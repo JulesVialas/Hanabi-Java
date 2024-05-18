@@ -48,7 +48,7 @@ public class Joueur {
 	String resultat = " ";
 	for (Carte element : cartesEnMain) {
 	    resultat += "couleur = " + element.getCouleur() + " hauteur = "
-		    + element.getHauteur() + "\n";
+		    + element.getValeur() + "\n";
 	}
 	return resultat;
     }
