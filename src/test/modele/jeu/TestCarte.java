@@ -9,7 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Classe de test pour 
+ * {@link modele.jeu.Carte}.
+ * 
+ * @author Corentin Solignac
  */
 class TestCarte {
 
@@ -18,7 +21,50 @@ class TestCarte {
      */
     @Test
     void testCarte() {
-        fail("Not yet implemented");
+    
+        
+        /* Carte avec couleur & valeur valides */
+        assertDoesNotThrow(()->new Carte(Couleur.ROUGE, Valeur.UN));
+        assertDoesNotThrow(()->new Carte(Couleur.ROUGE, Valeur.DEUX));
+        assertDoesNotThrow(()->new Carte(Couleur.ROUGE, Valeur.TROIS));
+        assertDoesNotThrow(()->new Carte(Couleur.ROUGE, Valeur.QUATRE));
+        assertDoesNotThrow(()->new Carte(Couleur.ROUGE, Valeur.CINQ));
+        
+        assertDoesNotThrow(()->new Carte(Couleur.JAUNE, Valeur.UN));
+        assertDoesNotThrow(()->new Carte(Couleur.JAUNE, Valeur.DEUX));
+        assertDoesNotThrow(()->new Carte(Couleur.JAUNE, Valeur.TROIS));
+        assertDoesNotThrow(()->new Carte(Couleur.JAUNE, Valeur.QUATRE));
+        assertDoesNotThrow(()->new Carte(Couleur.JAUNE, Valeur.CINQ));
+        
+        assertDoesNotThrow(()->new Carte(Couleur.VERT, Valeur.UN));
+        assertDoesNotThrow(()->new Carte(Couleur.VERT, Valeur.DEUX));
+        assertDoesNotThrow(()->new Carte(Couleur.VERT, Valeur.TROIS));
+        assertDoesNotThrow(()->new Carte(Couleur.VERT, Valeur.QUATRE));
+        assertDoesNotThrow(()->new Carte(Couleur.VERT, Valeur.CINQ));
+        
+        assertDoesNotThrow(()->new Carte(Couleur.BLEU, Valeur.UN));
+        assertDoesNotThrow(()->new Carte(Couleur.BLEU, Valeur.DEUX));
+        assertDoesNotThrow(()->new Carte(Couleur.BLEU, Valeur.TROIS));
+        assertDoesNotThrow(()->new Carte(Couleur.BLEU, Valeur.QUATRE));
+        assertDoesNotThrow(()->new Carte(Couleur.BLEU, Valeur.CINQ));
+        
+        assertDoesNotThrow(()->new Carte(Couleur.BLANC, Valeur.UN));
+        assertDoesNotThrow(()->new Carte(Couleur.BLANC, Valeur.DEUX));
+        assertDoesNotThrow(()->new Carte(Couleur.BLANC, Valeur.TROIS));
+        assertDoesNotThrow(()->new Carte(Couleur.BLANC, Valeur.QUATRE));
+        assertDoesNotThrow(()->new Carte(Couleur.BLANC, Valeur.CINQ));
+        
+        /* Carte avec couleur invalide */
+        // Protégé grâce à l'enumération Couleur
+        
+        /* Carte avec couleur valide & valeur invalide */
+        // Protégé grâce à l'enumération Valeur
+        
+        /* Carte avec couleur et valeur invalides */
+        // Protégé grâce aux énumérations
+        
+        /* Carte valide, vérifier valeurConnue à false */
+        //TODO nécessite tests des getters
     }
 
     /**
