@@ -24,7 +24,7 @@ public class Carte {
     private Couleur couleur;
 
     /** La valeur de la carte */
-    private int valeur;
+    private Valeur valeur;
 
     /** Indique si la couleur est connue ou non par le joueur qui l'a */
     private boolean couleurConnue;
@@ -39,7 +39,7 @@ public class Carte {
      * @param couleur la couleur de la carte
      * @param valeur la valeur de la carte
      */
-    public Carte(Couleur couleur, int valeur) {
+    public Carte(Couleur couleur, Valeur valeur) {
 	this.couleur = couleur;
 	this.valeur = valeur;
 	this.valeurConnue = false;
@@ -56,7 +56,7 @@ public class Carte {
     /**
      * @return valeur La valeur de la carte
      */
-    public int getValeur() {
+    public Valeur getValeur() {
 	return this.valeur;
     }
 
