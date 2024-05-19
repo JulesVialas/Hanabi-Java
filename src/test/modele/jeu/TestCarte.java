@@ -68,19 +68,240 @@ class TestCarte {
     }
 
     /**
-     * Test method for {@link modele.jeu.Carte#getCouleur()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Carte#getCouleur()}.
      */
     @Test
     void testGetCouleur() {
-        fail("Not yet implemented");
+        assertEquals(Couleur.ROUGE, new Carte(Couleur.ROUGE, Valeur.UN)
+                .getCouleur());
+        assertEquals(Couleur.ROUGE, new Carte(Couleur.ROUGE, Valeur.DEUX)
+                .getCouleur());
+        assertEquals(Couleur.ROUGE, new Carte(Couleur.ROUGE, Valeur.TROIS)
+                .getCouleur());
+        assertEquals(Couleur.ROUGE, new Carte(Couleur.ROUGE, Valeur.QUATRE)
+                .getCouleur());
+        assertEquals(Couleur.ROUGE, new Carte(Couleur.ROUGE, Valeur.CINQ)
+                .getCouleur());
+
+        assertNotEquals(Couleur.JAUNE, new Carte(Couleur.ROUGE, Valeur.UN)
+                .getCouleur());
+        assertNotEquals(Couleur.VERT, new Carte(Couleur.ROUGE, Valeur.DEUX)
+                .getCouleur());
+        assertNotEquals(Couleur.BLEU, new Carte(Couleur.ROUGE, Valeur.TROIS)
+                .getCouleur());
+        assertNotEquals(Couleur.BLANC, new Carte(Couleur.ROUGE, Valeur.QUATRE)
+                .getCouleur());
+        assertNotEquals(Couleur.BLANC, new Carte(Couleur.ROUGE, Valeur.CINQ)
+                .getCouleur());
+        
+        
+        assertEquals(Couleur.JAUNE, new Carte(Couleur.JAUNE, Valeur.UN)
+                .getCouleur());
+        assertEquals(Couleur.JAUNE, new Carte(Couleur.JAUNE, Valeur.DEUX)
+                .getCouleur());
+        assertEquals(Couleur.JAUNE, new Carte(Couleur.JAUNE, Valeur.TROIS)
+                .getCouleur());
+        assertEquals(Couleur.JAUNE, new Carte(Couleur.JAUNE, Valeur.QUATRE)
+                .getCouleur());
+        assertEquals(Couleur.JAUNE, new Carte(Couleur.JAUNE, Valeur.CINQ)
+                .getCouleur());
+
+        assertNotEquals(Couleur.ROUGE, new Carte(Couleur.JAUNE, Valeur.UN)
+                .getCouleur());
+        assertNotEquals(Couleur.VERT, new Carte(Couleur.JAUNE, Valeur.DEUX)
+                .getCouleur());
+        assertNotEquals(Couleur.BLEU, new Carte(Couleur.JAUNE, Valeur.TROIS)
+                .getCouleur());
+        assertNotEquals(Couleur.BLANC, new Carte(Couleur.JAUNE, Valeur.QUATRE)
+                .getCouleur());
+        assertNotEquals(Couleur.BLANC, new Carte(Couleur.JAUNE, Valeur.CINQ)
+                .getCouleur());
+
+        assertEquals(Couleur.VERT, new Carte(Couleur.VERT, Valeur.UN)
+                .getCouleur());
+        assertEquals(Couleur.VERT, new Carte(Couleur.VERT, Valeur.DEUX)
+                .getCouleur());
+        assertEquals(Couleur.VERT, new Carte(Couleur.VERT, Valeur.TROIS)
+                .getCouleur());
+        assertEquals(Couleur.VERT, new Carte(Couleur.VERT, Valeur.QUATRE)
+                .getCouleur());
+        assertEquals(Couleur.VERT, new Carte(Couleur.VERT, Valeur.CINQ)
+                .getCouleur());
+
+        assertNotEquals(Couleur.ROUGE, new Carte(Couleur.VERT, Valeur.UN)
+                .getCouleur());
+        assertNotEquals(Couleur.JAUNE, new Carte(Couleur.VERT, Valeur.DEUX)
+                .getCouleur());
+        assertNotEquals(Couleur.BLEU, new Carte(Couleur.VERT, Valeur.TROIS)
+                .getCouleur());
+        assertNotEquals(Couleur.BLANC, new Carte(Couleur.VERT, Valeur.QUATRE)
+                .getCouleur());
+        assertNotEquals(Couleur.BLANC, new Carte(Couleur.VERT, Valeur.CINQ)
+                .getCouleur());
+        
+        assertEquals(Couleur.BLEU, new Carte(Couleur.BLEU, Valeur.UN)
+                .getCouleur());
+        assertEquals(Couleur.BLEU, new Carte(Couleur.BLEU, Valeur.DEUX)
+                .getCouleur());
+        assertEquals(Couleur.BLEU, new Carte(Couleur.BLEU, Valeur.TROIS)
+                .getCouleur());
+        assertEquals(Couleur.BLEU, new Carte(Couleur.BLEU, Valeur.QUATRE)
+                .getCouleur());
+        assertEquals(Couleur.BLEU, new Carte(Couleur.BLEU, Valeur.CINQ)
+                .getCouleur());
+
+        assertNotEquals(Couleur.ROUGE, new Carte(Couleur.BLEU, Valeur.UN)
+                .getCouleur());
+        assertNotEquals(Couleur.JAUNE, new Carte(Couleur.BLEU, Valeur.DEUX)
+                .getCouleur());
+        assertNotEquals(Couleur.VERT, new Carte(Couleur.BLEU, Valeur.TROIS)
+                .getCouleur());
+        assertNotEquals(Couleur.BLANC, new Carte(Couleur.BLEU, Valeur.QUATRE)
+                .getCouleur());
+        assertNotEquals(Couleur.BLANC, new Carte(Couleur.BLEU, Valeur.CINQ)
+                .getCouleur());
+        
+        assertEquals(Couleur.BLANC, new Carte(Couleur.BLANC, Valeur.UN)
+                .getCouleur());
+        assertEquals(Couleur.BLANC, new Carte(Couleur.BLANC, Valeur.DEUX)
+                .getCouleur());
+        assertEquals(Couleur.BLANC, new Carte(Couleur.BLANC, Valeur.TROIS)
+                .getCouleur());
+        assertEquals(Couleur.BLANC, new Carte(Couleur.BLANC, Valeur.QUATRE)
+                .getCouleur());
+        assertEquals(Couleur.BLANC, new Carte(Couleur.BLANC, Valeur.CINQ)
+                .getCouleur());
+
+        assertNotEquals(Couleur.ROUGE, new Carte(Couleur.BLANC, Valeur.UN)
+                .getCouleur());
+        assertNotEquals(Couleur.JAUNE, new Carte(Couleur.BLANC, Valeur.DEUX)
+                .getCouleur());
+        assertNotEquals(Couleur.VERT, new Carte(Couleur.BLANC, Valeur.TROIS)
+                .getCouleur());
+        assertNotEquals(Couleur.BLEU, new Carte(Couleur.BLANC, Valeur.QUATRE)
+                .getCouleur());
+        assertNotEquals(Couleur.BLEU, new Carte(Couleur.BLANC, Valeur.CINQ)
+                .getCouleur());
     }
 
     /**
-     * Test method for {@link modele.jeu.Carte#getValeur()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Carte#getValeur()}.
      */
     @Test
     void testGetValeur() {
-        fail("Not yet implemented");
+
+        assertEquals(Valeur.UN, new Carte(Couleur.ROUGE, Valeur.UN)
+                .getValeur());
+        assertEquals(Valeur.DEUX, new Carte(Couleur.ROUGE, Valeur.DEUX)
+                .getValeur());
+        assertEquals(Valeur.TROIS, new Carte(Couleur.ROUGE, Valeur.TROIS)
+                .getValeur());
+        assertEquals(Valeur.QUATRE, new Carte(Couleur.ROUGE, Valeur.QUATRE)
+                .getValeur());
+        assertEquals(Valeur.CINQ, new Carte(Couleur.ROUGE, Valeur.CINQ)
+                .getValeur());
+
+        assertNotEquals(Valeur.DEUX, new Carte(Couleur.ROUGE, Valeur.UN)
+                .getValeur());
+        assertNotEquals(Valeur.TROIS, new Carte(Couleur.ROUGE, Valeur.DEUX)
+                .getValeur());
+        assertNotEquals(Valeur.QUATRE, new Carte(Couleur.ROUGE, Valeur.TROIS)
+                .getValeur());
+        assertNotEquals(Valeur.CINQ, new Carte(Couleur.ROUGE, Valeur.QUATRE)
+                .getValeur());
+        assertNotEquals(Valeur.UN, new Carte(Couleur.ROUGE, Valeur.CINQ)
+                .getValeur());
+        
+        
+        assertEquals(Valeur.UN, new Carte(Couleur.JAUNE, Valeur.UN)
+                .getValeur());
+        assertEquals(Valeur.DEUX, new Carte(Couleur.JAUNE, Valeur.DEUX)
+                .getValeur());
+        assertEquals(Valeur.TROIS, new Carte(Couleur.JAUNE, Valeur.TROIS)
+                .getValeur());
+        assertEquals(Valeur.QUATRE, new Carte(Couleur.JAUNE, Valeur.QUATRE)
+                .getValeur());
+        assertEquals(Valeur.CINQ, new Carte(Couleur.JAUNE, Valeur.CINQ)
+                .getValeur());
+
+        assertNotEquals(Valeur.TROIS, new Carte(Couleur.JAUNE, Valeur.UN)
+                .getValeur());
+        assertNotEquals(Valeur.QUATRE, new Carte(Couleur.JAUNE, Valeur.DEUX)
+                .getValeur());
+        assertNotEquals(Valeur.CINQ, new Carte(Couleur.JAUNE, Valeur.TROIS)
+                .getValeur());
+        assertNotEquals(Valeur.UN, new Carte(Couleur.JAUNE, Valeur.QUATRE)
+                .getValeur());
+        assertNotEquals(Valeur.DEUX, new Carte(Couleur.JAUNE, Valeur.CINQ)
+                .getValeur());
+
+        assertEquals(Valeur.UN, new Carte(Couleur.VERT, Valeur.UN)
+                .getValeur());
+        assertEquals(Valeur.DEUX, new Carte(Couleur.VERT, Valeur.DEUX)
+                .getValeur());
+        assertEquals(Valeur.TROIS, new Carte(Couleur.VERT, Valeur.TROIS)
+                .getValeur());
+        assertEquals(Valeur.QUATRE, new Carte(Couleur.VERT, Valeur.QUATRE)
+                .getValeur());
+        assertEquals(Valeur.CINQ, new Carte(Couleur.VERT, Valeur.CINQ)
+                .getValeur());
+
+        assertNotEquals(Valeur.QUATRE, new Carte(Couleur.VERT, Valeur.UN)
+                .getValeur());
+        assertNotEquals(Valeur.CINQ, new Carte(Couleur.VERT, Valeur.DEUX)
+                .getValeur());
+        assertNotEquals(Valeur.UN, new Carte(Couleur.VERT, Valeur.TROIS)
+                .getValeur());
+        assertNotEquals(Valeur.DEUX, new Carte(Couleur.VERT, Valeur.QUATRE)
+                .getValeur());
+        assertNotEquals(Valeur.TROIS, new Carte(Couleur.VERT, Valeur.CINQ)
+                .getValeur());
+        
+        assertEquals(Valeur.UN, new Carte(Couleur.BLEU, Valeur.UN)
+                .getValeur());
+        assertEquals(Valeur.DEUX, new Carte(Couleur.BLEU, Valeur.DEUX)
+                .getValeur());
+        assertEquals(Valeur.TROIS, new Carte(Couleur.BLEU, Valeur.TROIS)
+                .getValeur());
+        assertEquals(Valeur.QUATRE, new Carte(Couleur.BLEU, Valeur.QUATRE)
+                .getValeur());
+        assertEquals(Valeur.CINQ, new Carte(Couleur.BLEU, Valeur.CINQ)
+                .getValeur());
+
+        assertNotEquals(Valeur.CINQ, new Carte(Couleur.BLEU, Valeur.UN)
+                .getValeur());
+        assertNotEquals(Valeur.UN, new Carte(Couleur.BLEU, Valeur.DEUX)
+                .getValeur());
+        assertNotEquals(Valeur.DEUX, new Carte(Couleur.BLEU, Valeur.TROIS)
+                .getValeur());
+        assertNotEquals(Valeur.TROIS, new Carte(Couleur.BLEU, Valeur.QUATRE)
+                .getValeur());
+        assertNotEquals(Valeur.QUATRE, new Carte(Couleur.BLEU, Valeur.CINQ)
+                .getValeur());
+        
+        assertEquals(Valeur.UN, new Carte(Couleur.BLANC, Valeur.UN)
+                .getValeur());
+        assertEquals(Valeur.DEUX, new Carte(Couleur.BLANC, Valeur.DEUX)
+                .getValeur());
+        assertEquals(Valeur.TROIS, new Carte(Couleur.BLANC, Valeur.TROIS)
+                .getValeur());
+        assertEquals(Valeur.QUATRE, new Carte(Couleur.BLANC, Valeur.QUATRE)
+                .getValeur());
+        assertEquals(Valeur.CINQ, new Carte(Couleur.BLANC, Valeur.CINQ)
+                .getValeur());
+
+        assertNotEquals(Valeur.DEUX, new Carte(Couleur.BLANC, Valeur.UN)
+                .getValeur());
+        assertNotEquals(Valeur.TROIS, new Carte(Couleur.BLANC, Valeur.DEUX)
+                .getValeur());
+        assertNotEquals(Valeur.UN, new Carte(Couleur.BLANC, Valeur.TROIS)
+                .getValeur());
+        assertNotEquals(Valeur.CINQ, new Carte(Couleur.BLANC, Valeur.QUATRE)
+                .getValeur());
+        assertNotEquals(Valeur.QUATRE, new Carte(Couleur.BLANC, Valeur.CINQ)
+                .getValeur());
     }
 
     /**
