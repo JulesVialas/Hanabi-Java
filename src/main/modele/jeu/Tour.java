@@ -2,7 +2,7 @@
  * Tour.java                                            18 mai 2024
  * IUT de Rodez, TP42, pas de copyright.
  */
-package jeu;
+package modele.jeu;
 
 /**
  * Le tour d'une partie d'Hanabi est caractérisé par un numéro et un 

@@ -3,7 +3,7 @@
  * IUT de Rodez, TP42, pas de copyright
  */
 
-package jeu;
+package modele.jeu;
 
 /**
  * La classe Carte représente une carte du jeu Hanabi. 

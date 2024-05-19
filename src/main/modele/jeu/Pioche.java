@@ -1,4 +1,4 @@
-package jeu;
+package modele.jeu;
 
 
 /**

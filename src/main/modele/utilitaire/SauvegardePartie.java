@@ -1,4 +1,4 @@
-package utilitaires;
+package modele.utilitaire;
 
 public class SauvegardePartie {
 

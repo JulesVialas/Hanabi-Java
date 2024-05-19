@@ -1,4 +1,4 @@
-package jeu;
+package modele.jeu;
 
 /**
  * La classe Joueur représente un joueur dans un jeu de cartes. Chaque joueur a
