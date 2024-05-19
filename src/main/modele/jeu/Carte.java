@@ -20,13 +20,6 @@ package modele.jeu;
  */
 public class Carte {
     
-    /**
-     * Défini les couleurs de cartes valides pour le jeu Hanabi
-     */
-    public enum Couleur {
-        ROUGE, JAUNE, VERT, BLEU, BLANC
-    };
-    
     /** La couleur de la carte */
     private Couleur couleur;
 
