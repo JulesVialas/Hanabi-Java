@@ -40,24 +40,24 @@ public class Carte {
      * @param valeur la valeur de la carte
      */
     public Carte(Couleur couleur, Valeur valeur) {
-	this.couleur = couleur;
-	this.valeur = valeur;
-	this.valeurConnue = false;
-	this.couleurConnue = false;
+		this.couleur = couleur;
+		this.valeur = valeur;
+		this.valeurConnue = false;
+		this.couleurConnue = false;
     }
 
     /**
      * @return couleur La couleur de la carte
      */
     public Couleur getCouleur() {
-	return this.couleur;
+    	return this.couleur;
     }
 
     /**
      * @return valeur La valeur de la carte
      */
     public Valeur getValeur() {
-	return this.valeur;
+    	return this.valeur;
     }
 
     /**
@@ -65,7 +65,7 @@ public class Carte {
      *         de la carte
      */
     public boolean getCouleurConnue() {
-	return this.couleurConnue;
+    	return this.couleurConnue;
     }
 
     /**
@@ -73,7 +73,7 @@ public class Carte {
      * 	       de la carte
      */
     public boolean getValeurConnue() {
-	return this.valeurConnue;
+    	return this.valeurConnue;
     }
 
     /**
@@ -93,7 +93,7 @@ public class Carte {
      *        connue sinon false
      */
     public void setValeurConnue(boolean etat) {
-	this.valeurConnue = etat;
+    	this.valeurConnue = etat;
     }
 
     /**

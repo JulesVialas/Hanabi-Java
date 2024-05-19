@@ -1,3 +1,8 @@
+/*
+ * Pioche.java			18/05/2024
+ * IUT de Rodez, TP42, pas de copyright
+ */
+
 package modele.jeu;
 
 
@@ -9,24 +14,36 @@ package modele.jeu;
 public class Pioche {
     
     /** La pile de carte de la pioche. */
-    private Carte[] pileDeCarte; 
+    private Carte[] pile; 
+    
+    /** Le rang indique le nombre de cartes actuellement dans la pioche. */
+    private int taille;
 
     /** Constructeur pour initialiser une pioche.
      * 
      * @param pile 
      */
     public Pioche(Carte[] pile) {
-        this.pileDeCarte = pile;
+        this.pile = pile;
+        this.taille = pile.length;
     }
 
+    /**
+     * Retourne la pile de cartes actuelle.
+     * @return 
+     */
+    public Carte[] getPile() {
+        return this.pile;
+    }
     
     /**
-     * 
+     * Remplace la pile de cartes par une nouvelle pile
      *
-     * @param pile	Pile de carte qui constitue la pioche.
+     * @param pile Nouvelle pile de cartes qui constitue la pioche.
      */
     public void setPile(Carte[] pile) {
-	    pileDeCarte = pile; 
+        this.pile = pile;
+        this.taille = pile.length;
     }
 }
 
