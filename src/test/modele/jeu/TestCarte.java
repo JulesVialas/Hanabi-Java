@@ -22,7 +22,6 @@ class TestCarte {
     @Test
     void testCarte() {
     
-        
         /* Carte avec couleur & valeur valides */
         assertDoesNotThrow(()->new Carte(Couleur.ROUGE, Valeur.UN));
         assertDoesNotThrow(()->new Carte(Couleur.ROUGE, Valeur.DEUX));
@@ -309,31 +308,216 @@ class TestCarte {
      */
     @Test
     void testGetCouleurConnue() {
-        fail("Not yet implemented");
+        
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.UN)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.DEUX)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.TROIS)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.QUATRE)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.CINQ)
+                .getCouleurConnue());
+
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.UN)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.DEUX)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.TROIS)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.QUATRE)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.CINQ)
+                .getCouleurConnue());
+
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.UN)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.DEUX)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.TROIS)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.QUATRE)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.CINQ)
+                .getCouleurConnue());
+        
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.UN)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.DEUX)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.TROIS)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.QUATRE)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.CINQ)
+                .getCouleurConnue());
+
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.UN)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.DEUX)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.TROIS)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.QUATRE)
+                .getCouleurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.CINQ)
+                .getCouleurConnue());
+        
+        /* Tests après setter pour passer couleurConnue sur true */
+        //TODO après setters
     }
 
     /**
-     * Test method for {@link modele.jeu.Carte#getValeurConnue()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Carte#getValeurConnue()}.
      */
     @Test
     void testGetValeurConnue() {
-        fail("Not yet implemented");
+        
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.UN)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.DEUX)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.TROIS)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.QUATRE)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.CINQ)
+                .getValeurConnue());
+
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.UN)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.DEUX)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.TROIS)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.QUATRE)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.CINQ)
+                .getValeurConnue());
+
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.UN)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.DEUX)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.TROIS)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.QUATRE)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.CINQ)
+                .getValeurConnue());
+        
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.UN)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.DEUX)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.TROIS)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.QUATRE)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.CINQ)
+                .getValeurConnue());
+
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.UN)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.DEUX)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.TROIS)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.QUATRE)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.CINQ)
+                .getValeurConnue());
+        
+        /* Tests après setter pour passer valeurConnue sur true */
+        //TODO après setters
     }
 
     /**
-     * Test method for {@link modele.jeu.Carte#setCouleurConnue(boolean)}.
+     * Méthode de test pour
+     * {@link modele.jeu.Carte#setCouleurConnue(boolean)}.
      */
     @Test
     void testSetCouleurConnue() {
-        fail("Not yet implemented");
+        
+        /* Jeu de test */
+        Carte unRouge = new Carte(Couleur.ROUGE, Valeur.UN);        
+        Carte deuxJaune = new Carte(Couleur.JAUNE, Valeur.DEUX);        
+        Carte troisVert = new Carte(Couleur.VERT, Valeur.TROIS);        
+        Carte quatreBleu = new Carte(Couleur.BLEU, Valeur.QUATRE);     
+        Carte cinqBlanc = new Carte(Couleur.BLANC, Valeur.CINQ);
+        
+        /* Changement d'état pour l'attribut couleurConnue */
+        unRouge.setCouleurConnue(true);
+        deuxJaune.setCouleurConnue(true);    
+        troisVert.setCouleurConnue(true);
+        quatreBleu.setCouleurConnue(true);
+        cinqBlanc.setCouleurConnue(true);
+        
+        /* L'attribut est à true */
+        assertTrue(unRouge.getCouleurConnue());
+        assertTrue(deuxJaune.getCouleurConnue());
+        assertTrue(troisVert.getCouleurConnue());
+        assertTrue(quatreBleu.getCouleurConnue());
+        assertTrue(cinqBlanc.getCouleurConnue());
+        
+        /* Changement d'état pour l'attribut couleurConnue */
+        unRouge.setCouleurConnue(false);
+        deuxJaune.setCouleurConnue(false);    
+        troisVert.setCouleurConnue(false);
+        quatreBleu.setCouleurConnue(false);
+        cinqBlanc.setCouleurConnue(false);
+        
+        /* L'attribut est à false */
+        assertFalse(unRouge.getCouleurConnue());
+        assertFalse(deuxJaune.getCouleurConnue());
+        assertFalse(troisVert.getCouleurConnue());
+        assertFalse(quatreBleu.getCouleurConnue());
+        assertFalse(cinqBlanc.getCouleurConnue());
     }
 
     /**
-     * Test method for {@link modele.jeu.Carte#setValeurConnue(boolean)}.
+     * Méthode de test pour
+     * {@link modele.jeu.Carte#setValeurConnue(boolean)}.
      */
     @Test
     void testSetValeurConnue() {
-        fail("Not yet implemented");
+
+        /* Jeu de test */
+        Carte unRouge = new Carte(Couleur.ROUGE, Valeur.UN);        
+        Carte deuxJaune = new Carte(Couleur.JAUNE, Valeur.DEUX);        
+        Carte troisVert = new Carte(Couleur.VERT, Valeur.TROIS);        
+        Carte quatreBleu = new Carte(Couleur.BLEU, Valeur.QUATRE);     
+        Carte cinqBlanc = new Carte(Couleur.BLANC, Valeur.CINQ);
+        
+        /* Changement d'état pour l'attribut valeurConnue */
+        unRouge.setValeurConnue(true);
+        deuxJaune.setValeurConnue(true);    
+        troisVert.setValeurConnue(true);
+        quatreBleu.setValeurConnue(true);
+        cinqBlanc.setValeurConnue(true);
+        
+        /* L'attribut est à true */
+        assertTrue(unRouge.getValeurConnue());
+        assertTrue(deuxJaune.getValeurConnue());
+        assertTrue(troisVert.getValeurConnue());
+        assertTrue(quatreBleu.getValeurConnue());
+        assertTrue(cinqBlanc.getValeurConnue());
+        
+        /* Changement d'état pour l'attribut valeurConnue */
+        unRouge.setValeurConnue(false);
+        deuxJaune.setValeurConnue(false);    
+        troisVert.setValeurConnue(false);
+        quatreBleu.setValeurConnue(false);
+        cinqBlanc.setValeurConnue(false);
+        
+        /* L'attribut est à false */
+        assertFalse(unRouge.getValeurConnue());
+        assertFalse(deuxJaune.getValeurConnue());
+        assertFalse(troisVert.getValeurConnue());
+        assertFalse(quatreBleu.getValeurConnue());
+        assertFalse(cinqBlanc.getValeurConnue());
     }
 
     /**
