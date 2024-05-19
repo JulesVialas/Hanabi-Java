@@ -1,66 +1,64 @@
 package modele.jeu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * La classe Joueur représente un joueur dans un jeu de cartes. Chaque joueur a
- * un pseudo, un ensemble de cartes en main, et un rang qui indique le nombre de
- * cartes en main.
+ * La classe Joueur représente un joueur dans un jeu de cartes. 
+ * Chaque joueur a un pseudo et une main de cartes.
+ * 
+ * @author Jules Vialas
+ * @author Corentin Solignac
  */
 public class Joueur {
+
+    private static final String ERREUR_PSEUDO_INVALIDE = 
+    "Erreur: Le pseudo doit comporter entre 2 et 10 caractères et ne doit "
+    + "pas être uniquement constitué d'espaces, ni être null.";
 
     /** Le pseudo du joueur. */
     private String pseudo;
 
     /** Les cartes en main du joueur. */
-    private Carte[] cartesEnMain;
-
-    /** Le rang indique le nombre de cartes actuellement en main. */
-    private int rang = 0;
+    private ArrayList<Carte> cartesEnMain;
 
     /**
-     * Constructeur pour créer un joueur avec un pseudo et un ensemble de cartes
-     * initiales.
-     *
-     * @param pseudo       le pseudo du joueur.
-     * @param cartesEnMain les cartes initiales en main du joueur.
+     * Instancie un objet de type Joueur à l'aide de son pseudo.
+     * Le pseudo peut comporter entre 2 et 10 caractères. Il ne peut 
+     * pas être composés uniquement d'espaces, ni être null.
+     * 
+     * @param pseudo le pseudo du joueur
+     * @throws IllegalArgumentException si les règles de validité de 
+     *         construction d'un pseudo ne sont pas respectées.
      */
-    public Joueur(String pseudo, Carte[] cartesEnMain) {
+    public Joueur(String pseudo) {
+        
+        if(pseudo.isBlank() || pseudo.length() < 2 || pseudo.length() > 10) {
+            throw new IllegalArgumentException(ERREUR_PSEUDO_INVALIDE);
+        }
 	this.pseudo = pseudo;
-	this.cartesEnMain = cartesEnMain;
     }
 
     /**
-     * Retourne le pseudo du joueur.
-     *
-     * @return le pseudo du joueur.
+     * @return le pseudo du joueur
      */
     public String getPseudo() {
-	return pseudo;
+	return this.pseudo;
     }
 
     /**
-     * Retourne une chaîne de caractères représentant les cartes en main du
-     * joueur.
-     *
-     * @return une chaîne de caractères listant les cartes en main avec leur
-     *         couleur et hauteur.
+     * @return les cartes dans la main du joueur
      */
-    public String getCartesEnMains() {
-	String resultat = " ";
-	for (Carte element : cartesEnMain) {
-	    resultat += "couleur = " + element.getCouleur() + " hauteur = "
-		    + element.getValeur() + "\n";
-	}
-	return resultat;
+    public List<Carte> getCartesEnMains() {
+	return this.cartesEnMain;
     }
 
     /**
-     * Ajoute une carte à la main du joueur. La carte est ajoutée à la prochaine
-     * position disponible dans le tableau.
+     * Ajoute une carte à la main du joueur, à la suite des autres.
      *
-     * @param carte la carte à ajouter.
+     * @param carte la carte à ajouter
      */
     public void setCartesEnMains(Carte carte) {
-	cartesEnMain[rang] = carte;
-	rang++;
+	this.cartesEnMain.add(carte);
     }
 }
