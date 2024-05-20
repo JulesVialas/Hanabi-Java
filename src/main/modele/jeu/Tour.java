@@ -96,7 +96,36 @@ public class Tour {
      * @return le nombre de jetons rouges obtenus
      */
     public int getJetonsRouges() {
-        return this.jetonsBleus;
+        return this.jetonsRouges;
+    }
+    
+    /**
+     * Défini le nombre de jetons bleus.
+     * @param nbJetons le nombre de jetons bleus du tour 
+     */
+    public void setJetonsBleus(int nbJetons) {
+        this.jetonsBleus = nbJetons;
+    }
+    
+    /**
+     * Incrémente le nombre de jetons bleus.
+     */
+    public void incrementJetonsBleus() {
+        this.jetonsBleus++;
+    }
+    
+    /**
+     * Décrémente le nombre de jetons bleus.
+     */
+    public void decrementJetonsBleus() {
+        this.jetonsBleus--;
+    }
+    
+    /**
+     * Incrémente le nombre de jetons rouges.
+     */
+    public void incrementJetonsRouges() {
+        this.jetonsRouges++;
     }
     
     /**

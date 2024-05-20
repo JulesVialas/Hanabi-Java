@@ -68,7 +68,18 @@ class TestTour {
      */
     @Test
     void testGetJetonsBleus() {
-        fail("Not yet implemented");
+
+        Tour roundUn = new Tour(new Joueur("Emile"), 1);
+        assertEquals(0, roundUn.getJetonsBleus());
+        
+        roundUn.incrementJetonsBleus();
+        assertNotEquals(0, roundUn.getJetonsBleus());
+        assertEquals(1, roundUn.getJetonsBleus());
+        
+        roundUn.incrementJetonsBleus();
+        assertNotEquals(0, roundUn.getJetonsBleus());
+        assertNotEquals(1, roundUn.getJetonsBleus());
+        assertEquals(2, roundUn.getJetonsBleus());
     }
 
     /**
@@ -77,6 +88,73 @@ class TestTour {
      */
     @Test
     void testGetJetonsRouges() {
+        fail("Not yet implemented");
+    }
+    
+    /**
+     * Méthode de test pour
+     * {@link modele.jeu.Tour#incrementJetonsBleus()}.
+     */
+    @Test
+    void testIncrementJetonsBleus() {
+        Tour roundUn = new Tour(new Joueur("Emile"), 1);
+        assertEquals(0, roundUn.getJetonsBleus());
+        
+        roundUn.incrementJetonsBleus();
+        assertNotEquals(0, roundUn.getJetonsBleus());
+        assertEquals(1, roundUn.getJetonsBleus());
+        
+        roundUn.incrementJetonsBleus();
+        assertNotEquals(0, roundUn.getJetonsBleus());
+        assertNotEquals(1, roundUn.getJetonsBleus());
+        assertEquals(2, roundUn.getJetonsBleus());
+    }
+    
+    /**
+     * Méthode de test pour
+     * {@link modele.jeu.Tour#setJetonsBleus()}.
+     */
+    @Test
+    void testSetJetonsBleus() {    
+        Tour roundUn = new Tour(new Joueur("Emile"), 1);
+        Tour roundDeux = new Tour(new Joueur("Parisien"), 2);
+        assertEquals(0, roundUn.getJetonsBleus());
+        
+        roundUn.incrementJetonsBleus();
+        assertNotEquals(0, roundUn.getJetonsBleus());
+        assertEquals(1, roundUn.getJetonsBleus());
+        
+        roundUn.incrementJetonsBleus();
+        assertNotEquals(0, roundUn.getJetonsBleus());
+        assertNotEquals(1, roundUn.getJetonsBleus());
+        assertEquals(2, roundUn.getJetonsBleus());
+        
+        roundUn.incrementJetonsBleus();
+        roundDeux.setJetonsBleus(roundUn.getJetonsBleus());
+        assertEquals(3, roundDeux.getJetonsBleus());
+    }
+    
+    /**
+     * Méthode de test pour
+     * {@link modele.jeu.Tour#decrementJetonsBleus()}.
+     */
+    @Test
+    void testDecrementJetonsBleus() {
+        Tour roundTrois = new Tour(new Joueur("Parker"), 3);
+        
+        roundTrois.setJetonsBleus(4);
+        assertEquals(4, roundTrois.getJetonsBleus());
+        
+        roundTrois.decrementJetonsBleus();
+        assertEquals(3, roundTrois.getJetonsBleus());
+    }
+
+    /**
+     * Méthode de test pour
+     * {@link modele.jeu.Tour#incrementJetonsRouges()}.
+     */
+    @Test
+    void testIncrementJetonsRouges() {
         fail("Not yet implemented");
     }
 
