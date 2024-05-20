@@ -6,6 +6,8 @@ package modele.jeu;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 /**
@@ -14,7 +16,8 @@ import org.junit.jupiter.api.Test;
 class TestJoueur {
 
     /**
-     * Test method for {@link modele.jeu.Joueur#Joueur(java.lang.String)}.
+     * Méthode de test pour
+     * {@link modele.jeu.Joueur#Joueur(java.lang.String)}.
      */
     @Test
     void testJoueur() {
@@ -39,7 +42,8 @@ class TestJoueur {
     }
 
     /**
-     * Test method for {@link modele.jeu.Joueur#getPseudo()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Joueur#getPseudo()}.
      */
     @Test
     void testGetPseudo() {
@@ -62,19 +66,52 @@ class TestJoueur {
     }
 
     /**
-     * Test method for {@link modele.jeu.Joueur#getCartesEnMains()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Joueur#getCartesEnMains()}.
      */
     @Test
     void testGetCartesEnMains() {
-        fail("Not yet implemented");
+
+        /* Main vide lors de l'instanciation du Joueur */
+        assertEquals(null, new Joueur("O U I ").getCartesEnMains());
+        
+        /* 
+         * Tests getter avec main non vides dans 
+         * {@link modele.jeu.TestJoueur#testSetCartesEnMains()}.
+         */
     }
 
     /**
-     * Test method for {@link modele.jeu.Joueur#setCartesEnMains(modele.jeu.Carte)}.
+     * Méthode de test pour
+     * {@link modele.jeu.Joueur#setCartesEnMains(Carte carte)}.
      */
     @Test
     void testSetCartesEnMains() {
-        fail("Not yet implemented");
+
+        /* Cartes valides pour test */
+        Carte unRouge = new Carte(Couleur.ROUGE, Valeur.UN);
+        Carte deuxRouge = new Carte(Couleur.ROUGE, Valeur.DEUX);
+        
+        /* Joueurs valides pour test. Main null à ce stade */
+        Joueur Kamasi = new Joueur("Kamasi");
+        Joueur Washington = new Joueur("Washington");
+        
+        /* Listes de vérification */
+        ArrayList<Carte> verifKamasi = new ArrayList<>();
+        ArrayList<Carte> verifWashington = new ArrayList<>();
+        
+        /* On donne une carte à chacun */
+        verifKamasi.add(unRouge);
+        Kamasi.setCartesEnMains(unRouge);
+        
+        verifWashington.add(deuxRouge);
+        Washington.setCartesEnMains(deuxRouge);
+
+        /* On vérifie la main des joueurs */
+        assertEquals(verifKamasi, Kamasi.getCartesEnMains());
+        assertEquals(verifWashington, Washington.getCartesEnMains());
+        assertNotEquals(verifWashington, Kamasi.getCartesEnMains());
+        assertNotEquals(verifKamasi, Washington.getCartesEnMains());
     }
 
 }
