@@ -37,6 +37,7 @@ public class Joueur {
             throw new IllegalArgumentException(ERREUR_PSEUDO_INVALIDE);
         }
 	this.pseudo = pseudo;
+	this.cartesEnMain = new ArrayList<>();
     }
 
     /**
