@@ -5,6 +5,7 @@
 
 package modele.jeu;
 
+import java.util.ArrayList;
 
 /**
  * La classe Pioche représente la pioche de carte dans jeu Hanabi. La pioche
@@ -14,36 +15,24 @@ package modele.jeu;
 public class Pioche {
     
     /** La pile de carte de la pioche. */
-    private Carte[] pile; 
+    private ArrayList<Carte> pile; 
     
-    /** Le rang indique le nombre de cartes actuellement dans la pioche. */
-    private int taille;
 
-    /** Constructeur pour initialiser une pioche.
+    /** Instancie un objet de type Pioche.
      * 
-     * @param pile 
+     * @param pile une pile de carte
      */
-    public Pioche(Carte[] pile) {
+    public Pioche(ArrayList<Carte> pile) {
         this.pile = pile;
-        this.taille = pile.length;
     }
 
-    /**
-     * Retourne la pile de cartes actuelle.
-     * @return 
-     */
-    public Carte[] getPile() {
-        return this.pile;
-    }
-    
     /**
      * Remplace la pile de cartes par une nouvelle pile
      *
      * @param pile Nouvelle pile de cartes qui constitue la pioche.
      */
-    public void setPile(Carte[] pile) {
+    public void setPile(ArrayList<Carte> pile) {
         this.pile = pile;
-        this.taille = pile.length;
     }
 }
 

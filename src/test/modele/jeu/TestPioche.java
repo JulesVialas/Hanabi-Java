@@ -7,25 +7,26 @@ package modele.jeu;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.junit.jupiter.api.Test;
 
 class TestPioche {
 	
 
-    Carte[] pioche1 = new Carte[] {
-            new Carte(Couleur.ROUGE, Valeur.UN),
-            new Carte(Couleur.BLEU, Valeur.DEUX),
-            new Carte(Couleur.VERT, Valeur.TROIS),
-    	};
+	 ArrayList<Carte> pioche1 = new ArrayList<>(Arrays.asList(
+	            new Carte(Couleur.ROUGE, Valeur.UN),
+	            new Carte(Couleur.BLEU, Valeur.DEUX),
+	            new Carte(Couleur.VERT, Valeur.TROIS)
+	    ));
     
-    Carte[] pioche2 = new Carte[] {
-            new Carte(Couleur.JAUNE, Valeur.QUATRE),
-            new Carte(Couleur.BLEU, Valeur.UN)
-    	};
-    
-    Carte[] piocheVide = new Carte[] {
-    		
-    	};
+	 ArrayList<Carte> pioche2 = new ArrayList<>(Arrays.asList(
+	            new Carte(Couleur.JAUNE, Valeur.QUATRE),
+	            new Carte(Couleur.BLEU, Valeur.UN)
+	    ));
+
+	    ArrayList<Carte> piocheVide = new ArrayList<>();
     
 	@Test
 	void testPioche() {
@@ -35,11 +36,8 @@ class TestPioche {
 		
 		assertNotNull(pioche1);
 		assertNotNull(pioche2);
+		assertNotNull(piocheVide);
 	}
 	
 
-	@Test
-    void testSetPile() {
-		fail("Not yet implemented");
-    }
 }

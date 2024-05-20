@@ -2,22 +2,26 @@
  * Defausse.java			19/05/2024
  * IUT de Rodez, TP42, pas de copyright
  */
-
 package modele.jeu;
 
+import java.util.ArrayList;
+
 /**
- * 
+ * La classe Defausse représente la défausse de carte dans jeu Hanabi. La 
+ * défausse est une pile de cartes. Les cartes présentes dans la défausse sont
+ * inutilisées et sont seulement visible par le joueur pour prendre des bonnes
+ * décisions. 
  */
 public class Defausse {
 	
 	/** La pile de cartes de la défausse. */
-    private Carte[] pile;
+    private ArrayList<Carte> pile;
 
     /**
-     * Constructeur pour initialiser la défausse.
+     * Instancie un objet de type Defausse.
      */
     public Defausse() {
-        this.pile = new Carte[0]; 
+        this.pile = new ArrayList<>(); 
     }
 
     /**
@@ -25,7 +29,7 @@ public class Defausse {
      *
      * @param pile Nouvelle pile de cartes qui constitue la défausse.
      */
-    public void setPile(Carte[] pile) {
+    public void setPile(ArrayList<Carte> pile) {
         this.pile = pile;
     }
 }
