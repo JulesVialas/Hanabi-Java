@@ -88,7 +88,17 @@ class TestTour {
      */
     @Test
     void testGetJetonsRouges() {
-        fail("Not yet implemented");
+        Tour roundUn = new Tour(new Joueur("Emile"), 1);
+        assertEquals(0, roundUn.getJetonsRouges());
+        
+        roundUn.incrementJetonsRouges();
+        assertNotEquals(0, roundUn.getJetonsRouges());
+        assertEquals(1, roundUn.getJetonsRouges());
+        
+        roundUn.incrementJetonsRouges();
+        assertNotEquals(0, roundUn.getJetonsRouges());
+        assertNotEquals(1, roundUn.getJetonsRouges());
+        assertEquals(2, roundUn.getJetonsRouges());
     }
     
     /**
@@ -155,7 +165,17 @@ class TestTour {
      */
     @Test
     void testIncrementJetonsRouges() {
-        fail("Not yet implemented");
+        Tour roundUn = new Tour(new Joueur("Emile"), 1);
+        assertEquals(0, roundUn.getJetonsRouges());
+        
+        roundUn.incrementJetonsRouges();
+        assertNotEquals(0, roundUn.getJetonsRouges());
+        assertEquals(1, roundUn.getJetonsRouges());
+        
+        roundUn.incrementJetonsRouges();
+        assertNotEquals(0, roundUn.getJetonsRouges());
+        assertNotEquals(1, roundUn.getJetonsRouges());
+        assertEquals(2, roundUn.getJetonsRouges());
     }
 
     /**
