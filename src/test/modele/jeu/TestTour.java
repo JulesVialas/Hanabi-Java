@@ -40,7 +40,13 @@ class TestTour {
      */
     @Test
     void testGetJoueurCourant() {
-        fail("Not yet implemented");
+
+        Joueur Charles = new Joueur("Charles");
+        Joueur Mingus = new Joueur("Mingus");
+        assertEquals(Charles, new Tour(Charles, 5).getJoueurCourant());
+        assertEquals(Mingus, new Tour(Mingus, 15).getJoueurCourant());
+        assertNotEquals(Mingus, new Tour(Charles, 5).getJoueurCourant());
+        assertNotEquals(Charles, new Tour(Mingus, 15).getJoueurCourant());
     }
 
     /**
@@ -49,7 +55,11 @@ class TestTour {
      */
     @Test
     void testGetNumero() {
-        fail("Not yet implemented");
+        
+        assertEquals(5, new Tour(new Joueur("Charles"), 5).getNumero());
+        assertEquals(15, new Tour(new Joueur("Mingus"), 15).getNumero());
+        assertNotEquals(15, new Tour(new Joueur("Charles"), 5).getNumero());
+        assertNotEquals(5, new Tour(new Joueur("Mingus"), 15).getNumero());
     }
 
     /**
