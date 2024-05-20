@@ -24,6 +24,7 @@ class TestJoueur {
         assertDoesNotThrow(()->new Joueur("Kuras"));
         assertDoesNotThrow(()->new Joueur("12"));
         assertDoesNotThrow(()->new Joueur("0123456789"));
+        assertDoesNotThrow(()->new Joueur("O U I "));
         
         assertThrows(IllegalArgumentException.class,
                 ()->new Joueur(""));
@@ -42,7 +43,22 @@ class TestJoueur {
      */
     @Test
     void testGetPseudo() {
-        fail("Not yet implemented");
+        
+        assertEquals("Kamasi", new Joueur("Kamasi").getPseudo());
+        assertEquals("Washington", new Joueur("Washington").getPseudo());
+        assertEquals("Magda", new Joueur("Magda").getPseudo());
+        assertEquals("Kuras", new Joueur("Kuras").getPseudo());
+        assertEquals("12", new Joueur("12").getPseudo());
+        assertEquals("0123456789", new Joueur("0123456789").getPseudo());
+        assertEquals("O U I ", new Joueur("O U I ").getPseudo());
+        
+        assertNotEquals("kamasi", new Joueur("Kamasi").getPseudo());
+        assertNotEquals(" Washington", new Joueur("Washington").getPseudo());
+        assertNotEquals("Magda ", new Joueur("Magda").getPseudo());
+        assertNotEquals("KURAS", new Joueur("Kuras").getPseudo());
+        assertNotEquals(" 12 ", new Joueur("12").getPseudo());
+        assertNotEquals("0...9", new Joueur("0123456789").getPseudo());
+        assertNotEquals("o_u_i_", new Joueur("O U I ").getPseudo());
     }
 
     /**
