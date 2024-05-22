@@ -172,7 +172,7 @@ public class Tour {
 			}
 		}
 		if (!indiceDonne) {
-            throw new IllegalArgumentException(ERREUR_INDICE_DEJA_CONNU);
+            throw new IllegalArgumentException(INDICE_DEJA_CONNU);
         }
 		decrementJetonsBleus();
 	}
