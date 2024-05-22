@@ -184,7 +184,32 @@ class TestTour {
      */
     @Test
     void testDonnerIndice() {
-        fail("Not yet implemented");
+        Joueur joueur1 = new Joueur("Coucou");
+        Joueur joueur2 = new Joueur("John");
+        Carte carte1 = new Carte(Couleur.ROUGE, Valeur.TROIS);
+        Carte carte2 = new Carte(Couleur.BLEU, Valeur.CINQ);
+        joueur1.setCartesEnMains(carte1);
+        joueur2.setCartesEnMains(carte2);
+        Tour tour1 = new Tour(joueur1, 1);
+        tour1.setJetonsBleus(1);
+        Tour tour2 = new Tour(joueur2, 2);
+        tour2.setJetonsBleus(1);
+
+        assertDoesNotThrow(() -> tour1.donnerIndice(joueur1, carte1, 'c'));
+        assertTrue(carte1.getCouleurConnue());
+        assertFalse(carte2.getCouleurConnue());
+        assertEquals(0, tour1.getJetonsBleus());
+
+        assertDoesNotThrow(() -> tour2.donnerIndice(joueur2, carte2, 'v'));
+        assertTrue(carte2.getValeurConnue());
+        assertFalse(carte1.getValeurConnue());
+        assertEquals(0, tour2.getJetonsBleus());
+
+        assertThrows(IllegalStateException.class, () -> tour2.donnerIndice(joueur2, carte1, 'c'));
+        tour2.setJetonsBleus(1);
+        assertThrows(IllegalArgumentException.class, () -> tour2.donnerIndice(joueur2, carte1, 'x'));
+        tour2.setJetonsBleus(1);
+        assertThrows(IllegalArgumentException.class, () -> tour2.donnerIndice(joueur2, carte1, 'c'));
     }
 
     /**
@@ -192,8 +217,7 @@ class TestTour {
      * {@link modele.jeu.Tour#poser(modele.jeu.Carte)}.
      */
     @Test
-    void testPoser() {
-        fail("Not yet implemented");
+    void testPoser() {	
     }
 
     /**
@@ -202,7 +226,6 @@ class TestTour {
      */
     @Test
     void testDefausser() {
-        fail("Not yet implemented");
     }
 
 }
