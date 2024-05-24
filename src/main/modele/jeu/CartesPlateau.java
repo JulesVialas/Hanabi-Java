@@ -16,6 +16,10 @@ import java.util.Stack;
  */
 public class CartesPlateau {
     
+    private static final String ERREUR_MAUVAISE_COULEUR 
+    = "Erreur: la couleur de la carte à poser doit être de la même couleur "
+            + "que celle de la pile";
+
     /** La taille maximale des piles de cartes */
     public final int TAILLE_MAX_PILES_CARTES = 5;
     
@@ -41,6 +45,13 @@ public class CartesPlateau {
      * TAILLE_MAX_PILES_CARTES.
      */
     public CartesPlateau() {
+        
+        /* Initialise les piles en indiquant leur taille maximum */
+        pileRouge = new Stack<>();
+        pileJaune = new Stack<>();
+        pileBleu = new Stack<>();
+        pileVert = new Stack<>();
+        pileBlanc = new Stack<>();
         
         /* Initialise les piles en indiquant leur taille maximum */
         pileRouge.setSize(TAILLE_MAX_PILES_CARTES);
@@ -92,23 +103,37 @@ public class CartesPlateau {
     
     /**
      * Pose une carte sur la pile de cartes rouges du plateau.
-     * La carte doit être de couleur rouge.
+     * La carte doit être de couleur rouge, et sa valeur un cran
+     * au dessus de la dernière carte posée.
      * 
      * @param aPoser la carte a poser sur la pile de cartes rouges 
      * @throws IllegalArgumentException si la couleur de la carte
-     *                                  n'est pas ROUGE
+     *         n'est pas ROUGE ou si la valeur n'est pas la suivante
+     *         par rapport à la dernière carte de la pile
      */
     public void setPileRouge(Carte aPoser) {
-        //TODO
+        if(aPoser.getCouleur() != Couleur.ROUGE
+                //FIXME
+                || this.pileRouge.empty() 
+                    && aPoser.getValeur().getValeurNumerique() 
+                       != Valeur.UN.getValeurNumerique()
+                       
+                || aPoser.getValeur().getValeurNumerique() 
+                   != this.pileRouge.peek().getValeur().getValeurNumerique()) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_COULEUR);
+        }
+        this.pileRouge.push(aPoser);
     }
     
     /**
      * Pose une carte sur la pile de cartes jaunes du plateau.
-     * La carte doit être de couleur jaune.
+     * La carte doit être de couleur jaune, et sa valeur un cran
+     * au dessus de la dernière carte posée.
      * 
      * @param aPoser la carte a poser sur la pile de cartes jaunes 
      * @throws IllegalArgumentException si la couleur de la carte
-     *                                  n'est pas JAUNE
+     *         n'est pas JAUNE ou si la valeur n'est pas la suivante
+     *         par rapport à la dernière carte de la pile
      */
     public void setPileJaune(Carte aPoser) {
         //TODO
@@ -116,11 +141,13 @@ public class CartesPlateau {
     
     /**
      * Pose une carte sur la pile de cartes vertes du plateau.
-     * La carte doit être de couleur verte.
+     * La carte doit être de couleur verte, et sa valeur un cran
+     * au dessus de la dernière carte posée.
      * 
      * @param aPoser la carte a poser sur la pile de cartes vertes 
      * @throws IllegalArgumentException si la couleur de la carte
-     *                                  n'est pas VERT
+     *         n'est pas VERT ou si la valeur n'est pas la suivante
+     *         par rapport à la dernière carte de la pile
      */
     public void setPileVert(Carte aPoser) {
         //TODO
@@ -128,11 +155,13 @@ public class CartesPlateau {
     
     /**
      * Pose une carte sur la pile de cartes bleues du plateau.
-     * La carte doit être de couleur bleue.
+     * La carte doit être de couleur bleue, et sa valeur un cran
+     * au dessus de la dernière carte posée.
      * 
      * @param aPoser la carte a poser sur la pile de cartes bleues 
      * @throws IllegalArgumentException si la couleur de la carte
-     *                                  n'est pas BLEU
+     *         n'est pas BLEU ou si la valeur n'est pas la suivante
+     *         par rapport à la dernière carte de la pile
      */
     public void setPileBleu(Carte aPoser) {
         //TODO
@@ -140,11 +169,13 @@ public class CartesPlateau {
     
     /**
      * Pose une carte sur la pile de cartes blanches du plateau.
-     * La carte doit être de couleur blanche.
+     * La carte doit être de couleur blanche, et sa valeur un cran
+     * au dessus de la dernière carte posée.
      * 
      * @param aPoser la carte a poser sur la pile de cartes blanches 
      * @throws IllegalArgumentException si la couleur de la carte
-     *                                  n'est pas BLANC
+     *         n'est pas BLANC ou si la valeur n'est pas la suivante
+     *         par rapport à la dernière carte de la pile
      */
     public void setPileBlanc(Carte aPoser) {
         //TODO
