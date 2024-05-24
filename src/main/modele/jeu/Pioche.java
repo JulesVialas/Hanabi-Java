@@ -5,6 +5,7 @@
 
 package modele.jeu;
 
+import java.util.Collections;
 import java.util.Stack;
 
 /**
@@ -13,9 +14,6 @@ import java.util.Stack;
  * ne le sont qu'une fois que le joueur à piocher la carte.
  */
 public class Pioche {
-
-    /** Nombre de carte total dans le jeu */
-    // private final int NOMBRE_TOTAL_CARTE = 50;
 
     /** La pile de carte de la pioche. */
     private Stack<Carte> pile;
@@ -28,22 +26,16 @@ public class Pioche {
      *
      * @param paquet    le paquet de carte qui constitue la pioche
      */
-    public Pioche(Carte[] paquet) {
+    public Pioche() {
         this.pile = new Stack<>();
-    }
 
-    //TODO faire une boucle pour retourner toutes les cartes et pouvoir le mettre dans le constructeur pioche
-//    /**
-//     *
-//     * @return
-//     */
-//    private Carte[] jeuComplet() {
-//        Carte[] paquet;
-//        for (Carte indice : jeuCarteComplet)
-//            
-//        return paquet;
-//
-//    }
+        /* Rempli la pioche avec les cartes du jeu de base */
+        for (Carte carte : Carte.jeuComplet()) {
+            pile.push(carte);
+        }
+        /* Mélange les cartes */
+        Collections.shuffle(pile);
+    }
 
     /**
      * @return pile la pile de cartes de la pioche
