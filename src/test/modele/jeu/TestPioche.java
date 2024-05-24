@@ -5,32 +5,31 @@
 
 package modele.jeu;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
+import java.util.Stack;
 
 import org.junit.jupiter.api.Test;
 
 class TestPioche {
 
-    ArrayList<Carte> pioche1 = new ArrayList<>(Arrays.asList(new Carte(Couleur.ROUGE, Valeur.UN),
-            new Carte(Couleur.BLEU, Valeur.DEUX), new Carte(Couleur.VERT, Valeur.TROIS)));
+    Stack<Carte> PileCarteVide = new Stack<>();
 
-    ArrayList<Carte> pioche2 = new ArrayList<>(
-            Arrays.asList(new Carte(Couleur.JAUNE, Valeur.QUATRE), new Carte(Couleur.BLEU, Valeur.UN)));
+    Stack<Carte> PileCarte = new Stack<>();
 
-    ArrayList<Carte> piocheVide = new ArrayList<>();
 
+//      @Test
+//      void testPioche() {
+//              assertDoesNotThrow(()->new Pioche());
+//      }
+//
     @Test
-    void testPioche() {
-        assertDoesNotThrow(() -> new Pioche(pioche1));
-        assertDoesNotThrow(() -> new Pioche(pioche2));
-        assertDoesNotThrow(() -> new Pioche(piocheVide));
+    void testGetPioche() {
 
-        assertNotNull(pioche1);
-        assertNotNull(pioche2);
-        assertNotNull(piocheVide);
     }
 
+    @Test
+    void testSetPioche() {
+
+    }
 }

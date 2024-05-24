@@ -1,10 +1,10 @@
 /*
- * Defausse.java			19/05/2024
+ * Defausse.java                        19/05/2024
  * IUT de Rodez, TP42, pas de copyright
  */
 package modele.jeu;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  * La classe Defausse représente la défausse de carte dans jeu Hanabi. La
@@ -15,13 +15,20 @@ import java.util.ArrayList;
 public class Defausse {
 
     /** La pile de cartes de la défausse. */
-    private ArrayList<Carte> pile;
+    private Stack<Carte> pile;
 
     /**
      * Instancie un objet de type Defausse.
      */
     public Defausse() {
-        this.pile = new ArrayList<>();
+        this.pile = new Stack<>();
+    }
+
+    /**
+     * @return pile la pile de cartes de la défausse
+     */
+    public Stack<Carte> getDefausse() {
+        return this.pile;
     }
 
     /**
@@ -29,7 +36,7 @@ public class Defausse {
      *
      * @param pile Nouvelle pile de cartes qui constitue la défausse.
      */
-    public void setPile(ArrayList<Carte> pile) {
+    public void setDefausse(Stack<Carte> pile) {
         this.pile = pile;
     }
 }
