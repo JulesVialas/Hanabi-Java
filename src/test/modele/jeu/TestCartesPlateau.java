@@ -11,7 +11,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Méthode de test de 
+ * {@link modele.jeu.CartesPlateau}
  */
 class TestCartesPlateau {
 

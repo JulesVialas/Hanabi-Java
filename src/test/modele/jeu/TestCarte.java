@@ -63,7 +63,26 @@ class TestCarte {
         // Protégé grâce aux énumérations
         
         /* Carte valide, vérifier valeurConnue à false */
-        //TODO nécessite tests des getters
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.UN)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLANC, Valeur.CINQ)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.DEUX)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.ROUGE, Valeur.QUATRE)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.TROIS)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.VERT, Valeur.UN)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.DEUX)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.BLEU, Valeur.CINQ)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.TROIS)
+                .getValeurConnue());
+        assertFalse(()->new Carte(Couleur.JAUNE, Valeur.QUATRE)
+                .getValeurConnue());
     }
 
     /**
@@ -365,7 +384,7 @@ class TestCarte {
                 .getCouleurConnue());
         
         /* Tests après setter pour passer couleurConnue sur true */
-        //TODO après setters
+        // Testé implicitement dans les méthodes de test des setters
     }
 
     /**
@@ -431,7 +450,7 @@ class TestCarte {
                 .getValeurConnue());
         
         /* Tests après setter pour passer valeurConnue sur true */
-        //TODO après setters
+        // Testé implicitement dans les méthodes de test des setters
     }
 
     /**
@@ -527,5 +546,4 @@ class TestCarte {
     void testToString() {
         fail("Not yet implemented");
     }
-
 }
