@@ -25,7 +25,6 @@ class TestPioche {
 //
     @Test
     void testGetPioche() {
-
     }
 
     @Test

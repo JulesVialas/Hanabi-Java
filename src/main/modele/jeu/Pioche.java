@@ -20,24 +20,28 @@ public class Pioche {
     /** La pile de carte de la pioche. */
     private Stack<Carte> pile;
 
-    // private Carte[] jeuCarteComplet;
+    // TODO initialiser toutes les cartes
+    private Carte[] jeuCarteComplet;
 
     /**
      * Instancie un objet de type Pioche.
      *
-     * @param pile une pile de carte
+     * @param paquet    le paquet de carte qui constitue la pioche
      */
     public Pioche(Carte[] paquet) {
         this.pile = new Stack<>();
     }
 
+    //TODO faire une boucle pour retourner toutes les cartes et pouvoir le mettre dans le constructeur pioche
 //    /**
 //     *
 //     * @return
 //     */
 //    private Carte[] jeuComplet() {
-//        jeuCarteComplet.forEach();
-//        return null;
+//        Carte[] paquet;
+//        for (Carte indice : jeuCarteComplet)
+//            
+//        return paquet;
 //
 //    }
 
