@@ -23,12 +23,10 @@ package modele.jeu;
 public class JetonsPlateau {
 
     /** Message d'erreur concernant le nombre de jetons bleus */
-    public static final String ERREUR_NB_JETONS_BLEUS = 
-    "Erreur : Le nombre de jetons bleus n'est pas compris entre 0 et 8 inclut.";
+    public static final String ERREUR_NB_JETONS_BLEUS = "Erreur : Le nombre de jetons bleus n'est pas compris entre 0 et 8 inclut.";
 
     /** Message d'erreur concernant le nombre de jetons rouges */
-    public static final String ERREUR_NB_JETONS_ROUGES = 
-    "Erreur : le nombre de jetons rouges n'est pas compris entre 0 et 3 inclut.";
+    public static final String ERREUR_NB_JETONS_ROUGES = "Erreur : le nombre de jetons rouges n'est pas compris entre 0 et 3 inclut.";
 
     /** Le nombre de jetons bleu minimal */
     public final int NB_JETONS_BLEUS_MIN = 0;

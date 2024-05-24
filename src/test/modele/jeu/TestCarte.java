@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * TestCarte.java                                            19 mai 2024
  * IUT de Rodez, Info1 2023-2024 TP4, pas de copyright
