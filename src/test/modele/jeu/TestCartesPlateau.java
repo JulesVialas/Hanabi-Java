@@ -28,9 +28,10 @@ class TestCartesPlateau {
      */
     @Test
     void testGetPileRouge() {
+        /* La pile est initialisée vide */
+        assertTrue(new CartesPlateau().getPileRouge().empty());
         
-        /* Retourne null si la pile est vide */
-        assertEquals(null, new CartesPlateau().getPileRouge());
+        /* Testé implicitement dans les méthodes de test des setters */
     }
 
     /**
@@ -38,7 +39,10 @@ class TestCartesPlateau {
      */
     @Test
     void testGetPileJaune() {
-        fail("Not yet implemented");
+        /* La pile est initialisée vide */
+        assertTrue(new CartesPlateau().getPileJaune().empty());
+        
+        /* Testé implicitement dans les méthodes de test des setters */
     }
 
     /**
@@ -46,7 +50,10 @@ class TestCartesPlateau {
      */
     @Test
     void testGetPileVert() {
-        fail("Not yet implemented");
+        /* La pile est initialisée vide */
+        assertTrue(new CartesPlateau().getPileVert().empty());
+        
+        /* Testé implicitement dans les méthodes de test des setters */
     }
 
     /**
@@ -54,7 +61,10 @@ class TestCartesPlateau {
      */
     @Test
     void testGetPileBleu() {
-        fail("Not yet implemented");
+        /* La pile est initialisée vide */
+        assertTrue(new CartesPlateau().getPileBleu().empty());
+        
+        /* Testé implicitement dans les méthodes de test des setters */
     }
 
     /**
@@ -62,7 +72,10 @@ class TestCartesPlateau {
      */
     @Test
     void testGetPileBlanc() {
-        fail("Not yet implemented");
+        /* La pile est initialisée vide */
+        assertTrue(new CartesPlateau().getPileBlanc().empty());
+        
+        /* Testé implicitement dans les méthodes de test des setters */
     }
 
     /**
