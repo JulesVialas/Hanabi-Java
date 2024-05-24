@@ -19,28 +19,28 @@ package modele.jeu;
  */
 public class Tour {
 
-    /** Nombre maximal de jetons bleus que peut obtenir une équipe */
-    private static final int NB_MAX_JETONS_BLEUS = 8;
-
-    /** Nombre de jetons rouges impliquant la fin de la partie */
-    private static final int NB_MAX_JETONS_ROUGES = 3;
-
     /** Message d'erreur en cas de numéro de tour invalide */
-    private static final String ERREUR_NUMERO_TOUR_INVALIDE = "Erreur: le numéro de tour doit être supérieur ou égal à 1";
+    private static final String ERREUR_NUMERO_TOUR_INVALIDE
+    = "Erreur: le numéro de tour doit être supérieur ou égal à 1";
 
-    private static final String INDICE_DEJA_CONNU = "L'indice est déjà connu par le joueur";
+    private static final String INDICE_DEJA_CONNU 
+    = "L'indice est déjà connu par le joueur";
 
+    private static final String ERREUR_JETONS_BLEUS_INSUFFISANTS 
+    = "Erreur: il n'y a pas assez de jetons bleus pour donner un indice" ;
+
+    private static final String ERREUR_SAISIE_NATURE_INDICE
+    = "Erreur: la nature de l'indice doit être 'c' pour couleur " 
+        + "ou 'v' pour valeur" ;
+
+    /** La partie dans laquelle le tour s'inscrit */
+    private Partie partieDuTour;
+    
     /** Le joueur qui doit effectuer une action durant le tour */
     private Joueur joueurCourant;
 
     /** Le numéro de tour */
     private int numero;
-
-    /** Le nombre de jetons bleus disponibles pour ce tour */
-    private int jetonsBleus;
-
-    /** Le nombre de jetons rouges disponibles pour ce tour */
-    private int jetonsRouges;
 
     /**
      * Instancie un objet de type Tour. Un numéro de tour ne peut pas être
@@ -48,6 +48,7 @@ public class Tour {
      * 
      * @param artificier le joueur à qui ce sera le tour
      * @param numeroTour le numéro de tour
+     * @param partieDuTour la partie dans laquelle le tour s'inscrit
      * @throws IllegalArgumentException si le numéro de tour est strictement
      *                                  inférieur à 1
      */
@@ -59,8 +60,23 @@ public class Tour {
 
         this.joueurCourant = artificier;
         this.numero = numeroTour;
+        this.partieDuTour = null;
     }
 
+    /**
+     * @return la partie dans laquelle le tour s'incrit
+     */
+    public Partie getPartieDuTour() {
+        return this.partieDuTour;
+    }
+    
+    /**
+     * @param partieALier la partie à lier au tour
+     */
+    public void setPartieDuTour(Partie partieALier) {
+        this.partieDuTour = partieALier;
+    }
+    
     /**
      * @return le joueur dont c'est le tour de jouer
      * 
@@ -77,50 +93,6 @@ public class Tour {
     }
 
     /**
-     * @return le nombre de jetons bleus disponibles
-     */
-    public int getJetonsBleus() {
-        return this.jetonsBleus;
-    }
-
-    /**
-     * @return le nombre de jetons rouges obtenus
-     */
-    public int getJetonsRouges() {
-        return this.jetonsRouges;
-    }
-
-    /**
-     * Défini le nombre de jetons bleus.
-     * 
-     * @param nbJetons le nombre de jetons bleus du tour
-     */
-    public void setJetonsBleus(int nbJetons) {
-        this.jetonsBleus = nbJetons;
-    }
-
-    /**
-     * Incrémente le nombre de jetons bleus.
-     */
-    public void incrementJetonsBleus() {
-        this.jetonsBleus++;
-    }
-
-    /**
-     * Décrémente le nombre de jetons bleus.
-     */
-    public void decrementJetonsBleus() {
-        this.jetonsBleus--;
-    }
-
-    /**
-     * Incrémente le nombre de jetons rouges.
-     */
-    public void incrementJetonsRouges() {
-        this.jetonsRouges++;
-    }
-
-    /**
      * Donne un indice sur une carte, couleur ou valeur, si le nombre de jetons
      * bleus disponibles est strictement supérieur à zéro.
      * 
@@ -131,27 +103,36 @@ public class Tour {
      * @throws IllegalArgumentException si natureIndice n'est ni 'c' ni 'v'
      * @throws IllegalStateException    si le nombre de jetons bleus est égal à zéro
      */
-    public void donnerIndice(Joueur recepteur, Carte recoitIndice, char natureIndice) {
+    public void donnerIndice(Joueur recepteur, Carte recoitIndice, 
+        char natureIndice) {
         // FIXME Trouver comment situer la carte pour donner indice
         // aux autres cartes de la main
 
+        //TODO refactor après Partie done
         // TODO vérifier nb jetons bleus
         // TODO vérif que indice pas dja donné
         // TODO setIndice en fction de sa nature
 
-        if (getJetonsBleus() <= 0) {
-            throw new IllegalStateException("Erreur: il n'y a pas assez de jetons bleus pour donner un indice");
+        if (partieDuTour.getJetons().getBleus() <= 0) {
+            throw new IllegalStateException(ERREUR_JETONS_BLEUS_INSUFFISANTS);
         }
         if (natureIndice != 'c' && natureIndice != 'v') {
-            throw new IllegalArgumentException(
-                    "Erreur: la nature de l'indice doit être 'c' pour couleur ou 'v' pour valeur");
+            throw new IllegalArgumentException(ERREUR_SAISIE_NATURE_INDICE);
         }
+        
+        /* Temoin pour déterminer si l'indice a déjà été donné */
         boolean indiceDonne = false;
         for (Carte carte : recepteur.getCartesEnMains()) {
-            if (natureIndice == 'c' && carte.getCouleurConnue() == recoitIndice.getCouleurConnue() && !indiceDonne) {
+            if (natureIndice == 'c' 
+                    && carte.getCouleurConnue() == recoitIndice
+                                                   .getCouleurConnue() 
+                    && !indiceDonne
+                ) {
                 carte.setCouleurConnue(true);
                 indiceDonne = true;
-            } else if (natureIndice == 'v' && carte.getValeurConnue() == recoitIndice.getValeurConnue()
+            } else if (natureIndice == 'v' 
+                           && carte.getValeurConnue() 
+                               == recoitIndice.getValeurConnue()
                     && !indiceDonne) {
                 carte.setValeurConnue(true);
                 indiceDonne = true;
@@ -160,7 +141,7 @@ public class Tour {
         if (!indiceDonne) {
             throw new IllegalArgumentException(INDICE_DEJA_CONNU);
         }
-        decrementJetonsBleus();
+        partieDuTour.getJetons().decrementJetonsBleus();
     }
 
     /**

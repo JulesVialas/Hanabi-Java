@@ -62,18 +62,21 @@ class TestTour {
      */
     @Test
     void testGetJetonsBleus() {
-
+        Partie partie1 = new Partie("Coco", "Sol");
         Tour roundUn = new Tour(new Joueur("Emile"), 1);
-        assertEquals(0, roundUn.getJetonsBleus());
+        roundUn.setPartieDuTour(partie1);
+        
+        /* 8 jetons au début d'une partie, valeur par défaut */
+        assertEquals(8, roundUn.getPartieDuTour().getJetons().getBleus());
 
-        roundUn.incrementJetonsBleus();
-        assertNotEquals(0, roundUn.getJetonsBleus());
-        assertEquals(1, roundUn.getJetonsBleus());
+        roundUn.getPartieDuTour().getJetons().setBleus(4);
+        assertNotEquals(8, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertEquals(4, roundUn.getPartieDuTour().getJetons().getBleus());
 
-        roundUn.incrementJetonsBleus();
-        assertNotEquals(0, roundUn.getJetonsBleus());
-        assertNotEquals(1, roundUn.getJetonsBleus());
-        assertEquals(2, roundUn.getJetonsBleus());
+        roundUn.getPartieDuTour().getJetons().incrementBleus();
+        assertNotEquals(4, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertNotEquals(8, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertEquals(5, roundUn.getPartieDuTour().getJetons().getBleus());
     }
 
     /**
@@ -81,17 +84,20 @@ class TestTour {
      */
     @Test
     void testGetJetonsRouges() {
+        Partie partie1 = new Partie("Coco", "Sol");
         Tour roundUn = new Tour(new Joueur("Emile"), 1);
-        assertEquals(0, roundUn.getJetonsRouges());
+        roundUn.setPartieDuTour(partie1);
+        
+        assertEquals(0, roundUn.getPartieDuTour().getJetons().getRouges());
 
-        roundUn.incrementJetonsRouges();
-        assertNotEquals(0, roundUn.getJetonsRouges());
-        assertEquals(1, roundUn.getJetonsRouges());
+        roundUn.getPartieDuTour().getJetons().incrementRouges();
+        assertNotEquals(0, roundUn.getPartieDuTour().getJetons().getRouges());
+        assertEquals(1, roundUn.getPartieDuTour().getJetons().getRouges());
 
-        roundUn.incrementJetonsRouges();
-        assertNotEquals(0, roundUn.getJetonsRouges());
-        assertNotEquals(1, roundUn.getJetonsRouges());
-        assertEquals(2, roundUn.getJetonsRouges());
+        roundUn.getPartieDuTour().getJetons().incrementRouges();
+        assertNotEquals(0, roundUn.getPartieDuTour().getJetons().getRouges());
+        assertNotEquals(1, roundUn.getPartieDuTour().getJetons().getRouges());
+        assertEquals(2, roundUn.getPartieDuTour().getJetons().getRouges());
     }
 
     /**
@@ -99,17 +105,22 @@ class TestTour {
      */
     @Test
     void testIncrementJetonsBleus() {
+        Partie partie1 = new Partie("Coco", "Sol");
         Tour roundUn = new Tour(new Joueur("Emile"), 1);
-        assertEquals(0, roundUn.getJetonsBleus());
+        roundUn.setPartieDuTour(partie1);
+        
+        /* 8 jetons par défaut en début de partie */
+        assertEquals(8, roundUn.getPartieDuTour().getJetons().getBleus());
+        roundUn.getPartieDuTour().getJetons().setBleus(0);
 
-        roundUn.incrementJetonsBleus();
-        assertNotEquals(0, roundUn.getJetonsBleus());
-        assertEquals(1, roundUn.getJetonsBleus());
+        roundUn.getPartieDuTour().getJetons().incrementBleus();
+        assertNotEquals(0, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertEquals(1, roundUn.getPartieDuTour().getJetons().getBleus());
 
-        roundUn.incrementJetonsBleus();
-        assertNotEquals(0, roundUn.getJetonsBleus());
-        assertNotEquals(1, roundUn.getJetonsBleus());
-        assertEquals(2, roundUn.getJetonsBleus());
+        roundUn.getPartieDuTour().getJetons().incrementBleus();
+        assertNotEquals(0, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertNotEquals(1, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertEquals(2, roundUn.getPartieDuTour().getJetons().getBleus());
     }
 
     /**
@@ -117,22 +128,29 @@ class TestTour {
      */
     @Test
     void testSetJetonsBleus() {
+        Partie partie1 = new Partie("Coco", "Sol");
+        
         Tour roundUn = new Tour(new Joueur("Emile"), 1);
         Tour roundDeux = new Tour(new Joueur("Parisien"), 2);
-        assertEquals(0, roundUn.getJetonsBleus());
+        roundUn.setPartieDuTour(partie1);
+        roundDeux.setPartieDuTour(partie1);
+        
+        /* Nombre par défaut est 8 jetons lors de création d'une partie */
+        assertEquals(8, roundUn.getPartieDuTour().getJetons().getBleus());
 
-        roundUn.incrementJetonsBleus();
-        assertNotEquals(0, roundUn.getJetonsBleus());
-        assertEquals(1, roundUn.getJetonsBleus());
+        roundUn.getPartieDuTour().getJetons().decrementBleus();
+        assertNotEquals(8, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertEquals(7, roundUn.getPartieDuTour().getJetons().getBleus());
 
-        roundUn.incrementJetonsBleus();
-        assertNotEquals(0, roundUn.getJetonsBleus());
-        assertNotEquals(1, roundUn.getJetonsBleus());
-        assertEquals(2, roundUn.getJetonsBleus());
+        roundUn.getPartieDuTour().getJetons().decrementBleus();
+        assertNotEquals(8, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertNotEquals(7, roundUn.getPartieDuTour().getJetons().getBleus());
+        assertEquals(6, roundUn.getPartieDuTour().getJetons().getBleus());
 
-        roundUn.incrementJetonsBleus();
-        roundDeux.setJetonsBleus(roundUn.getJetonsBleus());
-        assertEquals(3, roundDeux.getJetonsBleus());
+        roundUn.getPartieDuTour().getJetons().decrementBleus();
+        roundDeux.getPartieDuTour().getJetons().setBleus(
+                (roundUn.getPartieDuTour().getJetons().getBleus()));
+        assertEquals(5, roundDeux.getPartieDuTour().getJetons().getBleus());
     }
 
     /**
@@ -140,13 +158,15 @@ class TestTour {
      */
     @Test
     void testDecrementJetonsBleus() {
+        Partie partie1 = new Partie("Coco", "Sol");
         Tour roundTrois = new Tour(new Joueur("Parker"), 3);
+        roundTrois.setPartieDuTour(partie1);
 
-        roundTrois.setJetonsBleus(4);
-        assertEquals(4, roundTrois.getJetonsBleus());
+        roundTrois.getPartieDuTour().getJetons().setBleus(4);
+        assertEquals(4, roundTrois.getPartieDuTour().getJetons().getBleus());
 
-        roundTrois.decrementJetonsBleus();
-        assertEquals(3, roundTrois.getJetonsBleus());
+        roundTrois.getPartieDuTour().getJetons().decrementBleus();
+        assertEquals(3, roundTrois.getPartieDuTour().getJetons().getBleus());
     }
 
     /**
@@ -154,17 +174,21 @@ class TestTour {
      */
     @Test
     void testIncrementJetonsRouges() {
+
+        Partie partie1 = new Partie("Coco", "Sol");
         Tour roundUn = new Tour(new Joueur("Emile"), 1);
-        assertEquals(0, roundUn.getJetonsRouges());
+        roundUn.setPartieDuTour(partie1);
+        
+        assertEquals(0, roundUn.getPartieDuTour().getJetons().getRouges());
 
-        roundUn.incrementJetonsRouges();
-        assertNotEquals(0, roundUn.getJetonsRouges());
-        assertEquals(1, roundUn.getJetonsRouges());
+        roundUn.getPartieDuTour().getJetons().incrementRouges();
+        assertNotEquals(0, roundUn.getPartieDuTour().getJetons().getRouges());
+        assertEquals(1, roundUn.getPartieDuTour().getJetons().getRouges());
 
-        roundUn.incrementJetonsRouges();
-        assertNotEquals(0, roundUn.getJetonsRouges());
-        assertNotEquals(1, roundUn.getJetonsRouges());
-        assertEquals(2, roundUn.getJetonsRouges());
+        roundUn.getPartieDuTour().getJetons().incrementRouges();
+        assertNotEquals(0, roundUn.getPartieDuTour().getJetons().getRouges());
+        assertNotEquals(1, roundUn.getPartieDuTour().getJetons().getRouges());
+        assertEquals(2, roundUn.getPartieDuTour().getJetons().getRouges());
     }
 
     /**
@@ -173,32 +197,43 @@ class TestTour {
      */
     @Test
     void testDonnerIndice() {
-        Joueur joueur1 = new Joueur("Coucou");
-        Joueur joueur2 = new Joueur("John");
+        Partie partie1 = new Partie("Coltrane", "John");
+        
         Carte carte1 = new Carte(Couleur.ROUGE, Valeur.TROIS);
         Carte carte2 = new Carte(Couleur.BLEU, Valeur.CINQ);
-        joueur1.setCartesEnMains(carte1);
-        joueur2.setCartesEnMains(carte2);
-        Tour tour1 = new Tour(joueur1, 1);
-        tour1.setJetonsBleus(1);
-        Tour tour2 = new Tour(joueur2, 2);
-        tour2.setJetonsBleus(1);
+        partie1.getJoueur1().setCartesEnMains(carte1);
+        partie1.getJoueur2().setCartesEnMains(carte2);
+        
+        Tour tour1 = new Tour(partie1.getJoueur1(), 1);
+        Tour tour2 = new Tour(partie1.getJoueur2(), 2);
+        tour1.setPartieDuTour(partie1);
+        tour2.setPartieDuTour(partie1);
+        
+        
+        tour1.getPartieDuTour().getJetons().setBleus(1);
+        
+        tour2.getPartieDuTour().getJetons().setBleus(1);
 
-        assertDoesNotThrow(() -> tour1.donnerIndice(joueur1, carte1, 'c'));
+        assertDoesNotThrow(() -> tour1.donnerIndice(partie1.getJoueur1(),
+                                                    carte1, 'c'));
         assertTrue(carte1.getCouleurConnue());
         assertFalse(carte2.getCouleurConnue());
-        assertEquals(0, tour1.getJetonsBleus());
+        assertEquals(0, tour1.getPartieDuTour().getJetons().getBleus());
 
-        assertDoesNotThrow(() -> tour2.donnerIndice(joueur2, carte2, 'v'));
+        assertDoesNotThrow(() -> tour2.donnerIndice(partie1.getJoueur2(),
+                                                    carte2, 'v'));
         assertTrue(carte2.getValeurConnue());
         assertFalse(carte1.getValeurConnue());
-        assertEquals(0, tour2.getJetonsBleus());
+        assertEquals(0, tour2.getPartieDuTour().getJetons().getBleus());
 
-        assertThrows(IllegalStateException.class, () -> tour2.donnerIndice(joueur2, carte1, 'c'));
-        tour2.setJetonsBleus(1);
-        assertThrows(IllegalArgumentException.class, () -> tour2.donnerIndice(joueur2, carte1, 'x'));
-        tour2.setJetonsBleus(1);
-        assertThrows(IllegalArgumentException.class, () -> tour2.donnerIndice(joueur2, carte1, 'c'));
+        assertThrows(IllegalStateException.class, () -> 
+            tour2.donnerIndice(partie1.getJoueur2(), carte1, 'c'));
+        tour2.getPartieDuTour().getJetons().setBleus(1);;
+        assertThrows(IllegalArgumentException.class, () ->
+            tour2.donnerIndice(partie1.getJoueur2(), carte1, 'x'));
+        tour2.getPartieDuTour().getJetons().setBleus(1);;
+        assertThrows(IllegalArgumentException.class, () -> 
+            tour2.donnerIndice(partie1.getJoueur2(), carte1, 'c'));
     }
 
     /**
