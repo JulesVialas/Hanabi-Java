@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Classe de test pour {@link modele.jeu.Joueur}
  */
 class TestJoueur {
 
