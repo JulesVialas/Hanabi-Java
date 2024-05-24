@@ -18,9 +18,6 @@ public class Pioche {
     /** La pile de carte de la pioche. */
     private Stack<Carte> pile;
 
-    // TODO initialiser toutes les cartes
-    private Carte[] jeuCarteComplet;
-
     /**
      * Instancie un objet de type Pioche.
      *

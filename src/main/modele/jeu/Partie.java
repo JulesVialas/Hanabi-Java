@@ -26,34 +26,34 @@ public class Partie {
     private int identifiant; //FIXME trouver qqc d'unique => hash datePseudosHeure ?
     
     /** Joueur 1 de la partie */
-    protected Joueur joueur1;
+    private Joueur joueur1;
     
     /** Joueur 2 de la partie */
-    protected Joueur joueur2;
+    private Joueur joueur2;
     
     /** Joueur 3 de la partie */
-    protected Joueur joueur3;
+    private Joueur joueur3;
     
     /** Joueur 4 de la partie */
-    protected Joueur joueur4;
+    private Joueur joueur4;
     
     /** Joueur 5 de la partie */
-    protected Joueur joueur5;
+    private Joueur joueur5;
     
     /** Les piles de cartes accueillant les feux d'artifices */
-    protected CartesPlateau feuxPoses;
+    private CartesPlateau feuxPoses;
     
     /** Les piles de jetons bleus et rouges */
     private JetonsPlateau jetons;
     
     /** La pioche de la partie */
-    protected Pioche pioche;
+    private Pioche pioche;
     
     /** La défausse de la partie */
-    protected Defausse defausse;
+    private Defausse defausse;
     
     /** Le tour en cours */
-    protected Tour tourCourant;
+    private Tour tourCourant;
     
     /**
      * Une partie de Hanabi est caractérisée par un nombre de joueurs
