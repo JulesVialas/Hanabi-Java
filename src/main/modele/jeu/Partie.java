@@ -76,7 +76,7 @@ public class Partie {
         /* Préparation du jeu */
         feuxPoses = new CartesPlateau();
         jetons = new JetonsPlateau();
-     //   pioche = new Pioche(); 
+        pioche = new Pioche(); 
         defausse = new Defausse();
         
         //TODO Distribuer les cartes aux joueurs pour débuter partie :)
