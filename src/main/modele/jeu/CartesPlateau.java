@@ -106,12 +106,20 @@ public class CartesPlateau {
      *         par rapport à la dernière carte de la pile
      */
     public void setPileRouge(Carte aPoser) {
-        if(aPoser.getCouleur() != Couleur.ROUGE ) {
+        
+        
+        // Vérifie qu'il s'agit de la bonne couleur
+        if (aPoser.getCouleur() != Couleur.ROUGE) {
             throw new IllegalArgumentException(ERREUR_MAUVAISE_COULEUR);
-        }
-        if (this.pileRouge.empty() && aPoser.getValeur() != Valeur.UN
-               || aPoser.getValeur().getValeurNumerique() 
-                  != this.pileRouge.peek().getValeur().getValeurNumerique()) {
+        } 
+        
+        if (pileRouge.empty() &&  aPoser.getValeur() != Valeur.UN
+            || (!pileRouge.empty() 
+                    && aPoser.getValeur().getValeurNumerique()
+                      != pileRouge.peek().getValeur()
+                                         .getValeurNumerique() + 1
+               )
+            ) {
             throw new IllegalArgumentException(ERREUR_MAUVAISE_VALEUR);
         }
         this.pileRouge.push(aPoser);
