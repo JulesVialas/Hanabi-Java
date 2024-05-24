@@ -20,6 +20,10 @@ public class CartesPlateau {
     = "Erreur: la couleur de la carte à poser doit être de la même couleur "
             + "que celle de la pile";
 
+    private static final String ERREUR_MAUVAISE_VALEUR 
+    = "Erreur: la valeur de la carte à poser doit être la valeur suivante"
+    + " de la valeur de la dernière carte de la pile";
+
     /** La taille maximale des piles de cartes */
     public final int TAILLE_MAX_PILES_CARTES = 5;
     
@@ -41,8 +45,9 @@ public class CartesPlateau {
     /**
      * Instancie un objet de type CartesPlateau qui contient les 
      * piles de cartes de chaque couleur du jeu Hanabi.
-     * La taille des piles est définie par la constante 
-     * TAILLE_MAX_PILES_CARTES.
+     * Il n'est pas nécessaire de définir la longueur maximale
+     * de la pile suite aux prérequis mis en place pour ajouter
+     * une carte sur la pile.
      */
     public CartesPlateau() {
         
@@ -52,13 +57,6 @@ public class CartesPlateau {
         pileBleu = new Stack<>();
         pileVert = new Stack<>();
         pileBlanc = new Stack<>();
-        
-        /* Initialise les piles en indiquant leur taille maximum */
-        pileRouge.setSize(TAILLE_MAX_PILES_CARTES);
-        pileJaune.setSize(TAILLE_MAX_PILES_CARTES);
-        pileBleu.setSize(TAILLE_MAX_PILES_CARTES);
-        pileVert.setSize(TAILLE_MAX_PILES_CARTES);
-        pileBlanc.setSize(TAILLE_MAX_PILES_CARTES);
     }
     
     /**
@@ -66,7 +64,7 @@ public class CartesPlateau {
      */
     public Stack<Carte> getPileRouge() {
         return pileRouge;
-        
+
     }
     
     /**
@@ -74,7 +72,6 @@ public class CartesPlateau {
      */
     public Stack<Carte> getPileJaune() {
         return pileJaune;
-        
     }
     
     /**
@@ -82,7 +79,6 @@ public class CartesPlateau {
      */
     public Stack<Carte> getPileVert() {
         return pileVert;
-        
     }
     
     /**
@@ -90,7 +86,6 @@ public class CartesPlateau {
      */
     public Stack<Carte> getPileBleu() {
         return pileBleu;
-        
     }
     
     /**
@@ -98,7 +93,6 @@ public class CartesPlateau {
      */
     public Stack<Carte> getPileBlanc() {
         return pileBlanc;
-        
     }
     
     /**
@@ -112,15 +106,13 @@ public class CartesPlateau {
      *         par rapport à la dernière carte de la pile
      */
     public void setPileRouge(Carte aPoser) {
-        if(aPoser.getCouleur() != Couleur.ROUGE
-                //FIXME
-                || this.pileRouge.empty() 
-                    && aPoser.getValeur().getValeurNumerique() 
-                       != Valeur.UN.getValeurNumerique()
-                       
-                || aPoser.getValeur().getValeurNumerique() 
-                   != this.pileRouge.peek().getValeur().getValeurNumerique()) {
+        if(aPoser.getCouleur() != Couleur.ROUGE ) {
             throw new IllegalArgumentException(ERREUR_MAUVAISE_COULEUR);
+        }
+        if (this.pileRouge.empty() && aPoser.getValeur() != Valeur.UN
+               || aPoser.getValeur().getValeurNumerique() 
+                  != this.pileRouge.peek().getValeur().getValeurNumerique()) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_VALEUR);
         }
         this.pileRouge.push(aPoser);
     }

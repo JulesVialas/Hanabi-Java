@@ -85,18 +85,24 @@ class TestCartesPlateau {
                 ()->new CartesPlateau()
                 .setPileRouge(new Carte(Couleur.BLANC, Valeur.UN))); 
         
-        /* Couleur valide pour la pile en question */
-        assertDoesNotThrow(()->new CartesPlateau()
-                .setPileRouge(new Carte(Couleur.ROUGE, Valeur.UN)));
-        assertDoesNotThrow(()->new CartesPlateau()
-                .setPileRouge(new Carte(Couleur.ROUGE, Valeur.DEUX)));
-        assertDoesNotThrow(()->new CartesPlateau()
-                .setPileRouge(new Carte(Couleur.ROUGE, Valeur.TROIS)));
-        assertDoesNotThrow(()->new CartesPlateau()
-                .setPileRouge(new Carte(Couleur.ROUGE, Valeur.QUATRE)));
-        assertDoesNotThrow(()->new CartesPlateau()
-                .setPileRouge(new Carte(Couleur.ROUGE, Valeur.CINQ)));
+        /* Pile de test */
+        //FIXME revoir les tests
+        CartesPlateau jeu1 = new CartesPlateau();
+        assertTrue(jeu1.getPileRouge().empty());
+        /* On a ajoute une carte à la pile vide */
+        assertThrows(IllegalArgumentException.class,
+                ()->jeu1.setPileRouge(new Carte(Couleur.ROUGE, Valeur.DEUX)));
+        assertThrows(IllegalArgumentException.class,
+                ()->jeu1.setPileRouge(new Carte(Couleur.ROUGE, Valeur.TROIS)));
+        assertThrows(IllegalArgumentException.class,
+                ()->jeu1.setPileRouge(new Carte(Couleur.ROUGE, Valeur.QUATRE)));
+        assertThrows(IllegalArgumentException.class,
+                ()->jeu1.setPileRouge(new Carte(Couleur.ROUGE, Valeur.CINQ)));
         
+        assertDoesNotThrow(
+            ()->jeu1.setPileRouge(new Carte(Couleur.ROUGE, Valeur.UN)));
+
+
         /* 
          * La valeur de la carte a poser n'est pas la valeur suivante
          * par rapport à la dernière posée, mais la couleur est la bonne
