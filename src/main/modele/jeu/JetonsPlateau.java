@@ -65,7 +65,7 @@ public class JetonsPlateau {
      * @throws IllegalStateException si le nombre de jetons bleus inscrit en
      *                               paramètre n'est pas valide.
      */
-    public void setBleu(int nombre) {
+    public void setBleus(int nombre) {
         if (nombre > NB_JETONS_BLEUS_MAX || nombre < NB_JETONS_BLEUS_MIN) {
             throw new IllegalStateException(ERREUR_NB_JETONS_BLEUS);
         }
@@ -79,7 +79,7 @@ public class JetonsPlateau {
      * @throws IllegalStateException si le nombre de jetons rouges inscrit en
      *                               paramètre n'est pas valide.
      */
-    public void setRouge(int nombre) {
+    public void setRouges(int nombre) {
         if (nombre > NB_JETONS_ROUGES_MAX || nombre < NB_JETONS_ROUGES_MIN) {
             throw new IllegalStateException(ERREUR_NB_JETONS_ROUGES);
         }
@@ -92,7 +92,7 @@ public class JetonsPlateau {
      * @throws IllegalStateException si le nombre de jetons bleus n'est pas valide
      *                               lors d'une incrémentation.
      */
-    public void incrementJetonsBleus() {
+    public void incrementBleus() {
         if (this.bleu + 1 > NB_JETONS_BLEUS_MAX) {
             throw new IllegalStateException(ERREUR_NB_JETONS_BLEUS);
         }
@@ -105,7 +105,7 @@ public class JetonsPlateau {
      * @throws IllegalStateException si le nombre de jetons bleus n'est pas valide
      *                               lors d'une décrémentation.
      */
-    public void decrementJetonsBleus() {
+    public void decrementBleus() {
         if (this.bleu - 1 < NB_JETONS_BLEUS_MIN) {
             throw new IllegalStateException(ERREUR_NB_JETONS_BLEUS);
         }
@@ -118,7 +118,7 @@ public class JetonsPlateau {
      * @throws IllegalStateException si le nombre de jetons rouges n'est pas valide
      *                               lors d'une incrémentation.
      */
-    public void incrementJetonsRouges() {
+    public void incrementRouges() {
         if (this.rouge + 1 > NB_JETONS_ROUGES_MAX) {
             throw new IllegalStateException(ERREUR_NB_JETONS_ROUGES);
         }
@@ -131,7 +131,7 @@ public class JetonsPlateau {
      * @throws IllegalStateException si le nombre de jetons rouges n'est pas valide
      *                               lors d'une décrémentation.
      */
-    public void decrementJetonsRouges() {
+    public void decrementRouges() {
         if (this.rouge - 1 < NB_JETONS_ROUGES_MIN) {
             throw new IllegalStateException(ERREUR_NB_JETONS_ROUGES);
         }

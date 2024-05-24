@@ -35,7 +35,7 @@ public class TestJetonsPlateau {
      */
     @Test
     public void testSetBleuValide() {
-        jetons.setBleu(5);
+        jetons.setBleus(5);
         assertEquals(5, jetons.getBleus());
     }
 
@@ -45,7 +45,7 @@ public class TestJetonsPlateau {
     @Test
     public void testSetBleuInvalideTropHaut() {
         assertThrows(IllegalStateException.class, () -> {
-            jetons.setBleu(9);
+            jetons.setBleus(9);
         });
     }
 
@@ -55,7 +55,7 @@ public class TestJetonsPlateau {
     @Test
     public void testSetBleuInvalideTropBas() {
         assertThrows(IllegalStateException.class, () -> {
-            jetons.setBleu(-1);
+            jetons.setBleus(-1);
         });
     }
 
@@ -64,7 +64,7 @@ public class TestJetonsPlateau {
      */
     @Test
     public void testSetRougeValide() {
-        jetons.setRouge(2);
+        jetons.setRouges(2);
         assertEquals(2, jetons.getRouges());
     }
 
@@ -74,7 +74,7 @@ public class TestJetonsPlateau {
     @Test
     public void testSetRougeInvalideTropHaut() {
         assertThrows(IllegalStateException.class, () -> {
-            jetons.setRouge(4);
+            jetons.setRouges(4);
         });
     }
 
@@ -84,91 +84,91 @@ public class TestJetonsPlateau {
     @Test
     public void testSetRougeInvalideTropBas() {
         assertThrows(IllegalStateException.class, () -> {
-            jetons.setRouge(-1);
+            jetons.setRouges(-1);
         });
     }
 
     /**
-     * Test method for {@link modele.jeu.JetonsPlateau#incrementJetonsBleus()}.
+     * Test method for {@link modele.jeu.JetonsPlateau#incrementBleus()}.
      */
     @Test
-    public void testIncrementeJetonsBleusValide() {
-        jetons.setBleu(7);
-        jetons.incrementJetonsBleus();
+    public void testIncrementeBleusValide() {
+        jetons.setBleus(7);
+        jetons.incrementBleus();
         assertEquals(8, jetons.getBleus());
     }
 
     /**
-     * Test method for {@link modele.jeu.JetonsPlateau#incrementJetonsBleus()}.
+     * Test method for {@link modele.jeu.JetonsPlateau#incrementBleus()}.
      */
     @Test
-    public void testIncrementeJetonsBleusInvalide() {
-        jetons.setBleu(8);
+    public void testIncrementeInvalide() {
+        jetons.setBleus(8);
         assertThrows(IllegalStateException.class, () -> {
-            jetons.incrementJetonsBleus();
+            jetons.incrementBleus();
         });
     }
 
     /**
-     * Test method for {@link modele.jeu.JetonsPlateau#decrementJetonsBleus()}.
+     * Test method for {@link modele.jeu.JetonsPlateau#decrementBleus()}.
      */
     @Test
-    public void testDecrementeJetonsBleusValide() {
-        jetons.setBleu(1);
-        jetons.decrementJetonsBleus();
+    public void testDecrementeBleusValide() {
+        jetons.setBleus(1);
+        jetons.decrementBleus();
         assertEquals(0, jetons.getBleus());
     }
 
     /**
-     * Test method for {@link modele.jeu.JetonsPlateau#decrementJetonsBleus()}.
+     * Test method for {@link modele.jeu.JetonsPlateau#decrementBleus()}.
      */
     @Test
-    public void testDecrementeJetonsBleusInvalide() {
-        jetons.setBleu(0);
+    public void testDecrementeBleusInvalide() {
+        jetons.setBleus(0);
         assertThrows(IllegalStateException.class, () -> {
-            jetons.decrementJetonsBleus();
+            jetons.decrementBleus();
         });
     }
 
     /**
-     * Test method for {@link modele.jeu.JetonsPlateau#incrementJetonsRouges()}.
+     * Test method for {@link modele.jeu.JetonsPlateau#incrementRouges()}.
      */
     @Test
     public void testIncrementeJetonsRougesValide() {
-        jetons.setRouge(2);
-        jetons.incrementJetonsRouges();
+        jetons.setRouges(2);
+        jetons.incrementRouges();
         assertEquals(3, jetons.getRouges());
     }
 
     /**
-     * Test method for {@link modele.jeu.JetonsPlateau#incrementJetonsRouges()}.
+     * Test method for {@link modele.jeu.JetonsPlateau#incrementRouges()}.
      */
     @Test
     public void testIncrementeJetonsRougesInvalide() {
-        jetons.setRouge(3);
+        jetons.setRouges(3);
         assertThrows(IllegalStateException.class, () -> {
-            jetons.incrementJetonsRouges();
+            jetons.incrementRouges();
         });
     }
 
     /**
-     * Test method for {@link modele.jeu.JetonsPlateau#decrementJetonsRouges()}.
+     * Test method for {@link modele.jeu.JetonsPlateau#decrementRouges()}.
      */
     @Test
     public void testDecrementeJetonsRougesValide() {
-        jetons.setRouge(1);
-        jetons.decrementJetonsRouges();
+        jetons.setRouges(1);
+        jetons.decrementRouges();
         assertEquals(0, jetons.getRouges());
     }
 
     /**
-     * Test method for {@link modele.jeu.JetonsPlateau#decrementJetonsRouges()}.
+     * Test method for {@link modele.jeu.JetonsPlateau#decrementRouges()}.
      */
     @Test
     public void testDecrementeJetonsRougesInvalide() {
-        jetons.setRouge(0);
+        jetons.setRouges(0);
         assertThrows(IllegalStateException.class, () -> {
-            jetons.decrementJetonsRouges();
+            jetons.decrementRouges();
         });
     }
 
