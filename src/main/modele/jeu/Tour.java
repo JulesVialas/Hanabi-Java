@@ -141,7 +141,7 @@ public class Tour {
         if (!indiceDonne) {
             throw new IllegalArgumentException(INDICE_DEJA_CONNU);
         }
-        partieDuTour.getJetons().decrementJetonsBleus();
+        partieDuTour.getJetons().decrementBleus();
     }
 
     /**
