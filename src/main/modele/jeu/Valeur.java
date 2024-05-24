@@ -8,16 +8,16 @@ package modele.jeu;
  * Défini les valeurs de cartes valides pour le jeu Hanabi
  */
 public enum Valeur {
-    
+
     UN(1), DEUX(2), TROIS(3), QUATRE(4), CINQ(5);
-    
+
     /** La valeur de la carte sous forme d'entier */
     private int valeurNumerique;
-    
+
     Valeur(int valeurNumerique) {
         this.valeurNumerique = valeurNumerique;
     }
-    
+
     /**
      * @return la valeur de la carte
      */

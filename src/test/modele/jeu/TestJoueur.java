@@ -16,38 +16,31 @@ import org.junit.jupiter.api.Test;
 class TestJoueur {
 
     /**
-     * Méthode de test pour
-     * {@link modele.jeu.Joueur#Joueur(java.lang.String)}.
+     * Méthode de test pour {@link modele.jeu.Joueur#Joueur(java.lang.String)}.
      */
     @Test
     void testJoueur() {
-        assertDoesNotThrow(()->new Joueur("Kamasi"));
-        assertDoesNotThrow(()->new Joueur("Washington"));
-        assertDoesNotThrow(()->new Joueur("Magda"));
-        assertDoesNotThrow(()->new Joueur("Kuras"));
-        assertDoesNotThrow(()->new Joueur("12"));
-        assertDoesNotThrow(()->new Joueur("0123456789"));
-        assertDoesNotThrow(()->new Joueur("O U I "));
-        
-        assertThrows(IllegalArgumentException.class,
-                ()->new Joueur(""));
-        assertThrows(IllegalArgumentException.class,
-                ()->new Joueur("          "));
-        assertThrows(NullPointerException.class,
-                ()->new Joueur(null));
-        assertThrows(IllegalArgumentException.class,
-                ()->new Joueur("01234567890"));
-        assertThrows(IllegalArgumentException.class,
-                ()->new Joueur("a"));
+        assertDoesNotThrow(() -> new Joueur("Kamasi"));
+        assertDoesNotThrow(() -> new Joueur("Washington"));
+        assertDoesNotThrow(() -> new Joueur("Magda"));
+        assertDoesNotThrow(() -> new Joueur("Kuras"));
+        assertDoesNotThrow(() -> new Joueur("12"));
+        assertDoesNotThrow(() -> new Joueur("0123456789"));
+        assertDoesNotThrow(() -> new Joueur("O U I "));
+
+        assertThrows(IllegalArgumentException.class, () -> new Joueur(""));
+        assertThrows(IllegalArgumentException.class, () -> new Joueur("          "));
+        assertThrows(NullPointerException.class, () -> new Joueur(null));
+        assertThrows(IllegalArgumentException.class, () -> new Joueur("01234567890"));
+        assertThrows(IllegalArgumentException.class, () -> new Joueur("a"));
     }
 
     /**
-     * Méthode de test pour
-     * {@link modele.jeu.Joueur#getPseudo()}.
+     * Méthode de test pour {@link modele.jeu.Joueur#getPseudo()}.
      */
     @Test
     void testGetPseudo() {
-        
+
         assertEquals("Kamasi", new Joueur("Kamasi").getPseudo());
         assertEquals("Washington", new Joueur("Washington").getPseudo());
         assertEquals("Magda", new Joueur("Magda").getPseudo());
@@ -55,7 +48,7 @@ class TestJoueur {
         assertEquals("12", new Joueur("12").getPseudo());
         assertEquals("0123456789", new Joueur("0123456789").getPseudo());
         assertEquals("O U I ", new Joueur("O U I ").getPseudo());
-        
+
         assertNotEquals("kamasi", new Joueur("Kamasi").getPseudo());
         assertNotEquals(" Washington", new Joueur("Washington").getPseudo());
         assertNotEquals("Magda ", new Joueur("Magda").getPseudo());
@@ -66,24 +59,22 @@ class TestJoueur {
     }
 
     /**
-     * Méthode de test pour
-     * {@link modele.jeu.Joueur#getCartesEnMains()}.
+     * Méthode de test pour {@link modele.jeu.Joueur#getCartesEnMains()}.
      */
     @Test
     void testGetCartesEnMains() {
 
         /* Main vide lors de l'instanciation du Joueur */
         assertEquals(null, new Joueur("O U I ").getCartesEnMains());
-        
-        /* 
-         * Tests getter avec main non vides dans 
-         * {@link modele.jeu.TestJoueur#testSetCartesEnMains()}.
+
+        /*
+         * Tests getter avec main non vides dans {@link
+         * modele.jeu.TestJoueur#testSetCartesEnMains()}.
          */
     }
 
     /**
-     * Méthode de test pour
-     * {@link modele.jeu.Joueur#setCartesEnMains(Carte carte)}.
+     * Méthode de test pour {@link modele.jeu.Joueur#setCartesEnMains(Carte carte)}.
      */
     @Test
     void testSetCartesEnMains() {
@@ -91,19 +82,19 @@ class TestJoueur {
         /* Cartes valides pour test */
         Carte unRouge = new Carte(Couleur.ROUGE, Valeur.UN);
         Carte deuxRouge = new Carte(Couleur.ROUGE, Valeur.DEUX);
-        
+
         /* Joueurs valides pour test. Main null à ce stade */
         Joueur Kamasi = new Joueur("Kamasi");
         Joueur Washington = new Joueur("Washington");
-        
+
         /* Listes de vérification */
         ArrayList<Carte> verifKamasi = new ArrayList<>();
         ArrayList<Carte> verifWashington = new ArrayList<>();
-        
+
         /* On donne une carte à chacun */
         verifKamasi.add(unRouge);
         Kamasi.setCartesEnMains(unRouge);
-        
+
         verifWashington.add(deuxRouge);
         Washington.setCartesEnMains(deuxRouge);
 

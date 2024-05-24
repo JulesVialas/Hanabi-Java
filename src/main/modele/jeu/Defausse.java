@@ -7,21 +7,21 @@ package modele.jeu;
 import java.util.ArrayList;
 
 /**
- * La classe Defausse représente la défausse de carte dans jeu Hanabi. La 
+ * La classe Defausse représente la défausse de carte dans jeu Hanabi. La
  * défausse est une pile de cartes. Les cartes présentes dans la défausse sont
  * inutilisées et sont seulement visible par le joueur pour prendre des bonnes
- * décisions. 
+ * décisions.
  */
 public class Defausse {
-	
-	/** La pile de cartes de la défausse. */
+
+    /** La pile de cartes de la défausse. */
     private ArrayList<Carte> pile;
 
     /**
      * Instancie un objet de type Defausse.
      */
     public Defausse() {
-        this.pile = new ArrayList<>(); 
+        this.pile = new ArrayList<>();
     }
 
     /**
