@@ -107,12 +107,12 @@ public class CartesPlateau {
      */
     public void setPileRouge(Carte aPoser) {
         
-        
         // Vérifie qu'il s'agit de la bonne couleur
         if (aPoser.getCouleur() != Couleur.ROUGE) {
             throw new IllegalArgumentException(ERREUR_MAUVAISE_COULEUR);
         } 
         
+        // Vérifie que la valeur de la carte aPoser est bien la suivante
         if (pileRouge.empty() &&  aPoser.getValeur() != Valeur.UN
             || (!pileRouge.empty() 
                     && aPoser.getValeur().getValeurNumerique()
@@ -136,7 +136,23 @@ public class CartesPlateau {
      *         par rapport à la dernière carte de la pile
      */
     public void setPileJaune(Carte aPoser) {
-        //TODO
+        
+        // Vérifie qu'il s'agit de la bonne couleur
+        if (aPoser.getCouleur() != Couleur.JAUNE) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_COULEUR);
+        } 
+
+        // Vérifie que la valeur de la carte aPoser est bien la suivante
+        if (pileJaune.empty() &&  aPoser.getValeur() != Valeur.UN
+                || (!pileJaune.empty() 
+                        && aPoser.getValeur().getValeurNumerique()
+                        != pileJaune.peek().getValeur()
+                        .getValeurNumerique() + 1
+                        )
+                ) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_VALEUR);
+        }
+        this.pileJaune.push(aPoser);
     }
     
     /**
@@ -150,7 +166,23 @@ public class CartesPlateau {
      *         par rapport à la dernière carte de la pile
      */
     public void setPileVert(Carte aPoser) {
-        //TODO
+        
+        // Vérifie qu'il s'agit de la bonne couleur
+        if (aPoser.getCouleur() != Couleur.VERT) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_COULEUR);
+        } 
+
+        // Vérifie que la valeur de la carte aPoser est bien la suivante
+        if (pileVert.empty() &&  aPoser.getValeur() != Valeur.UN
+                || (!pileVert.empty() 
+                        && aPoser.getValeur().getValeurNumerique()
+                        != pileVert.peek().getValeur()
+                        .getValeurNumerique() + 1
+                        )
+                ) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_VALEUR);
+        }
+        this.pileVert.push(aPoser);
     }
     
     /**
@@ -164,7 +196,23 @@ public class CartesPlateau {
      *         par rapport à la dernière carte de la pile
      */
     public void setPileBleu(Carte aPoser) {
-        //TODO
+     
+        // Vérifie qu'il s'agit de la bonne couleur
+        if (aPoser.getCouleur() != Couleur.BLEU) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_COULEUR);
+        } 
+
+        // Vérifie que la valeur de la carte aPoser est bien la suivante
+        if (pileBleu.empty() &&  aPoser.getValeur() != Valeur.UN
+                || (!pileBleu.empty() 
+                        && aPoser.getValeur().getValeurNumerique()
+                        != pileBleu.peek().getValeur()
+                        .getValeurNumerique() + 1
+                        )
+                ) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_VALEUR);
+        }
+        this.pileBleu.push(aPoser);
     }
     
     /**
@@ -178,6 +226,22 @@ public class CartesPlateau {
      *         par rapport à la dernière carte de la pile
      */
     public void setPileBlanc(Carte aPoser) {
-        //TODO
+        
+        // Vérifie qu'il s'agit de la bonne couleur
+        if (aPoser.getCouleur() != Couleur.BLANC) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_COULEUR);
+        } 
+
+        // Vérifie que la valeur de la carte aPoser est bien la suivante
+        if (pileBlanc.empty() &&  aPoser.getValeur() != Valeur.UN
+                || (!pileBlanc.empty() 
+                        && aPoser.getValeur().getValeurNumerique()
+                        != pileBlanc.peek().getValeur()
+                        .getValeurNumerique() + 1
+                        )
+                ) {
+            throw new IllegalArgumentException(ERREUR_MAUVAISE_VALEUR);
+        }
+        this.pileBlanc.push(aPoser);
     }
 }
