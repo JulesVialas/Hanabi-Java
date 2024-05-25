@@ -20,8 +20,6 @@ public class Pioche {
 
     /**
      * Instancie un objet de type Pioche.
-     *
-     * @param paquet    le paquet de carte qui constitue la pioche
      */
     public Pioche() {
         this.pile = new Stack<>();
