@@ -93,26 +93,28 @@ public class Tour {
     }
 
     /**
-     * Donne un indice sur une carte, couleur ou valeur, si le nombre de jetons
-     * bleus disponibles est strictement supérieur à zéro.
+     * Donne un indice sur une carte, couleur ou valeur, si le 
+     * nombre de jetons bleus disponibles est strictement supérieur
+     * à zéro.
+     * Une carte peut recevoir plusieurs fois le même indice sans que
+     * cela pose problème.
+     * Lorsqu'un indice est donné, on le propage aux cartes de la main 
+     * du joueur répondant au même critère.
      * 
      * @param recepteur    Le joueur qui reçoit l'indice
      * @param recoitIndice la carte qui reçoit l'indice
      * @param natureIndice la nature de l'indice: 'c' pour la couleur, 'v' pour la
      *                     valeur
      * @throws IllegalArgumentException si natureIndice n'est ni 'c' ni 'v'
+     * @throws IllegalArgumentException si le joueur recevant 
+     *         l'indice est le même qui donne l'indice 
      * @throws IllegalStateException    si le nombre de jetons bleus est égal à zéro
      */
     public void donnerIndice(Joueur recepteur, Carte recoitIndice, 
         char natureIndice) {
-        // FIXME Trouver comment situer la carte pour donner indice
-        // aux autres cartes de la main
-
-        //TODO refactor après Partie done
-        // TODO vérifier nb jetons bleus
-        // TODO vérif que indice pas dja donné
-        // TODO setIndice en fction de sa nature
-
+        // FIXME Empecher joueur de se donner indice à soi-même ?
+        // ou alors qu'en graphique ?
+        
         if (partieDuTour.getJetons().getBleus() <= 0) {
             throw new IllegalStateException(ERREUR_JETONS_BLEUS_INSUFFISANTS);
         }
@@ -120,30 +122,60 @@ public class Tour {
             throw new IllegalArgumentException(ERREUR_SAISIE_NATURE_INDICE);
         }
         
-        /* Temoin pour déterminer si l'indice a déjà été donné */
-        boolean indiceDonne = false;
         for (Carte carte : recepteur.getCartesEnMains()) {
             if (natureIndice == 'c' 
                     && carte.getCouleurConnue() == recoitIndice
-                                                   .getCouleurConnue() 
-                    && !indiceDonne
-                ) {
+                                                   .getCouleurConnue() ) {
                 carte.setCouleurConnue(true);
-                indiceDonne = true;
             } else if (natureIndice == 'v' 
                            && carte.getValeurConnue() 
-                               == recoitIndice.getValeurConnue()
-                    && !indiceDonne) {
+                               == recoitIndice.getValeurConnue()) {
                 carte.setValeurConnue(true);
-                indiceDonne = true;
             }
         }
-        if (!indiceDonne) {
-            throw new IllegalArgumentException(INDICE_DEJA_CONNU);
-        }
+        /* On propage l'indice */
+        propagerIndice(natureIndice, recoitIndice, recepteur);
+        
+        /* On enlève un jeton bleu */
         partieDuTour.getJetons().decrementBleus();
     }
 
+    /** 
+     * Propage l'indice donné à une carte aux autres cartes
+     * de la main du joueur répondant au même critères.
+     * 
+     * @param natureIndice la nature de l'indice que l'on souhaite 
+     *        propager
+     * @param valeurIndice la carte dont on souhaite connaitre les
+     *        caractéristiques pour pouvoir les propager
+     * @param artificier le joueur qui possède la main dans laquelle
+     *        on souhaite propager l'indice      
+     * @throws IllegalStateException si la carte n'est pas dans la 
+     *         main d'un joueur.
+     */
+    private static void propagerIndice(char natureIndice, Carte valeurIndice,
+            Joueur artificier) {
+        
+        /* Indique si la nature de l'indice est couleur ou valeur */
+        boolean indiceCouleur;
+        
+        indiceCouleur = natureIndice == 'c';
+        
+        if (indiceCouleur) {
+            for (Carte cartes : artificier.getCartesEnMains()) {
+                if (cartes.getCouleur() == valeurIndice.getCouleur()) {
+                    cartes.setCouleurConnue(true);
+                }
+            }
+        } else { // La nature de l'indice est valeur
+            for (Carte cartes : artificier.getCartesEnMains()) {
+                if (cartes.getValeur() == valeurIndice.getValeur()) {
+                    cartes.setValeurConnue(true);
+                }
+            }
+        }
+    }
+    
     /**
      * Pose une carte sur les cartes posées sur le plateau si elle est valide, sinon
      * octroi un jeton rouge à l'équipe. Si la carte posée complète un feu
