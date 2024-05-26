@@ -24,6 +24,12 @@ package jeu.modele;
  */
 public class Partie {
 
+    /* Nombre de cartes dans la main des joueurs pour partie à 2 et 3 */
+    private static final int NB_CARTES_2_3_JOUEURS = 5;
+    
+    /* Nombre de cartes dans la main des joueurs pour partie à 4 et 5 */
+    private static final int NB_CARTES_4_5_JOUEURS = 4;
+    
     /** L'identifiant de la partie */
     private int identifiant; //FIXME trouver qqc d'unique => hash datePseudosHeure ?
     
@@ -81,7 +87,9 @@ public class Partie {
         pioche = new Pioche(); 
         defausse = new Defausse();
         
-        //TODO Distribuer les cartes aux joueurs pour débuter partie :)
+        /* Distribution des cartes */
+        distribuerCartes(joueur1, NB_CARTES_2_3_JOUEURS);
+        distribuerCartes(joueur2, NB_CARTES_2_3_JOUEURS);
         
         /* Lancement de la partie */
         tourCourant = new Tour(joueur1, 1);
@@ -112,7 +120,10 @@ public class Partie {
         pioche = new Pioche();
         defausse = new Defausse();
         
-        //TODO Distribuer les cartes aux joueurs pour débuter partie :)
+        /* Distribution des cartes */
+        distribuerCartes(joueur1, NB_CARTES_2_3_JOUEURS);
+        distribuerCartes(joueur2, NB_CARTES_2_3_JOUEURS);
+        distribuerCartes(joueur3, NB_CARTES_2_3_JOUEURS);
         
         /* Lancement de la partie */
         tourCourant = new Tour(joueur1, 1);
@@ -146,7 +157,11 @@ public class Partie {
         pioche = new Pioche();
         defausse = new Defausse();
         
-        //TODO Distribuer les cartes aux joueurs pour débuter partie :)
+        /* Distribution des cartes */
+        distribuerCartes(joueur1, NB_CARTES_4_5_JOUEURS);
+        distribuerCartes(joueur2, NB_CARTES_4_5_JOUEURS);
+        distribuerCartes(joueur3, NB_CARTES_4_5_JOUEURS);
+        distribuerCartes(joueur4, NB_CARTES_4_5_JOUEURS);
         
         /* Lancement de la partie */
         tourCourant = new Tour(joueur1, 1);
@@ -174,7 +189,7 @@ public class Partie {
         joueur2 = new Joueur(pseudoJ2);
         joueur3 = new Joueur(pseudoJ3);
         joueur4 = new Joueur(pseudoJ4);
-        joueur4 = new Joueur(pseudoJ5);
+        joueur5 = new Joueur(pseudoJ5);
         
         /* Préparation du jeu */
         feuxPoses = new CartesPlateau();
@@ -182,7 +197,12 @@ public class Partie {
         pioche = new Pioche();
         defausse = new Defausse();
         
-        //TODO Distribuer les cartes aux joueurs pour débuter partie :)
+        /* Distribution des cartes */
+        distribuerCartes(joueur1, NB_CARTES_4_5_JOUEURS);
+        distribuerCartes(joueur2, NB_CARTES_4_5_JOUEURS);
+        distribuerCartes(joueur3, NB_CARTES_4_5_JOUEURS);
+        distribuerCartes(joueur4, NB_CARTES_4_5_JOUEURS);
+        distribuerCartes(joueur5, NB_CARTES_4_5_JOUEURS);
         
         /* Lancement de la partie */
         tourCourant = new Tour(joueur1, 1);
@@ -228,5 +248,26 @@ public class Partie {
      */
     public Joueur getJoueur5() {
         return this.joueur5;
+    }
+    
+    /**
+     * @return la pioche
+     */
+    public Pioche getPioche() {
+        return this.pioche;
+    }
+    
+    /**
+     * Distribue le nombre de cartes souhaité de la pioche à un 
+     * joueur. Cette méthode sert uniquement à la distribution lors 
+     * du début de partie.
+     * 
+     * @param receveurCarte le joueur recevant les cartes
+     * @param nbCarte le nombre de cartes à donner au joueur
+     */
+    private void distribuerCartes(Joueur receveurCarte, int nbCarte) {
+        for (int index = 0; index < nbCarte; index++) {
+            receveurCarte.getCartesEnMains().add(pioche.getPioche().pop());
+        }
     }
 }

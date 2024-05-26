@@ -75,7 +75,7 @@ class TestJoueur {
     void testGetCartesEnMains() {
 
         /* Main vide lors de l'instanciation du Joueur */
-        assertEquals(null, new Joueur("O U I ").getCartesEnMains());
+        assertTrue(new Joueur("O U I ").getCartesEnMains().size() == 0);
 
         /*
          * Tests getter avec main non vides dans {@link
