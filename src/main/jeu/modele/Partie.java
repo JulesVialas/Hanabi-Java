@@ -6,6 +6,8 @@
  */
 package jeu.modele;
 
+import java.util.Stack;
+
 /**
  * Le jeu de société Hanabi est un jeu coopératif, c'est-à-dire un 
  * jeu dans lequel les joueurs ne s'affrontent pas mais font équipe
@@ -253,8 +255,15 @@ public class Partie {
     /**
      * @return la pioche
      */
-    public Pioche getPioche() {
-        return this.pioche;
+    public Stack<Carte> getPioche() {
+        return this.pioche.getPaquet();
+    }
+    
+    /**
+     * @return la défausse
+     */
+    public Stack<Carte> getDefausse() {
+        return this.defausse.getPaquet();
     }
     
     /**
@@ -267,7 +276,7 @@ public class Partie {
      */
     private void distribuerCartes(Joueur receveurCarte, int nbCarte) {
         for (int index = 0; index < nbCarte; index++) {
-            receveurCarte.getCartesEnMains().add(pioche.getPioche().pop());
+            receveurCarte.getCartesEnMains().add(pioche.getPaquet().pop());
         }
     }
 }
