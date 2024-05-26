@@ -105,12 +105,13 @@ public class Tour {
      * 
      * @param recepteur    Le joueur qui reçoit l'indice
      * @param recoitIndice la carte qui reçoit l'indice
-     * @param natureIndice la nature de l'indice: 'c' pour la couleur, 'v' pour la
-     *                     valeur
+     * @param natureIndice la nature de l'indice: 'c' pour la couleur, 
+     *        'v' pour la valeur
      * @throws IllegalArgumentException si natureIndice n'est ni 'c' ni 'v'
      * @throws IllegalArgumentException si le joueur recevant 
      *         l'indice est le même qui donne l'indice 
-     * @throws IllegalStateException    si le nombre de jetons bleus est égal à zéro
+     * @throws IllegalStateException si le nombre de jetons bleus est 
+     *         égal à zéro
      */
     public void donnerIndice(Joueur recepteur, Carte recoitIndice, 
         char natureIndice) {
@@ -179,10 +180,11 @@ public class Tour {
     }
     
     /**
-     * Pose une carte sur les cartes posées sur le plateau si elle est valide, sinon
-     * octroi un jeton rouge à l'équipe. Si la carte posée complète un feu
-     * d'artifice, un jeton bleu est octroyé à l'équipe si elle n'en possède pas
-     * déjà le nombre maximal. Si la pioche n'est pas vide, une carte est ensuite
+     * Pose une carte sur les cartes posées sur le plateau si elle 
+     * est valide, sinon octroi un jeton rouge à l'équipe. Si la 
+     * carte posée complète un feu d'artifice, un jeton bleu est 
+     * octroyé à l'équipe si elle n'en possède pas déjà le nombre
+     * maximal. Si la pioche n'est pas vide, une carte est ensuite 
      * ajoutée à la main du joueur.
      * 
      * @param carteAPoser la carte que le joueur pose sur le plateau
@@ -197,15 +199,37 @@ public class Tour {
     }
 
     /**
-     * Défausse la carte du joueur et octroie un jeton bleu à l'équipe si elle n'en
-     * possède pas déjà le nombre maximal. Si la pioche n'est pas vide, une carte
-     * est ensuite ajoutée à la main du joueur.
+     * Défausse la carte du joueur et octroie un jeton bleu à 
+     * l'équipe si elle n'en possède pas déjà le nombre maximal. 
+     * Si la pioche n'est pas vide, une carte est ensuite ajoutée 
+     * à la main du joueur.
      * 
      * @param carteADefausser la carte que le joueur souhaite défausser
+     * @throws IllegalStateException si le nombre de jetons bleus
+     *         est insuffisant
      */
     public void defausser(Carte carteADefausser) {
-        // TODO Si bleu < nbMaxJetonsBleus, bleus++
-        // TODO Filer carte joueur si pioche pas vide
+        
+        /* On ajoute la carte à la défausse */
+        getPartieDuTour().getDefausse().push(carteADefausser);
+        
+        System.out.println(joueurCourant.getCartesEnMains());
+        
+        /* On enlève la carte du jeu du joueur */
+        joueurCourant.getCartesEnMains().remove(carteADefausser);
+        
+        /* Si la pioche n'est pas vide on donne une carte */
+        if (!partieDuTour.getPioche().isEmpty()) {
+            joueurCourant.getCartesEnMains().add(partieDuTour
+                                            .getPioche().pop());
+        }
+        
+        /* On ajoute 1 jeton bleu à la partie si le nb max n'est pas atteint */
+        if (partieDuTour.getJetons().getBleus() 
+                < JetonsPlateau.NB_JETONS_BLEUS_MAX) {
+            
+            partieDuTour.getJetons().incrementBleus();
+        }
         // TODO lastTour si pioche vide, trouver pour end
     }
 }

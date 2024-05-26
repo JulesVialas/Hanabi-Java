@@ -8,14 +8,10 @@ package jeu.modele;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
-import jeu.modele.Carte;
-import jeu.modele.Couleur;
-import jeu.modele.Joueur;
-import jeu.modele.Partie;
-import jeu.modele.Tour;
-import jeu.modele.Valeur;
 
 /**
  * Classe de test pour {@link jeu.modele.Tour}.
@@ -359,7 +355,34 @@ class TestTour {
      */
     @Test
     void testDefausser() {
-        fail("Not yet implemented");
+        
+        Partie partie2J = new Partie("Bob", "Dylan");
+        Tour tour1 = new Tour(partie2J.getJoueur1(), 1);
+        tour1.setPartieDuTour(partie2J);
+        
+        /* On vérifie que le nombre de cartes est le bon pour 2 joueurs */
+        assertTrue(partie2J.getJoueur1().getCartesEnMains().size() == 5);
+        
+        /* 
+         * On stocke l'état actuel de la main avant défausse, à l'aide 
+         * d'une deep copy pour ne pas seulement copier la référence  
+         * de l'objet
+         */
+        List<Carte> saveCarteAvantDefausse 
+        = List.copyOf(partie2J.getJoueur1().getCartesEnMains());
+        
+        /* On défausse une carte */
+        tour1.defausser(partie2J.getJoueur1().getCartesEnMains().getLast());
+        
+        /* 
+         * On vérifie que le nombre de cartes dans la main est le bon.
+         * On suppose que la pioche n'est pas vide donc qu'une carte lui
+         * est rendue.
+         */
+        assertTrue(partie2J.getJoueur1().getCartesEnMains().size() == 5);
+        
+        /* On compare les mains avant et après défausse */
+        assertFalse(partie2J.getJoueur1().getCartesEnMains()
+                .containsAll(saveCarteAvantDefausse));
     }
-
 }
