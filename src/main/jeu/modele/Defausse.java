@@ -32,7 +32,7 @@ public class Defausse {
     /**
      * @return la pile de cartes de la défausse
      */
-    public Stack<Carte> getDefausse() {
+    public Stack<Carte> getPaquet() {
         return this.pile;
     }
 

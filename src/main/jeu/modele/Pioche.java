@@ -37,7 +37,7 @@ public class Pioche {
     /**
      * @return pile la pile de cartes de la pioche
      */
-    public Stack<Carte> getPioche() {
+    public Stack<Carte> getPaquet() {
         return this.pile;
     }
 
