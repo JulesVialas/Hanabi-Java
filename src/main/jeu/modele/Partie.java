@@ -4,7 +4,7 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-package modele.jeu;
+package jeu.modele;
 
 /**
  * Le jeu de société Hanabi est un jeu coopératif, c'est-à-dire un 

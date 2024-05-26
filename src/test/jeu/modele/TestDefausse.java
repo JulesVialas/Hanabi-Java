@@ -4,7 +4,7 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-package modele.jeu;
+package jeu.modele;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,14 +12,19 @@ import java.util.Stack;
 
 import org.junit.jupiter.api.Test;
 
+import jeu.modele.Carte;
+import jeu.modele.Couleur;
+import jeu.modele.Defausse;
+import jeu.modele.Valeur;
+
 /**
- * Classe de test pour {@link modele.jeu.Defausse}
+ * Classe de test pour {@link jeu.modele.Defausse}
  */
 class TestDefausse {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Defausse#Defausse()}.
+     * {@link jeu.modele.Defausse#Defausse()}.
      */
     @Test
     void testDefausse() {
@@ -33,7 +38,7 @@ class TestDefausse {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Defausse#getDefausse()}.
+     * {@link jeu.modele.Defausse#getDefausse()}.
      */
     @Test
     void testGetDefausse() {
@@ -51,7 +56,7 @@ class TestDefausse {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Defausse#setDefausse(java.util.Stack)}.
+     * {@link jeu.modele.Defausse#setDefausse(java.util.Stack)}.
      */
     @Test
     void testSetDefausse() {

@@ -5,7 +5,7 @@
  * Games/XII Singes.
  */
 
-package modele.jeu;
+package jeu.modele;
 
 /**
  * La classe JetonsPlateau représente les jetons du jeu Hanabi. Il existe deux

@@ -4,15 +4,19 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-package modele.jeu;
+package jeu.modele;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import jeu.modele.Carte;
+import jeu.modele.Couleur;
+import jeu.modele.Valeur;
+
 /**
  * Classe de test pour 
- * {@link modele.jeu.Carte}.
+ * {@link jeu.modele.Carte}.
  * 
  * @author Corentin Solignac
  */
@@ -20,7 +24,7 @@ class TestCarte {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Carte#Carte(modele.jeu.Carte.Couleur, int)}.
+     * {@link jeu.modele.Carte#Carte(modele.jeu.Carte.Couleur, int)}.
      */
     @Test
     void testCarte() {
@@ -90,7 +94,7 @@ class TestCarte {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Carte#getCouleur()}.
+     * {@link jeu.modele.Carte#getCouleur()}.
      */
     @Test
     void testGetCouleur() {
@@ -208,7 +212,7 @@ class TestCarte {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Carte#getValeur()}.
+     * {@link jeu.modele.Carte#getValeur()}.
      */
     @Test
     void testGetValeur() {
@@ -327,7 +331,7 @@ class TestCarte {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Carte#getCouleurConnue()}.
+     * {@link jeu.modele.Carte#getCouleurConnue()}.
      */
     @Test
     void testGetCouleurConnue() {
@@ -393,7 +397,7 @@ class TestCarte {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Carte#getValeurConnue()}.
+     * {@link jeu.modele.Carte#getValeurConnue()}.
      */
     @Test
     void testGetValeurConnue() {
@@ -459,7 +463,7 @@ class TestCarte {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Carte#setCouleurConnue(boolean)}.
+     * {@link jeu.modele.Carte#setCouleurConnue(boolean)}.
      */
     @Test
     void testSetCouleurConnue() {
@@ -502,7 +506,7 @@ class TestCarte {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Carte#setValeurConnue(boolean)}.
+     * {@link jeu.modele.Carte#setValeurConnue(boolean)}.
      */
     @Test
     void testSetValeurConnue() {
@@ -545,7 +549,7 @@ class TestCarte {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Carte#toString()}.
+     * {@link jeu.modele.Carte#toString()}.
      */
     @Test
     void testToString() {

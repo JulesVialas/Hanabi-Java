@@ -4,14 +4,16 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-package modele.jeu;
+package jeu.modele;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jeu.modele.JetonsPlateau;
+
 /**
- * Classe de test pour {@link modele.jeu.JetonsPlateau}.
+ * Classe de test pour {@link jeu.modele.JetonsPlateau}.
  * 
  * @author Jules Vialas
  */
@@ -21,7 +23,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#JetonsPlateau()}.
+     * {@link jeu.modele.JetonsPlateau#JetonsPlateau()}.
      */
     @BeforeEach
     public void setUp() {
@@ -30,7 +32,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#JetonsPlateau()}.
+     * {@link jeu.modele.JetonsPlateau#JetonsPlateau()}.
      */
     @Test
     public void testValeursInitiales() {
@@ -40,7 +42,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#setBleu(int)}.
+     * {@link jeu.modele.JetonsPlateau#setBleu(int)}.
      */
     @Test
     public void testSetBleuValide() {
@@ -50,7 +52,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#setBleu(int)}.
+     * {@link jeu.modele.JetonsPlateau#setBleu(int)}.
      */
     @Test
     public void testSetBleuInvalideTropHaut() {
@@ -61,7 +63,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#setBleu(int)}.
+     * {@link jeu.modele.JetonsPlateau#setBleu(int)}.
      */
     @Test
     public void testSetBleuInvalideTropBas() {
@@ -72,7 +74,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#setRouge(int)}.
+     * {@link jeu.modele.JetonsPlateau#setRouge(int)}.
      */
     @Test
     public void testSetRougeValide() {
@@ -82,7 +84,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#setRouge(int)}.
+     * {@link jeu.modele.JetonsPlateau#setRouge(int)}.
      */
     @Test
     public void testSetRougeInvalideTropHaut() {
@@ -93,7 +95,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#setRouge(int)}.
+     * {@link jeu.modele.JetonsPlateau#setRouge(int)}.
      */
     @Test
     public void testSetRougeInvalideTropBas() {
@@ -104,7 +106,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#incrementBleus()}.
+     * {@link jeu.modele.JetonsPlateau#incrementBleus()}.
      */
     @Test
     public void testIncrementeBleusValide() {
@@ -115,7 +117,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#incrementBleus()}.
+     * {@link jeu.modele.JetonsPlateau#incrementBleus()}.
      */
     @Test
     public void testIncrementeInvalide() {
@@ -127,7 +129,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#decrementBleus()}.
+     * {@link jeu.modele.JetonsPlateau#decrementBleus()}.
      */
     @Test
     public void testDecrementeBleusValide() {
@@ -138,7 +140,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#decrementBleus()}.
+     * {@link jeu.modele.JetonsPlateau#decrementBleus()}.
      */
     @Test
     public void testDecrementeBleusInvalide() {
@@ -150,7 +152,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#incrementRouges()}.
+     * {@link jeu.modele.JetonsPlateau#incrementRouges()}.
      */
     @Test
     public void testIncrementeJetonsRougesValide() {
@@ -161,7 +163,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#incrementRouges()}.
+     * {@link jeu.modele.JetonsPlateau#incrementRouges()}.
      */
     @Test
     public void testIncrementeJetonsRougesInvalide() {
@@ -173,7 +175,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#decrementRouges()}.
+     * {@link jeu.modele.JetonsPlateau#decrementRouges()}.
      */
     @Test
     public void testDecrementeJetonsRougesValide() {
@@ -184,7 +186,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#decrementRouges()}.
+     * {@link jeu.modele.JetonsPlateau#decrementRouges()}.
      */
     @Test
     public void testDecrementeJetonsRougesInvalide() {
@@ -196,7 +198,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#getBleus()}.
+     * {@link jeu.modele.JetonsPlateau#getBleus()}.
      */
     @Test
     void testGetBleus() {
@@ -208,7 +210,7 @@ public class TestJetonsPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.JetonsPlateau#getRouges()}.
+     * {@link jeu.modele.JetonsPlateau#getRouges()}.
      */
     @Test
     void testGetRouges() {

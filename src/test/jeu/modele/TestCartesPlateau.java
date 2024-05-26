@@ -4,7 +4,7 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-package modele.jeu;
+package jeu.modele;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,15 +12,20 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jeu.modele.Carte;
+import jeu.modele.CartesPlateau;
+import jeu.modele.Couleur;
+import jeu.modele.Valeur;
+
 /**
  * Méthode de test de 
- * {@link modele.jeu.CartesPlateau}
+ * {@link jeu.modele.CartesPlateau}
  */
 class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#CartesPlateau()}.
+     * {@link jeu.modele.CartesPlateau#CartesPlateau()}.
      */
     @Test
     void testCartesPlateau() {
@@ -29,7 +34,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#getPileRouge()}.
+     * {@link jeu.modele.CartesPlateau#getPileRouge()}.
      */
     @Test
     void testGetPileRouge() {
@@ -41,7 +46,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#getPileJaune()}.
+     * {@link jeu.modele.CartesPlateau#getPileJaune()}.
      */
     @Test
     void testGetPileJaune() {
@@ -53,7 +58,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#getPileVert()}.
+     * {@link jeu.modele.CartesPlateau#getPileVert()}.
      */
     @Test
     void testGetPileVert() {
@@ -65,7 +70,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#getPileBleu()}.
+     * {@link jeu.modele.CartesPlateau#getPileBleu()}.
      */
     @Test
     void testGetPileBleu() {
@@ -77,7 +82,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#getPileBlanc()}.
+     * {@link jeu.modele.CartesPlateau#getPileBlanc()}.
      */
     @Test
     void testGetPileBlanc() {
@@ -89,7 +94,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#setPileRouge(modele.jeu.Carte)}.
+     * {@link jeu.modele.CartesPlateau#setPileRouge(jeu.modele.Carte)}.
      */
     @Test
     void testSetPileRouge() {
@@ -198,7 +203,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#setPileJaune(modele.jeu.Carte)}.
+     * {@link jeu.modele.CartesPlateau#setPileJaune(jeu.modele.Carte)}.
      */
     @Test
     void testSetPileJaune() {
@@ -307,7 +312,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#setPileVert(modele.jeu.Carte)}.
+     * {@link jeu.modele.CartesPlateau#setPileVert(jeu.modele.Carte)}.
      */
     @Test
     void testSetPileVert() {
@@ -415,7 +420,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#setPileBleu(modele.jeu.Carte)}.
+     * {@link jeu.modele.CartesPlateau#setPileBleu(jeu.modele.Carte)}.
      */
     @Test
     void testSetPileBleu() {
@@ -524,7 +529,7 @@ class TestCartesPlateau {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.CartesPlateau#setPileBlanc(modele.jeu.Carte)}.
+     * {@link jeu.modele.CartesPlateau#setPileBlanc(jeu.modele.Carte)}.
      */
     @Test
     void testSetPileBlanc() {

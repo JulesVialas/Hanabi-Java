@@ -5,7 +5,7 @@
  * Games/XII Singes.
  */
 
-package modele.jeu;
+package jeu.modele;
 
 import java.util.Collections;
 import java.util.Stack;

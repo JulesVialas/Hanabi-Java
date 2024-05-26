@@ -4,14 +4,21 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-package modele.jeu;
+package jeu.modele;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import jeu.modele.Carte;
+import jeu.modele.Couleur;
+import jeu.modele.Joueur;
+import jeu.modele.Partie;
+import jeu.modele.Tour;
+import jeu.modele.Valeur;
+
 /**
- * Classe de test pour {@link modele.jeu.Tour}.
+ * Classe de test pour {@link jeu.modele.Tour}.
  * 
  * @author Corentin Solignac
  */
@@ -19,7 +26,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#Tour(modele.jeu.Joueur, int)}.
+     * {@link jeu.modele.Tour#Tour(jeu.modele.Joueur, int)}.
      */
     @Test
     void testTour() {
@@ -36,7 +43,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#getJoueurCourant()}.
+     * {@link jeu.modele.Tour#getJoueurCourant()}.
      */
     @Test
     void testGetJoueurCourant() {
@@ -51,7 +58,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#getNumero()}.
+     * {@link jeu.modele.Tour#getNumero()}.
      */
     @Test
     void testGetNumero() {
@@ -64,7 +71,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#getJetonsBleus()}.
+     * {@link jeu.modele.Tour#getJetonsBleus()}.
      */
     @Test
     void testGetJetonsBleus() {
@@ -87,7 +94,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#getJetonsRouges()}.
+     * {@link jeu.modele.Tour#getJetonsRouges()}.
      */
     @Test
     void testGetJetonsRouges() {
@@ -109,7 +116,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#incrementJetonsBleus()}.
+     * {@link jeu.modele.Tour#incrementJetonsBleus()}.
      */
     @Test
     void testIncrementJetonsBleus() {
@@ -133,7 +140,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#setJetonsBleus()}.
+     * {@link jeu.modele.Tour#setJetonsBleus()}.
      */
     @Test
     void testSetJetonsBleus() {
@@ -164,7 +171,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#decrementJetonsBleus()}.
+     * {@link jeu.modele.Tour#decrementJetonsBleus()}.
      */
     @Test
     void testDecrementJetonsBleus() {
@@ -181,7 +188,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#incrementJetonsRouges()}.
+     * {@link jeu.modele.Tour#incrementJetonsRouges()}.
      */
     @Test
     void testIncrementJetonsRouges() {
@@ -204,8 +211,8 @@ class TestTour {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Tour#donnerIndice(modele.jeu.Joueur,
-     * modele.jeu.Carte, char)}.
+     * {@link jeu.modele.Tour#donnerIndice(jeu.modele.Joueur,
+     * jeu.modele.Carte, char)}.
      */
     @Test
     void testDonnerIndice() {
@@ -339,7 +346,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#poser(modele.jeu.Carte)}.
+     * {@link jeu.modele.Tour#poser(jeu.modele.Carte)}.
      */
     @Test
     void testPoser() {
@@ -348,7 +355,7 @@ class TestTour {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Tour#defausser(modele.jeu.Carte)}.
+     * {@link jeu.modele.Tour#defausser(jeu.modele.Carte)}.
      */
     @Test
     void testDefausser() {

@@ -5,7 +5,7 @@
  * Games/XII Singes.
  */
 
-package modele.jeu;
+package jeu.modele;
 
 /**
  * La classe Carte représente une carte du jeu Hanabi. Chaque carte possède une

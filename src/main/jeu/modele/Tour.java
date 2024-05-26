@@ -4,7 +4,7 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-package modele.jeu;
+package jeu.modele;
 
 /**
  * Le tour d'une partie d'Hanabi est caractérisé par un numéro et un joueur.

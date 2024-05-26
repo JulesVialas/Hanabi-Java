@@ -4,7 +4,7 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-package modele.jeu;
+package jeu.modele;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,14 +12,19 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
+import jeu.modele.Carte;
+import jeu.modele.Couleur;
+import jeu.modele.Joueur;
+import jeu.modele.Valeur;
+
 /**
- * Classe de test pour {@link modele.jeu.Joueur}
+ * Classe de test pour {@link jeu.modele.Joueur}
  */
 class TestJoueur {
 
     /**
      * Méthode de test pour
-     * {@link modele.jeu.Joueur#Joueur(java.lang.String)}.
+     * {@link jeu.modele.Joueur#Joueur(java.lang.String)}.
      */
     @Test
     void testJoueur() {
@@ -40,7 +45,7 @@ class TestJoueur {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Joueur#getPseudo()}.
+     * {@link jeu.modele.Joueur#getPseudo()}.
      */
     @Test
     void testGetPseudo() {
@@ -64,7 +69,7 @@ class TestJoueur {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Joueur#getCartesEnMains()}.
+     * {@link jeu.modele.Joueur#getCartesEnMains()}.
      */
     @Test
     void testGetCartesEnMains() {
@@ -80,7 +85,7 @@ class TestJoueur {
 
     /**
      * Méthode de test pour 
-     * {@link modele.jeu.Joueur#setCartesEnMains(Carte carte)}.
+     * {@link jeu.modele.Joueur#setCartesEnMains(Carte carte)}.
      */
     @Test
     void testSetCartesEnMains() {
