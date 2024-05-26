@@ -346,6 +346,7 @@ class TestTour {
      */
     @Test
     void testPoser() {
+        //TODO Méthode dev, donc à tester !!
         fail("Not yet implemented");
     }
 

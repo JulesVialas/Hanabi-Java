@@ -267,6 +267,43 @@ public class Partie {
     }
     
     /**
+     * @return la pile de feux d'artifices jaunes posés
+     */
+    public Stack<Carte> getFeuxPosesJaune() {
+        return this.feuxPoses.getPileJaune();
+    }
+    
+    /**
+     * @return la pile de feux d'artifices verts posés
+     */
+    public Stack<Carte> getFeuxPosesVert() {
+        return this.feuxPoses.getPileVert();
+    }
+    
+    /**
+     * @return la pile de feux d'artifices bleu posés
+     */
+    public Stack<Carte> getFeuxPosesBleu() {
+        return this.feuxPoses.getPileBleu();
+    }
+    
+    /**
+     * @return la pile de feux d'artifices blancs posés
+     */
+    public Stack<Carte> getFeuxPosesBlanc() {
+        return this.feuxPoses.getPileBlanc();
+    }
+    
+    /**
+     * @return la pile de feux d'artifices rouges posés
+     */
+    public Stack<Carte> getFeuxPosesRouge() {
+        return this.feuxPoses.getPileRouge();
+    }
+    
+    
+    
+    /**
      * Distribue le nombre de cartes souhaité de la pioche à un 
      * joueur. Cette méthode sert uniquement à la distribution lors 
      * du début de partie.

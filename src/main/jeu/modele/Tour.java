@@ -190,12 +190,94 @@ public class Tour {
      * @param carteAPoser la carte que le joueur pose sur le plateau
      */
     public void poser(Carte carteAPoser) {
-        // TODO vérif que carte complète
-        // TODO si complète pas, rouge++
+        
+        boolean doesContinueFirework; // Indique si la carte continue le feu
+        doesContinueFirework = false;
+        
+        switch(carteAPoser.getCouleur()) {
+            case Couleur.ROUGE:
+                /*
+                 *  On teste si la valeur de la carte à poser est la suivante
+                 *  attendue
+                 */
+                doesContinueFirework 
+                = carteAPoser.getValeur().getValeurNumerique() 
+                  == partieDuTour.getFeuxPosesRouge()
+                                 .peek().getValeur().getValeurNumerique() + 1;
+                if (doesContinueFirework) {
+                    
+                    /* On mets la carte sur pile rouge */
+                    partieDuTour.getFeuxPosesRouge().push(carteAPoser);
+                }
+                break;
+            case Couleur.JAUNE:
+                doesContinueFirework 
+                = carteAPoser.getValeur().getValeurNumerique() 
+                  == partieDuTour.getFeuxPosesJaune()
+                                 .peek().getValeur().getValeurNumerique() + 1;
+                if (doesContinueFirework) {
+                    partieDuTour.getFeuxPosesJaune().push(carteAPoser);
+                }
+                break;
+            case Couleur.VERT:
+                doesContinueFirework 
+                = carteAPoser.getValeur().getValeurNumerique() 
+                  == partieDuTour.getFeuxPosesVert()
+                                 .peek().getValeur().getValeurNumerique() + 1;
+                if (doesContinueFirework) {
+                    partieDuTour.getFeuxPosesVert().push(carteAPoser);
+                }
+                break;
+            case Couleur.BLEU:
+                doesContinueFirework 
+                = carteAPoser.getValeur().getValeurNumerique() 
+                  == partieDuTour.getFeuxPosesBleu()
+                                 .peek().getValeur().getValeurNumerique() + 1;
+                if (doesContinueFirework) {
+                    partieDuTour.getFeuxPosesBleu().push(carteAPoser);
+                }
+                break;
+            default: //case Couleur.BLANC:
+                doesContinueFirework 
+                = carteAPoser.getValeur().getValeurNumerique() 
+                  == partieDuTour.getFeuxPosesBlanc()
+                                 .peek().getValeur().getValeurNumerique() + 1;
+                if (doesContinueFirework) {
+                    partieDuTour.getFeuxPosesBlanc().push(carteAPoser);
+                }
+                break;     
+        }
+        
+        if (!doesContinueFirework) { // Carte invalide
+            /* On défausse la carte */
+            partieDuTour.getDefausse().push(carteAPoser);                        
+                
+            /* On ajoute un jeton rouge */
+            partieDuTour.getJetons().incrementRouges();
+            
+        } else if (doesContinueFirework // Carte posée est 5 donc termine le feu
+                   && carteAPoser.getValeur().getValeurNumerique() == 5
+                   && partieDuTour.getJetons().getBleus() 
+                   < JetonsPlateau.NB_JETONS_BLEUS_MAX) {
+            
+            /* On ajoute un jeton bleu s'il ne sont pas au maximum */
+                partieDuTour.getJetons().incrementBleus();
+        }
+
+        /* On enlève la carte jouée de la main du joueur */
+        joueurCourant.getCartesEnMains().remove(carteAPoser);
+        
+        /* On lui en donne une nouvelle s'il en reste dans la pioche */
+        if (!partieDuTour.getPioche().isEmpty()) {
+            
+            joueurCourant.getCartesEnMains().add(partieDuTour
+                                            .getPioche().pop());
+        }
+        //TODO Tests !!
         // TODO mais jsais pas où: stop game si rouge == 3
-        // TODO si valeur de posée == 5, bleu++ si bleu < 8
-        // TODO Filer carte joueur si pioche pas vide
-        // TODO lastTour si pioche vide, trouver pour end
+        // TODO lastTour si pioche vide, trouver pour end => 
+        // mettre vérif à chaque fin d'action en fonction de ce qui peut arriver
+        // (0 pioche ou rouges) ? Pcq tour dépend de l'action !
     }
 
     /**
@@ -220,6 +302,7 @@ public class Tour {
         
         /* Si la pioche n'est pas vide on donne une carte */
         if (!partieDuTour.getPioche().isEmpty()) {
+            
             joueurCourant.getCartesEnMains().add(partieDuTour
                                             .getPioche().pop());
         }
