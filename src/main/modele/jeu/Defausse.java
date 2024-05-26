@@ -7,10 +7,12 @@ package modele.jeu;
 import java.util.Stack;
 
 /**
- * La classe Defausse représente la défausse de carte dans jeu Hanabi. La
- * défausse est une pile de cartes. Les cartes présentes dans la défausse sont
- * inutilisées et sont seulement visible par le joueur pour prendre des bonnes
+ * La classe Defausse représente la défausse de cartes dans le jeu 
+ *  Hanabi. Il s'agit d'une pile de cartes. Les cartes présentes dans
+ * la défausse sont consultables par les joueurs pour orienter leurs
  * décisions.
+ * 
+ * @author Aurélien Valat
  */
 public class Defausse {
 
@@ -19,13 +21,14 @@ public class Defausse {
 
     /**
      * Instancie un objet de type Defausse.
+     * La defausse est vide par défaut.
      */
     public Defausse() {
         this.pile = new Stack<>();
     }
 
     /**
-     * @return pile la pile de cartes de la défausse
+     * @return la pile de cartes de la défausse
      */
     public Stack<Carte> getDefausse() {
         return this.pile;
@@ -34,9 +37,10 @@ public class Defausse {
     /**
      * Remplace la pile de cartes par une nouvelle pile.
      *
-     * @param pile Nouvelle pile de cartes qui constitue la défausse.
+     * @param pileAInserer Nouvelle pile de cartes qui constitue
+     *        la défausse.
      */
-    public void setDefausse(Stack<Carte> pile) {
-        this.pile = pile;
+    public void setDefausse(Stack<Carte> pileAInserer) {
+        this.pile = pileAInserer;
     }
 }
