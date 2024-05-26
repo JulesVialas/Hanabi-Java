@@ -1,6 +1,8 @@
 /*
- * TestPioche.java                                            19 mai 2024
- * IUT de Rodez, Info1 2023-2024 TP4, pas de copyright
+ * TestPioche.java                                       19/05/2024
+ * IUT de Rodez, TP42 (Solignac, Valat, Vialas), pas de copyright.
+ * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
+ * Games/XII Singes.
  */
 package modele.jeu;
 
@@ -11,12 +13,13 @@ import java.util.Stack;
 import org.junit.jupiter.api.Test;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Classe de test pour {@link modele.jeu.Pioche}.
  */
 class TestPioche {
     
     /**
-     * Test method for {@link modele.jeu.Pioche#Pioche()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Pioche#Pioche()}.
      */
     @Test
     void testPioche() {
@@ -41,7 +44,8 @@ class TestPioche {
         
 
     /**
-     * Test method for {@link modele.jeu.Pioche#getPioche()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Pioche#getPioche()}.
      */
     @Test
     void testGetPioche() {
@@ -53,7 +57,8 @@ class TestPioche {
 
     
     /**
-     * Test method for {@link modele.jeu.Pioche#setPioche(java.util.Stack)}.
+     * Méthode de test pour
+     * {@link modele.jeu.Pioche#setPioche(java.util.Stack)}.
      */
     @Test
     void testSetPioche() {
@@ -87,5 +92,4 @@ class TestPioche {
         assertEquals(1, pioche.getPioche().size(), "La pioche doit contenir 1 "
                 + "carte.");
     }
-
 }

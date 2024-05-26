@@ -1,6 +1,8 @@
 /*
- * TestCartesPlateau.java                                            24 mai 2024
- * IUT de Rodez, Info1 2023-2024 TP4, pas de copyright
+ * TestCartesPlateau.java                                   24/05/2024
+ * IUT de Rodez, TP42 (Solignac, Valat, Vialas), pas de copyright.
+ * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
+ * Games/XII Singes.
  */
 package modele.jeu;
 
@@ -17,7 +19,8 @@ import org.junit.jupiter.api.Test;
 class TestCartesPlateau {
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#CartesPlateau()}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#CartesPlateau()}.
      */
     @Test
     void testCartesPlateau() {
@@ -25,7 +28,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#getPileRouge()}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#getPileRouge()}.
      */
     @Test
     void testGetPileRouge() {
@@ -36,7 +40,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#getPileJaune()}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#getPileJaune()}.
      */
     @Test
     void testGetPileJaune() {
@@ -47,7 +52,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#getPileVert()}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#getPileVert()}.
      */
     @Test
     void testGetPileVert() {
@@ -58,7 +64,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#getPileBleu()}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#getPileBleu()}.
      */
     @Test
     void testGetPileBleu() {
@@ -69,7 +76,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#getPileBlanc()}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#getPileBlanc()}.
      */
     @Test
     void testGetPileBlanc() {
@@ -80,7 +88,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#setPileRouge(modele.jeu.Carte)}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#setPileRouge(modele.jeu.Carte)}.
      */
     @Test
     void testSetPileRouge() {
@@ -188,7 +197,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#setPileJaune(modele.jeu.Carte)}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#setPileJaune(modele.jeu.Carte)}.
      */
     @Test
     void testSetPileJaune() {
@@ -296,7 +306,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#setPileVert(modele.jeu.Carte)}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#setPileVert(modele.jeu.Carte)}.
      */
     @Test
     void testSetPileVert() {
@@ -403,7 +414,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#setPileBleu(modele.jeu.Carte)}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#setPileBleu(modele.jeu.Carte)}.
      */
     @Test
     void testSetPileBleu() {
@@ -511,7 +523,8 @@ class TestCartesPlateau {
     }
 
     /**
-     * Test method for {@link modele.jeu.CartesPlateau#setPileBlanc(modele.jeu.Carte)}.
+     * Méthode de test pour
+     * {@link modele.jeu.CartesPlateau#setPileBlanc(modele.jeu.Carte)}.
      */
     @Test
     void testSetPileBlanc() {
@@ -617,5 +630,4 @@ class TestCartesPlateau {
         assertDoesNotThrow(
                 ()->jeu1.setPileBlanc(new Carte(Couleur.BLANC, Valeur.CINQ)));
     }
-
 }

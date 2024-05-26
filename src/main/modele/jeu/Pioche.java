@@ -1,6 +1,8 @@
 /*
- * Pioche.java                  18/05/2024
- * IUT de Rodez, TP42, pas de copyright
+ * Pioche.java                                           18/05/2024
+ * IUT de Rodez, TP42 (Solignac, Valat, Vialas), pas de copyright.
+ * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
+ * Games/XII Singes.
  */
 
 package modele.jeu;

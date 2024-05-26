@@ -1,6 +1,8 @@
 /*
- * TestDefausse.java                                            19 mai 2024
- * IUT de Rodez, Info1 2023-2024 TP4, pas de copyright
+ * TestDefausse.java                                            19/05/2024
+ * IUT de Rodez, TP42 (Solignac, Valat, Vialas), pas de copyright.
+ * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
+ * Games/XII Singes.
  */
 package modele.jeu;
 
@@ -16,7 +18,8 @@ import org.junit.jupiter.api.Test;
 class TestDefausse {
 
     /**
-     * Test method for {@link modele.jeu.Defausse#Defausse()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Defausse#Defausse()}.
      */
     @Test
     void testDefausse() {
@@ -29,7 +32,8 @@ class TestDefausse {
     }
 
     /**
-     * Test method for {@link modele.jeu.Defausse#getDefausse()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Defausse#getDefausse()}.
      */
     @Test
     void testGetDefausse() {
@@ -46,7 +50,8 @@ class TestDefausse {
     }
 
     /**
-     * Test method for {@link modele.jeu.Defausse#setDefausse(java.util.Stack)}.
+     * Méthode de test pour
+     * {@link modele.jeu.Defausse#setDefausse(java.util.Stack)}.
      */
     @Test
     void testSetDefausse() {

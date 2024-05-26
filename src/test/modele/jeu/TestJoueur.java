@@ -1,6 +1,8 @@
 /*
- * TestJoueur.java                                            19 mai 2024
- * IUT de Rodez, Info1 2023-2024 TP4, pas de copyright
+ * TestJoueur.java                                            19/05/2024
+ * IUT de Rodez, TP42 (Solignac, Valat, Vialas), pas de copyright.
+ * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
+ * Games/XII Singes.
  */
 package modele.jeu;
 
@@ -16,7 +18,8 @@ import org.junit.jupiter.api.Test;
 class TestJoueur {
 
     /**
-     * Méthode de test pour {@link modele.jeu.Joueur#Joueur(java.lang.String)}.
+     * Méthode de test pour
+     * {@link modele.jeu.Joueur#Joueur(java.lang.String)}.
      */
     @Test
     void testJoueur() {
@@ -36,7 +39,8 @@ class TestJoueur {
     }
 
     /**
-     * Méthode de test pour {@link modele.jeu.Joueur#getPseudo()}.
+     * Méthode de test pour 
+     * {@link modele.jeu.Joueur#getPseudo()}.
      */
     @Test
     void testGetPseudo() {
@@ -59,7 +63,8 @@ class TestJoueur {
     }
 
     /**
-     * Méthode de test pour {@link modele.jeu.Joueur#getCartesEnMains()}.
+     * Méthode de test pour 
+     * {@link modele.jeu.Joueur#getCartesEnMains()}.
      */
     @Test
     void testGetCartesEnMains() {
@@ -74,7 +79,8 @@ class TestJoueur {
     }
 
     /**
-     * Méthode de test pour {@link modele.jeu.Joueur#setCartesEnMains(Carte carte)}.
+     * Méthode de test pour 
+     * {@link modele.jeu.Joueur#setCartesEnMains(Carte carte)}.
      */
     @Test
     void testSetCartesEnMains() {
@@ -104,5 +110,4 @@ class TestJoueur {
         assertNotEquals(verifWashington, Kamasi.getCartesEnMains());
         assertNotEquals(verifKamasi, Washington.getCartesEnMains());
     }
-
 }

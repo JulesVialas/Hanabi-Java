@@ -1,6 +1,8 @@
 /*
- * TestCarte.java                                            19 mai 2024
- * IUT de Rodez, Info1 2023-2024 TP4, pas de copyright
+ * TestCarte.java                                            19/05/2024
+ * IUT de Rodez, TP42 (Solignac, Valat, Vialas), pas de copyright.
+ * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
+ * Games/XII Singes.
  */
 package modele.jeu;
 
@@ -17,7 +19,8 @@ import org.junit.jupiter.api.Test;
 class TestCarte {
 
     /**
-     * Test method for {@link modele.jeu.Carte#Carte(modele.jeu.Carte.Couleur, int)}.
+     * Méthode de test pour
+     * {@link modele.jeu.Carte#Carte(modele.jeu.Carte.Couleur, int)}.
      */
     @Test
     void testCarte() {
@@ -323,7 +326,8 @@ class TestCarte {
     }
 
     /**
-     * Test method for {@link modele.jeu.Carte#getCouleurConnue()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Carte#getCouleurConnue()}.
      */
     @Test
     void testGetCouleurConnue() {
@@ -540,7 +544,8 @@ class TestCarte {
     }
 
     /**
-     * Test method for {@link modele.jeu.Carte#toString()}.
+     * Méthode de test pour
+     * {@link modele.jeu.Carte#toString()}.
      */
     @Test
     void testToString() {
