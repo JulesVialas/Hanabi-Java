@@ -225,87 +225,95 @@ class TestTour {
         tour1.setPartieDuTour(partie1);
         tour2.setPartieDuTour(partie1);
         
-        /* On initialise les jetons bleus à 1 */
+        /* Le joueur veut donner un indice à sa propre main */
+        assertThrows(IllegalStateException.class,
+                ()-> tour1.donnerIndice(carte1, 'c'));
+        
+        /* On défini les jetons bleus à 1 */
         tour1.getPartieDuTour().getJetons().setBleus(1);
         tour2.getPartieDuTour().getJetons().setBleus(1);
 
         /* On peut donner un indice car 1 jeton est dispo */
-        assertDoesNotThrow(() -> tour1.donnerIndice(partie1.getJoueur1(),
-                                                    carte1, 'c'));
+        assertDoesNotThrow(() -> tour1.donnerIndice(carte2, 'c'));
         /* 
          * L'indice est donné, donc le booleen de la carte qui a reçu
          *  l'indice est true, et false pour celle qui ne l'a pas reçu 
          */
-        assertTrue(carte1.getCouleurConnue());
-        assertFalse(carte2.getCouleurConnue());
+        assertTrue(carte2.getCouleurConnue());
+        assertFalse(carte1.getCouleurConnue());
         assertEquals(0, tour1.getPartieDuTour().getJetons().getBleus());
 
         /* Tentative de donner indice lorsque zéro jetons bleus */
         assertThrows(IllegalStateException.class,
-                () -> tour2.donnerIndice(partie1.getJoueur2(),
-                                                    carte2, 'v'));
+                () -> tour2.donnerIndice(carte1, 'v'));
+        
         /* On redonne un jeton */
         tour2.getPartieDuTour().getJetons().setBleus(1);
         
         /* On donne un indice */
-        assertDoesNotThrow(() -> tour2.donnerIndice(partie1.getJoueur2(),
-                                                    carte2, 'v'));
+        assertDoesNotThrow(() -> tour2.donnerIndice(carte1, 'v'));
         /* 
          * L'indice est donné, donc le booleen de la carte qui a reçu
          * l'indice est true, et false pour celle qui ne l'a pas reçu
          */
-        assertTrue(carte2.getValeurConnue());
-        assertFalse(carte1.getValeurConnue());
+        assertTrue(carte1.getValeurConnue());
+        assertFalse(carte2.getValeurConnue());
         
         /* 
          * On essaie de redonner le même indice à une carte, ce qui ne 
          * doit pas poser de problèmes 
          */
         tour2.getPartieDuTour().getJetons().setBleus(1);
-        assertDoesNotThrow(() -> tour2.donnerIndice(partie1.getJoueur2(),
-                carte2, 'v'));
+        assertDoesNotThrow(() -> tour2.donnerIndice(carte1, 'v'));
         
         /* Il n'y a plus de jetons bleus */
         assertEquals(0, tour2.getPartieDuTour().getJetons().getBleus());
 
         /* Les saisies d'indices sont invalides ( != 'c' et 'v') */
         assertThrows(IllegalStateException.class, () -> 
-            tour2.donnerIndice(partie1.getJoueur2(), carte1, 'c'));
+            tour2.donnerIndice(carte1, 'c'));
         
         /* On redonne un jeton mais les saisies d'indices sont invalides */
         tour2.getPartieDuTour().getJetons().setBleus(1);
         assertThrows(IllegalArgumentException.class, () ->
-            tour2.donnerIndice(partie1.getJoueur2(), carte1, 'x'));
+            tour2.donnerIndice(carte1, 'x'));
         
         /* On essaie de redonner le même indice à une carte */
         tour2.getPartieDuTour().getJetons().setBleus(1);
         assertDoesNotThrow(()-> 
-            tour2.donnerIndice(partie1.getJoueur2(), carte1, 'c'));
+            tour2.donnerIndice(carte1, 'c'));
         
         /* Création de joueurs pour tester la propagation de l'indice */
-        Joueur joueur1 = new Joueur("Kyle");
-        Joueur joueur2 = new Joueur("Poole");
-        Tour tour3 = new Tour(joueur2, 3);
-        tour3.setPartieDuTour(partie1);
-        partie1.getJetons().setBleus(8);
+        Partie partie2 = new Partie("Kyle", "Poole"); // Jetons bleus à 8 par défaut
+        Tour tour3 = new Tour(partie2.getJoueur2(), 3);
+        Tour tour4 = new Tour(partie2.getJoueur1(), 3);
+        tour3.setPartieDuTour(partie2); 
+        tour4.setPartieDuTour(partie2);
         
         Carte unJaune1 = new Carte(Couleur.JAUNE, Valeur.UN);
         
-        joueur1.setCartesEnMains(unJaune1);
-        joueur1.setCartesEnMains(new Carte(Couleur.JAUNE, Valeur.DEUX));
-        joueur1.setCartesEnMains(new Carte(Couleur.JAUNE, Valeur.TROIS));
-        joueur1.setCartesEnMains(new Carte(Couleur.JAUNE, Valeur.QUATRE));
+        /* On remplace la main du joueur */
+        partie2.getJoueur1().getCartesEnMains().remove(3);
+        partie2.getJoueur1().getCartesEnMains().remove(2);
+        partie2.getJoueur1().getCartesEnMains().remove(1);
+        partie2.getJoueur1().getCartesEnMains().remove(0);
+        
+        
+        partie2.getJoueur1().setCartesEnMains(unJaune1);
+        partie2.getJoueur1().setCartesEnMains(new Carte(Couleur.JAUNE, Valeur.DEUX));
+        partie2.getJoueur1().setCartesEnMains(new Carte(Couleur.JAUNE, Valeur.TROIS));
+        partie2.getJoueur1().setCartesEnMains(new Carte(Couleur.JAUNE, Valeur.QUATRE));
         
         /* On vérifie qu'aucun carte n'a l'indice de couleur */
-        for (Carte cartesDuJoueur : joueur1.getCartesEnMains()) {
+        for (Carte cartesDuJoueur : partie2.getJoueur1().getCartesEnMains()) {
             assertFalse(cartesDuJoueur.getCouleurConnue());
         }
         
         /* L'indice est donné par joueur 2 à joueur 1 */
-        tour3.donnerIndice(joueur1, unJaune1, 'c');
+        tour3.donnerIndice(unJaune1, 'c');
         
         /* On vérifie que toutes les cartes ont reçu l'indice */
-        for (Carte cartesDuJoueur : joueur1.getCartesEnMains()) {
+        for (Carte cartesDuJoueur : partie2.getJoueur1().getCartesEnMains()) {
             assertTrue(cartesDuJoueur.getCouleurConnue());
         }
         
@@ -313,29 +321,29 @@ class TestTour {
         Carte unRouge1 = new Carte(Couleur.ROUGE, Valeur.UN);
         Carte unJaune2 = new Carte(Couleur.JAUNE, Valeur.UN);
         Carte quatreVert1 = new Carte(Couleur.VERT, Valeur.QUATRE);
-        joueur2.setCartesEnMains(unJaune1);
-        joueur2.setCartesEnMains(unRouge1);
-        joueur2.setCartesEnMains(unJaune2);
-        joueur2.setCartesEnMains(quatreVert1);
+        partie2.getJoueur2().setCartesEnMains(unJaune1);
+        partie2.getJoueur2().setCartesEnMains(unRouge1);
+        partie2.getJoueur2().setCartesEnMains(unJaune2);
+        partie2.getJoueur2().setCartesEnMains(quatreVert1);
         
         /* On vérifie qu'aucun carte n'a l'indice de valeur */
-        for (Carte cartesDuJoueur : joueur2.getCartesEnMains()) {
+        for (Carte cartesDuJoueur : partie2.getJoueur2().getCartesEnMains()) {
             assertFalse(cartesDuJoueur.getValeurConnue());
         }
         
-        /* 
-         * L'indice est donné par joueur 2 à lui-même, comportement
-         * accepté pour les classes métiers, sera empeché par l'IHM
-         * FIXME peut-être throw si donneur = receveur
-         */
-        tour3.donnerIndice(joueur2, unJaune1, 'v');
+        /* L'indice est donné par joueur 2 à lui-même, donc refusé */
+        assertThrows(IllegalStateException.class,
+                ()->tour3.donnerIndice(unRouge1, 'v'));
+        
+        /* L'indice est donné par J1 à J2 */
+        assertDoesNotThrow(()->tour4.donnerIndice(unRouge1, 'v'));
         
         /* 
          * On vérifie que seules les cartes répondant
          * au critère ont reçu l'indice
          */
-        assertTrue(unJaune1.getValeurConnue());
         assertTrue(unRouge1.getValeurConnue());
+        assertTrue(unJaune1.getValeurConnue());
         assertTrue(unJaune2.getValeurConnue());
         assertFalse(quatreVert1.getValeurConnue());
     }
