@@ -101,4 +101,73 @@ class TestPartie {
     void testGetPioche() {
         fail("Not yet implemented");
     }
+    
+    /**
+     * Méthode de test pour 
+     * {@link jeu.modele.Partie#calculerScore()}.
+     */
+    @Test
+    void testCalculerScore() {
+
+        /* Score maximal car trop forts :D */
+        Partie partie1 = new Partie("SOLIGNAC", "VALAT", "VIALAS");
+        partie1.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.UN));
+        partie1.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.DEUX));
+        partie1.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.TROIS));
+        partie1.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.QUATRE));
+        partie1.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.CINQ));
+        
+        partie1.getFeuxPosesJaune().push(new Carte(Couleur.JAUNE, Valeur.UN));
+        partie1.getFeuxPosesJaune().push(new Carte(Couleur.JAUNE, Valeur.DEUX));
+        partie1.getFeuxPosesJaune().push(new Carte(Couleur.JAUNE, Valeur.TROIS));
+        partie1.getFeuxPosesJaune().push(new Carte(Couleur.JAUNE, Valeur.QUATRE));
+        partie1.getFeuxPosesJaune().push(new Carte(Couleur.JAUNE, Valeur.CINQ));
+        
+        partie1.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.UN));
+        partie1.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.DEUX));
+        partie1.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.TROIS));
+        partie1.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.QUATRE));
+        partie1.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.CINQ));
+        
+        partie1.getFeuxPosesBleu().push(new Carte(Couleur.BLEU, Valeur.UN));
+        partie1.getFeuxPosesBleu().push(new Carte(Couleur.BLEU, Valeur.DEUX));
+        partie1.getFeuxPosesBleu().push(new Carte(Couleur.BLEU, Valeur.TROIS));
+        partie1.getFeuxPosesBleu().push(new Carte(Couleur.BLEU, Valeur.QUATRE));
+        partie1.getFeuxPosesBleu().push(new Carte(Couleur.BLEU, Valeur.CINQ));
+        
+        partie1.getFeuxPosesBlanc().push(new Carte(Couleur.BLANC, Valeur.UN));
+        partie1.getFeuxPosesBlanc().push(new Carte(Couleur.BLANC, Valeur.DEUX));
+        partie1.getFeuxPosesBlanc().push(new Carte(Couleur.BLANC, Valeur.TROIS));
+        partie1.getFeuxPosesBlanc().push(new Carte(Couleur.BLANC, Valeur.QUATRE));
+        partie1.getFeuxPosesBlanc().push(new Carte(Couleur.BLANC, Valeur.CINQ));
+        
+        assertEquals(25, partie1.calculerScore());
+        
+        /* Score égal à 0 car aucune carte posée */
+        Partie partie2 = new Partie("Les", "Gens", "Pas", "Forts");
+
+        assertEquals(0, partie2.calculerScore());
+        
+        /* Score égal à 14, (feux: 4, 2, 5, 3, 0) */
+        Partie partie3 = new Partie("Un", "Score", "Honorable");
+        partie3.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.UN));
+        partie3.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.DEUX));
+        partie3.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.TROIS));
+        partie3.getFeuxPosesRouge().push(new Carte(Couleur.ROUGE, Valeur.QUATRE));
+        
+        partie3.getFeuxPosesJaune().push(new Carte(Couleur.JAUNE, Valeur.UN));
+        partie3.getFeuxPosesJaune().push(new Carte(Couleur.JAUNE, Valeur.DEUX));
+        
+        partie3.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.UN));
+        partie3.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.DEUX));
+        partie3.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.TROIS));
+        partie3.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.QUATRE));
+        partie3.getFeuxPosesVert().push(new Carte(Couleur.VERT, Valeur.CINQ));
+        
+        partie3.getFeuxPosesBleu().push(new Carte(Couleur.BLEU, Valeur.UN));
+        partie3.getFeuxPosesBleu().push(new Carte(Couleur.BLEU, Valeur.DEUX));
+        partie3.getFeuxPosesBleu().push(new Carte(Couleur.BLEU, Valeur.TROIS));
+        
+        assertEquals(14, partie3.calculerScore());
+    }
 }

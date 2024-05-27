@@ -6,6 +6,7 @@
  */
 package jeu.modele;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 import jeu.utilitaire.PersistanceHanabi;
@@ -317,5 +318,60 @@ public class Partie {
         for (int index = 0; index < nbCarte; index++) {
             receveurCarte.getCartesEnMains().add(pioche.getPaquet().pop());
         }
+    }
+    
+    /**
+     * Calcule le score de l'équipe. Pour rappel le score est 
+     * calculé en additionnant la plus haute valeur de chacun des
+     * 5 feux d'artifice.
+     * 
+     * @return le score de l'équipe
+     */
+    public int calculerScore() {
+        
+        int somme;
+        somme = 0;
+        
+        try {
+            somme = somme 
+                    + getFeuxPosesRouge().peek().getValeur()
+                                                .getValeurNumerique();
+        } catch(EmptyStackException e) {
+            // empty body; => si pile vide alors aucune carte du feu posée
+        }
+        
+        try {
+            somme = somme 
+                    + getFeuxPosesJaune().peek().getValeur()
+                                                .getValeurNumerique();
+        } catch(EmptyStackException e) {
+            // empty body; 
+        }
+        
+        try {
+            somme = somme 
+                    + getFeuxPosesVert().peek().getValeur()
+                                                .getValeurNumerique();
+        } catch(EmptyStackException e) {
+            // empty body; 
+        }
+        
+        try {
+            somme = somme 
+                    + getFeuxPosesBleu().peek().getValeur()
+                                                .getValeurNumerique();
+        } catch(EmptyStackException e) {
+            // empty body; 
+        }
+        
+        try {
+            somme = somme 
+                    + getFeuxPosesBlanc().peek().getValeur()
+                                                .getValeurNumerique();
+        } catch(EmptyStackException e) {
+            // empty body; 
+        }
+        
+        return somme;
     }
 }
