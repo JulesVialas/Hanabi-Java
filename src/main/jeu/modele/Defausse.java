@@ -45,4 +45,11 @@ public class Defausse {
     public void setDefausse(Stack<Carte> pileAInserer) {
         this.pile = pileAInserer;
     }
+    
+    /**
+     * @return la pile de la défausse
+     */
+    public Stack<Carte> getDefausse() {
+        return this.pile;
+    }
 }
