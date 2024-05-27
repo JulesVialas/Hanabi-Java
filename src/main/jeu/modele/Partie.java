@@ -8,6 +8,8 @@ package jeu.modele;
 
 import java.util.Stack;
 
+import jeu.utilitaire.PersistanceHanabi;
+
 /**
  * Le jeu de société Hanabi est un jeu coopératif, c'est-à-dire un 
  * jeu dans lequel les joueurs ne s'affrontent pas mais font équipe
@@ -33,7 +35,7 @@ public class Partie {
     private static final int NB_CARTES_4_5_JOUEURS = 4;
     
     /** L'identifiant de la partie */
-    private int identifiant; //FIXME trouver qqc d'unique => hash datePseudosHeure ?
+    private long identifiant;
     
     /** Joueur 1 de la partie */
     private Joueur joueur1;
@@ -76,7 +78,7 @@ public class Partie {
      * @param pseudoJ2 le pseudo du joueur 2
      */
     public Partie(String pseudoJ1, String pseudoJ2) {
-        identifiant = 1; //TODO stub
+        identifiant = PersistanceHanabi.genererIDPartie();
         
         //FIXME vérif si faut set NULL pour 3 autres
         /* Instanciation des joueurs */
@@ -109,7 +111,7 @@ public class Partie {
      * @param pseudoJ3 le pseudo du joueur 3
      */
     public Partie(String pseudoJ1, String pseudoJ2, String pseudoJ3) {
-        identifiant = 1; //TODO stub
+        identifiant = PersistanceHanabi.genererIDPartie();
         
         /* Instanciation des joueurs */
         joueur1 = new Joueur(pseudoJ1);
@@ -145,7 +147,7 @@ public class Partie {
      */
     public Partie(String pseudoJ1, String pseudoJ2, String pseudoJ3,
         String pseudoJ4) {
-        identifiant = 1; //TODO stub
+        identifiant = PersistanceHanabi.genererIDPartie();
         
         /* Instanciation des joueurs */
         joueur1 = new Joueur(pseudoJ1);
@@ -184,7 +186,7 @@ public class Partie {
      */
     public Partie(String pseudoJ1, String pseudoJ2, String pseudoJ3,
         String pseudoJ4, String pseudoJ5) {
-        identifiant = 1; //TODO stub
+        identifiant = PersistanceHanabi.genererIDPartie();
         
         /* Instanciation des joueurs */
         joueur1 = new Joueur(pseudoJ1);
