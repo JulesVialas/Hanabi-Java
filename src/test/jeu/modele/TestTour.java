@@ -346,8 +346,71 @@ class TestTour {
      */
     @Test
     void testPoser() {
-        //TODO Méthode dev, donc à tester !!
-        fail("Not yet implemented");
+        Partie partie2J = new Partie("Roberto", "Fonseca");
+        Tour tour1 = new Tour(partie2J.getJoueur1(), 1);
+        tour1.setPartieDuTour(partie2J);
+        
+        Carte unJauneDefinitif = new Carte(Couleur.JAUNE, Valeur.UN);
+        Carte troisJauneDefinitif = new Carte(Couleur.JAUNE, Valeur.TROIS);
+        
+        /* 
+         * On remplace 1 carte pour que le joueur
+         * possède un 1 jaune, et ainsi tester l'ajout valide
+         * sur une pile vide.
+         */
+        tour1.getJoueurCourant().getCartesEnMains().remove(0);
+        tour1.getJoueurCourant().getCartesEnMains()
+                                .add(unJauneDefinitif);
+        
+        /* On vérifie que la pile de feux jaunes est bien vide */
+        assertTrue(partie2J.getFeuxPosesJaune().isEmpty());
+        
+        /* On sauvegarde la main avant d'avoir posé la carte */
+        List<Carte> saveAvantPose1;
+        saveAvantPose1 = List.copyOf(tour1.getJoueurCourant()
+                                          .getCartesEnMains());
+        
+        /* On pose le 1 jaune, qui se trouve à l'index 4 car ajouté manuellement */
+        tour1.poser(tour1.getJoueurCourant().getCartesEnMains().get(4));
+        
+        /* On vérifie que les mains avant/après sont différentes */
+        assertNotEquals(tour1.getJoueurCourant().getCartesEnMains(),
+                saveAvantPose1);
+        
+        /* On vérifie que la pile jaune contient le 1 sur le dessus */
+        assertTrue(partie2J.getFeuxPosesJaune().contains(unJauneDefinitif));
+        
+        /* On vérifie qu'aucun jeton rouge n'a été ajouté */
+        assertEquals(0, partie2J.getJetons().getRouges());
+        
+        /* On vérifie qu'aucun jeton bleu n'a été ajouté (car au max par défaut) */
+        assertEquals(8, partie2J.getJetons().getBleus());
+        
+        /* On remplace ensuite une carte par un 3 jaune */
+        tour1.getJoueurCourant().getCartesEnMains().remove(0);
+        tour1.getJoueurCourant().getCartesEnMains()
+                                .add(troisJauneDefinitif);
+        
+        /* On sauvegarde la main pour comparer après l'action */
+        List<Carte> saveAvantPose2;
+        saveAvantPose2 = List.copyOf(tour1.getJoueurCourant()
+                                          .getCartesEnMains());
+        
+        /* On essaie de poser le 3 jaune sur la pile qui contient le 1 jaune */
+        tour1.poser(tour1.getJoueurCourant().getCartesEnMains().get(4));
+        
+        /* On vérifie que la carte n'a pas été ajoutée à la pile jaune */
+        assertFalse(partie2J.getFeuxPosesJaune().contains(troisJauneDefinitif));
+        
+        /* On vérifie qu'un jeton rouge a bien été ajouté */
+        assertEquals(1, partie2J.getJetons().getRouges());
+        
+        /* On vérifie qu'aucun jeton bleu n'a été ajouté (car au max par défaut) */
+        assertEquals(8, partie2J.getJetons().getBleus());
+        
+        /* On vérifie que la main avant/après est différente */
+        assertNotEquals(saveAvantPose2, tour1.getJoueurCourant()
+                                             .getCartesEnMains());
     }
 
     /**

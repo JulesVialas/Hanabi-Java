@@ -198,12 +198,16 @@ public class Tour {
             case Couleur.ROUGE:
                 /*
                  *  On teste si la valeur de la carte à poser est la suivante
-                 *  attendue
+                 *  attendue, et si la valeur == 1 si la pile est vide pour 
+                 *  éviter de throw EmptyStackException.
                  */
                 doesContinueFirework 
-                = carteAPoser.getValeur().getValeurNumerique() 
-                  == partieDuTour.getFeuxPosesRouge()
-                                 .peek().getValeur().getValeurNumerique() + 1;
+                = partieDuTour.getFeuxPosesRouge().empty() 
+                        && carteAPoser.getValeur() == Valeur.UN
+                  || carteAPoser.getValeur().getValeurNumerique() 
+                      == partieDuTour.getFeuxPosesRouge()
+                                     .peek().getValeur().getValeurNumerique()
+                                     + 1;
                 if (doesContinueFirework) {
                     
                     /* On mets la carte sur pile rouge */
@@ -212,36 +216,48 @@ public class Tour {
                 break;
             case Couleur.JAUNE:
                 doesContinueFirework 
-                = carteAPoser.getValeur().getValeurNumerique() 
-                  == partieDuTour.getFeuxPosesJaune()
-                                 .peek().getValeur().getValeurNumerique() + 1;
+                = partieDuTour.getFeuxPosesJaune().empty() 
+                        && carteAPoser.getValeur() == Valeur.UN
+                  || carteAPoser.getValeur().getValeurNumerique() 
+                      == partieDuTour.getFeuxPosesJaune()
+                                     .peek().getValeur().getValeurNumerique()
+                                     + 1;
                 if (doesContinueFirework) {
                     partieDuTour.getFeuxPosesJaune().push(carteAPoser);
                 }
                 break;
             case Couleur.VERT:
                 doesContinueFirework 
-                = carteAPoser.getValeur().getValeurNumerique() 
-                  == partieDuTour.getFeuxPosesVert()
-                                 .peek().getValeur().getValeurNumerique() + 1;
+                = partieDuTour.getFeuxPosesVert().empty() 
+                        && carteAPoser.getValeur() == Valeur.UN
+                  || carteAPoser.getValeur().getValeurNumerique() 
+                      == partieDuTour.getFeuxPosesVert()
+                                     .peek().getValeur().getValeurNumerique()
+                                     + 1;
                 if (doesContinueFirework) {
                     partieDuTour.getFeuxPosesVert().push(carteAPoser);
                 }
                 break;
             case Couleur.BLEU:
                 doesContinueFirework 
-                = carteAPoser.getValeur().getValeurNumerique() 
-                  == partieDuTour.getFeuxPosesBleu()
-                                 .peek().getValeur().getValeurNumerique() + 1;
+                = partieDuTour.getFeuxPosesBleu().empty() 
+                        && carteAPoser.getValeur() == Valeur.UN
+                  || carteAPoser.getValeur().getValeurNumerique() 
+                      == partieDuTour.getFeuxPosesBleu()
+                                     .peek().getValeur().getValeurNumerique()
+                                     + 1;
                 if (doesContinueFirework) {
                     partieDuTour.getFeuxPosesBleu().push(carteAPoser);
                 }
                 break;
             default: //case Couleur.BLANC:
                 doesContinueFirework 
-                = carteAPoser.getValeur().getValeurNumerique() 
-                  == partieDuTour.getFeuxPosesBlanc()
-                                 .peek().getValeur().getValeurNumerique() + 1;
+                = partieDuTour.getFeuxPosesBlanc().empty() 
+                        && carteAPoser.getValeur() == Valeur.UN
+                  || carteAPoser.getValeur().getValeurNumerique() 
+                      == partieDuTour.getFeuxPosesBlanc()
+                                     .peek().getValeur().getValeurNumerique()
+                                     + 1;
                 if (doesContinueFirework) {
                     partieDuTour.getFeuxPosesBlanc().push(carteAPoser);
                 }
@@ -294,8 +310,6 @@ public class Tour {
         
         /* On ajoute la carte à la défausse */
         getPartieDuTour().getDefausse().push(carteADefausser);
-        
-        System.out.println(joueurCourant.getCartesEnMains());
         
         /* On enlève la carte du jeu du joueur */
         joueurCourant.getCartesEnMains().remove(carteADefausser);
