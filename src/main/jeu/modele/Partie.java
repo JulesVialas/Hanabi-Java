@@ -373,4 +373,41 @@ public class Partie {
         
         return somme;
     }
+    
+    /**
+     * Indique si la partie est terminée. Pour que la partie soit 
+     * terminée il faut que l'un des 3 cas suivant se présente:
+     * <ul>
+     *     <li>les jetons rouges sont au nombre de 3</li>
+     *     <li>tous les feux d'artifices sont complétés</li>
+     *     <li>chaque joueur a joué une dernière fois après qu'un
+     *         membre de l'équipe ait pioché la dernière carte 
+     *         (y compris ce dernier)
+     *     </li>
+     * </ul>
+     * @return true si la partie est finie, false sinon
+     */
+    private boolean isPartieFinie() {
+        //TODO trouver pour le cas de la pioche finie donc 
+        // dernier tour pour chaque joueur
+        
+        return getJetons().getRouges() == 3
+                || areFireworksCompleted();
+                //TODO dernier tour de table a eu lieu
+                //TODO Tests :D
+    }
+    
+    /**
+     * Indique si tous les feux d'artifices ont été complétés.
+     * 
+     * @return true si tous les feux d'artifices sont complets,
+     *         sinon false
+     */
+    private boolean areFireworksCompleted() {
+        return getFeuxPosesRouge().size()== 5
+                && getFeuxPosesJaune().size()== 5
+                && getFeuxPosesVert().size()== 5
+                && getFeuxPosesBleu().size()== 5
+                && getFeuxPosesBlanc().size()== 5;
+    }
 }
