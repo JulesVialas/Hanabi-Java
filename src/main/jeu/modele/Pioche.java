@@ -44,9 +44,16 @@ public class Pioche {
     /**
      * Remplace la pile de cartes par une nouvelle pile
      *
-     * @param pile Nouvelle pile de cartes qui constitue la pioche.
+     * @param pileAMettre Nouvelle pile de cartes qui constitue la pioche.
      */
-    public void setPioche(Stack<Carte> pile) {
-        this.pile = pile;
+    public void setPioche(Stack<Carte> pileAMettre) {
+        this.pile = pileAMettre;
+    }
+    
+    /**
+     * @return la pile de la pioche
+     */
+    public Stack<Carte> getPioche() {
+        return this.pile;
     }
 }
