@@ -81,7 +81,6 @@ public class Partie {
     public Partie(String pseudoJ1, String pseudoJ2) {
         identifiant = PersistanceHanabi.genererIDPartie();
         
-        //FIXME vérif si faut set NULL pour 3 autres
         /* Instanciation des joueurs */
         joueur1 = new Joueur(pseudoJ1);
         joueur2 = new Joueur(pseudoJ2);
