@@ -35,6 +35,13 @@ public class Tour {
     = "Erreur: la nature de l'indice doit être 'c' pour couleur " 
         + "ou 'v' pour valeur" ;
 
+    private static final String ERREUR_INDICE_SOI_MEME 
+    = "Erreur: il n'est pas possible de donner un indice sur les cartes"
+    + " de sa propre main";
+
+    private static final String ERREUR_CARTE_PAS_DANS_MAIN 
+    = "Erreur: aucun joueur ne possède la carte indiquée dans sa main";
+
     /** La partie dans laquelle le tour s'inscrit */
     private Partie partieDuTour;
     
@@ -109,14 +116,22 @@ public class Tour {
      *        'v' pour la valeur
      * @throws IllegalArgumentException si natureIndice n'est ni 'c' ni 'v'
      * @throws IllegalArgumentException si le joueur recevant 
+     *         l'indice n'est pas le joueur possédant la carte recevant 
+     *         l'indice 
+     * @throws IllegalStateException si le joueur recevant 
      *         l'indice est le même qui donne l'indice 
      * @throws IllegalStateException si le nombre de jetons bleus est 
      *         égal à zéro
      */
-    public void donnerIndice(Joueur recepteur, Carte recoitIndice, 
-        char natureIndice) {
-        // FIXME Empecher joueur de se donner indice à soi-même ?
-        // ou alors qu'en graphique ?
+    public void donnerIndice(Carte recoitIndice, char natureIndice) {
+        
+        /* On détermine quel joueur possède la carte */
+        Joueur recepteur = determinerJoueurAyantCarte(recoitIndice);
+        
+        /* On empèche le joueur de se donner un indice à lui-même */
+        if (recepteur == joueurCourant) {
+            throw new IllegalStateException(ERREUR_INDICE_SOI_MEME);
+        }
         
         if (partieDuTour.getJetons().getBleus() <= 0) {
             throw new IllegalStateException(ERREUR_JETONS_BLEUS_INSUFFISANTS);
@@ -137,12 +152,45 @@ public class Tour {
             }
         }
         /* On propage l'indice */
-        propagerIndice(natureIndice, recoitIndice, recepteur);
+        propagerIndice(natureIndice, recoitIndice);
         
         /* On enlève un jeton bleu */
         partieDuTour.getJetons().decrementBleus();
     }
 
+    /**
+     * Détermine quel joueur possède la carte indiquée.
+     * 
+     * @param aSituer la carte dont on souhaite connaître le propriétaire
+     * @return le joueur possédant la carte dans sa main
+     * @throws IllegalStateException si aucun joueur ne possède la carte
+     */
+    private Joueur determinerJoueurAyantCarte(Carte aSituer) {
+        
+        if (partieDuTour.getJoueur1().getCartesEnMains().contains(aSituer)) {
+            return partieDuTour.getJoueur1();
+        }
+        
+        if (partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)) {
+            return partieDuTour.getJoueur2();
+        }
+        
+        if (partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)) {
+            return partieDuTour.getJoueur2();
+        }
+        
+        if (partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)) {
+            return partieDuTour.getJoueur2();
+        }
+        
+        if (partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)) {
+            return partieDuTour.getJoueur2();
+        }
+
+        /* Si aucun joueur ne possède la carte */
+        throw new IllegalStateException(ERREUR_CARTE_PAS_DANS_MAIN);
+    }
+     
     /** 
      * Propage l'indice donné à une carte aux autres cartes
      * de la main du joueur répondant au même critères.
@@ -156,8 +204,9 @@ public class Tour {
      * @throws IllegalStateException si la carte n'est pas dans la 
      *         main d'un joueur.
      */
-    private static void propagerIndice(char natureIndice, Carte valeurIndice,
-            Joueur artificier) {
+    private void propagerIndice(char natureIndice, Carte valeurIndice) {
+        
+        Joueur artificier = determinerJoueurAyantCarte(valeurIndice);
         
         /* Indique si la nature de l'indice est couleur ou valeur */
         boolean indiceCouleur;
