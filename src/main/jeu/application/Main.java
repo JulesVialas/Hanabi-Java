@@ -23,7 +23,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         /* Chargement de la vue de l'application */
         FXMLLoader chargeurFXML = new FXMLLoader();
-        chargeurFXML.setLocation(getClass().getResource("MenuPrincipal.fxml"));
+        chargeurFXML.setLocation(getClass().getResource("vue/MenuPrincipal.fxml"));
         Parent racine;
         try {
             racine = chargeurFXML.load();
