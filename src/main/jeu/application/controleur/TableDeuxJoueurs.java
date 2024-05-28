@@ -42,4 +42,3 @@ public class TableDeuxJoueurs {
         //TODO modele :)
     }
 }
-}
