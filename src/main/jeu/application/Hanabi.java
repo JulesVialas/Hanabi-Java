@@ -20,6 +20,9 @@ import javafx.scene.Scene;
  */
 public class Hanabi extends Application {
 
+    //TODO cf p.61 du cours :D
+    //TODO attributs statiques des scènes => init les 5 even si 2J ?
+    
     @Override
     public void start(Stage primaryStage) {
         /* Chargement de la vue de l'application */

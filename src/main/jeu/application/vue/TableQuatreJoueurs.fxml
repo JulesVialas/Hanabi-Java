@@ -13,7 +13,7 @@
             style="-fx-background-color: white;" 
             xmlns="http://javafx.com/javafx/21" 
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="jeu.application.controleur.ControleurMenuPrincipal"
+            fx:controller="jeu.application.controleur.MenuPrincipal"
 >
    <children>
       <Ellipse fill="#477148" layoutX="308.0" layoutY="200.0" radiusX="270.0" radiusY="185.0" strokeType="INSIDE" />

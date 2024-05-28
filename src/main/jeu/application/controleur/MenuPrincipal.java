@@ -17,14 +17,12 @@ import jeu.modele.Partie;
 /**
  * Joue le rôle de controlleur pour l'application Hanabi.
  * Fait le lien entre la vue présente dans le package
- * {@link jeu.application.vue} et le modele présent dans le package
- * {@link jeu.modele}.
+ * {@link jeu.application.vue#MenuPrincipal.fxml} et le modele
+ * présent dans le package {@link jeu.modele}.
+ * FIXME idk si lien avec modele tbh
  * @author Corentin Solignac
  */
-public class ControleurMenuPrincipal {
-    
-    /** Modèle géré par le contrôleur */
-    private Partie partieEnCours;
+public class MenuPrincipal {
     
     //TODO ajouter tous les @FXML des éléments dynamiques :D
     
