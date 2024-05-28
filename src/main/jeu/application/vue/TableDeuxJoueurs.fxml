@@ -8,11 +8,15 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
+            xmlns="http://javafx.com/javafx/21" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="jeu.application.controleur.ControleurHanabi"
+>
    <children>
       <Ellipse fill="#477148" layoutX="308.0" layoutY="200.0" radiusX="270.0" radiusY="185.0" strokeType="INSIDE" />
-      <HBox alignment="CENTER" layoutX="46.0" layoutY="175.0" spacing="5.0">
+      <HBox alignment="CENTER" layoutX="240.0" layoutY="31.0" spacing="5.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
@@ -20,31 +24,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="436.0" layoutY="175.0" spacing="5.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="157.0" layoutY="50.0" spacing="5.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="319.0" layoutY="50.0" spacing="5.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="232.0" layoutY="311.0" spacing="5.0">
+      <HBox alignment="CENTER" layoutX="240.0" layoutY="311.0" spacing="5.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
@@ -66,27 +46,12 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="130.0" layoutY="250.0" strokeType="INSIDE" width="30.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="470.0" layoutY="250.0" strokeType="INSIDE" width="30.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="455.0" layoutY="250.0" strokeType="INSIDE" width="30.0" />
-      <Label layoutX="272.0" layoutY="361.0" text="Joueur 1" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="361.0" text="Joueur 1" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="86.0" layoutY="225.0" text="Joueur 2" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="197.0" layoutY="100.0" text="Joueur 3" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="359.0" layoutY="100.0" text="Joueur 4" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="476.0" layoutY="225.0" text="Joueur 5" textFill="WHITE">
+      <Label layoutX="280.0" layoutY="81.0" text="Joueur 2" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

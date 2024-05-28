@@ -4,7 +4,6 @@
  * Hanabi est un jeu créé par Antoine Bauza, et édité par Cocktail
  * Games/XII Singes.
  */
-
 package jeu.application.controleur;
 
 import javafx.event.ActionEvent;
