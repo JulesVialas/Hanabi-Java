@@ -21,7 +21,7 @@ import jeu.modele.Partie;
  * {@link jeu.modele}.
  * @author Corentin Solignac
  */
-public class ControleurHanabi {
+public class ControleurMenuPrincipal {
     
     /** Modèle géré par le contrôleur */
     private Partie partieEnCours;

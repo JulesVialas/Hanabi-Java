@@ -15,9 +15,10 @@ import javafx.scene.Scene;
 
 /**
  * Point d'entrée de l'application Hanabi.
+ * Ouvre l'application sur le menu principal.
  * @author Corentin Solignac
  */
-public class Main extends Application {
+public class Hanabi extends Application {
 
     @Override
     public void start(Stage primaryStage) {
