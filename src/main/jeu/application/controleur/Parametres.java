@@ -8,10 +8,15 @@ package jeu.application.controleur;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 import jeu.modele.Partie; 
 
 /**
@@ -25,6 +30,9 @@ import jeu.modele.Partie;
 public class Parametres {
 
     //TODO ajouter tous les @FXML des éléments dynamiques :D
+	
+	@FXML
+	private Button retourMenuPrincipal;
     
     /**
      * Prépare le modèle et la vue.
@@ -36,11 +44,16 @@ public class Parametres {
         
     }
     
-    /**
-     * TODO
-     */
     @FXML
-    void idk(ActionEvent event) {
-        //TODO modele :O
-    }
+	private void retourMenu(ActionEvent event) {
+		try {
+            Stage stage = (Stage) retourMenuPrincipal.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/jeu/application/vue/MenuPrincipal.fxml"));
+            Parent root = loader.load();
+            Scene sceneMenuPrincipal = new Scene(root, 600, 400);
+            stage.setScene(sceneMenuPrincipal);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
 }

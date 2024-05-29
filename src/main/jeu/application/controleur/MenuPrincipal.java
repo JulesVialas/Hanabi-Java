@@ -8,10 +8,15 @@ package jeu.application.controleur;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 import jeu.modele.Partie; 
 
 /**
@@ -37,27 +42,52 @@ public class MenuPrincipal {
         //FIXME je suppose qu'on ne créé pas de partie yet ?
     }
     
+    @FXML
+    private Button nouvellePartieButton;
+    
+    @FXML
+    private Button parametresButton;
+
+    @FXML
+    private Button chargerPartieButton;
+    
     /**
      * Créé et lance une nouvelle partie de Hanabi.
      */
     @FXML
-    void lancerNouvellePartie(ActionEvent event) {
-        //TODO lancerNouvellePartie
+    public void basculerVersChoixJoueurs(ActionEvent event) {
+        try {
+            Stage stage = (Stage) nouvellePartieButton.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/jeu/application/vue/ChoixJoueurs.fxml"));
+            Parent root = loader.load();
+            Scene sceneChoixJoueurs = new Scene(root, 600, 400);
+            stage.setScene(sceneChoixJoueurs);
+        } catch (Exception e) {
+            e.printStackTrace(); //TODO 
+        }
     }
     
     /**
      * Charge et lance une partie de Hanabi sauvegardée
-     */
+     */    
     @FXML 
     void chargerPartie(ActionEvent event) {
-        //TODO chargerPartie
+    	//TODO
     }
     
     /**
      * Ouvre la page de paramètres
-     */
+     */    
     @FXML 
     void ouvrirParametres(ActionEvent event) {
-        //TODO ouvrirParametres
+    	try {
+            Stage stage = (Stage) parametresButton.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/jeu/application/vue/Parametres.fxml"));
+            Parent root = loader.load();
+            Scene sceneChoixJoueurs = new Scene(root, 600, 400);
+            stage.setScene(sceneChoixJoueurs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

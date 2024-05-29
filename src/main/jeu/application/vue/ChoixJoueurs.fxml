@@ -8,19 +8,25 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" 
-      minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" 
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/21" 
-      xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="jeu.application.controleur.MenuPrincipal"
->
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.ChoixJoueurs">
    <children>
-      <Label alignment="TOP_CENTER" contentDisplay="TOP" text="Hanabi">
-         <font>
-            <Font name="Calibri Bold" size="70.0" />
-         </font>
-      </Label>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" text="Hanabi">
+               <font>
+                  <Font name="Calibri Bold" size="70.0" />
+               </font>
+            </Label>
+            <Button fx:id="retourMenuPrincipal" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#retourMenu" style="-fx-background-color: #477148;" text="⭠" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold Italic" size="20" />
+               </font>
+               <HBox.margin>
+                  <Insets left="120.0" right="15.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
          <children>
             <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" text="Nombre de joueurs">
@@ -28,22 +34,22 @@
                   <Font name="Calibri" size="25.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" style="-fx-background-color: black; -fx-opacity: 50%;" text="2" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#select2Joueurs" style="-fx-background-color: black; -fx-opacity: 50%;" text="2" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: black; -fx-opacity: 50%;" text="3" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#select3Joueurs" style="-fx-background-color: black; -fx-opacity: 50%;" text="3" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: black; -fx-opacity: 50%;" text="4" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#select4Joueurs" style="-fx-background-color: black; -fx-opacity: 50%;" text="4" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: black; -fx-opacity: 50%;" text="5" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#select5Joueurs" style="-fx-background-color: black; -fx-opacity: 50%;" text="5" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="20.0" />
                </font>
@@ -52,34 +58,34 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
          <children>
-            <Label text="Joueur 1">
+            <Label fx:id="joueur1Label" text="Joueur 1">
                <font>
                   <Font name="Calibri Bold" size="25.0" />
                </font>
             </Label>
-            <TextField promptText="pseudo" />
-            <Label text="Joueur 2">
+            <TextField fx:id="joueur1TextField" promptText="pseudo" />
+            <Label fx:id="joueur2Label" text="Joueur 2">
                <font>
                   <Font name="Calibri Bold" size="25.0" />
                </font>
             </Label>
-            <TextField promptText="pseudo" />
+            <TextField fx:id="joueur2TextField" promptText="pseudo" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
          <children>
-            <Label text="Joueur 3">
+            <Label fx:id="joueur3Label" text="Joueur 3">
                <font>
                   <Font name="Calibri Bold" size="25.0" />
                </font>
             </Label>
-            <TextField promptText="pseudo" />
-            <Label text="Joueur 4">
+            <TextField fx:id="joueur3TextField" promptText="pseudo" />
+            <Label fx:id="joueur4Label" text="Joueur 4">
                <font>
                   <Font name="Calibri Bold" size="25.0" />
                </font>
             </Label>
-            <TextField promptText="pseudo" />
+            <TextField fx:id="joueur4TextField" promptText="pseudo" />
          </children>
          <VBox.margin>
             <Insets />
@@ -87,7 +93,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
          <children>
-            <Label text="Joueur 5">
+            <Label fx:id="joueur5Label" text="Joueur 5">
                <font>
                   <Font name="Calibri Bold" size="25.0" />
                </font>
@@ -95,13 +101,13 @@
                   <Insets />
                </HBox.margin>
             </Label>
-            <TextField promptText="pseudo" />
+            <TextField fx:id="joueur5TextField" promptText="pseudo" />
          </children>
          <padding>
             <Insets top="-20.0" />
          </padding>
       </HBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: #477148;" text="Lancer une partie" textFill="WHITE">
+      <Button fx:id="lancerPartieButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#lancerPartie" style="-fx-background-color: #477148;" text="Lancer une partie" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>

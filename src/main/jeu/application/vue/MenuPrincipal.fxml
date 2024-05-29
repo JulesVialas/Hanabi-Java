@@ -12,7 +12,7 @@
             <Font name="Calibri Bold" size="70.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#lancerNouvellePartie" style="-fx-background-color: #477148;" text="Nouvelle partie" textFill="WHITE">
+      <Button fx:id="nouvellePartieButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#basculerVersChoixJoueurs" onMouseClicked="#chargerPartie" style="-fx-background-color: #477148;" text="Nouvelle partie" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>
@@ -22,7 +22,7 @@
             <Font name="Calibri Bold" size="25.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#ouvrirParametres" style="-fx-background-color: #477148;" text="Paramètres" textFill="WHITE">
+      <Button fx:id="parametresButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ouvrirParametres" onMouseClicked="#ouvrirParametres" style="-fx-background-color: #477148;" text="Paramètres" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>
