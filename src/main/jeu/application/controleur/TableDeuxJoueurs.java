@@ -2,14 +2,8 @@ package jeu.application.controleur;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import jeu.modele.Partie;
 
-/**
- * Joue le rôle de contrôleur pour la vue TableDeuxJoueurs de
- * l'application Hanabi.
- * Fait le lien entre la vue {@link jeu.application.vue#TableDeuxJoueurs.fxml}
- * et le modele présent dans le package {@link jeu.modele}.
- * @author Corentin Solignac
- */
 public class TableDeuxJoueurs {
 
 	@FXML
@@ -18,5 +12,15 @@ public class TableDeuxJoueurs {
 	@FXML
 	private Label joueur2Label;
 
-	//TODO Centrer la table :)
+	public void setPartie(Partie partie) {
+		if (partie != null) {
+			joueur1Label.setText(partie.getJoueur1().getPseudo());
+			joueur2Label.setText(partie.getJoueur2().getPseudo());
+		}
+	}
+
+	@FXML
+	public void initialize() {
+		// Ne pas accéder aux données ici, elles seront définies via setPartie()
+	}
 }

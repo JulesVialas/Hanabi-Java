@@ -13,6 +13,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import jeu.application.controleur.TableCinqJoueurs;
+import jeu.application.controleur.TableDeuxJoueurs;
+import jeu.application.controleur.TableQuatreJoueurs;
+import jeu.application.controleur.TableTroisJoueurs;
+import jeu.modele.Partie;
 
 /**
  * Point d'entrée de l'application Hanabi.
@@ -49,6 +54,7 @@ public class Hanabi extends Application {
 	 */
 	private static Stage fenetrePrincipale;
 
+
 	/**
 	 * Permet de modifier la scène de la fenêtre principale
 	 * pour qu'elle devienne la scène principale, celle qui
@@ -78,33 +84,69 @@ public class Hanabi extends Application {
 	 * Permet de modifier la scène de la fenêtre principale
 	 * pour qu'elle devienne celle de TableDeuxJoueurs
 	 */
-	public static void activerTableDeuxJoueurs() {
-		fenetrePrincipale.setScene(sceneTableDeuxJoueurs);
-	}
+	public static void activerTableDeuxJoueurs(Partie partie) {
+        try {
+            FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableDeuxJoueurs.fxml"));
+            Parent root = loader.load();
+            TableDeuxJoueurs controller = loader.getController();
+            controller.setPartie(partie);
+            sceneTableDeuxJoueurs = new Scene(root, 800, 600);
+            fenetrePrincipale.setScene(sceneTableDeuxJoueurs);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 	/**
 	 * Permet de modifier la scène de la fenêtre principale
 	 * pour qu'elle devienne celle de TableTroisJoueurs
 	 */
-	public static void activerTableTroisJoueurs() {
-		fenetrePrincipale.setScene(sceneTableTroisJoueurs);
-	}
+	public static void activerTableTroisJoueurs(Partie partie) {
+        try {
+            FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableTroisJoueurs.fxml"));
+            Parent root = loader.load();
+            TableTroisJoueurs controller = loader.getController();
+            controller.setPartie(partie);
+            sceneTableTroisJoueurs = new Scene(root, 800, 600);
+            fenetrePrincipale.setScene(sceneTableTroisJoueurs);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 	/**
 	 * Permet de modifier la scène de la fenêtre principale
 	 * pour qu'elle devienne celle de TableQuatreJoueurs
 	 */
-	public static void activerTableQuatreJoueurs() {
-		fenetrePrincipale.setScene(sceneTableQuatreJoueurs);
-	}
+	public static void activerTableQuatreJoueurs(Partie partie) {
+        try {
+            FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableQuatreJoueurs.fxml"));
+            Parent root = loader.load();
+            TableQuatreJoueurs controller = loader.getController();
+            controller.setPartie(partie);
+            sceneTableQuatreJoueurs = new Scene(root, 800, 600);
+            fenetrePrincipale.setScene(sceneTableQuatreJoueurs);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 	/**
 	 * Permet de modifier la scène de la fenêtre principale
 	 * pour qu'elle devienne celle de TableCinqJoueurs
 	 */
-	public static void activerTableCinqJoueurs() {
-		fenetrePrincipale.setScene(sceneTableCinqJoueurs);
-	}
+	public static void activerTableCinqJoueurs(Partie partie) {
+        try {
+            FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableCinqJoueurs.fxml"));
+            Parent root = loader.load();
+            TableCinqJoueurs controller = loader.getController();
+            controller.setPartie(partie);
+            sceneTableCinqJoueurs = new Scene(root, 800, 600);
+            fenetrePrincipale.setScene(sceneTableCinqJoueurs);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 	@Override
 	public void start(Stage primaryStage) {

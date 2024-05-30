@@ -15,9 +15,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
 import jeu.application.Hanabi;
-import jeu.modele.Joueur;
+import jeu.modele.Partie;
 
 /**
  * TODO commenter la responsabilité de cette classe (SRP)
@@ -52,26 +51,28 @@ public class ChoixJoueurs {
 
 	@FXML
 	private Label joueur5Label;
-	
+
 	@FXML
-        private Button bouton2J;
-	
+	private Button bouton2J;
+
 	@FXML
-        private Button bouton3J;
-	
+	private Button bouton3J;
+
 	@FXML
-        private Button bouton4J;
-	
+	private Button bouton4J;
+
 	@FXML
 	private Button bouton5J;
 
 	private int nbJoueurs;
 
-	Joueur joueur1;
-	Joueur joueur2;
-	Joueur joueur3;
-	Joueur joueur4;
-	Joueur joueur5;
+	static Partie partieDeuxJoueurs;
+
+	Partie partieTroisJoueurs;
+
+	Partie partieQuatreJoueurs;
+
+	Partie partieCinqJoueurs;
 
 	/**
 	 * Méthode d'initialisation appelée après que tous les éléments FXML ont été injectés.
@@ -90,30 +91,20 @@ public class ChoixJoueurs {
 	private void lancerPartie(ActionEvent event) {
 		switch (nbJoueurs) {
 		case 2:
-			Hanabi.activerTableDeuxJoueurs();
-			joueur1 = new Joueur(joueur1TextField.getText());
-			joueur2 = new Joueur(joueur2TextField.getText());
+			partieDeuxJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText());
+			Hanabi.activerTableDeuxJoueurs(partieDeuxJoueurs);
 			break;
 		case 3:
-			Hanabi.activerTableTroisJoueurs();
-			joueur1 = new Joueur(joueur1TextField.getText());
-			joueur2 = new Joueur(joueur2TextField.getText());
-			joueur3 = new Joueur(joueur3TextField.getText());
+			partieTroisJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(), joueur3TextField.getText());
+			Hanabi.activerTableTroisJoueurs(partieTroisJoueurs);
 			break;
 		case 4:
-			Hanabi.activerTableQuatreJoueurs();
-			joueur1 = new Joueur(joueur1TextField.getText());
-			joueur2 = new Joueur(joueur2TextField.getText());
-			joueur3 = new Joueur(joueur3TextField.getText());
-			joueur4 = new Joueur(joueur4TextField.getText());
+			partieQuatreJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(), joueur3TextField.getText(), joueur4TextField.getText());
+			Hanabi.activerTableQuatreJoueurs(partieQuatreJoueurs);
 			break;
 		case 5:
-			Hanabi.activerTableCinqJoueurs();
-			joueur1 = new Joueur(joueur1TextField.getText());
-			joueur2 = new Joueur(joueur2TextField.getText());
-			joueur3 = new Joueur(joueur3TextField.getText());
-			joueur4 = new Joueur(joueur4TextField.getText());
-			joueur5 = new Joueur(joueur5TextField.getText());
+			partieCinqJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(), joueur3TextField.getText(), joueur4TextField.getText(), joueur5TextField.getText());
+			Hanabi.activerTableCinqJoueurs(partieCinqJoueurs);
 			break;
 		default:
 			return;

@@ -2,6 +2,7 @@ package jeu.application.controleur;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import jeu.modele.Partie;
 
 public class TableTroisJoueurs {
 
@@ -17,4 +18,12 @@ public class TableTroisJoueurs {
     @FXML
     private void initialize() {
     }
+
+    public void setPartie(Partie partie) {
+		if (partie != null) {
+			joueur1Label.setText(partie.getJoueur1().getPseudo());
+			joueur2Label.setText(partie.getJoueur2().getPseudo());
+			joueur3Label.setText(partie.getJoueur3().getPseudo());
+		}
+	}
 }
