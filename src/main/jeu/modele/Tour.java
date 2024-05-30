@@ -245,17 +245,17 @@ public class Tour {
         
         if (doesContinueFirework(carteAPoser)) {
             switch(carteAPoser.getCouleur()) {
-                case Couleur.ROUGE:
+                case ROUGE:
                         /* On mets la carte sur pile rouge */
                         partieDuTour.getFeuxPosesRouge().push(carteAPoser);
                     break;
-                case Couleur.JAUNE:
+                case JAUNE:
                         partieDuTour.getFeuxPosesJaune().push(carteAPoser);
                     break;
-                case Couleur.VERT:
+                case VERT:
                         partieDuTour.getFeuxPosesVert().push(carteAPoser);
                     break;
-                case Couleur.BLEU:
+                case BLEU:
                         partieDuTour.getFeuxPosesBleu().push(carteAPoser);
                     break;
                 default: //case Couleur.BLANC:
@@ -316,7 +316,7 @@ public class Tour {
     private boolean doesContinueFirework(Carte aTester) {
        
         switch(aTester.getCouleur()) {
-            case Couleur.ROUGE:
+            case ROUGE:
                 /*
                  *  On teste si la valeur de la carte à poser est la suivante
                  *  attendue, et si la valeur == 1 si la pile est vide pour 
@@ -328,21 +328,21 @@ public class Tour {
                       == partieDuTour.getFeuxPosesRouge()
                                      .peek().getValeur().getValeurNumerique()
                                      + 1;
-            case Couleur.JAUNE:
+            case JAUNE:
                 return partieDuTour.getFeuxPosesJaune().empty() 
                         && aTester.getValeur() == Valeur.UN
                   || aTester.getValeur().getValeurNumerique() 
                       == partieDuTour.getFeuxPosesJaune()
                                      .peek().getValeur().getValeurNumerique()
                                      + 1;
-            case Couleur.VERT:
+            case VERT:
                 return partieDuTour.getFeuxPosesVert().empty() 
                         && aTester.getValeur() == Valeur.UN
                   || aTester.getValeur().getValeurNumerique() 
                       == partieDuTour.getFeuxPosesVert()
                                      .peek().getValeur().getValeurNumerique()
                                      + 1;    
-            case Couleur.BLEU:
+            case BLEU:
                 return partieDuTour.getFeuxPosesBleu().empty() 
                         && aTester.getValeur() == Valeur.UN
                   || aTester.getValeur().getValeurNumerique() 
