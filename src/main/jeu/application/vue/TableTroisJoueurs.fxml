@@ -70,8 +70,6 @@
             </Button>
          </children>
       </HBox>
-      <Circle fill="BLUE" layoutX="237.0" layoutY="421.0" radius="15.0" strokeType="INSIDE" />
-      <Circle fill="RED" layoutX="562.0" layoutY="421.0" radius="15.0" strokeType="INSIDE" />
       <AnchorPane layoutX="342.0" layoutY="188.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="50.0" layoutX="53.0" layoutY="43.0" strokeType="INSIDE" width="30.0" />
@@ -128,22 +126,24 @@
             </Button>
          </children>
       </HBox>
-      <Label fx:id="nbJetonsBleu" alignment="CENTER" layoutX="225.0" layoutY="412.0" prefHeight="22.0" prefWidth="23.0" text="8">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="nbJetonsRouge" alignment="CENTER" layoutX="549.0" layoutY="412.0" prefHeight="22.0" prefWidth="25.0" text="0">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
       <Label fx:id="nbCartesDefausse" alignment="CENTER" layoutX="548.0" layoutY="366.0" prefHeight="22.0" prefWidth="25.0" text="0">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
       <Label fx:id="nbCartesPioche" alignment="CENTER" layoutX="225.0" layoutY="365.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Circle fill="BLUE" layoutX="237.0" layoutY="433.0" radius="15.0" strokeType="INSIDE" />
+      <Circle fill="RED" layoutX="562.0" layoutY="433.0" radius="15.0" strokeType="INSIDE" />
+      <Label fx:id="nbJetonsBleu" alignment="CENTER" layoutX="226.0" layoutY="422.0" prefHeight="22.0" prefWidth="23.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbJetonsRouge" alignment="CENTER" layoutX="549.0" layoutY="423.0" prefHeight="22.0" prefWidth="25.0" text="0">
          <font>
             <Font size="15.0" />
          </font>

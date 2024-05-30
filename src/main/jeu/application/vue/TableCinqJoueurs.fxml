@@ -171,12 +171,12 @@
             </Button>
          </children>
       </HBox>
-      <Label fx:id="nbJetonsBleu" alignment="CENTER" layoutX="225.0" layoutY="412.0" prefHeight="22.0" prefWidth="23.0" text="8">
+      <Label fx:id="nbJetonsBleu" alignment="CENTER" layoutX="226.0" layoutY="410.0" prefHeight="22.0" prefWidth="23.0" text="0">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="nbJetonsRouge" alignment="CENTER" layoutX="549.0" layoutY="412.0" prefHeight="22.0" prefWidth="25.0" text="0">
+      <Label fx:id="nbJetonsRouge" alignment="CENTER" layoutX="549.0" layoutY="410.0" prefHeight="22.0" prefWidth="25.0" text="0">
          <font>
             <Font size="15.0" />
          </font>
