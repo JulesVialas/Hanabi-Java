@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.TableDeuxJoueurs">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.TableDeuxJoueurs">
    <children>
       <Ellipse fill="#477148" layoutX="308.0" layoutY="200.0" radiusX="270.0" radiusY="185.0" strokeType="INSIDE" />
       <HBox alignment="CENTER" layoutX="240.0" layoutY="31.0" spacing="5.0">

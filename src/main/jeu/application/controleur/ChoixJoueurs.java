@@ -12,28 +12,15 @@ package jeu.application.controleur;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import jeu.application.Hanabi;
 import jeu.modele.Joueur;
-
-import java.io.IOException;
 
 /**
  * TODO commenter la responsabilité de cette classe (SRP)
  */
 public class ChoixJoueurs {
-
-	@FXML
-	private Button lancerPartieButton;
-
-	@FXML
-	private Button retourMenuPrincipal;
-
 	@FXML
 	private TextField joueur1TextField;
 
@@ -87,43 +74,35 @@ public class ChoixJoueurs {
 	 */
 	@FXML
 	private void lancerPartie(ActionEvent event) {
-		try {
-			Stage stage = (Stage) lancerPartieButton.getScene().getWindow();
-			Parent root;
-			switch (nbJoueurs) {
-			case 2:
-				root = FXMLLoader.load(getClass().getResource("/jeu/application/vue/TableDeuxJoueurs.fxml"));
-				joueur1 = new Joueur(joueur1TextField.getText());
-				joueur2 = new Joueur(joueur2TextField.getText());
-				break;
-			case 3:
-				root = FXMLLoader.load(getClass().getResource("/jeu/application/vue/TableTroisJoueurs.fxml"));
-				joueur1 = new Joueur(joueur1TextField.getText());
-				joueur2 = new Joueur(joueur2TextField.getText());
-				joueur3 = new Joueur(joueur3TextField.getText());
-				break;
-			case 4:
-				root = FXMLLoader.load(getClass().getResource("/jeu/application/vue/TableQuatreJoueurs.fxml"));
-				joueur1 = new Joueur(joueur1TextField.getText());
-				joueur2 = new Joueur(joueur2TextField.getText());
-				joueur3 = new Joueur(joueur3TextField.getText());
-				joueur4 = new Joueur(joueur4TextField.getText());
-				break;
-			case 5:
-				root = FXMLLoader.load(getClass().getResource("/jeu/application/vue/TableCinqJoueurs.fxml"));
-				joueur1 = new Joueur(joueur1TextField.getText());
-				joueur2 = new Joueur(joueur2TextField.getText());
-				joueur3 = new Joueur(joueur3TextField.getText());
-				joueur4 = new Joueur(joueur4TextField.getText());
-				joueur5 = new Joueur(joueur5TextField.getText());
-				break;
-			default:
-				return;
-			}
-			Scene scene = new Scene(root, 600, 400);
-			stage.setScene(scene);
-		} catch (IOException e) {
-			e.printStackTrace();
+		switch (nbJoueurs) {
+		case 2:
+			Hanabi.activerTableDeuxJoueurs();
+			joueur1 = new Joueur(joueur1TextField.getText());
+			joueur2 = new Joueur(joueur2TextField.getText());
+			break;
+		case 3:
+			Hanabi.activerTableTroisJoueurs();
+			joueur1 = new Joueur(joueur1TextField.getText());
+			joueur2 = new Joueur(joueur2TextField.getText());
+			joueur3 = new Joueur(joueur3TextField.getText());
+			break;
+		case 4:
+			Hanabi.activerTableQuatreJoueurs();
+			joueur1 = new Joueur(joueur1TextField.getText());
+			joueur2 = new Joueur(joueur2TextField.getText());
+			joueur3 = new Joueur(joueur3TextField.getText());
+			joueur4 = new Joueur(joueur4TextField.getText());
+			break;
+		case 5:
+			Hanabi.activerTableCinqJoueurs();
+			joueur1 = new Joueur(joueur1TextField.getText());
+			joueur2 = new Joueur(joueur2TextField.getText());
+			joueur3 = new Joueur(joueur3TextField.getText());
+			joueur4 = new Joueur(joueur4TextField.getText());
+			joueur5 = new Joueur(joueur5TextField.getText());
+			break;
+		default:
+			return;
 		}
 	}
 
@@ -198,14 +177,6 @@ public class ChoixJoueurs {
 	 */
 	@FXML
 	private void retourMenu(ActionEvent event) {
-		try {
-			Stage stage = (Stage) retourMenuPrincipal.getScene().getWindow();
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/jeu/application/vue/MenuPrincipal.fxml"));
-			Parent root = loader.load();
-			Scene sceneMenuPrincipal = new Scene(root, 600, 400);
-			stage.setScene(sceneMenuPrincipal);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		Hanabi.activerPrincipale();
 	}
 }

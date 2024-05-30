@@ -2,7 +2,6 @@ package jeu.application.controleur;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import jeu.modele.Joueur;
 
 /**
  * Joue le rôle de contrôleur pour la vue TableDeuxJoueurs de
