@@ -53,6 +53,7 @@ public class MenuPrincipal {
     
     /**
      * Créé et lance une nouvelle partie de Hanabi.
+     * @param event 
      */
     @FXML
     public void basculerVersChoixJoueurs(ActionEvent event) {
@@ -72,7 +73,7 @@ public class MenuPrincipal {
      */    
     @FXML 
     void chargerPartie(ActionEvent event) {
-    	//TODO
+    	//TODO chargerPartie
     }
     
     /**

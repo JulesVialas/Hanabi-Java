@@ -23,6 +23,9 @@ import jeu.modele.Joueur;
 
 import java.io.IOException;
 
+/**
+ * TODO commenter la responsabilité de cette classe (SRP)
+ */
 public class ChoixJoueurs {
 
 	@FXML

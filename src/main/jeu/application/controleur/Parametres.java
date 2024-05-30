@@ -45,8 +45,8 @@ public class Parametres {
     }
     
     @FXML
-	private void retourMenu(ActionEvent event) {
-		try {
+    private void retourMenu(ActionEvent event) {
+        try {
             Stage stage = (Stage) retourMenuPrincipal.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/jeu/application/vue/MenuPrincipal.fxml"));
             Parent root = loader.load();
@@ -55,5 +55,5 @@ public class Parametres {
         } catch (Exception e) {
             e.printStackTrace();
         }
-	}
+    }
 }
