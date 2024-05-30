@@ -12,8 +12,10 @@ package jeu.application.controleur;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import jeu.application.Hanabi;
 import jeu.modele.Joueur;
 
@@ -50,6 +52,18 @@ public class ChoixJoueurs {
 
 	@FXML
 	private Label joueur5Label;
+	
+	@FXML
+        private Button bouton2J;
+	
+	@FXML
+        private Button bouton3J;
+	
+	@FXML
+        private Button bouton4J;
+	
+	@FXML
+	private Button bouton5J;
 
 	private int nbJoueurs;
 
@@ -152,6 +166,7 @@ public class ChoixJoueurs {
 		joueur4TextField.setVisible(true);
 		joueur5Label.setVisible(false);
 		joueur5TextField.setVisible(false);
+		bouton4J.setStyle("-fx-background-color: Black");
 	}
 
 	/**
@@ -168,6 +183,7 @@ public class ChoixJoueurs {
 		joueur4TextField.setVisible(true);
 		joueur5Label.setVisible(true);
 		joueur5TextField.setVisible(true);
+		bouton5J.setStyle("-fx-background-color: Black");
 	}
 
 	/**
