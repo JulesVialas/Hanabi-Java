@@ -95,6 +95,9 @@ public class TableCinqJoueurs {
 	@FXML
 	private Button joueur5Carte4;
 
+	/**
+	 * @param partie la partie à jouer
+	 */
 	public void setPartie(Partie partie) {
 		if (partie != null) {
 			joueur1Label.setText(partie.getJoueur1().getPseudo());
@@ -200,6 +203,9 @@ public class TableCinqJoueurs {
 		}
 	}
 
+	/**
+	 * initialisation de la scène
+	 */
 	@FXML
 	public void initialize() {
 		// Ne pas accéder aux données ici, elles seront définies via setPartie()
