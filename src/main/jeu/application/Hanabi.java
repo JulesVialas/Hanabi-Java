@@ -82,6 +82,7 @@ public class Hanabi extends Application {
 	/**
 	 * Change la scène de la fenêtre principale pour
 	 * qu'elle devienne celle de TableDeuxJoueurs
+	 * @param partie la partie qui se déroule 
 	 */
 	public static void activerTableDeuxJoueurs(Partie partie) {
 		try {
@@ -99,6 +100,7 @@ public class Hanabi extends Application {
 	/**
 	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
 	 * celle de TableTroisJoueurs
+	 * @param partie la partie qui se déroule
 	 */
 	public static void activerTableTroisJoueurs(Partie partie) {
 		try {
@@ -116,6 +118,7 @@ public class Hanabi extends Application {
 	/**
 	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
 	 * celle de TableQuatreJoueurs
+	 * @param partie la partie qui se déroule
 	 */
 	public static void activerTableQuatreJoueurs(Partie partie) {
 		try {
@@ -133,6 +136,7 @@ public class Hanabi extends Application {
 	/**
 	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
 	 * celle de TableCinqJoueurs
+	 * @param partie la partie qui se déroule
 	 */
 	public static void activerTableCinqJoueurs(Partie partie) {
 		try {
