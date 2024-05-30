@@ -3,6 +3,7 @@ package jeu.application.controleur;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import jeu.modele.Couleur;
 import jeu.modele.Partie;
 
@@ -55,6 +56,9 @@ public class TableDeuxJoueurs {
 
 	@FXML
 	private Button joueur2Carte5;
+	
+	@FXML
+	private VBox overlayActions;
 
 	public void setPartie(Partie partie) {
 		if (partie != null) {
@@ -90,6 +94,16 @@ public class TableDeuxJoueurs {
 					Integer.toString(partie.getJoueur2().getCartesEnMains().get(4).getValeur().getValeurNumerique()));
 		}
 	}
+	
+	@FXML
+	private void gererClicActions() {
+		overlayActions.setVisible(true);
+	}
+	
+	@FXML
+	private void FermerOverlay() {
+		overlayActions.setVisible(false);
+	}
 
 	private String convertirCouleurEnHex(Couleur couleur) {
 		switch (couleur) {
@@ -110,6 +124,6 @@ public class TableDeuxJoueurs {
 
 	@FXML
 	public void initialize() {
-		// Ne pas accéder aux données ici, elles seront définies via setPartie()
+		overlayActions.setVisible(false);
 	}
 }

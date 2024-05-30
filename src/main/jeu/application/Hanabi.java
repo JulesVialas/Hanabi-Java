@@ -213,7 +213,7 @@ public class Hanabi extends Application {
 			chargeurFXMLTableCinqJoueurs.setLocation(getClass().getResource("vue/TableCinqJoueurs.fxml"));
 			conteneur = chargeurFXMLTableCinqJoueurs.load();
 			sceneTableCinqJoueurs = new Scene(conteneur, 800, 600);
-
+			
 			// on définit le titre, la hauteur et la largeur de la fenêtre principale
 			primaryStage.setTitle("Hanabi");
 			primaryStage.setHeight(600);
