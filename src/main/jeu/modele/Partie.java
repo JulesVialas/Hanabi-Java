@@ -383,4 +383,20 @@ public class Partie {
 		return getFeuxPosesRouge().size() == 5 && getFeuxPosesJaune().size() == 5 && getFeuxPosesVert().size() == 5
 				&& getFeuxPosesBleu().size() == 5 && getFeuxPosesBlanc().size() == 5;
 	}
+	
+	/**
+	 * @return le tour courant
+	 */
+	public Tour getTourCourant() {
+            return tourCourant; 
+	}
+	
+	/**
+         * Change le tour courant pour un autre
+	 * @param aDefinirCourant le tour que l'on souhaite définir 
+	 *        comme tour courant
+         */
+        public void setTourCourant(Tour aDefinirCourant) {
+            tourCourant = aDefinirCourant; 
+        }
 }

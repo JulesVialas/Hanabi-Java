@@ -97,8 +97,8 @@
       </Label>
       <VBox fx:id="overlayActions" alignment="CENTER" onMouseClicked="#FermerOverlay" prefHeight="600.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: #00000080;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button mnemonicParsing="false" style="-fx-opacity: 100%;" text="Indiquer la couleur de la carte ?" />
-            <Button mnemonicParsing="false" style="-fx-opacity: 100%;" text="Indiquer le numéro de la carte ?" />
+            <Button fx:id="btnDonnerCouleur" mnemonicParsing="false" onAction="#donnerIndiceCouleur" style="-fx-opacity: 100%;" text="Indiquer la couleur de la carte ?" />
+            <Button fx:id="btnDonnerValeur" mnemonicParsing="false" style="-fx-opacity: 100%;" text="Indiquer le numéro de la carte ?" />
          </children>
       </VBox>
    </children>
