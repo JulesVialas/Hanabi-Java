@@ -82,7 +82,9 @@ public class ChoixJoueurs {
 	@FXML
 	private void initialize() {
 	    /* Partie à 5 joueurs est proposé par défaut */
+	    nbJoueurs = 5;
 	    bouton5J.setStyle("-fx-background-color:  #477148");
+	    
 	}
 
 	/**

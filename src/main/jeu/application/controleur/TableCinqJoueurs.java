@@ -1,11 +1,15 @@
 package jeu.application.controleur;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import jeu.modele.Couleur;
 import jeu.modele.Partie;
 
+/**
+ * Controleur de la table de jeux à cinq joueurs
+ */
 public class TableCinqJoueurs {
 
 	@FXML
@@ -209,5 +213,14 @@ public class TableCinqJoueurs {
 	@FXML
 	public void initialize() {
 		// Ne pas accéder aux données ici, elles seront définies via setPartie()
+	}
+	
+	/**
+	 * Carte 1 du joueur 1 cliquée
+	 */
+	@FXML
+	private void Carte1Joueur1(ActionEvent event) {
+	    System.out.println(joueur1Carte1.getLayoutX());
+	    System.out.println(joueur1Carte1.getLayoutY());
 	}
 }
