@@ -81,7 +81,8 @@ public class ChoixJoueurs {
 	 */
 	@FXML
 	private void initialize() {
-		// Initialiser le contrôleur
+	    /* Partie à 5 joueurs est proposé par défaut */
+	    bouton5J.setStyle("-fx-background-color:  #477148");
 	}
 
 	/**
@@ -141,6 +142,12 @@ public class ChoixJoueurs {
 		joueur4TextField.setVisible(false);
 		joueur5Label.setVisible(false);
 		joueur5TextField.setVisible(false);
+		
+		/* Colorer le bouton du nb de joueurs */
+		bouton2J.setStyle("-fx-background-color:  #477148");
+		bouton3J.setStyle("-fx-background-color:  #808080");
+		bouton4J.setStyle("-fx-background-color:  #808080");
+		bouton5J.setStyle("-fx-background-color:  #808080");
 	}
 
 	/**
@@ -157,6 +164,12 @@ public class ChoixJoueurs {
 		joueur4TextField.setVisible(false);
 		joueur5Label.setVisible(false);
 		joueur5TextField.setVisible(false);
+		
+		/* Colorer le bouton du nb de joueurs */
+		bouton2J.setStyle("-fx-background-color:  #808080");
+                bouton3J.setStyle("-fx-background-color:  #477148");
+                bouton4J.setStyle("-fx-background-color:  #808080");
+                bouton5J.setStyle("-fx-background-color:  #808080");
 	}
 
 	/**
@@ -173,6 +186,12 @@ public class ChoixJoueurs {
 		joueur4TextField.setVisible(true);
 		joueur5Label.setVisible(false);
 		joueur5TextField.setVisible(false);
+		
+		/* Colorer le bouton du nb de joueurs */
+                bouton2J.setStyle("-fx-background-color:  #808080");
+                bouton3J.setStyle("-fx-background-color:  #808080");
+                bouton4J.setStyle("-fx-background-color:  #477148");
+                bouton5J.setStyle("-fx-background-color:  #808080");
 	}
 
 	/**
@@ -189,6 +208,12 @@ public class ChoixJoueurs {
 		joueur4TextField.setVisible(true);
 		joueur5Label.setVisible(true);
 		joueur5TextField.setVisible(true);
+		
+		/* Colorer le bouton du nb de joueurs */
+                bouton2J.setStyle("-fx-background-color:  #808080");
+                bouton3J.setStyle("-fx-background-color:  #808080");
+                bouton4J.setStyle("-fx-background-color:  #808080");
+                bouton5J.setStyle("-fx-background-color:  #477148");
 	}
 
 	/**
