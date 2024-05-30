@@ -12,6 +12,7 @@ package jeu.application.controleur;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -90,29 +91,40 @@ public class ChoixJoueurs {
 	 */
 	@FXML
 	private void lancerPartie(ActionEvent event) {
-		switch (nbJoueurs) {
-		case 2:
-			partieDeuxJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText());
-			Hanabi.activerTableDeuxJoueurs(partieDeuxJoueurs);
-			break;
-		case 3:
-			partieTroisJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
-					joueur3TextField.getText());
-			Hanabi.activerTableTroisJoueurs(partieTroisJoueurs);
-			break;
-		case 4:
-			partieQuatreJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
-					joueur3TextField.getText(), joueur4TextField.getText());
-			Hanabi.activerTableQuatreJoueurs(partieQuatreJoueurs);
-			break;
-		case 5:
-			partieCinqJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
-					joueur3TextField.getText(), joueur4TextField.getText(), joueur5TextField.getText());
-			Hanabi.activerTableCinqJoueurs(partieCinqJoueurs);
-			break;
-		default:
-			return;
-		}
+	    try {
+                switch (nbJoueurs) {
+                case 2:
+                        partieDeuxJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText());
+                        Hanabi.activerTableDeuxJoueurs(partieDeuxJoueurs);
+                        break;
+                case 3:
+                        partieTroisJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
+                                        joueur3TextField.getText());
+                        Hanabi.activerTableTroisJoueurs(partieTroisJoueurs);
+                        break;
+                case 4:
+                        partieQuatreJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
+                                        joueur3TextField.getText(), joueur4TextField.getText());
+                        Hanabi.activerTableQuatreJoueurs(partieQuatreJoueurs);
+                        break;
+                case 5:
+                        partieCinqJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
+                                        joueur3TextField.getText(), joueur4TextField.getText(), joueur5TextField.getText());
+                        Hanabi.activerTableCinqJoueurs(partieCinqJoueurs);
+                        break;
+                default:
+                        return;
+                }
+            } catch(IllegalArgumentException erreur) {
+                /* 
+                 * Une erreur de saisie a été commise pour les pseudos. 
+                 * Une boite d'alerte est affiché pour prévenir le joueur. 
+                 */ 
+                Alert boiteAlerte = new Alert(Alert.AlertType.ERROR); 
+                boiteAlerte.setTitle("Erreur de saisie des pseudos"); 
+                boiteAlerte.setHeaderText(erreur.getMessage()); 
+                boiteAlerte.showAndWait(); 
+            }
 	}
 
 	/**
