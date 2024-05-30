@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -11,28 +12,62 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.TableTroisJoueurs">
    <children>
       <Ellipse fill="#477148" layoutX="400.0" layoutY="275.0" radiusX="350.0" radiusY="250.0" strokeType="INSIDE" />
-      <HBox alignment="CENTER" layoutX="110.0" layoutY="231.0" spacing="5.0">
+      <HBox alignment="CENTER" layoutX="547.0" layoutY="231.0" spacing="5.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
+            <Button fx:id="joueur3Carte1" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur3Carte2" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur3Carte3" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur3Carte4" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur3Carte5" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="553.0" layoutY="231.0" spacing="5.0">
+      <HBox alignment="CENTER" layoutX="324.0" layoutY="411.0" spacing="5.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" strokeType="INSIDE" width="30.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="342.0" layoutY="410.0" spacing="5.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
+            <Button fx:id="joueur1Carte1" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur1Carte2" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur1Carte3" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur1Carte4" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur1Carte5" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
       <Circle fill="BLUE" layoutX="237.0" layoutY="421.0" radius="15.0" strokeType="INSIDE" />
@@ -54,12 +89,61 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="joueur2Label" layoutX="149.0" layoutY="281.0" text="Joueur 2" textFill="WHITE">
+      <Label fx:id="joueur2Label" layoutX="133.0" layoutY="281.0" text="Joueur 2" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="joueur3Label" layoutX="593.0" layoutY="281.0" text="Joueur 3" textFill="WHITE">
+      <Label fx:id="joueur3Label" layoutX="604.0" layoutY="281.0" text="Joueur 3" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="76.0" layoutY="231.0" spacing="5.0">
+         <children>
+            <Button fx:id="joueur2Carte1" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur2Carte2" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur2Carte3" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur2Carte4" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur2Carte5" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label fx:id="nbJetonsBleu" alignment="CENTER" layoutX="225.0" layoutY="412.0" prefHeight="22.0" prefWidth="23.0" text="8">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbJetonsRouge" alignment="CENTER" layoutX="549.0" layoutY="412.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbCartesDefausse" alignment="CENTER" layoutX="548.0" layoutY="366.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbCartesPioche" alignment="CENTER" layoutX="225.0" layoutY="365.0" prefHeight="22.0" prefWidth="25.0" text="0">
          <font>
             <Font size="15.0" />
          </font>

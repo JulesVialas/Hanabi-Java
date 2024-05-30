@@ -39,6 +39,9 @@ public class TableDeuxJoueurs {
 	private Button joueur1Carte4;
 
 	@FXML
+	private Button joueur1Carte5;
+
+	@FXML
 	private Button joueur2Carte1;
 
 	@FXML
@@ -49,6 +52,9 @@ public class TableDeuxJoueurs {
 
 	@FXML
 	private Button joueur2Carte4;
+
+	@FXML
+	private Button joueur2Carte5;
 
 	public void setPartie(Partie partie) {
 		if (partie != null) {
@@ -69,6 +75,8 @@ public class TableDeuxJoueurs {
 					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(2).getCouleur()) + ";");
 			joueur2Carte4.setStyle("-fx-background-color: #"
 					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(3).getCouleur()) + ";");
+			joueur2Carte5.setStyle("-fx-background-color: #"
+					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(4).getCouleur()) + ";");
 
 			joueur2Carte1.setText(
 					Integer.toString(partie.getJoueur2().getCartesEnMains().get(0).getValeur().getValeurNumerique()));
@@ -78,6 +86,8 @@ public class TableDeuxJoueurs {
 					Integer.toString(partie.getJoueur2().getCartesEnMains().get(2).getValeur().getValeurNumerique()));
 			joueur2Carte4.setText(
 					Integer.toString(partie.getJoueur2().getCartesEnMains().get(3).getValeur().getValeurNumerique()));
+			joueur2Carte5.setText(
+					Integer.toString(partie.getJoueur2().getCartesEnMains().get(4).getValeur().getValeurNumerique()));
 		}
 	}
 
