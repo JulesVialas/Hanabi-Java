@@ -157,7 +157,10 @@ public class Tour {
 			return partieDuTour.getJoueur1();
 		}
 
-		if (partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer) || partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer) || partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer) || partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)) {
+		if (partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)
+				|| partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)
+				|| partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)
+				|| partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)) {
 			return partieDuTour.getJoueur2();
 		}
 

@@ -15,6 +15,30 @@ public class TableDeuxJoueurs {
 	private Label joueur2Label;
 
 	@FXML
+	private Label nbJetonsRouge;
+
+	@FXML
+	private Label nbJetonsBleu;
+
+	@FXML
+	private Label nbCartesDefausse;
+
+	@FXML
+	private Label nbCartesPioche;
+
+	@FXML
+	private Button joueur1Carte1;
+
+	@FXML
+	private Button joueur1Carte2;
+
+	@FXML
+	private Button joueur1Carte3;
+
+	@FXML
+	private Button joueur1Carte4;
+
+	@FXML
 	private Button joueur2Carte1;
 
 	@FXML
@@ -30,6 +54,12 @@ public class TableDeuxJoueurs {
 		if (partie != null) {
 			joueur1Label.setText(partie.getJoueur1().getPseudo());
 			joueur2Label.setText(partie.getJoueur2().getPseudo());
+
+			nbJetonsRouge.setText(Integer.toString(partie.getJetons().getRouges()));
+			nbJetonsBleu.setText(Integer.toString(partie.getJetons().getBleus()));
+
+			nbCartesPioche.setText(Integer.toString(partie.getPioche().size()));
+			nbCartesDefausse.setText(Integer.toString(partie.getDefausse().size()));
 
 			joueur2Carte1.setStyle("-fx-background-color: #"
 					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(0).getCouleur()) + ";");

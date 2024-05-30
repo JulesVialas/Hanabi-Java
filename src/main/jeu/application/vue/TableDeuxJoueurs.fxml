@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Ellipse?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.TableDeuxJoueurs">
@@ -34,10 +33,26 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="342.0" layoutY="410.0" spacing="5.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
+            <Button fx:id="joueur1Carte1" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: #000000; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur1Carte2" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: #000000; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur1Carte3" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: #000000; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur1Carte4" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: #000000; -fx-opacity: 50%;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
       <Circle fill="BLUE" layoutX="237.0" layoutY="421.0" radius="15.0" strokeType="INSIDE" />
@@ -71,12 +86,12 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label fx:id="joueur1Label" layoutX="382.0" layoutY="460.0" text="Joueur 1" textFill="WHITE">
+      <Label fx:id="joueur1Label" alignment="CENTER" contentDisplay="CENTER" layoutX="382.0" layoutY="460.0" text="Joueur 1" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="joueur2Label" layoutX="382.0" layoutY="85.0" text="Joueur 2" textFill="WHITE">
+      <Label fx:id="joueur2Label" alignment="CENTER" layoutX="382.0" layoutY="85.0" text="Joueur 2" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -96,5 +111,25 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <Label fx:id="nbJetonsBleu" alignment="CENTER" layoutX="225.0" layoutY="410.0" prefHeight="22.0" prefWidth="23.0" text="8">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbJetonsRouge" alignment="CENTER" layoutX="549.0" layoutY="410.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbCartesDefausse" alignment="CENTER" layoutX="548.0" layoutY="364.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbCartesPioche" alignment="CENTER" layoutX="225.0" layoutY="363.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
