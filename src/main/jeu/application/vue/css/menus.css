@@ -1,0 +1,10 @@
+/*Feuille de style pour les menus du jeu Hanabi */
+
+.bouton {
+    -fx-background-color:grey;
+}
+
+.bouton:hover {
+    -fx-background-color:black;
+}
+
