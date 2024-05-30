@@ -173,7 +173,6 @@ public class ChoixJoueurs {
 		joueur4TextField.setVisible(true);
 		joueur5Label.setVisible(false);
 		joueur5TextField.setVisible(false);
-		bouton4J.setStyle("-fx-background-color: Black");
 	}
 
 	/**
@@ -190,7 +189,6 @@ public class ChoixJoueurs {
 		joueur4TextField.setVisible(true);
 		joueur5Label.setVisible(true);
 		joueur5TextField.setVisible(true);
-		bouton5J.setStyle("-fx-background-color: Black");
 	}
 
 	/**
