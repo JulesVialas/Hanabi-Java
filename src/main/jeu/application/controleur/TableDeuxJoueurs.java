@@ -1,16 +1,25 @@
 package jeu.application.controleur;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import jeu.modele.Carte;
 import jeu.modele.Couleur;
 import jeu.modele.Partie;
 
 public class TableDeuxJoueurs {
 
+        private static final String ERREUR_PARTIE_NULL 
+        = "Erreur: une partie ne peut pas être null";
+
+        /** La partie à gérer */
+        private Partie partieEnCours;
+    
 	@FXML
 	private Label joueur1Label;
 
@@ -60,6 +69,12 @@ public class TableDeuxJoueurs {
 	private Button joueur2Carte5;
 
 	@FXML
+        private Button btnDonnerCouleur;
+	
+	@FXML
+        private Button btnDonnerValeur;
+	
+	@FXML
 	private VBox overlayActions;
 
 	@FXML
@@ -68,37 +83,44 @@ public class TableDeuxJoueurs {
 	private BoxBlur blurEffect = new BoxBlur(10, 10, 3);
 
 	public void setPartie(Partie partie) {
+	        
 		if (partie != null) {
-			joueur1Label.setText(partie.getJoueur1().getPseudo());
-			joueur2Label.setText(partie.getJoueur2().getPseudo());
+		    partieEnCours = partie;
+		    
+		    // FIXME mettre ça dans un updateView
+		    joueur1Label.setText(partie.getJoueur1().getPseudo());
+		    joueur2Label.setText(partie.getJoueur2().getPseudo());
 
-			nbJetonsRouge.setText(Integer.toString(partie.getJetons().getRouges()));
-			nbJetonsBleu.setText(Integer.toString(partie.getJetons().getBleus()));
+		    nbJetonsRouge.setText(Integer.toString(partie.getJetons().getRouges()));
+		    nbJetonsBleu.setText(Integer.toString(partie.getJetons().getBleus()));
 
-			nbCartesPioche.setText(Integer.toString(partie.getPioche().size()));
-			nbCartesDefausse.setText(Integer.toString(partie.getDefausse().size()));
+		    nbCartesPioche.setText(Integer.toString(partie.getPioche().size()));
+		    nbCartesDefausse.setText(Integer.toString(partie.getDefausse().size()));
 
-			joueur2Carte1.setStyle("-fx-background-color: #"
-					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(0).getCouleur()) + ";");
-			joueur2Carte2.setStyle("-fx-background-color: #"
-					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(1).getCouleur()) + ";");
-			joueur2Carte3.setStyle("-fx-background-color: #"
-					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(2).getCouleur()) + ";");
-			joueur2Carte4.setStyle("-fx-background-color: #"
-					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(3).getCouleur()) + ";");
-			joueur2Carte5.setStyle("-fx-background-color: #"
-					+ convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(4).getCouleur()) + ";");
+		    // FIXME mettre ça dans un updateMains
+		    joueur2Carte1.setStyle("-fx-background-color: #"
+		            + convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(0).getCouleur()) + ";");
+		    joueur2Carte2.setStyle("-fx-background-color: #"
+		            + convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(1).getCouleur()) + ";");
+		    joueur2Carte3.setStyle("-fx-background-color: #"
+		            + convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(2).getCouleur()) + ";");
+		    joueur2Carte4.setStyle("-fx-background-color: #"
+		            + convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(3).getCouleur()) + ";");
+		    joueur2Carte5.setStyle("-fx-background-color: #"
+		            + convertirCouleurEnHex(partie.getJoueur2().getCartesEnMains().get(4).getCouleur()) + ";");
 
-			joueur2Carte1.setText(
-					Integer.toString(partie.getJoueur2().getCartesEnMains().get(0).getValeur().getValeurNumerique()));
-			joueur2Carte2.setText(
-					Integer.toString(partie.getJoueur2().getCartesEnMains().get(1).getValeur().getValeurNumerique()));
-			joueur2Carte3.setText(
-					Integer.toString(partie.getJoueur2().getCartesEnMains().get(2).getValeur().getValeurNumerique()));
-			joueur2Carte4.setText(
-					Integer.toString(partie.getJoueur2().getCartesEnMains().get(3).getValeur().getValeurNumerique()));
-			joueur2Carte5.setText(
-					Integer.toString(partie.getJoueur2().getCartesEnMains().get(4).getValeur().getValeurNumerique()));
+		    joueur2Carte1.setText(
+		            Integer.toString(partie.getJoueur2().getCartesEnMains().get(0).getValeur().getValeurNumerique()));
+		    joueur2Carte2.setText(
+		            Integer.toString(partie.getJoueur2().getCartesEnMains().get(1).getValeur().getValeurNumerique()));
+		    joueur2Carte3.setText(
+		            Integer.toString(partie.getJoueur2().getCartesEnMains().get(2).getValeur().getValeurNumerique()));
+		    joueur2Carte4.setText(
+		            Integer.toString(partie.getJoueur2().getCartesEnMains().get(3).getValeur().getValeurNumerique()));
+		    joueur2Carte5.setText(
+		            Integer.toString(partie.getJoueur2().getCartesEnMains().get(4).getValeur().getValeurNumerique()));
+		} else {
+		    throw new IllegalArgumentException(ERREUR_PARTIE_NULL);
 		}
 	}
 
@@ -134,5 +156,15 @@ public class TableDeuxJoueurs {
 	@FXML
 	public void initialize() {
 		overlayActions.setVisible(false);
+	}
+	
+	@FXML
+	private void donnerIndiceCouleur(ActionEvent event) {
+	    //TODO faut récupérer la carte liée au bouton
+	    // => switch case en private en fcontion de la source
+	    //partieEnCours.getTourCourant()
+	    //    .donnerIndice(Carte recoitIndice, 'c');
+	    System.out.println(((Control)event.getSource()).getId());
+	    System.out.println("Coucou");
 	}
 }
