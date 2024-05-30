@@ -3,6 +3,8 @@ package jeu.application.controleur;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.BoxBlur;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import jeu.modele.Couleur;
 import jeu.modele.Partie;
@@ -56,9 +58,14 @@ public class TableDeuxJoueurs {
 
 	@FXML
 	private Button joueur2Carte5;
-	
+
 	@FXML
 	private VBox overlayActions;
+
+	@FXML
+	private AnchorPane mainPane;
+
+	private BoxBlur blurEffect = new BoxBlur(10, 10, 3);
 
 	public void setPartie(Partie partie) {
 		if (partie != null) {
@@ -94,15 +101,17 @@ public class TableDeuxJoueurs {
 					Integer.toString(partie.getJoueur2().getCartesEnMains().get(4).getValeur().getValeurNumerique()));
 		}
 	}
-	
+
 	@FXML
 	private void gererClicActions() {
+		mainPane.setEffect(blurEffect); // Apply blur effect to main pane
 		overlayActions.setVisible(true);
 	}
-	
+
 	@FXML
 	private void FermerOverlay() {
 		overlayActions.setVisible(false);
+		mainPane.setEffect(null); // Remove blur effect from main pane
 	}
 
 	private String convertirCouleurEnHex(Couleur couleur) {
