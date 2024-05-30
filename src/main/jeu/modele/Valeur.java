@@ -11,19 +11,19 @@ package jeu.modele;
  */
 public enum Valeur {
 
-    UN(1), DEUX(2), TROIS(3), QUATRE(4), CINQ(5);
+	UN(1), DEUX(2), TROIS(3), QUATRE(4), CINQ(5);
 
-    /** La valeur de la carte sous forme d'entier */
-    private int valeurNumerique;
+	/** La valeur de la carte sous forme d'entier */
+	private int valeurNumerique;
 
-    Valeur(int valeurNumerique) {
-        this.valeurNumerique = valeurNumerique;
-    }
+	Valeur(int valeurNumerique) {
+		this.valeurNumerique = valeurNumerique;
+	}
 
-    /**
-     * @return la valeur de la carte
-     */
-    public int getValeurNumerique() {
-        return this.valeurNumerique;
-    }
-};
+	/**
+	 * @return la valeur de la carte
+	 */
+	public int getValeurNumerique() {
+		return this.valeurNumerique;
+	}
+}

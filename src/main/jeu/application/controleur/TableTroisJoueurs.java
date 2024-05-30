@@ -6,20 +6,20 @@ import jeu.modele.Partie;
 
 public class TableTroisJoueurs {
 
-    @FXML
-    private Label joueur1Label;
+	@FXML
+	private Label joueur1Label;
 
-    @FXML
-    private Label joueur2Label;
-    
-    @FXML
-    private Label joueur3Label;
+	@FXML
+	private Label joueur2Label;
 
-    @FXML
-    private void initialize() {
-    }
+	@FXML
+	private Label joueur3Label;
 
-    public void setPartie(Partie partie) {
+	@FXML
+	private void initialize() {
+	}
+
+	public void setPartie(Partie partie) {
 		if (partie != null) {
 			joueur1Label.setText(partie.getJoueur1().getPseudo());
 			joueur2Label.setText(partie.getJoueur2().getPseudo());

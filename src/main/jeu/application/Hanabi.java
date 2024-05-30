@@ -20,13 +20,14 @@ import jeu.application.controleur.TableTroisJoueurs;
 import jeu.modele.Partie;
 
 /**
- * Point d'entrée de l'application Hanabi.
- * Ouvre l'application sur le menu principal.
+ * Point d'entrée de l'application Hanabi. Ouvre l'application sur le menu
+ * principal.
+ *
  * @author Corentin Solignac
  * @author Jules Vialas
  */
 public class Hanabi extends Application {
-	
+
 	/** Scène principale de l'application, celle qui contient les 2 boutons */
 	private static Scene scenePrincipale;
 
@@ -48,112 +49,109 @@ public class Hanabi extends Application {
 	/** Scène permettant de gérer la table à 5 joueurs */
 	private static Scene sceneTableCinqJoueurs;
 
-	/** Fenêtre principale de l'application
-	 * La scène qui lui est associée sera modifiée en fonction
-	 * des clics de l'utilisateur
+	/**
+	 * Fenêtre principale de l'application La scène qui lui est associée sera
+	 * modifiée en fonction des clics de l'utilisateur
 	 */
 	private static Stage fenetrePrincipale;
 
-
 	/**
-	 * Permet de modifier la scène de la fenêtre principale
-	 * pour qu'elle devienne la scène principale, celle qui
-	 * affiche les 2 boutons ChoixJoueurs et Parametres
+	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne la
+	 * scène principale, celle qui affiche les 2 boutons ChoixJoueurs et Parametres
 	 */
 	public static void activerPrincipale() {
 		fenetrePrincipale.setScene(scenePrincipale);
 	}
 
 	/**
-	 * Permet de modifier la scène de la fenêtre principale
-	 * pour qu'elle devienne celle de ChoixJoueurs
+	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
+	 * celle de ChoixJoueurs
 	 */
 	public static void activerChoixJoueurs() {
 		fenetrePrincipale.setScene(sceneChoixJoueurs);
 	}
 
 	/**
-	 * Permet de modifier la scène de la fenêtre principale
-	 * pour qu'elle devienne celle de Paramètres
+	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
+	 * celle de Paramètres
 	 */
 	public static void activerParametres() {
 		fenetrePrincipale.setScene(sceneParametres);
 	}
 
 	/**
-	 * Permet de modifier la scène de la fenêtre principale
-	 * pour qu'elle devienne celle de TableDeuxJoueurs
+	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
+	 * celle de TableDeuxJoueurs
 	 */
 	public static void activerTableDeuxJoueurs(Partie partie) {
-        try {
-            FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableDeuxJoueurs.fxml"));
-            Parent root = loader.load();
-            TableDeuxJoueurs controller = loader.getController();
-            controller.setPartie(partie);
-            sceneTableDeuxJoueurs = new Scene(root, 800, 600);
-            fenetrePrincipale.setScene(sceneTableDeuxJoueurs);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+		try {
+			FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableDeuxJoueurs.fxml"));
+			Parent root = loader.load();
+			TableDeuxJoueurs controller = loader.getController();
+			controller.setPartie(partie);
+			sceneTableDeuxJoueurs = new Scene(root, 800, 600);
+			fenetrePrincipale.setScene(sceneTableDeuxJoueurs);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
-	 * Permet de modifier la scène de la fenêtre principale
-	 * pour qu'elle devienne celle de TableTroisJoueurs
+	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
+	 * celle de TableTroisJoueurs
 	 */
 	public static void activerTableTroisJoueurs(Partie partie) {
-        try {
-            FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableTroisJoueurs.fxml"));
-            Parent root = loader.load();
-            TableTroisJoueurs controller = loader.getController();
-            controller.setPartie(partie);
-            sceneTableTroisJoueurs = new Scene(root, 800, 600);
-            fenetrePrincipale.setScene(sceneTableTroisJoueurs);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+		try {
+			FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableTroisJoueurs.fxml"));
+			Parent root = loader.load();
+			TableTroisJoueurs controller = loader.getController();
+			controller.setPartie(partie);
+			sceneTableTroisJoueurs = new Scene(root, 800, 600);
+			fenetrePrincipale.setScene(sceneTableTroisJoueurs);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
-	 * Permet de modifier la scène de la fenêtre principale
-	 * pour qu'elle devienne celle de TableQuatreJoueurs
+	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
+	 * celle de TableQuatreJoueurs
 	 */
 	public static void activerTableQuatreJoueurs(Partie partie) {
-        try {
-            FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableQuatreJoueurs.fxml"));
-            Parent root = loader.load();
-            TableQuatreJoueurs controller = loader.getController();
-            controller.setPartie(partie);
-            sceneTableQuatreJoueurs = new Scene(root, 800, 600);
-            fenetrePrincipale.setScene(sceneTableQuatreJoueurs);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+		try {
+			FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableQuatreJoueurs.fxml"));
+			Parent root = loader.load();
+			TableQuatreJoueurs controller = loader.getController();
+			controller.setPartie(partie);
+			sceneTableQuatreJoueurs = new Scene(root, 800, 600);
+			fenetrePrincipale.setScene(sceneTableQuatreJoueurs);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
-	 * Permet de modifier la scène de la fenêtre principale
-	 * pour qu'elle devienne celle de TableCinqJoueurs
+	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
+	 * celle de TableCinqJoueurs
 	 */
 	public static void activerTableCinqJoueurs(Partie partie) {
-        try {
-            FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableCinqJoueurs.fxml"));
-            Parent root = loader.load();
-            TableCinqJoueurs controller = loader.getController();
-            controller.setPartie(partie);
-            sceneTableCinqJoueurs = new Scene(root, 800, 600);
-            fenetrePrincipale.setScene(sceneTableCinqJoueurs);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+		try {
+			FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableCinqJoueurs.fxml"));
+			Parent root = loader.load();
+			TableCinqJoueurs controller = loader.getController();
+			controller.setPartie(partie);
+			sceneTableCinqJoueurs = new Scene(root, 800, 600);
+			fenetrePrincipale.setScene(sceneTableCinqJoueurs);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			/*
-			 * chargement de la vue de la scène principale dans le conteneur
-			 * de type Parent
+			 * chargement de la vue de la scène principale dans le conteneur de type Parent
 			 */
 			FXMLLoader chargeurFXML = new FXMLLoader();
 			chargeurFXML.setLocation(getClass().getResource("vue/MenuPrincipal.fxml"));
@@ -164,8 +162,8 @@ public class Hanabi extends Application {
 			scenePrincipale = new Scene(conteneur, 800, 600);
 
 			/*
-			 * Chargement de la vue ChoixJoueurs et
-			 * création de la scène associée à cette vue
+			 * Chargement de la vue ChoixJoueurs et création de la scène associée à cette
+			 * vue
 			 */
 			FXMLLoader chargeurFXMLChoixJoueurs = new FXMLLoader();
 			chargeurFXMLChoixJoueurs.setLocation(getClass().getResource("vue/ChoixJoueurs.fxml"));
@@ -173,8 +171,7 @@ public class Hanabi extends Application {
 			sceneChoixJoueurs = new Scene(conteneur, 800, 600);
 
 			/*
-			 * Chargement de la vue Parametres et
-			 * création de la scène associée à cette vue
+			 * Chargement de la vue Parametres et création de la scène associée à cette vue
 			 */
 			FXMLLoader chargeurFXMLParametres = new FXMLLoader();
 			chargeurFXMLParametres.setLocation(getClass().getResource("vue/Parametres.fxml"));
@@ -182,8 +179,8 @@ public class Hanabi extends Application {
 			sceneParametres = new Scene(conteneur, 800, 600);
 
 			/*
-			 * Chargement de la vue TableDeuxJoueurs et
-			 * création de la scène associée à cette vue
+			 * Chargement de la vue TableDeuxJoueurs et création de la scène associée à
+			 * cette vue
 			 */
 			FXMLLoader chargeurFXMLTableDeuxJoueurs = new FXMLLoader();
 			chargeurFXMLTableDeuxJoueurs.setLocation(getClass().getResource("vue/TableDeuxJoueurs.fxml"));
@@ -191,8 +188,8 @@ public class Hanabi extends Application {
 			sceneTableDeuxJoueurs = new Scene(conteneur, 800, 600);
 
 			/*
-			 * Chargement de la vue TableTroisJoueurs et
-			 * création de la scène associée à cette vue
+			 * Chargement de la vue TableTroisJoueurs et création de la scène associée à
+			 * cette vue
 			 */
 			FXMLLoader chargeurFXMLTableTroisJoueurs = new FXMLLoader();
 			chargeurFXMLTableTroisJoueurs.setLocation(getClass().getResource("vue/TableTroisJoueurs.fxml"));
@@ -200,8 +197,8 @@ public class Hanabi extends Application {
 			sceneTableTroisJoueurs = new Scene(conteneur, 800, 600);
 
 			/*
-			 * Chargement de la vue TableDeuxJoueurs et
-			 * création de la scène associée à cette vue
+			 * Chargement de la vue TableDeuxJoueurs et création de la scène associée à
+			 * cette vue
 			 */
 			FXMLLoader chargeurFXMLTableQuatreJoueurs = new FXMLLoader();
 			chargeurFXMLTableQuatreJoueurs.setLocation(getClass().getResource("vue/TableQuatreJoueurs.fxml"));
@@ -209,8 +206,8 @@ public class Hanabi extends Application {
 			sceneTableQuatreJoueurs = new Scene(conteneur, 800, 600);
 
 			/*
-			 * Chargement de la vue TableCinqJoueurs et
-			 * création de la scène associée à cette vue
+			 * Chargement de la vue TableCinqJoueurs et création de la scène associée à
+			 * cette vue
 			 */
 			FXMLLoader chargeurFXMLTableCinqJoueurs = new FXMLLoader();
 			chargeurFXMLTableCinqJoueurs.setLocation(getClass().getResource("vue/TableCinqJoueurs.fxml"));
@@ -223,10 +220,9 @@ public class Hanabi extends Application {
 			primaryStage.setWidth(800);
 
 			/*
-			 * on associe la scène principale à la fenêtre principale
-			 * Cette dernière est stockée en tant qu'attribut afin d'être accessible
-			 * dans les méthodes activer... Celles qui permettent de rendre active
-			 * l'une des 3 scènes
+			 * on associe la scène principale à la fenêtre principale Cette dernière est
+			 * stockée en tant qu'attribut afin d'être accessible dans les méthodes
+			 * activer... Celles qui permettent de rendre active l'une des 3 scènes
 			 */
 			primaryStage.setScene(scenePrincipale);
 			fenetrePrincipale = primaryStage;
@@ -236,8 +232,10 @@ public class Hanabi extends Application {
 			e.printStackTrace();
 		}
 	}
+
 	/**
 	 * Programme principal
+	 *
 	 * @param args non utilisé
 	 */
 	public static void main(String[] args) {

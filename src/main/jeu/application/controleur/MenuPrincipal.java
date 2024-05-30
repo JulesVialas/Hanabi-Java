@@ -9,6 +9,7 @@
  * différent : ChoixJoueurs, Parametres ... (ce sont les vues qui changent)
  */
 package jeu.application.controleur;
+
 import javafx.fxml.FXML;
 import jeu.application.Hanabi;
 
@@ -17,12 +18,12 @@ public class MenuPrincipal {
 	private void gererClicNouvellePartie() {
 		Hanabi.activerChoixJoueurs();
 	}
-	
+
 	@FXML
 	private void gererClicChargerPartie() {
-		//TODO
+		// TODO
 	}
-	
+
 	@FXML
 	private void gererClicParametres() {
 		Hanabi.activerParametres();

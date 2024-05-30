@@ -10,5 +10,5 @@ package jeu.modele;
  * Défini les couleurs de cartes valides pour le jeu Hanabi
  */
 public enum Couleur {
-    ROUGE, JAUNE, VERT, BLEU, BLANC
-};
+	ROUGE, JAUNE, VERT, BLEU, BLANC
+}

@@ -68,14 +68,15 @@ public class ChoixJoueurs {
 
 	static Partie partieDeuxJoueurs;
 
-	Partie partieTroisJoueurs;
+	static Partie partieTroisJoueurs;
 
-	Partie partieQuatreJoueurs;
+	static Partie partieQuatreJoueurs;
 
-	Partie partieCinqJoueurs;
+	static Partie partieCinqJoueurs;
 
 	/**
-	 * Méthode d'initialisation appelée après que tous les éléments FXML ont été injectés.
+	 * Méthode d'initialisation appelée après que tous les éléments FXML ont été
+	 * injectés.
 	 */
 	@FXML
 	private void initialize() {
@@ -95,15 +96,18 @@ public class ChoixJoueurs {
 			Hanabi.activerTableDeuxJoueurs(partieDeuxJoueurs);
 			break;
 		case 3:
-			partieTroisJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(), joueur3TextField.getText());
+			partieTroisJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
+					joueur3TextField.getText());
 			Hanabi.activerTableTroisJoueurs(partieTroisJoueurs);
 			break;
 		case 4:
-			partieQuatreJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(), joueur3TextField.getText(), joueur4TextField.getText());
+			partieQuatreJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
+					joueur3TextField.getText(), joueur4TextField.getText());
 			Hanabi.activerTableQuatreJoueurs(partieQuatreJoueurs);
 			break;
 		case 5:
-			partieCinqJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(), joueur3TextField.getText(), joueur4TextField.getText(), joueur5TextField.getText());
+			partieCinqJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
+					joueur3TextField.getText(), joueur4TextField.getText(), joueur5TextField.getText());
 			Hanabi.activerTableCinqJoueurs(partieCinqJoueurs);
 			break;
 		default:
