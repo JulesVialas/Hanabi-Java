@@ -80,8 +80,8 @@ public class Hanabi extends Application {
 	}
 
 	/**
-	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne
-	 * celle de TableDeuxJoueurs
+	 * Change la scène de la fenêtre principale pour
+	 * qu'elle devienne celle de TableDeuxJoueurs
 	 */
 	public static void activerTableDeuxJoueurs(Partie partie) {
 		try {

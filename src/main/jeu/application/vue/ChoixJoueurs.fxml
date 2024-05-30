@@ -34,22 +34,22 @@
                   <Font name="Calibri" size="25.0" />
                </font>
             </Label>
-            <Button fx:id="bouton2J" mnemonicParsing="false" onAction="#select2Joueurs" styleClass="bouton" stylesheets="@css/menus.css" text="2" textFill="WHITE">
+            <Button fx:id="bouton2J" mnemonicParsing="false" onAction="#select2Joueurs" styleClass="boutonNonSelectionne" stylesheets="@css/menus.css" text="2" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="bouton3J" mnemonicParsing="false" onAction="#select3Joueurs" styleClass="bouton" stylesheets="@css/menus.css" text="3" textFill="WHITE">
+            <Button fx:id="bouton3J" mnemonicParsing="false" onAction="#select3Joueurs" styleClass="boutonNonSelectionne" stylesheets="@css/menus.css" text="3" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="bouton4J" mnemonicParsing="false" onAction="#select4Joueurs" styleClass="bouton" stylesheets="@css/menus.css" text="4" textFill="WHITE">
+            <Button fx:id="bouton4J" mnemonicParsing="false" onAction="#select4Joueurs" styleClass="boutonNonSelectionne" stylesheets="@css/menus.css" text="4" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="bouton5J" mnemonicParsing="false" onAction="#select5Joueurs" styleClass="bouton" stylesheets="@css/menus.css" text="5" textFill="WHITE">
+            <Button fx:id="bouton5J" mnemonicParsing="false" onAction="#select5Joueurs" styleClass="boutonSelectionne" stylesheets="@css/menus.css" text="5" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="20.0" />
                </font>
