@@ -255,11 +255,11 @@ public class TableCinqJoueurs {
 	}
 	
 	@FXML
-<<<<<<< HEAD
 	private void gererClicParametres() {
 	    Parametres.partieActive = true;
 	    Hanabi.activerParametres();
-=======
+	}
+	    
 	private void gererClicCouleur() {
 		//Tour.donnerIndice(TODO trouver la carte selectionnée, 'c');
 	}
@@ -272,6 +272,5 @@ public class TableCinqJoueurs {
 	@FXML
 	private void gererClicPoser() {
 		//Tour.poser(TODO Trouver la carte selectionnée);
->>>>>>> branch 'master' of https://github.com/JulesVialas/SAE-S2.01.git
 	}
 }
