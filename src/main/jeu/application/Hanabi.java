@@ -28,7 +28,7 @@ import jeu.modele.Partie;
  * @author Jules Vialas
  */
 public class Hanabi extends Application {
-
+	
 	/** Scène principale de l'application, celle qui contient les 2 boutons */
 	private static Scene scenePrincipale;
 
@@ -51,7 +51,10 @@ public class Hanabi extends Application {
 	private static Scene sceneTableCinqJoueurs;
 
 	/** Scène permettant de gérer le changement de theme */
-        private static Scene sceneTheme;
+    private static Scene sceneTheme;
+    
+    /** Scène permettant de gérer l'affichage des règles */
+    private static Scene sceneRegles;
         
         /** Scène permettant de gérer la personnalisation de la partie */
         private static Scene scenePersonnalisation;
@@ -212,6 +215,21 @@ public class Hanabi extends Application {
                 e.printStackTrace();
             }
         }
+        
+        /**
+         * TODO commenter le rôle de cette méthode
+         */
+        @FXML
+        public static void activerRegles() {
+        	try {
+                FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/Regles.fxml"));
+                Parent root = loader.load();
+                sceneRegles = new Scene(root, 800, 600);
+                fenetrePrincipale.setScene(sceneRegles);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -279,7 +297,18 @@ public class Hanabi extends Application {
 			chargeurFXMLTableCinqJoueurs.setLocation(getClass().getResource("vue/TableCinqJoueurs.fxml"));
 			conteneur = chargeurFXMLTableCinqJoueurs.load();
 			sceneTableCinqJoueurs = new Scene(conteneur, 800, 600);
-			    
+
+			FXMLLoader chargeurFXMLChangerTheme = new FXMLLoader();
+			chargeurFXMLChangerTheme.setLocation(getClass().getResource("vue/ChangerTheme.fxml"));
+			conteneur = chargeurFXMLChangerTheme.load();
+            sceneTheme = new Scene(conteneur, 800, 600);
+            
+            FXMLLoader chargeurFXMLRegles= new FXMLLoader();
+			chargeurFXMLRegles.setLocation(getClass().getResource("vue/Regles.fxml"));
+			conteneur = chargeurFXMLRegles.load();
+            sceneRegles = new Scene(conteneur, 800, 600);
+                        
+                        
 			// on définit le titre, la hauteur et la largeur de la fenêtre principale
 			primaryStage.setTitle("Hanabi");
 			primaryStage.setHeight(600);
