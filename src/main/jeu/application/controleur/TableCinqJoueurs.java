@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
+import javafx.scene.effect.BoxBlur;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import jeu.application.Hanabi;
@@ -133,6 +135,11 @@ public class TableCinqJoueurs {
 
     @FXML
     private Button menuPause;
+    
+    @FXML
+    private AnchorPane effetPause;
+    
+    private BoxBlur blurEffect = new BoxBlur(10, 10, 3);
 
     /**
      * @param aAffecter la partie à jouer
@@ -289,8 +296,8 @@ public class TableCinqJoueurs {
 
     @FXML
     private void gererClicParametres() {
+    	effetPause.setEffect(blurEffect);
         Parametres.partieActive = true;
-        Hanabi.activerParametres();
     }
 
     private void gererClicCouleur() {
