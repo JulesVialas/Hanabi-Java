@@ -4,114 +4,109 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" onMouseClicked="#FermerOverlay" fx:controller="jeu.application.controleur.TableDeuxJoueurs">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#FermerOverlay" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.TableDeuxJoueurs">
    <children>
-      <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+      <Ellipse fill="#477148" layoutX="410.0" layoutY="285.0" radiusX="350.0" radiusY="250.0" strokeType="INSIDE" />
+      <HBox alignment="CENTER" layoutX="334.0" layoutY="421.0" spacing="5.0">
          <children>
-            <Ellipse fill="#477148" layoutX="410.0" layoutY="285.0" radiusX="350.0" radiusY="250.0" strokeType="INSIDE" />
-            <HBox alignment="CENTER" layoutX="334.0" layoutY="421.0" spacing="5.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
-               </children>
-            </HBox>
-            <Circle fill="BLUE" layoutX="247.0" layoutY="431.0" radius="15.0" strokeType="INSIDE" />
-            <Circle fill="RED" layoutX="572.0" layoutY="431.0" radius="15.0" strokeType="INSIDE" />
-            <AnchorPane layoutX="352.0" layoutY="198.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="50.0" layoutX="53.0" layoutY="43.0" strokeType="INSIDE" width="30.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="50.0" layoutX="-1.0" strokeType="INSIDE" width="30.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="50.0" layoutX="106.0" layoutY="86.0" strokeType="INSIDE" width="30.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="-1.0" layoutY="86.0" strokeType="INSIDE" width="30.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREEN" height="50.0" layoutX="106.0" strokeType="INSIDE" width="30.0" />
-               </children>
-            </AnchorPane>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="232.0" layoutY="360.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="572.0" layoutY="360.0" strokeType="INSIDE" width="30.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="557.0" layoutY="360.0" strokeType="INSIDE" width="30.0" />
-            <Label fx:id="joueur1Label" layoutX="392.0" layoutY="470.0" text="Joueur 1" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="joueur2Label" layoutX="392.0" layoutY="101.0" text="Joueur 2" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <HBox alignment="CENTER" layoutX="334.0" layoutY="50.0" spacing="5.0">
-               <children>
-                  <Button fx:id="joueur2Carte1" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="joueur2Carte2" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="joueur2Carte3" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="joueur2Carte4" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="joueur2Carte5" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-            <Label fx:id="nbJetonsBleu" alignment="CENTER" layoutX="236.0" layoutY="420.0" prefHeight="22.0" prefWidth="23.0" text="0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="nbJetonsRouge" alignment="CENTER" layoutX="559.5" layoutY="420.0" prefHeight="22.0" prefWidth="25.0" text="0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="nbCartesDefausse" alignment="CENTER" layoutX="558.0" layoutY="376.0" prefHeight="22.0" prefWidth="25.0" text="0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="nbCartesPioche" alignment="CENTER" layoutX="235.0" layoutY="375.0" prefHeight="22.0" prefWidth="25.0" text="0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="50.0" strokeType="INSIDE" width="30.0" />
+         </children>
+      </HBox>
+      <Circle fill="BLUE" layoutX="247.0" layoutY="431.0" radius="15.0" strokeType="INSIDE" />
+      <Circle fill="RED" layoutX="572.0" layoutY="431.0" radius="15.0" strokeType="INSIDE" />
+      <AnchorPane layoutX="352.0" layoutY="198.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="50.0" layoutX="53.0" layoutY="43.0" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="50.0" layoutX="-1.0" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="50.0" layoutX="106.0" layoutY="86.0" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="-1.0" layoutY="86.0" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREEN" height="50.0" layoutX="106.0" strokeType="INSIDE" width="30.0" />
          </children>
       </AnchorPane>
-      <VBox fx:id="overlayActions" alignment="CENTER" layoutX="353.0" layoutY="123.0" spacing="15.0">
-               <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: WHITE;" text="Indiquer couleur">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="232.0" layoutY="360.0" strokeType="INSIDE" width="30.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="572.0" layoutY="360.0" strokeType="INSIDE" width="30.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="557.0" layoutY="360.0" strokeType="INSIDE" width="30.0" />
+      <Label fx:id="joueur1Label" layoutX="392.0" layoutY="470.0" text="Joueur 1" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="joueur2Label" layoutX="392.0" layoutY="101.0" text="Joueur 2" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="334.0" layoutY="50.0" spacing="5.0">
+         <children>
+            <Button fx:id="joueur2Carte1" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-                  <Button mnemonicParsing="false" style="-fx-background-color: WHITE;" text="Indiquer numéro">
+            <Button fx:id="joueur2Carte2" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur2Carte3" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur2Carte4" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="joueur2Carte5" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label fx:id="nbJetonsBleu" alignment="CENTER" layoutX="236.0" layoutY="420.0" prefHeight="22.0" prefWidth="23.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbJetonsRouge" alignment="CENTER" layoutX="559.5" layoutY="420.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbCartesDefausse" alignment="CENTER" layoutX="558.0" layoutY="376.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbCartesPioche" alignment="CENTER" layoutX="235.0" layoutY="375.0" prefHeight="22.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <HBox fx:id="overlayActions" alignment="CENTER" layoutX="344.0" layoutY="123.0" spacing="15.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: WHITE;" text="Couleur">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: WHITE;" text="Valeur">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
                </children>
-            </VBox>
+            </HBox>
    </children>
 </AnchorPane>

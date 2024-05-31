@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import jeu.modele.Couleur;
 import jeu.modele.Partie;
 
@@ -98,6 +99,9 @@ public class TableCinqJoueurs {
 
 	@FXML
 	private Button joueur5Carte4;
+	
+	@FXML
+	private HBox overlayActions;
 
 	/**
 	 * @param partie la partie à jouer
@@ -212,7 +216,7 @@ public class TableCinqJoueurs {
 	 */
 	@FXML
 	public void initialize() {
-		// Ne pas accéder aux données ici, elles seront définies via setPartie()
+		overlayActions.setVisible(false);
 	}
 	
 	/**
@@ -223,4 +227,17 @@ public class TableCinqJoueurs {
 	    System.out.println(joueur1Carte1.getLayoutX());
 	    System.out.println(joueur1Carte1.getLayoutY());
 	}
+	
+	@FXML
+	private void gererClicActions() {
+		overlayActions.setVisible(true);
+	}
+
+	@FXML
+	private void FermerOverlay() {
+		overlayActions.setVisible(false);
+	}
+	
+	@FXML
+	private void 
 }

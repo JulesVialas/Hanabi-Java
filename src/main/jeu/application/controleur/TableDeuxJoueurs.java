@@ -7,6 +7,7 @@ import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import jeu.modele.Carte;
 import jeu.modele.Couleur;
@@ -75,7 +76,7 @@ public class TableDeuxJoueurs {
         private Button btnDonnerValeur;
 	
 	@FXML
-	private VBox overlayActions;
+	private HBox overlayActions;
 
 	@FXML
 	private AnchorPane mainPane;
@@ -126,14 +127,12 @@ public class TableDeuxJoueurs {
 
 	@FXML
 	private void gererClicActions() {
-		mainPane.setEffect(blurEffect); // Apply blur effect to main pane
 		overlayActions.setVisible(true);
 	}
 
 	@FXML
 	private void FermerOverlay() {
 		overlayActions.setVisible(false);
-		mainPane.setEffect(null); // Remove blur effect from main pane
 	}
 
 	private String convertirCouleurEnHex(Couleur couleur) {
