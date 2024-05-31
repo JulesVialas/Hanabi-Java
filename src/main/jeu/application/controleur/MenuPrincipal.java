@@ -13,6 +13,9 @@ package jeu.application.controleur;
 import javafx.fxml.FXML;
 import jeu.application.Hanabi;
 
+/**
+ * TODO commenter la responsabilité de cette classe (SRP)
+ */
 public class MenuPrincipal {
 	@FXML
 	private void gererClicNouvellePartie() {

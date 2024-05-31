@@ -139,16 +139,16 @@ public class Hanabi extends Application {
 	 * @param partie la partie qui se déroule
 	 */
 	public static void activerTableCinqJoueurs(Partie partie) {
-		try {
-			FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableCinqJoueurs.fxml"));
-			Parent root = loader.load();
-			TableCinqJoueurs controller = loader.getController();
-			controller.setPartie(partie);
-			sceneTableCinqJoueurs = new Scene(root, 800, 600);
-			fenetrePrincipale.setScene(sceneTableCinqJoueurs);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    try {
+	        FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/TableCinqJoueurs.fxml"));
+	        Parent root = loader.load();
+	        TableCinqJoueurs controller = loader.getController();
+	        controller.setPartie(partie);
+	        sceneTableCinqJoueurs = new Scene(root, 800, 600);
+	        fenetrePrincipale.setScene(sceneTableCinqJoueurs);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	@Override

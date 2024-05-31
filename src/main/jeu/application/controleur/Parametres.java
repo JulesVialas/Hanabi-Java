@@ -38,7 +38,7 @@ public class Parametres {
 
 	@FXML
 	private void retourMenu(ActionEvent event) {
-        if (partieActive) {
+	    if (partieActive) {
 	        Hanabi.activerTableCinqJoueurs(ChoixJoueurs.partieCinqJoueurs);
 	    } else {
 	        Hanabi.activerPrincipale();
