@@ -21,6 +21,8 @@ public class TableCinqJoueurs {
 
     /** La carte sélectionnée */
     private Carte carteSelectionnee;
+
+    //TODO joueurs (bas, gauche, drte ...)
     
     @FXML
     private Label joueurBasLabel;
@@ -117,7 +119,7 @@ public class TableCinqJoueurs {
 
     @FXML
     private Button menuPause;
-    
+
     /**
      * @param aAffecter la partie à jouer
      */
@@ -210,22 +212,22 @@ public class TableCinqJoueurs {
         }
     }
 
-	private String convertirCouleurEnHex(Couleur couleur) {
-		switch (couleur) {
-		case ROUGE:
-			return "FF0000";
-		case VERT:
-			return "008000";
-		case BLEU:
-			return "0000FF";
-		case JAUNE:
-			return "FFFF00";
-		case BLANC:
-			return "FFFFFF";
-		default:
-			return "000000";
-		}
-	}
+    private String convertirCouleurEnHex(Couleur couleur) {
+        switch (couleur) {
+        case ROUGE:
+            return "FF0000";
+        case VERT:
+            return "008000";
+        case BLEU:
+            return "0000FF";
+        case JAUNE:
+            return "FFFF00";
+        case BLANC:
+            return "FFFFFF";
+        default:
+            return "000000";
+        }
+    }
 
 	@FXML
 	private void gererClicCarteEquipier(ActionEvent event) {
@@ -269,64 +271,79 @@ public class TableCinqJoueurs {
 	    System.out.println(joueurBasCarte1.getLayoutX());
 	    System.out.println(joueurBasCarte1.getLayoutY());
 	}
-	
 
-	@FXML
-	private void FermerOverlay() {
-		overlayActions.setVisible(false);
-		overlayJoueurCourant.setVisible(false);
-	}
 
-	
-	@FXML
-	private void gererClicParametres() {
-	    Parametres.partieActive = true;
-	    Hanabi.activerParametres();
-	}
-	    
-	private void gererClicCouleur() {
-		//Tour.donnerIndice(TODO trouver la carte selectionnée, 'c');
-	} 	
-	
-	@FXML
-	private void gererClicValeur() {
-		//Tour.donnerIndice(TODO trouver la carte selectionnée, 'v');
-	}
-	
-	@FXML
-	private void gererClicPoser() {
-		//Tour.poser(TODO Trouver la carte selectionnée);
-	}
-	
-	@FXML
-        private void donnerIndiceCouleur(ActionEvent event) {
-            //TODO faut récupérer la carte liée au bouton
-            // => switch case en private en fcontion de la source
-            //partieEnCours.getTourCourant()
-            //    .donnerIndice(Carte recoitIndice, 'c');
-            System.out.println(((Control)event.getSource()).getId());
-            System.out.println("Coucou");
+    @FXML
+    private void FermerOverlay() {
+        overlayActions.setVisible(false);
+        overlayJoueurCourant.setVisible(false);
+    }
+
+
+    @FXML
+    private void gererClicParametres() {
+        Parametres.partieActive = true;
+        Hanabi.activerParametres();
+    }
+
+    private void gererClicCouleur() {
+        //Tour.donnerIndice(TODO trouver la carte selectionnée, 'c');
+    } 	
+
+    @FXML
+    private void gererClicValeur() {
+        //Tour.donnerIndice(TODO trouver la carte selectionnée, 'v');
+    }
+
+    @FXML
+    private void gererClicPoser() {
+        //Tour.poser(TODO Trouver la carte selectionnée);
+    }
+
+    @FXML
+    private void donnerIndiceCouleur(ActionEvent event) {
+        //TODO faut récupérer la carte liée au bouton
+        // => switch case en private en fcontion de la source
+        //partieEnCours.getTourCourant()
+        //    .donnerIndice(Carte recoitIndice, 'c');
+        System.out.println(((Control)event.getSource()).getId());
+        System.out.println("Coucou");
+    }
+
+    //	/**
+    //	 * Défini la carte sélectionnée
+    //	 */
+    //	private void setCarteSelectionnee(Control btnClique) {
+    //	    switch((Control)event.getSource()) {
+    //	        case joueur1Carte1:
+    //	        carteSelectionnee = 
+    //	    }                
+    //	}
+
+    /**
+     * Met à jour la position des joueurs en fonction du 
+     * numéro de tour
+     */
+    private void updatePositionJoueurs() {
+        switch(partieEnCours.getTourCourant().getNumero() % 5) {
+        case 0:
+
         }
-	
-//	/**
-//	 * Défini la carte sélectionnée
-//	 */
-//	private void setCarteSelectionnee(Control btnClique) {
-//	    switch((Control)event.getSource()) {
-//	        case joueur1Carte1:
-//	        carteSelectionnee = 
-//	    }                
-//	}
-	
-	/**
-	 * Met à jour la position des joueurs en fonction du 
-	 * numéro de tour
-	 */
-	private void updatePositionJoueurs() {
-	    switch(partieEnCours.getTourCourant().getNumero() % 5) {
-	    case 0:
-	        
-	    }
-	    
-	}
+    }
+    
+    /** 
+     * Renvoie la carte liée au bouton cliqué à partir
+     * de l'identifiant du bouton.
+     * 
+     * @param idBouton l'identifiant du bouton cliqué
+     * @return la carte associée au bouton
+     */
+    private Carte obtenirCarteButton(String idBouton) {
+        switch(idBouton) {
+        case "joueurGauche1Carte1":
+            System.out.println("CoucouBoy");
+        }
+        //TODO récupérer joueurBase, JoueurGauche etc 
+        return carteSelectionnee;
+    }
 }
