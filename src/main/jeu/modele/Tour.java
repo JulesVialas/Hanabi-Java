@@ -115,7 +115,7 @@ public class Tour {
 	 */
 	public void donnerIndice(Carte recoitIndice, char natureIndice) {
 
-		/* On détermine quel joueur possède la carte */
+		/* On détermine quel 	joueur possède la carte */
 		Joueur recepteur = determinerJoueurAyantCarte(recoitIndice);
 
 		/* On empèche le joueur de se donner un indice à lui-même */
