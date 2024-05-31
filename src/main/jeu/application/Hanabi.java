@@ -301,12 +301,22 @@ public class Hanabi extends Application {
 			FXMLLoader chargeurFXMLChangerTheme = new FXMLLoader();
 			chargeurFXMLChangerTheme.setLocation(getClass().getResource("vue/ChangerTheme.fxml"));
 			conteneur = chargeurFXMLChangerTheme.load();
-            sceneTheme = new Scene(conteneur, 800, 600);
+                        sceneTheme = new Scene(conteneur, 800, 600);
+                        
+                        FXMLLoader chargeurFXMLPersonnaliserPartie = new FXMLLoader();
+                        chargeurFXMLPersonnaliserPartie.setLocation(getClass().getResource("vue/PersonnaliserPartie.fxml"));
+                        conteneur = chargeurFXMLPersonnaliserPartie.load();
+                        sceneTheme = new Scene(conteneur, 800, 600);
+                        
+                        FXMLLoader chargeurFXMLChoixSauvegardePartie = new FXMLLoader();
+                        chargeurFXMLChoixSauvegardePartie.setLocation(getClass().getResource("vue/ChangerTheme.fxml"));
+                        conteneur = chargeurFXMLChoixSauvegardePartie.load();
+                        sceneTheme = new Scene(conteneur, 800, 600);
             
-            FXMLLoader chargeurFXMLRegles= new FXMLLoader();
+                         FXMLLoader chargeurFXMLRegles= new FXMLLoader();
 			chargeurFXMLRegles.setLocation(getClass().getResource("vue/Regles.fxml"));
 			conteneur = chargeurFXMLRegles.load();
-            sceneRegles = new Scene(conteneur, 800, 600);
+			sceneRegles = new Scene(conteneur, 800, 600);
                         
                         
 			// on définit le titre, la hauteur et la largeur de la fenêtre principale
