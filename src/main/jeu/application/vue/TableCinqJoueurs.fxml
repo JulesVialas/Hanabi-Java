@@ -196,14 +196,14 @@
             </Label>
             <VBox fx:id="overlayActions" alignment="CENTER" layoutX="328.0" layoutY="105.0" spacing="15.0">
                <children>
-                  <Button fx:id="btnIndiceCouleur1" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#donnerIndiceCouleur" style="-fx-background-color: WHITE;" text="✔" textFill="GREEN">
+                  <Button fx:id="btnValiderIndice" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#donnerIndice" style="-fx-background-color: WHITE;" text="✔" textFill="GREEN">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
                   <HBox alignment="CENTER" spacing="15.0">
                      <children>
-                        <Button fx:id="btnIndiceCouleur" mnemonicParsing="false" onAction="#donnerIndiceCouleur" prefHeight="31.0" prefWidth="73.0" style="-fx-background-color: WHITE;" text="Couleur">
+                        <Button fx:id="btnIndiceCouleur" mnemonicParsing="false" onAction="#gererClicCouleur" prefHeight="31.0" prefWidth="73.0" style="-fx-background-color: WHITE;" text="Couleur">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -219,7 +219,7 @@
             </VBox>
             <VBox fx:id="overlayJoueurCourant" alignment="CENTER" layoutX="316.0" layoutY="327.0" spacing="15.0">
                <children>
-                  <Button fx:id="btnIndiceCouleur11" mnemonicParsing="false" onAction="#donnerIndiceCouleur" style="-fx-background-color: white;" text="✔" textFill="GREEN">
+                  <Button fx:id="btnIndiceCouleur11" mnemonicParsing="false" onAction="#donnerIndice" style="-fx-background-color: white;" text="✔" textFill="GREEN">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>

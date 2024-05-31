@@ -25,6 +25,9 @@ public class TableCinqJoueurs {
 
     /** La carte sélectionnée */
     private Carte carteSelectionnee;
+    
+    /** La nature de l'indice à donner */
+    private char natureIndice;
 
     /* Joueurs correspondant aux positions*/
     private Joueur joueurBas;
@@ -217,7 +220,10 @@ public class TableCinqJoueurs {
         Pause.setVisible(true);
     }
 
+    @FXML
     private void gererClicCouleur() {
+        natureIndice = 'c';
+        //TODO mettre en évidence les cartes correspondantes
         //Tour.donnerIndice(TODO trouver la carte selectionnée, 'c');
     } 	
 
@@ -232,9 +238,9 @@ public class TableCinqJoueurs {
     }
 
     @FXML
-    private void donnerIndiceCouleur(ActionEvent event) {
+    private void donnerIndice(ActionEvent event) {
         partieEnCours.getTourCourant()
-                     .donnerIndice(carteSelectionnee, 'c');
+                     .donnerIndice(carteSelectionnee, natureIndice);
         System.out.println(((Control)event.getSource()).getId());
         resetCarteSelectionnee();
         updateView();
