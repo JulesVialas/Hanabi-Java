@@ -132,9 +132,9 @@ public class TableCinqJoueurs {
 
     @FXML
     private VBox overlayJoueurCourant;
-
+    
     @FXML
-    private Button menuPause;
+    private VBox Pause;
     
     @FXML
     private AnchorPane effetPause;
@@ -285,6 +285,7 @@ public class TableCinqJoueurs {
 
         overlayActions.setVisible(false);
         overlayJoueurCourant.setVisible(false);
+        Pause.setVisible(false);
     }
 
     @FXML
@@ -298,6 +299,7 @@ public class TableCinqJoueurs {
     private void gererClicParametres() {
     	effetPause.setEffect(blurEffect);
         Parametres.partieActive = true;
+        Pause.setVisible(true);
     }
 
     private void gererClicCouleur() {
