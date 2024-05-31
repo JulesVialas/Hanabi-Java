@@ -38,22 +38,22 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="342.0" layoutY="410.0" spacing="5.0">
          <children>
-            <Button fx:id="joueur1Carte1" mnemonicParsing="false" onAction="#Carte1Joueur1" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+            <Button fx:id="joueur1Carte1" mnemonicParsing="false" onAction="#gererClicJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueur1Carte2" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+            <Button fx:id="joueur1Carte2" mnemonicParsing="false" onAction="#gererClicJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueur1Carte3" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+            <Button fx:id="joueur1Carte3" mnemonicParsing="false" onAction="#gererClicJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueur1Carte4" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+            <Button fx:id="joueur1Carte4" mnemonicParsing="false" onAction="#gererClicJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -199,6 +199,20 @@
                </font>
             </Button>
             <Button mnemonicParsing="false" style="-fx-background-color: WHITE;" text="Valeur">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="overlayActions1" alignment="CENTER" layoutX="334.0" layoutY="360.0" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" style="-fx-background-color: WHITE;" text="Poser">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" style="-fx-background-color: WHITE;" text="Défausser">
                <font>
                   <Font size="15.0" />
                </font>

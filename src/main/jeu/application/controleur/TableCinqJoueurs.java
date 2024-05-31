@@ -102,6 +102,9 @@ public class TableCinqJoueurs {
 	
 	@FXML
 	private HBox overlayActions;
+	
+	@FXML
+	private HBox overlayJoueurCourant;
 
 	/**
 	 * @param partie la partie à jouer
@@ -217,6 +220,7 @@ public class TableCinqJoueurs {
 	@FXML
 	public void initialize() {
 		overlayActions.setVisible(false);
+		overlayJoueurCourant.setVisible(false);
 	}
 	
 	/**
@@ -231,6 +235,7 @@ public class TableCinqJoueurs {
 	@FXML
 	private void gererClicActions() {
 		overlayActions.setVisible(true);
+		overlayJoueurCourant.setVisible(false);
 	}
 
 	@FXML
@@ -239,5 +244,8 @@ public class TableCinqJoueurs {
 	}
 	
 	@FXML
-	private void 
+	private void gererClicJoueurCourant() {
+		overlayJoueurCourant.setVisible(true);
+		overlayActions.setVisible(false);
+	}
 }
