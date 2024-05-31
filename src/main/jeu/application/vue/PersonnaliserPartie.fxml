@@ -6,6 +6,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="283.0" layoutY="101.0" text="Vous pouvez changer le thème de l'interface" />
+      <Label layoutX="342.0" layoutY="70.0" text="Personnaliser la partie" />
    </children>
 </AnchorPane>

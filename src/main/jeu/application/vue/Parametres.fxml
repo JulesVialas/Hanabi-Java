@@ -24,7 +24,7 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="201.0" mnemonicParsing="false" style="-fx-background-color: #477148;" text="Personnaliser partie" textFill="WHITE">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="279.0" layoutY="201.0" mnemonicParsing="false" onAction="#personnaliserLaPartie" style="-fx-background-color: #477148;" text="Personnaliser partie" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>
@@ -32,7 +32,7 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="310.0" mnemonicParsing="false" style="-fx-background-color: #477148;" text="Choisir emplacement par défaut pour la sauvegarde" textFill="WHITE">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="310.0" mnemonicParsing="false" onAction="#choixSauvegardePartie" style="-fx-background-color: #477148;" text="Choisir emplacement par défaut pour la sauvegarde" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>

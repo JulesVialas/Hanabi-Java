@@ -33,7 +33,6 @@ public class Parametres {
 	private void initialize() {
 		/* Préparation des éléments FXML */
 		// TODO ajouter les @FXML des éléments
-
 	}
 
 	@FXML
@@ -41,6 +40,15 @@ public class Parametres {
 	    Hanabi.activerChangerTheme();
 	}
 	
+	@FXML
+	private void personnaliserLaPartie() {
+	    Hanabi.activerPersonnaliserPartie();
+	}
+	
+	@FXML
+        private void choixSauvegardePartie() {
+            Hanabi.activerChoixSauvegardePartie();
+        }
 	
 	@FXML
 	private void retourMenu(ActionEvent event) {

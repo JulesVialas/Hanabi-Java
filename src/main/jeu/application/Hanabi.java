@@ -14,7 +14,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import jeu.application.controleur.ChangerTheme;
 import jeu.application.controleur.TableCinqJoueurs;
 import jeu.application.controleur.TableDeuxJoueurs;
 import jeu.application.controleur.TableQuatreJoueurs;
@@ -53,6 +52,15 @@ public class Hanabi extends Application {
 
 	/** Scène permettant de gérer le changement de theme */
         private static Scene sceneTheme;
+        
+        /** Scène permettant de gérer la personnalisation de la partie */
+        private static Scene scenePersonnalisation;
+        
+        /**
+         * Scène permettant de gérer le choix de l'emplacement de la 
+         * sauvegarde. 
+         */
+        private static Scene sceneChoixSauvegarde;
         
 	/**
 	 * Fenêtre principale de l'application La scène qui lui est associée sera
@@ -172,6 +180,38 @@ public class Hanabi extends Application {
                 e.printStackTrace();
             }
         }
+        
+        /**
+         * Permet de modifier la scène de la fenetre principale pour
+         * qu'elle devienne celle de PersonnaliserPartie
+         */
+        @FXML
+        public static void activerPersonnaliserPartie() {
+            try {
+                FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/PersonnaliserPartie.fxml"));
+                Parent root = loader.load();
+                scenePersonnalisation = new Scene(root, 800, 600);
+                fenetrePrincipale.setScene(scenePersonnalisation);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        /**
+         * Permet de modifier la scène de la fenetre principale pour
+         * qu'elle devienne celle de ChoixSauvegardePartie
+         */
+        @FXML
+        public static void activerChoixSauvegardePartie() {
+            try {
+                FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/ChoixSauvegardePartie.fxml"));
+                Parent root = loader.load();
+                sceneChoixSauvegarde = new Scene(root, 800, 600);
+                fenetrePrincipale.setScene(sceneChoixSauvegarde);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -239,19 +279,7 @@ public class Hanabi extends Application {
 			chargeurFXMLTableCinqJoueurs.setLocation(getClass().getResource("vue/TableCinqJoueurs.fxml"));
 			conteneur = chargeurFXMLTableCinqJoueurs.load();
 			sceneTableCinqJoueurs = new Scene(conteneur, 800, 600);
-			
-			
-			
-			
-			FXMLLoader chargeurFXMLChangerTheme = new FXMLLoader();
-			chargeurFXMLChangerTheme.setLocation(getClass().getResource("vue/ChangerTheme.fxml"));
-                        conteneur = chargeurFXMLChangerTheme.load();
-                        sceneTheme = new Scene(conteneur, 800, 600);
-                        
-                        
-                        
-                        
-                        
+			    
 			// on définit le titre, la hauteur et la largeur de la fenêtre principale
 			primaryStage.setTitle("Hanabi");
 			primaryStage.setHeight(600);
