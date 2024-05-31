@@ -37,6 +37,12 @@ public class Parametres {
 	}
 
 	@FXML
+	private void changerLeTheme() {
+	    Hanabi.activerChangerTheme();
+	}
+	
+	
+	@FXML
 	private void retourMenu(ActionEvent event) {
 	    if (partieActive) {
 	        Hanabi.activerTableCinqJoueurs(ChoixJoueurs.partieCinqJoueurs);

@@ -16,7 +16,7 @@
             <Font name="Calibri Bold Italic" size="20" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="101.0" mnemonicParsing="false" style="-fx-background-color: #477148;" text="Changer le thème" textFill="WHITE">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="101.0" mnemonicParsing="false" onAction="#changerLeTheme" style="-fx-background-color: #477148;" text="Changer le thème" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>
