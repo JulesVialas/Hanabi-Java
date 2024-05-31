@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import jeu.application.Hanabi;
 import jeu.modele.Couleur;
 import jeu.modele.Partie;
 
@@ -105,6 +106,9 @@ public class TableCinqJoueurs {
 	
 	@FXML
 	private HBox overlayJoueurCourant;
+	
+	@FXML
+	private Button menuPause;
 
 	/**
 	 * @param partie la partie à jouer
@@ -248,5 +252,11 @@ public class TableCinqJoueurs {
 	private void gererClicJoueurCourant() {
 		overlayJoueurCourant.setVisible(true);
 		overlayActions.setVisible(false);
+	}
+	
+	@FXML
+	private void gererClicParametres() {
+	    Parametres.partieActive = true;
+	    Hanabi.activerParametres();
 	}
 }

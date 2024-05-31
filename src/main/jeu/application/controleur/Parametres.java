@@ -9,6 +9,7 @@ package jeu.application.controleur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import jeu.application.Hanabi;
+import jeu.modele.Partie;
 
 /**
  * Joue le rôle de contrôleur pour la vue Paramètres de l'application Hanabi.
@@ -20,7 +21,12 @@ import jeu.application.Hanabi;
  */
 public class Parametres {
 
-	/**
+	/** 
+	 * Indique si la partie est active ou non pour gerer le retour de la 
+	 * page paramètre à la page menu ou à la page de la partie*/
+	public static boolean partieActive = false;
+
+    /**
 	 * Prépare le modèle et la vue.
 	 */
 	@FXML
@@ -32,6 +38,10 @@ public class Parametres {
 
 	@FXML
 	private void retourMenu(ActionEvent event) {
-		Hanabi.activerPrincipale();
+        if (partieActive) {
+	        Hanabi.activerTableCinqJoueurs(ChoixJoueurs.partieCinqJoueurs);
+	    } else {
+	        Hanabi.activerPrincipale();
+	    }
 	}
 }
