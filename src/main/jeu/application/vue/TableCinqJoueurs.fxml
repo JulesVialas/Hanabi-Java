@@ -14,22 +14,22 @@
       <Ellipse fill="#477148" layoutX="400.0" layoutY="275.0" radiusX="350.0" radiusY="250.0" strokeType="INSIDE" />
       <HBox alignment="CENTER" layoutX="206.0" layoutY="72.0" spacing="5.0">
          <children>
-            <Button fx:id="joueurGauche2Carte1" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurGauche2Carte1" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurGauche2Carte2" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurGauche2Carte2" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurGauche2Carte3" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurGauche2Carte3" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurGauche2Carte4" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurGauche2Carte4" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -38,22 +38,22 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="342.0" layoutY="410.0" spacing="5.0">
          <children>
-            <Button fx:id="joueurBasCarte1" mnemonicParsing="false" onAction="#gererClicJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+            <Button fx:id="joueurBasCarte1" mnemonicParsing="false" onAction="#gererClicCarteJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurBasCarte2" mnemonicParsing="false" onAction="#gererClicJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+            <Button fx:id="joueurBasCarte2" mnemonicParsing="false" onAction="#gererClicCarteJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurBasCarte3" mnemonicParsing="false" onAction="#gererClicJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+            <Button fx:id="joueurBasCarte3" mnemonicParsing="false" onAction="#gererClicCarteJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurBasCarte4" mnemonicParsing="false" onAction="#gererClicJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
+            <Button fx:id="joueurBasCarte4" mnemonicParsing="false" onAction="#gererClicCarteJoueurCourant" prefHeight="50.0" prefWidth="30.0" style="-fx-background-color: black; -fx-opacity: 50%;">
                <font>
                   <Font size="15.0" />
                </font>
@@ -101,22 +101,22 @@
       </Label>
       <HBox alignment="CENTER" layoutX="460.0" layoutY="72.0" spacing="5.0">
          <children>
-            <Button fx:id="joueurDroite1Carte1" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurDroite1Carte1" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurDroite1Carte2" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurDroite1Carte2" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurDroite1Carte3" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurDroite1Carte3" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurDroite1Carte4" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurDroite1Carte4" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -125,22 +125,22 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="109.0" layoutY="231.0" spacing="5.0">
          <children>
-            <Button fx:id="joueurGauche1Carte1" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurGauche1Carte1" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurGauche1Carte2" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurGauche1Carte2" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurGauche1Carte3" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurGauche1Carte3" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurGauche1Carte4" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurGauche1Carte4" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -149,22 +149,22 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="557.0" layoutY="231.0" spacing="5.0">
          <children>
-            <Button fx:id="joueurDroite2Carte1" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurDroite2Carte1" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurDroite2Carte2" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurDroite2Carte2" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurDroite2Carte3" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurDroite2Carte3" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="joueurDroite2Carte4" mnemonicParsing="false" onAction="#gererClicActions" prefHeight="50.0" prefWidth="30.0">
+            <Button fx:id="joueurDroite2Carte4" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
                <font>
                   <Font size="15.0" />
                </font>

@@ -228,21 +228,28 @@ public class TableCinqJoueurs {
 	}
 
 	@FXML
-	private void gererClicActions(ActionEvent event) {
-	    Button buttonClicked = (Button) event.getSource();
-	    String fxId = buttonClicked.getId();
-	    System.out.println("Bouton cliqué : " + fxId);
+	private void gererClicCarteEquipier(ActionEvent event) {
+		String identifiant = recupererIdentifiantBoutonCarte(event);
+		System.out.println("Bouton cliqué : " + identifiant);
 	    overlayActions.setVisible(true);
 	    overlayJoueurCourant.setVisible(false);
 	}
 
 	@FXML
-	private void gererClicJoueurCourant(ActionEvent event) {
-	    Button buttonClicked = (Button) event.getSource();
-	    String fxId = buttonClicked.getId();
-	    System.out.println("Bouton cliqué : " + fxId);
+	private void gererClicCarteJoueurCourant(ActionEvent event) {
+		String identifiant = recupererIdentifiantBoutonCarte(event);
+		System.out.println("Bouton cliqué : " + identifiant);
 	    overlayJoueurCourant.setVisible(true);
 	    overlayActions.setVisible(false);
+	}
+	
+	/**
+	 * @param event l'évenement de clic sur la carte
+	 * @return l'identifiant du boutton représentant la carte cliquée
+	 */
+	private String recupererIdentifiantBoutonCarte(ActionEvent event) {
+		Button buttonClicked = (Button) event.getSource();
+		return buttonClicked.getId();
 	}
 	
 	/**
