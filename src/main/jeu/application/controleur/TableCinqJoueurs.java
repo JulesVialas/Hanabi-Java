@@ -241,6 +241,7 @@ public class TableCinqJoueurs {
 	@FXML
 	private void FermerOverlay() {
 		overlayActions.setVisible(false);
+		overlayJoueurCourant.setVisible(false);
 	}
 	
 	@FXML

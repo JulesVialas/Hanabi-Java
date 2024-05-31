@@ -205,7 +205,7 @@
             </Button>
          </children>
       </HBox>
-      <HBox fx:id="overlayActions1" alignment="CENTER" layoutX="334.0" layoutY="360.0" spacing="15.0">
+      <HBox fx:id="overlayJoueurCourant" alignment="CENTER" layoutX="334.0" layoutY="360.0" spacing="15.0">
          <children>
             <Button mnemonicParsing="false" style="-fx-background-color: WHITE;" text="Poser">
                <font>
