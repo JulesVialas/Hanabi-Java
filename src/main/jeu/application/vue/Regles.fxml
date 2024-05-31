@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -8,8 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.Regles">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.Regles">
    <children>
       <ScrollPane layoutX="0.800000011920929" layoutY="0.800000011920929" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
         <content>
@@ -59,14 +63,14 @@
                         </ImageView>
                      </children>
                   </VBox>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="704.0" layoutY="33.0" mnemonicParsing="false" onAction="#retourMenu" style="-fx-background-color: #477148;" text="⭠" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="20" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="724.0" layoutY="18.0" mnemonicParsing="false" onAction="#retourMenu" style="-fx-background-color: #477148;" text="⭠" textFill="WHITE">
-         <font>
-            <Font name="Calibri Bold Italic" size="20" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

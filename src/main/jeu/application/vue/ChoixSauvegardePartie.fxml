@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.ChoixSauvegardePartie">
    <children>
       <Label layoutX="227.0" layoutY="106.0" text="Veuillez choisir l'emplacement par défaut de la sauvegarde du jeu" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="704.0" layoutY="33.0" mnemonicParsing="false" onAction="#retourMenu" style="-fx-background-color: #477148;" text="⭠" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="20" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

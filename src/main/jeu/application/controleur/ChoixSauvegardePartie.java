@@ -13,4 +13,8 @@ import jeu.application.Hanabi;
  */
 public class ChoixSauvegardePartie {
 
+    @FXML
+    private void retourMenu(ActionEvent event) {
+            Hanabi.activerParametres();
+    }
 }

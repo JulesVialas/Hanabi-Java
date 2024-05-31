@@ -1,5 +1,5 @@
 /*
- * PersonnaliserPartie.java                                            31 mai 2024
+ * PersonnaliserPartie.java                                          31 mai 2024
  * IUT de Rodez, Info1 2023-2024 TP4, pas de copyright
  */
 package jeu.application.controleur;

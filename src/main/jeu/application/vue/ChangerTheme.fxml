@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,6 +8,12 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.ChangerTheme">
    <children>
       <Label layoutX="283.0" layoutY="101.0" text="Vous pouvez changer le thème de l'interface" />
-      <Button layoutX="704.0" layoutY="33.0" minHeight="37.0" minWidth="48.0" mnemonicParsing="false" onAction="#retourMenu" text="⭠" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="704.0" layoutY="33.0" mnemonicParsing="false" onAction="#retourMenu" style="-fx-background-color: #477148;" text="⭠" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="20" />
+         </font>
+      </Button>
+      <Button layoutX="231.0" layoutY="267.0" mnemonicParsing="false" text="Thème 1" />
+      <Button layoutX="518.0" layoutY="267.0" mnemonicParsing="false" text="Thème 2" />
    </children>
 </AnchorPane>
