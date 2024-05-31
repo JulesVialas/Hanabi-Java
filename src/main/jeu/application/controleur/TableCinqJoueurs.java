@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import jeu.application.Hanabi;
 import jeu.modele.Carte;
 import jeu.modele.Couleur;
@@ -125,10 +126,10 @@ public class TableCinqJoueurs {
     private Button btnIndiceCouleur;
     
     @FXML
-    private HBox overlayActions;
+    private VBox overlayActions;
 
     @FXML
-    private HBox overlayJoueurCourant;
+    private VBox overlayJoueurCourant;
 
     @FXML
     private Button menuPause;
