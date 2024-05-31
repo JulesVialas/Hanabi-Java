@@ -227,6 +227,24 @@ public class TableCinqJoueurs {
 		}
 	}
 
+	@FXML
+	private void gererClicActions(ActionEvent event) {
+	    Button buttonClicked = (Button) event.getSource();
+	    String fxId = buttonClicked.getId();
+	    System.out.println("Bouton cliqué : " + fxId);
+	    overlayActions.setVisible(true);
+	    overlayJoueurCourant.setVisible(false);
+	}
+
+	@FXML
+	private void gererClicJoueurCourant(ActionEvent event) {
+	    Button buttonClicked = (Button) event.getSource();
+	    String fxId = buttonClicked.getId();
+	    System.out.println("Bouton cliqué : " + fxId);
+	    overlayJoueurCourant.setVisible(true);
+	    overlayActions.setVisible(false);
+	}
+	
 	/**
 	 * initialisation de la scène
 	 */
@@ -245,23 +263,13 @@ public class TableCinqJoueurs {
 	    System.out.println(joueurBasCarte1.getLayoutY());
 	}
 	
-	@FXML
-	private void gererClicActions() {
-		overlayActions.setVisible(true);
-		overlayJoueurCourant.setVisible(false);
-	}
 
 	@FXML
 	private void FermerOverlay() {
 		overlayActions.setVisible(false);
 		overlayJoueurCourant.setVisible(false);
 	}
-	
-	@FXML
-	private void gererClicJoueurCourant() {
-		overlayJoueurCourant.setVisible(true);
-		overlayActions.setVisible(false);
-	}
+
 	
 	@FXML
 	private void gererClicParametres() {
@@ -271,7 +279,7 @@ public class TableCinqJoueurs {
 	    
 	private void gererClicCouleur() {
 		//Tour.donnerIndice(TODO trouver la carte selectionnée, 'c');
-	}
+	} 	
 	
 	@FXML
 	private void gererClicValeur() {
