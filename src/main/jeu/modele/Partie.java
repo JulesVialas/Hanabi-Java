@@ -203,6 +203,7 @@ public class Partie {
 
 		/* Lancement de la partie */
 		tourCourant = new Tour(joueur1, 1);
+		tourCourant.setPartieDuTour(this);
 	}
 
 	/**

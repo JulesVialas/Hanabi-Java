@@ -122,6 +122,9 @@ public class TableCinqJoueurs {
     private Button joueurDroite2Carte4;
 
     @FXML
+    private Button btnIndiceCouleur;
+    
+    @FXML
     private HBox overlayActions;
 
     @FXML
@@ -135,6 +138,7 @@ public class TableCinqJoueurs {
      */
     public void setPartie(Partie aAffecter) {
         this.partieEnCours = aAffecter;
+        System.out.println(partieEnCours);
         updatePositionJoueurs();
         if (aAffecter != null) {
             joueurBasLabel.setText(aAffecter.getJoueur1().getPseudo());
@@ -258,7 +262,7 @@ public class TableCinqJoueurs {
 
     /**
      * @param event l'évenement de clic sur la carte
-     * @return l'identifiant du boutton représentant la carte cliquée
+     * @return l'identifiant du bouton représentant la carte cliquée
      */
     private String recupererIdentifiantBoutonCarte(ActionEvent event) {
         Button buttonClicked = (Button) event.getSource();
@@ -304,12 +308,11 @@ public class TableCinqJoueurs {
 
     @FXML
     private void donnerIndiceCouleur(ActionEvent event) {
-        //TODO faut récupérer la carte liée au bouton
-        // => switch case en private en fcontion de la source
-        //partieEnCours.getTourCourant()
-        //    .donnerIndice(Carte recoitIndice, 'c');
+        System.out.println("Avant indice = " + carteSelectionnee);
+        partieEnCours.getTourCourant()
+            .donnerIndice(carteSelectionnee, 'c');
         System.out.println(((Control)event.getSource()).getId());
-        System.out.println("Coucou");
+        System.out.println("Après indice = " + carteSelectionnee);
     }
 
     /**
