@@ -117,7 +117,7 @@ public class ChoixJoueurs {
             case 5:
                 partieCinqJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
                         joueur3TextField.getText(), joueur4TextField.getText(), joueur5TextField.getText());
-                //  TableCinqJoueurs.setPartie(partieCinqJoueurs);
+               // TableCinqJoueurs.setPartie(partieCinqJoueurs);
                 Hanabi.activerTableCinqJoueurs(partieCinqJoueurs);
                 break;
             default:

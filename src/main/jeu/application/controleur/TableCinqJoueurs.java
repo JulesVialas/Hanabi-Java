@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import jeu.application.Hanabi;
 import jeu.modele.Carte;
 import jeu.modele.Couleur;
+import jeu.modele.Joueur;
 import jeu.modele.Partie;
 
 /**
@@ -22,8 +23,17 @@ public class TableCinqJoueurs {
     /** La carte sélectionnée */
     private Carte carteSelectionnee;
 
-    //TODO joueurs (bas, gauche, drte ...)
-    
+    /* Joueurs correspondant aux positions*/
+    private Joueur joueurBas;
+
+    private Joueur joueurGauche1;
+
+    private Joueur joueurGauche2;
+
+    private Joueur joueurDroite1;
+
+    private Joueur joueurDroite2;
+
     @FXML
     private Label joueurBasLabel;
 
@@ -125,6 +135,7 @@ public class TableCinqJoueurs {
      */
     public void setPartie(Partie aAffecter) {
         this.partieEnCours = aAffecter;
+        updatePositionJoueurs();
         if (aAffecter != null) {
             joueurBasLabel.setText(aAffecter.getJoueur1().getPseudo());
             joueurGauche1Label.setText(aAffecter.getJoueur2().getPseudo());
@@ -229,49 +240,40 @@ public class TableCinqJoueurs {
         }
     }
 
-	@FXML
-	private void gererClicCarteEquipier(ActionEvent event) {
-		String identifiant = recupererIdentifiantBoutonCarte(event);
-		System.out.println("Bouton cliqué : " + identifiant);
-	    overlayActions.setVisible(true);
-	    overlayJoueurCourant.setVisible(false);
-	}
+    @FXML
+    private void gererClicCarteEquipier(ActionEvent event) {
+        String identifiant = recupererIdentifiantBoutonCarte(event);
+        setCarteSelectionnee(identifiant);
+        overlayActions.setVisible(true);
+        overlayJoueurCourant.setVisible(false);
+    }
 
-	@FXML
-	private void gererClicCarteJoueurCourant(ActionEvent event) {
-		String identifiant = recupererIdentifiantBoutonCarte(event);
-		System.out.println("Bouton cliqué : " + identifiant);
-	    overlayJoueurCourant.setVisible(true);
-	    overlayActions.setVisible(false);
-	}
-	
-	/**
-	 * @param event l'évenement de clic sur la carte
-	 * @return l'identifiant du boutton représentant la carte cliquée
-	 */
-	private String recupererIdentifiantBoutonCarte(ActionEvent event) {
-		Button buttonClicked = (Button) event.getSource();
-		return buttonClicked.getId();
-	}
-	
-	/**
-	 * initialisation de la scène
-	 */
-	@FXML
-	public void initialize() {
-		overlayActions.setVisible(false);
-		overlayJoueurCourant.setVisible(false);
-	}
-	
-	/**
-	 * Carte 1 du joueur 1 cliquée
-	 */
-	@FXML
-	private void Carte1joueurBas(ActionEvent event) {
-	    System.out.println(joueurBasCarte1.getLayoutX());
-	    System.out.println(joueurBasCarte1.getLayoutY());
-	}
+    @FXML
+    private void gererClicCarteJoueurCourant(ActionEvent event) {
+        String identifiant = recupererIdentifiantBoutonCarte(event);
+        setCarteSelectionnee(identifiant);
+        overlayJoueurCourant.setVisible(true);
+        overlayActions.setVisible(false);
+    }
 
+    /**
+     * @param event l'évenement de clic sur la carte
+     * @return l'identifiant du boutton représentant la carte cliquée
+     */
+    private String recupererIdentifiantBoutonCarte(ActionEvent event) {
+        Button buttonClicked = (Button) event.getSource();
+        return buttonClicked.getId();
+    }
+
+    /**
+     * initialisation de la scène
+     */
+    @FXML
+    public void initialize() {
+
+        overlayActions.setVisible(false);
+        overlayJoueurCourant.setVisible(false);
+    }
 
     @FXML
     private void FermerOverlay() {
@@ -310,16 +312,6 @@ public class TableCinqJoueurs {
         System.out.println("Coucou");
     }
 
-    //	/**
-    //	 * Défini la carte sélectionnée
-    //	 */
-    //	private void setCarteSelectionnee(Control btnClique) {
-    //	    switch((Control)event.getSource()) {
-    //	        case joueur1Carte1:
-    //	        carteSelectionnee = 
-    //	    }                
-    //	}
-
     /**
      * Met à jour la position des joueurs en fonction du 
      * numéro de tour
@@ -327,23 +319,127 @@ public class TableCinqJoueurs {
     private void updatePositionJoueurs() {
         switch(partieEnCours.getTourCourant().getNumero() % 5) {
         case 0:
-
+            joueurBas = partieEnCours.getJoueur5();
+            joueurGauche1 = partieEnCours.getJoueur1();
+            joueurGauche2 = partieEnCours.getJoueur2();
+            joueurDroite1 = partieEnCours.getJoueur3();
+            joueurDroite2 = partieEnCours.getJoueur4();
+            break;
+        case 1:
+            joueurBas = partieEnCours.getJoueur1();
+            joueurGauche1 = partieEnCours.getJoueur2();
+            joueurGauche2 = partieEnCours.getJoueur3();
+            joueurDroite1 = partieEnCours.getJoueur4();
+            joueurDroite2 = partieEnCours.getJoueur5();
+            break;
+        case 2:
+            joueurBas = partieEnCours.getJoueur2();
+            joueurGauche1 = partieEnCours.getJoueur3();
+            joueurGauche2 = partieEnCours.getJoueur4();
+            joueurDroite1 = partieEnCours.getJoueur5();
+            joueurDroite2 = partieEnCours.getJoueur1();
+            break;
+        case 3:
+            joueurBas = partieEnCours.getJoueur3();
+            joueurGauche1 = partieEnCours.getJoueur4();
+            joueurGauche2 = partieEnCours.getJoueur5();
+            joueurDroite1 = partieEnCours.getJoueur1();
+            joueurDroite2 = partieEnCours.getJoueur2();
+            break;
+        case 4:
+            joueurBas = partieEnCours.getJoueur4();
+            joueurGauche1 = partieEnCours.getJoueur5();
+            joueurGauche2 = partieEnCours.getJoueur1();
+            joueurDroite1 = partieEnCours.getJoueur2();
+            joueurDroite2 = partieEnCours.getJoueur3();
+            break;
+        default:
+            break;
         }
     }
-    
+
     /** 
-     * Renvoie la carte liée au bouton cliqué à partir
-     * de l'identifiant du bouton.
+     * Définie la carte liée au bouton cliqué comme étant la
+     * carte sélectionnée.
      * 
      * @param idBouton l'identifiant du bouton cliqué
-     * @return la carte associée au bouton
      */
-    private Carte obtenirCarteButton(String idBouton) {
+    private void setCarteSelectionnee(String idBouton) {
+        System.out.println(idBouton);
         switch(idBouton) {
+
+        /* Joueur bas */
+        case "joueurBasCarte1":
+            carteSelectionnee = joueurBas.getCartesEnMains().get(0);
+            break;
+        case "joueurBasCarte2":
+            carteSelectionnee = joueurBas.getCartesEnMains().get(1);
+            break;
+        case "joueurBasCarte3":
+            carteSelectionnee = joueurBas.getCartesEnMains().get(2);
+            break;
+        case "joueurBasCarte4":
+            carteSelectionnee = joueurBas.getCartesEnMains().get(3);
+            break;
+
+            /* Joueur gauche 1 */    
         case "joueurGauche1Carte1":
-            System.out.println("CoucouBoy");
+            carteSelectionnee = joueurGauche1.getCartesEnMains().get(0);
+            break;
+        case "joueurGauche1Carte2":
+            carteSelectionnee = joueurGauche1.getCartesEnMains().get(1);
+            break;
+        case "joueurGauche1Carte3":
+            carteSelectionnee = joueurGauche1.getCartesEnMains().get(2);
+            break;
+        case "joueurGauche1Carte4":
+            carteSelectionnee = joueurGauche1.getCartesEnMains().get(3);
+            break;
+
+            /* Joueur gauche 2 */    
+        case "joueurGauche2Carte1":
+            carteSelectionnee = joueurGauche2.getCartesEnMains().get(0);
+            break;
+        case "joueurGauche2Carte2":
+            carteSelectionnee = joueurGauche2.getCartesEnMains().get(1);
+            break;
+        case "joueurGauche2Carte3":
+            carteSelectionnee = joueurGauche2.getCartesEnMains().get(2);
+            break;
+        case "joueurGauche2Carte4":
+            carteSelectionnee = joueurGauche2.getCartesEnMains().get(3);
+            break;
+
+            /* Joueur droite 1 */    
+        case "joueurDroite1Carte1":
+            carteSelectionnee = joueurDroite1.getCartesEnMains().get(0);
+            break;
+        case "joueurDroite1Carte2":
+            carteSelectionnee = joueurDroite1.getCartesEnMains().get(1);
+            break;
+        case "joueurDroite1Carte3":
+            carteSelectionnee = joueurDroite1.getCartesEnMains().get(2);
+            break;
+        case "joueurDroite1Carte4":
+            carteSelectionnee = joueurDroite1.getCartesEnMains().get(3);
+            break;
+
+            /* Joueur droite 1 */    
+        case "joueurDroite2Carte1":
+            carteSelectionnee = joueurDroite2.getCartesEnMains().get(0);
+            break;
+        case "joueurDroite2Carte2":
+            carteSelectionnee = joueurDroite2.getCartesEnMains().get(1);
+            break;
+        case "joueurDroite2Carte3":
+            carteSelectionnee = joueurDroite2.getCartesEnMains().get(2);
+            break;
+        case "joueurDroite2Carte4":
+            carteSelectionnee = joueurDroite2.getCartesEnMains().get(3);
+            break;
+        default:
+            break;
         }
-        //TODO récupérer joueurBase, JoueurGauche etc 
-        return carteSelectionnee;
+        System.out.println(carteSelectionnee);
     }
 }
