@@ -228,7 +228,7 @@
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnIndiceValeur" mnemonicParsing="false" prefHeight="31.0" prefWidth="73.0" style="-fx-background-color: WHITE;" text="Valeur">
+                        <Button fx:id="btnIndiceValeur" mnemonicParsing="false" onAction="#gererClicValeur" prefHeight="31.0" prefWidth="73.0" style="-fx-background-color: WHITE;" text="Valeur">
                            <font>
                               <Font size="15.0" />
                            </font>

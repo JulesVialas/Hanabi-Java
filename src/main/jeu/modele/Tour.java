@@ -123,7 +123,7 @@ public class Tour {
                 throw new IllegalArgumentException(ERREUR_CARTE_NULL);
             }
 	    
-		/* On détermine quel 	joueur possède la carte */
+		/* On détermine quel joueur possède la carte */
 		Joueur recepteur = determinerJoueurAyantCarte(recoitIndice);
 
 		/* On empèche le joueur de se donner un indice à lui-même */
@@ -161,19 +161,38 @@ public class Tour {
 	 */
 	private Joueur determinerJoueurAyantCarte(Carte aSituer) {
 
-		if (partieDuTour.getJoueur1().getCartesEnMains().contains(aSituer)) {
-			return partieDuTour.getJoueur1();
-		}
+	    if (partieDuTour
+	        .getJoueur1().getCartesEnMains().contains(aSituer)) {
+	        
+	        return partieDuTour.getJoueur1();
+	    }
 
-		if (partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)
-				|| partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)
-				|| partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)
-				|| partieDuTour.getJoueur2().getCartesEnMains().contains(aSituer)) {
-			return partieDuTour.getJoueur2();
-		}
+	    if (partieDuTour
+	        .getJoueur2().getCartesEnMains().contains(aSituer)) {
+	        
+	        return partieDuTour.getJoueur2();
+	    }
 
-		/* Si aucun joueur ne possède la carte */
-		throw new IllegalStateException(ERREUR_CARTE_PAS_DANS_MAIN);
+	    if (partieDuTour
+	        .getJoueur3().getCartesEnMains().contains(aSituer)) {
+	        
+	        return partieDuTour.getJoueur3();
+	    }
+
+	    if (partieDuTour
+	        .getJoueur4().getCartesEnMains().contains(aSituer)) {
+	        
+	        return partieDuTour.getJoueur4();
+	    }
+
+	    if (partieDuTour
+	        .getJoueur5().getCartesEnMains().contains(aSituer)) {
+	        
+	        return partieDuTour.getJoueur5();
+	    }
+		
+	    /* Si aucun joueur ne possède la carte */
+	    throw new IllegalStateException(ERREUR_CARTE_PAS_DANS_MAIN);
 	}
 
 	/**

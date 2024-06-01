@@ -254,6 +254,7 @@ public class TableCinqJoueurs {
     @FXML
     private void gererClicValeur() {
         natureIndice = 'v';
+        System.out.println(natureIndice);
         //Tour.donnerIndice(TODO trouver la carte selectionnée, 'v');
     }
 
@@ -284,9 +285,12 @@ public class TableCinqJoueurs {
     
     @FXML
     private void donnerIndice(ActionEvent event) {
+        System.out.println(natureIndice);
         partieEnCours.getTourCourant()
                      .donnerIndice(carteSelectionnee, natureIndice);
         System.out.println(((Control)event.getSource()).getId());
+        natureIndice = ' ';
+        carteSelectionnee = null;
         resetCarteSelectionnee();
         updateView();
     }
