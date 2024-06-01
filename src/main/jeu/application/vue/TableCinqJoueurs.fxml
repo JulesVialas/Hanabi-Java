@@ -243,21 +243,26 @@
             <Button fx:id="menuPause" layoutX="14.0" layoutY="14.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#gererClicParametres" style="-fx-background-color: lightgrey;" />
          </children>
       </AnchorPane>
-      <VBox fx:id="Pause" onMouseClicked="#FermerOverlay" alignment="CENTER" layoutX="223.0" prefHeight="600.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="Pause" alignment="CENTER" layoutX="223.0" onMouseClicked="#FermerOverlay" prefHeight="600.0" prefWidth="800.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" text="Pause" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" style="-fx-background-color: black;" text="Menu Principal" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#retourMenuPrincipal" style="-fx-background-color: black;" text="Menu Principal" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: black;" text="Paramètres" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#versParametres" style="-fx-background-color: black;" text="Paramètres" textFill="WHITE">
                <font>
                   <Font size="20.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#retourJeu" style="-fx-background-color: black;" text="⭠" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold Italic" size="20" />
                </font>
             </Button>
          </children>

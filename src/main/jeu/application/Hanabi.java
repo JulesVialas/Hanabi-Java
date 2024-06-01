@@ -51,20 +51,26 @@ public class Hanabi extends Application {
 	private static Scene sceneTableCinqJoueurs;
 
 	/** Scène permettant de gérer le changement de theme */
-    private static Scene sceneTheme;
-    
-    /** Scène permettant de gérer l'affichage des règles */
-    private static Scene sceneRegles;
-        
-        /** Scène permettant de gérer la personnalisation de la partie */
+	private static Scene sceneTheme;
+
+	/** Scène permettant de gérer l'affichage des règles */
+	private static Scene sceneRegles;
+
+	/** Scène permettant de gérer la personnalisation de la partie */
         private static Scene scenePersonnalisation;
         
         /**
          * Scène permettant de gérer le choix de l'emplacement de la 
          * sauvegarde. 
          */
-        private static Scene sceneChoixSauvegarde;
+        private static Scene sceneChoixSauvegarde; 
         
+        /** Scène permettant de gérer la sauvegarde de la partie */
+        private static Scene sceneSauvegarde;
+        
+        /** Scène permettant de gérer la confirmation de la sauvegarde de la partie */
+        private static Scene sceneConfirmationSauvegarde;
+
 	/**
 	 * Fenêtre principale de l'application La scène qui lui est associée sera
 	 * modifiée en fonction des clics de l'utilisateur
@@ -230,7 +236,39 @@ public class Hanabi extends Application {
                 e.printStackTrace();
             }
         }
-	
+        
+        /**
+         * Permet de modifier la scene de la fenêtre principale pour 
+         * qu'elle devienne celle de Sauvegarder
+         */
+        @FXML
+        public static void activerSauvegarder() {
+                try {
+                FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/Sauvegarde.fxml"));
+                Parent root = loader.load();
+                sceneSauvegarde = new Scene(root, 800, 600);
+                fenetrePrincipale.setScene(sceneSauvegarde);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        /**
+         * Permet de modifier la scene de la fenêtre principale pour 
+         * qu'elle devienne celle de ConfirmationSauvegarder
+         */
+        @FXML
+        public static void activerConfirmationSauvegarde() {
+                try {
+                FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/ConfirmationSauvegarde.fxml"));
+                Parent root = loader.load();
+                sceneConfirmationSauvegarde = new Scene(root, 800, 600);
+                fenetrePrincipale.setScene(sceneConfirmationSauvegarde);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -316,6 +354,16 @@ public class Hanabi extends Application {
                          FXMLLoader chargeurFXMLRegles= new FXMLLoader();
 			chargeurFXMLRegles.setLocation(getClass().getResource("vue/Regles.fxml"));
 			conteneur = chargeurFXMLRegles.load();
+			sceneRegles = new Scene(conteneur, 800, 600);
+			
+			FXMLLoader chargeurFXMLSauvegarde= new FXMLLoader();
+			chargeurFXMLSauvegarde.setLocation(getClass().getResource("vue/Sauvegarde.fxml"));
+			conteneur = chargeurFXMLSauvegarde.load();
+			sceneRegles = new Scene(conteneur, 800, 600);
+
+			FXMLLoader chargeurFXMLConfirmationSauvegarde= new FXMLLoader();
+			chargeurFXMLConfirmationSauvegarde.setLocation(getClass().getResource("vue/ConfirmationSauvegarde.fxml"));
+			conteneur = chargeurFXMLConfirmationSauvegarde.load();
 			sceneRegles = new Scene(conteneur, 800, 600);
                         
                         

@@ -245,7 +245,22 @@ public class TableCinqJoueurs {
         resetCarteSelectionnee();
         updateView();
     }
+    
+    @FXML
+    private void retourJeu(ActionEvent event) {
+        Hanabi.activerTableCinqJoueurs(ChoixJoueurs.partieCinqJoueurs);
+    }
 
+    @FXML
+    private void versParametres(){
+        Hanabi.activerParametres();
+    }
+    
+    @FXML
+    private void retourMenuPrincipal(){
+        Hanabi.activerSauvegarder();
+    }
+    
     /**
      * Vider le champ carteSelectionnee
      */
@@ -508,4 +523,5 @@ public class TableCinqJoueurs {
         joueurDroite2Carte4.setText(
                 Integer.toString(partieEnCours.getJoueur5().getCartesEnMains().get(3).getValeur().getValeurNumerique()));
     }
+    
 }
