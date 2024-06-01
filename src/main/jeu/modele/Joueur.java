@@ -27,6 +27,9 @@ public class Joueur {
 
 	/** Les cartes en main du joueur. */
 	private ArrayList<Carte> cartesEnMain;
+	
+	/** Le numéro du joueur */
+	private int numero;
 
 	/**
 	 * Instancie un objet de type Joueur à l'aide de son pseudo. Le pseudo peut
@@ -67,5 +70,20 @@ public class Joueur {
 	 */
 	public void setCartesEnMains(Carte carte) {
 		this.cartesEnMain.add(carte);
+	}
+	
+	/** 
+	 * Attribue un numéro au joueur
+	 * @param aAttribuer le numéro à attribuer
+	 */
+	public void setNumero(int aAttribuer) {
+	    this.numero = aAttribuer;
+	}
+	
+	/**
+	 * @return le numero du joueur
+	 */
+	public int getNumero() {
+	    return this.numero;
 	}
 }

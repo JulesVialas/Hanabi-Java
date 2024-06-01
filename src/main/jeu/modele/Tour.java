@@ -6,6 +6,8 @@
  */
 package jeu.modele;
 
+import java.util.EmptyStackException;
+
 /**
  * Le tour d'une partie d'Hanabi est caractérisé par un numéro et un joueur.
  * Durant un tour, le joueur doit effectuer une action parmi les quatre
@@ -316,7 +318,7 @@ public class Tour {
 	 * @return true si elle continue le feu d'artifice de sa couleur, sinon false
 	 */
 	private boolean doesContinueFirework(Carte aTester) {
-
+	    try {
 		switch (aTester.getCouleur()) {
 		case ROUGE:
 			/*
@@ -343,6 +345,9 @@ public class Tour {
 					.getValeurNumerique() == partieDuTour.getFeuxPosesBlanc().peek().getValeur().getValeurNumerique()
 							+ 1;
 		}
+	    } catch (EmptyStackException pileFeuxVide) {
+	        return false; // Ne continue pas le feu d'artifice
+	    }
 	}
 
 	/**

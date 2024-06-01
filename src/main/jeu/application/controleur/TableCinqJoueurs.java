@@ -16,11 +16,15 @@ import jeu.modele.Carte;
 import jeu.modele.Couleur;
 import jeu.modele.Joueur;
 import jeu.modele.Partie;
+import jeu.modele.Tour;
 
 /**
  * Contrôleur de la table de jeux à cinq joueurs
  */
 public class TableCinqJoueurs {
+
+    private static final String ERREUR_PARTIE_TERMINEE 
+    = "Erreur: impossible de créer un nouveau tour, la partie est terminée.";
 
     /** La partie à contrôler */
     private Partie partieEnCours;
@@ -225,9 +229,7 @@ public class TableCinqJoueurs {
     @FXML
     public void initialize() {
 
-        overlayActions.setVisible(false);
-        overlayJoueurCourant.setVisible(false);
-        Pause.setVisible(false);
+        masquerOrverlays();
     }
 
     @FXML
@@ -281,6 +283,8 @@ public class TableCinqJoueurs {
         carteSelectionnee = null;
         System.out.println(carteSelectionnee);
         updateView();
+        lancerTourSuivant(creerTourSuivant());
+        updateView(); //STUB
     }
     
     @FXML
@@ -293,6 +297,8 @@ public class TableCinqJoueurs {
         carteSelectionnee = null;
         resetCarteSelectionnee();
         updateView();
+        lancerTourSuivant(creerTourSuivant());
+        updateView(); //STUB
     }
     
     @FXML
@@ -407,17 +413,62 @@ public class TableCinqJoueurs {
      */
     public void updateView() {
         //TODO updateView
-
+        masquerOrverlays();
         updatePositionJoueurs();
+        updateLabelsJoueurs();
         updateAffichageCartes();
         //TODO update cases indices équipiers
         //TODO affichage cartes joueur courant en fonction indices
         updateJetons();
         updatePiocheDefausse();
-        // TODO MAJ Cartes feux artifice
         updateFeuxArtifice();
+        if (partieEnCours.isPartieFinie()) {
+            /* Désactive tous ce qui ne sert pas à sortir de la partie */
+            desactiverBoutonsPartie();
+            masquerOrverlays();
+        }
+    }
+    
+    /**
+     * Masque les overlays d'actions et de menus
+     */
+    private void masquerOrverlays() {
+        overlayActions.setVisible(false);
+        overlayJoueurCourant.setVisible(false);
+        Pause.setVisible(false);
     }
 
+    /**
+     * Désactive tous les boutons en lien avec la réalisation
+     * d'actions de la partie.
+     */
+    private void desactiverBoutonsPartie() {
+        joueurBasCarte1.setDisable(true);
+        joueurBasCarte2.setDisable(true);
+        joueurBasCarte3.setDisable(true);
+        joueurBasCarte4.setDisable(true);
+        
+        joueurGauche1Carte1.setDisable(true);
+        joueurGauche1Carte2.setDisable(true);
+        joueurGauche1Carte3.setDisable(true);
+        joueurGauche1Carte4.setDisable(true);
+        
+        joueurGauche2Carte1.setDisable(true);
+        joueurGauche2Carte2.setDisable(true);
+        joueurGauche2Carte3.setDisable(true);
+        joueurGauche2Carte4.setDisable(true);
+        
+        joueurDroite1Carte1.setDisable(true);
+        joueurDroite1Carte2.setDisable(true);
+        joueurDroite1Carte3.setDisable(true);
+        joueurDroite1Carte4.setDisable(true);
+        
+        joueurDroite2Carte1.setDisable(true);
+        joueurDroite2Carte2.setDisable(true);
+        joueurDroite2Carte3.setDisable(true);
+        joueurDroite2Carte4.setDisable(true);
+    }
+    
     /**
      * Initialise la couleur des tas de feux d'artifice sur la table
      */
@@ -443,42 +494,42 @@ public class TableCinqJoueurs {
         switch(partieEnCours.getTourCourant().getNumero() % 5) {
         case 0:
             joueurBas = partieEnCours.getJoueur5();
-            joueurGauche1 = partieEnCours.getJoueur1();
-            joueurGauche2 = partieEnCours.getJoueur2();
-            joueurDroite1 = partieEnCours.getJoueur3();
-            joueurDroite2 = partieEnCours.getJoueur4();
+            joueurGauche1 = partieEnCours.getJoueur4();
+            joueurGauche2 = partieEnCours.getJoueur3();
+            joueurDroite1 = partieEnCours.getJoueur2();
+            joueurDroite2 = partieEnCours.getJoueur1();
             updateLabelsJoueurs();
             break;
         case 1:
             joueurBas = partieEnCours.getJoueur1();
-            joueurGauche1 = partieEnCours.getJoueur2();
-            joueurGauche2 = partieEnCours.getJoueur3();
-            joueurDroite1 = partieEnCours.getJoueur4();
-            joueurDroite2 = partieEnCours.getJoueur5();
+            joueurGauche1 = partieEnCours.getJoueur5();
+            joueurGauche2 = partieEnCours.getJoueur4();
+            joueurDroite1 = partieEnCours.getJoueur3();
+            joueurDroite2 = partieEnCours.getJoueur2();
             updateLabelsJoueurs();
             break;
         case 2:
             joueurBas = partieEnCours.getJoueur2();
-            joueurGauche1 = partieEnCours.getJoueur3();
-            joueurGauche2 = partieEnCours.getJoueur4();
-            joueurDroite1 = partieEnCours.getJoueur5();
-            joueurDroite2 = partieEnCours.getJoueur1();
+            joueurGauche1 = partieEnCours.getJoueur1();
+            joueurGauche2 = partieEnCours.getJoueur5();
+            joueurDroite1 = partieEnCours.getJoueur4();
+            joueurDroite2 = partieEnCours.getJoueur3();
             updateLabelsJoueurs();
             break;
         case 3:
             joueurBas = partieEnCours.getJoueur3();
-            joueurGauche1 = partieEnCours.getJoueur4();
-            joueurGauche2 = partieEnCours.getJoueur5();
-            joueurDroite1 = partieEnCours.getJoueur1();
-            joueurDroite2 = partieEnCours.getJoueur2();
+            joueurGauche1 = partieEnCours.getJoueur2();
+            joueurGauche2 = partieEnCours.getJoueur1();
+            joueurDroite1 = partieEnCours.getJoueur5();
+            joueurDroite2 = partieEnCours.getJoueur4();
             updateLabelsJoueurs();
             break;
         case 4:
             joueurBas = partieEnCours.getJoueur4();
-            joueurGauche1 = partieEnCours.getJoueur5();
-            joueurGauche2 = partieEnCours.getJoueur1();
-            joueurDroite1 = partieEnCours.getJoueur2();
-            joueurDroite2 = partieEnCours.getJoueur3();
+            joueurGauche1 = partieEnCours.getJoueur3();
+            joueurGauche2 = partieEnCours.getJoueur2();
+            joueurDroite1 = partieEnCours.getJoueur1();
+            joueurDroite2 = partieEnCours.getJoueur5();
             updateLabelsJoueurs();
             break;
         default:
@@ -490,11 +541,11 @@ public class TableCinqJoueurs {
      * Met à jour le pseudo des joueurs sur le plateau
      */
     private void updateLabelsJoueurs() {
-        joueurBasLabel.setText(partieEnCours.getJoueur1().getPseudo());
-        joueurGauche1Label.setText(partieEnCours.getJoueur2().getPseudo());
-        joueurGauche2Label.setText(partieEnCours.getJoueur3().getPseudo());
-        joueurDroite1Label.setText(partieEnCours.getJoueur4().getPseudo());
-        joueurDroite2Label.setText(partieEnCours.getJoueur5().getPseudo());
+        joueurBasLabel.setText(joueurBas.getPseudo());
+        joueurGauche1Label.setText(joueurGauche1.getPseudo());
+        joueurGauche2Label.setText(joueurGauche2.getPseudo());
+        joueurDroite1Label.setText(joueurDroite1.getPseudo());
+        joueurDroite2Label.setText(joueurDroite2.getPseudo());
     }
     
     /**
@@ -626,4 +677,55 @@ public class TableCinqJoueurs {
             // Empty body
         }
     }    
+    
+    /**
+     * Créé le tour suivant à partir du tour actuel.
+     * Si la partie est terminée (3 jetons rouges, feux d'artifices
+     * complets ou dernier tour de table après pioche vide), une 
+     * exception sera propagée pour empêcher de poursuivre la 
+     * partie.
+     * 
+     * @throws IllegalStateException si une des conditions de fin de 
+     *         partie est respectée
+     */
+    private Tour creerTourSuivant() {
+        
+        if (partieEnCours.isPartieFinie()) {
+            //TODO dernier tour après pioche vide
+            throw new IllegalStateException(ERREUR_PARTIE_TERMINEE);
+        }
+        
+        Tour nouveau = new Tour(joueurDroite2, 
+                        partieEnCours.getTourCourant().getNumero() + 1);
+        
+        nouveau.setPartieDuTour(partieEnCours);
+        
+        return nouveau;
+    }
+    
+    /**
+     * Lance le nouveau tour suivant si aucune condition de fin 
+     * de partie n'est remplie.
+     * 
+     * <p>
+     * Si une condition de fin de partie est remplie (trois jetons 
+     * rouges, feux d'artifices complétés, dernier tour de table après
+     * pioche vidée a eu lieu), alors la séquence de partie
+     * terminée sera lancée.
+     * 
+     * @param aLancer le tour à lancer
+     */
+    private void lancerTourSuivant(Tour aLancer) {
+        
+        try {
+            System.out.println("JBas avant = " + joueurBas.getPseudo());
+            partieEnCours.setTourCourant(aLancer);
+            updateView();
+            System.out.println("JBas après = " + joueurBas.getPseudo());
+            //TODO écran de changement de joueur
+        } catch (IllegalStateException partieTerminee) {
+            //TODO lancer séquence de partie terminée
+            System.out.println("La partie est terminée");
+        }
+    }
 }

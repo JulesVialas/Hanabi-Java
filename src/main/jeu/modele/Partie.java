@@ -82,6 +82,8 @@ public class Partie {
 		/* Instanciation des joueurs */
 		joueur1 = new Joueur(pseudoJ1);
 		joueur2 = new Joueur(pseudoJ2);
+		joueur1.setNumero(1);
+		joueur2.setNumero(2);
 
 		/* Préparation du jeu */
 		feuxPoses = new CartesPlateau();
@@ -114,7 +116,10 @@ public class Partie {
 		joueur1 = new Joueur(pseudoJ1);
 		joueur2 = new Joueur(pseudoJ2);
 		joueur3 = new Joueur(pseudoJ3);
-
+		joueur1.setNumero(1);
+		joueur2.setNumero(2);
+		joueur3.setNumero(3);
+		
 		/* Préparation du jeu */
 		feuxPoses = new CartesPlateau();
 		jetons = new JetonsPlateau();
@@ -149,7 +154,11 @@ public class Partie {
 		joueur2 = new Joueur(pseudoJ2);
 		joueur3 = new Joueur(pseudoJ3);
 		joueur4 = new Joueur(pseudoJ4);
-
+		joueur1.setNumero(1);
+		joueur2.setNumero(2);
+		joueur3.setNumero(3);
+		joueur4.setNumero(4);
+		
 		/* Préparation du jeu */
 		feuxPoses = new CartesPlateau();
 		jetons = new JetonsPlateau();
@@ -187,7 +196,12 @@ public class Partie {
 		joueur3 = new Joueur(pseudoJ3);
 		joueur4 = new Joueur(pseudoJ4);
 		joueur5 = new Joueur(pseudoJ5);
-
+		joueur1.setNumero(1);
+		joueur2.setNumero(2);
+		joueur3.setNumero(3);
+		joueur4.setNumero(4);
+		joueur5.setNumero(5);
+		
 		/* Préparation du jeu */
 		feuxPoses = new CartesPlateau();
 		jetons = new JetonsPlateau();
@@ -366,7 +380,7 @@ public class Partie {
 	 *
 	 * @return true si la partie est finie, false sinon
 	 */
-	private boolean isPartieFinie() {
+	public boolean isPartieFinie() {
 		// TODO trouver pour le cas de la pioche finie donc
 		// dernier tour pour chaque joueur
 
@@ -380,9 +394,12 @@ public class Partie {
 	 *
 	 * @return true si tous les feux d'artifices sont complets, sinon false
 	 */
-	private boolean areFireworksCompleted() {
-		return getFeuxPosesRouge().size() == 5 && getFeuxPosesJaune().size() == 5 && getFeuxPosesVert().size() == 5
-				&& getFeuxPosesBleu().size() == 5 && getFeuxPosesBlanc().size() == 5;
+	public boolean areFireworksCompleted() {
+	    return getFeuxPosesRouge().size() == 5 
+		   && getFeuxPosesJaune().size() == 5
+		   && getFeuxPosesVert().size() == 5
+		   && getFeuxPosesBleu().size() == 5 
+		   && getFeuxPosesBlanc().size() == 5;
 	}
 	
 	/**
