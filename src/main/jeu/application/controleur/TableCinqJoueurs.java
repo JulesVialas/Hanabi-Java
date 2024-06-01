@@ -1,5 +1,7 @@
 package jeu.application.controleur;
 
+import java.util.EmptyStackException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -28,6 +30,9 @@ public class TableCinqJoueurs {
     
     /** La nature de l'indice à donner */
     private char natureIndice;
+    
+    /** La nature de la pose de carte: p pour poser et d pour défausser */
+    private char naturePose;
 
     /* Joueurs correspondant aux positions*/
     private Joueur joueurBas;
@@ -67,6 +72,21 @@ public class TableCinqJoueurs {
     @FXML
     private Label nbCartesPioche;
 
+    @FXML
+    private Button pileFeuxRouges;
+    
+    @FXML
+    private Button pileFeuxJaunes;
+    
+    @FXML
+    private Button pileFeuxVerts;
+    
+    @FXML
+    private Button pileFeuxBleus;
+    
+    @FXML
+    private Button pileFeuxBlancs;
+    
     @FXML
     private Button joueurBasCarte1;
 
@@ -129,6 +149,9 @@ public class TableCinqJoueurs {
 
     @FXML
     private Button btnIndiceCouleur;
+    
+    @FXML
+    private Button btnIndiceValeur;
 
     @FXML
     private VBox overlayActions;
@@ -150,6 +173,7 @@ public class TableCinqJoueurs {
     public void setPartie(Partie aAffecter) {
         /* Initialise la partie lors du lancement */
         this.partieEnCours = aAffecter;
+        initializeCouleurFeuxArtifice();
         updateView();
     }
 
@@ -229,14 +253,35 @@ public class TableCinqJoueurs {
 
     @FXML
     private void gererClicValeur() {
+        natureIndice = 'v';
         //Tour.donnerIndice(TODO trouver la carte selectionnée, 'v');
     }
 
     @FXML
     private void gererClicPoser() {
+        naturePose = 'p';
+        //Tour.poser(TODO Trouver la carte selectionnée);
+    }
+    
+    @FXML
+    private void gererClicDefausser() {
+        naturePose = 'd';
         //Tour.poser(TODO Trouver la carte selectionnée);
     }
 
+    @FXML 
+    private void poserDefausserCarte() {
+        if (naturePose == 'p') {
+            partieEnCours.getTourCourant().poser(carteSelectionnee);
+        } else { // naturePose = 'd'
+            partieEnCours.getTourCourant().defausser(carteSelectionnee);
+        }
+        naturePose = ' ';
+        carteSelectionnee = null;
+        System.out.println(carteSelectionnee);
+        updateView();
+    }
+    
     @FXML
     private void donnerIndice(ActionEvent event) {
         partieEnCours.getTourCourant()
@@ -366,8 +411,26 @@ public class TableCinqJoueurs {
         updateJetons();
         updatePiocheDefausse();
         // TODO MAJ Cartes feux artifice
+        updateFeuxArtifice();
     }
 
+    /**
+     * Initialise la couleur des tas de feux d'artifice sur la table
+     */
+    private void initializeCouleurFeuxArtifice() {
+        //TODO enlever animation si cliqués !
+        pileFeuxRouges.setStyle("-fx-background-color: #"
+                               + convertirCouleurEnHex(Couleur.ROUGE));
+        pileFeuxJaunes.setStyle("-fx-background-color: #"
+                               + convertirCouleurEnHex(Couleur.JAUNE));
+        pileFeuxVerts.setStyle("-fx-background-color: #"
+                               + convertirCouleurEnHex(Couleur.VERT));
+        pileFeuxBleus.setStyle("-fx-background-color: #"
+                               + convertirCouleurEnHex(Couleur.BLEU));
+        pileFeuxBlancs.setStyle("-fx-background-color: #"
+                               + convertirCouleurEnHex(Couleur.BLANC));
+    }
+    
     /**
      * Met à jour la position des joueurs en fonction du 
      * numéro de tour
@@ -524,4 +587,39 @@ public class TableCinqJoueurs {
                 Integer.toString(partieEnCours.getJoueur5().getCartesEnMains().get(3).getValeur().getValeurNumerique()));
     }
     
+    /**
+     * Met à jour l'affichage des feux d'artifice posés sur la table.
+     */
+    private void updateFeuxArtifice() {
+        try {
+            pileFeuxRouges.setText(
+                    Integer.toString(partieEnCours.getFeuxPosesRouge().peek().getValeur().getValeurNumerique()));
+        } catch (EmptyStackException e) {
+            // Empty body
+        }
+        try {
+            pileFeuxJaunes.setText(
+                    Integer.toString(partieEnCours.getFeuxPosesJaune().peek().getValeur().getValeurNumerique()));
+        } catch (EmptyStackException e) {
+            // Empty body
+        }
+        try {
+            pileFeuxVerts.setText(
+                    Integer.toString(partieEnCours.getFeuxPosesVert().peek().getValeur().getValeurNumerique()));
+        } catch (EmptyStackException e) {
+            // Empty body
+        }
+        try {
+            pileFeuxBleus.setText(
+                    Integer.toString(partieEnCours.getFeuxPosesBleu().peek().getValeur().getValeurNumerique()));
+        } catch (EmptyStackException e) {
+            // Empty body
+        }
+        try {
+            pileFeuxBlancs.setText(
+                    Integer.toString(partieEnCours.getFeuxPosesBlanc().peek().getValeur().getValeurNumerique()));
+        } catch (EmptyStackException e) {
+            // Empty body
+        }
+    }    
 }

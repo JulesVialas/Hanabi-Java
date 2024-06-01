@@ -36,6 +36,9 @@ public class Tour {
 
 	private static final String ERREUR_CARTE_PAS_DANS_MAIN = "Erreur: aucun joueur ne possède la carte indiquée dans sa main";
 
+    private static final String ERREUR_CARTE_NULL 
+    = "Erreur: aucune action ne peut être effectuée sur une carte null";
+
 	/** La partie dans laquelle le tour s'inscrit */
 	private Partie partieDuTour;
 
@@ -109,12 +112,17 @@ public class Tour {
 	 * @throws IllegalArgumentException si natureIndice n'est ni 'c' ni 'v'
 	 * @throws IllegalArgumentException si le joueur recevant l'indice n'est pas le
 	 *                                  joueur possédant la carte recevant l'indice
+         * @throws IllegalArgumentException si la carte est null
 	 * @throws IllegalStateException    si le joueur recevant l'indice est le même
 	 *                                  qui donne l'indice
 	 * @throws IllegalStateException    si le nombre de jetons bleus est égal à zéro
 	 */
 	public void donnerIndice(Carte recoitIndice, char natureIndice) {
 
+	    if (recoitIndice == null) {
+                throw new IllegalArgumentException(ERREUR_CARTE_NULL);
+            }
+	    
 		/* On détermine quel 	joueur possède la carte */
 		Joueur recepteur = determinerJoueurAyantCarte(recoitIndice);
 
@@ -211,68 +219,73 @@ public class Tour {
 	 * ajoutée à la main du joueur.
 	 *
 	 * @param carteAPoser la carte que le joueur pose sur le plateau
+	 * @throws IllegalArgumentException si la carte est null
 	 */
 	public void poser(Carte carteAPoser) {
 
-		boolean doesContinueFirework; // Indique si la carte continue le feu
-		doesContinueFirework = false;
+	    if (carteAPoser == null) {
+	        throw new IllegalArgumentException(ERREUR_CARTE_NULL);
+	    }
 
-		if (doesContinueFirework(carteAPoser)) {
-			switch (carteAPoser.getCouleur()) {
-			case ROUGE:
-				/* On mets la carte sur pile rouge */
-				partieDuTour.getFeuxPosesRouge().push(carteAPoser);
-				break;
-			case JAUNE:
-				partieDuTour.getFeuxPosesJaune().push(carteAPoser);
-				break;
-			case VERT:
-				partieDuTour.getFeuxPosesVert().push(carteAPoser);
-				break;
-			case BLEU:
-				partieDuTour.getFeuxPosesBleu().push(carteAPoser);
-				break;
-			default: // case Couleur.BLANC:
-				partieDuTour.getFeuxPosesBlanc().push(carteAPoser);
-				break;
-			}
+	    boolean doesContinueFirework; // Indique si la carte continue le feu
+	    doesContinueFirework = false;
 
-			if (// Carte posée est 5 donc termine le feu
-			carteAPoser.getValeur().getValeurNumerique() == 5
-					&& partieDuTour.getJetons().getBleus() < JetonsPlateau.NB_JETONS_BLEUS_MAX) {
+	    if (doesContinueFirework(carteAPoser)) {
+	        switch (carteAPoser.getCouleur()) {
+	        case ROUGE:
+	            /* On mets la carte sur pile rouge */
+	            partieDuTour.getFeuxPosesRouge().push(carteAPoser);
+	            break;
+	        case JAUNE:
+	            partieDuTour.getFeuxPosesJaune().push(carteAPoser);
+	            break;
+	        case VERT:
+	            partieDuTour.getFeuxPosesVert().push(carteAPoser);
+	            break;
+	        case BLEU:
+	            partieDuTour.getFeuxPosesBleu().push(carteAPoser);
+	            break;
+	        default: // case Couleur.BLANC:
+	            partieDuTour.getFeuxPosesBlanc().push(carteAPoser);
+	            break;
+	        }
 
-				/* On ajoute un jeton bleu s'il ne sont pas au maximum */
-				partieDuTour.getJetons().incrementBleus();
-			}
+	        if (// Carte posée est 5 donc termine le feu
+	                carteAPoser.getValeur().getValeurNumerique() == 5
+	                && partieDuTour.getJetons().getBleus() < JetonsPlateau.NB_JETONS_BLEUS_MAX) {
 
-		} else { // Carte invalide
-			/* On défausse la carte */
-			partieDuTour.getDefausse().push(carteAPoser);
+	            /* On ajoute un jeton bleu s'il ne sont pas au maximum */
+	            partieDuTour.getJetons().incrementBleus();
+	        }
 
-			/* On ajoute un jeton rouge */
-			partieDuTour.getJetons().incrementRouges();
-		}
+	    } else { // Carte invalide
+	        /* On défausse la carte */
+	        partieDuTour.getDefausse().push(carteAPoser);
 
-		if (doesContinueFirework // Carte posée est 5 donc termine le feu
-				&& carteAPoser.getValeur().getValeurNumerique() == 5
-				&& partieDuTour.getJetons().getBleus() < JetonsPlateau.NB_JETONS_BLEUS_MAX) {
+	        /* On ajoute un jeton rouge */
+	        partieDuTour.getJetons().incrementRouges();
+	    }
 
-			/* On ajoute un jeton bleu s'il ne sont pas au maximum */
-			partieDuTour.getJetons().incrementBleus();
-		}
+	    if (doesContinueFirework // Carte posée est 5 donc termine le feu
+	            && carteAPoser.getValeur().getValeurNumerique() == 5
+	            && partieDuTour.getJetons().getBleus() < JetonsPlateau.NB_JETONS_BLEUS_MAX) {
 
-		/* On enlève la carte jouée de la main du joueur */
-		joueurCourant.getCartesEnMains().remove(carteAPoser);
+	        /* On ajoute un jeton bleu s'il ne sont pas au maximum */
+	        partieDuTour.getJetons().incrementBleus();
+	    }
 
-		/* On lui en donne une nouvelle s'il en reste dans la pioche */
-		if (!partieDuTour.getPioche().isEmpty()) {
+	    /* On enlève la carte jouée de la main du joueur */
+	    joueurCourant.getCartesEnMains().remove(carteAPoser);
 
-			joueurCourant.getCartesEnMains().add(partieDuTour.getPioche().pop());
-		}
-		// TODO mais jsais pas où: stop game si rouge == 3
-		// TODO lastTour si pioche vide, trouver pour end =>
-		// mettre vérif à chaque fin d'action en fonction de ce qui peut arriver
-		// (0 pioche ou rouges) ? Pcq tour dépend de l'action !
+	    /* On lui en donne une nouvelle s'il en reste dans la pioche */
+	    if (!partieDuTour.getPioche().isEmpty()) {
+
+	        joueurCourant.getCartesEnMains().add(partieDuTour.getPioche().pop());
+	    }
+	    // TODO mais jsais pas où: stop game si rouge == 3
+	    // TODO lastTour si pioche vide, trouver pour end =>
+	    // mettre vérif à chaque fin d'action en fonction de ce qui peut arriver
+	    // (0 pioche ou rouges) ? Pcq tour dépend de l'action !
 	}
 
 	/**
@@ -319,10 +332,15 @@ public class Tour {
 	 * est ensuite ajoutée à la main du joueur.
 	 *
 	 * @param carteADefausser la carte que le joueur souhaite défausser
+         * @throws IllegalArgumentException si la carte est null
 	 * @throws IllegalStateException si le nombre de jetons bleus est insuffisant
 	 */
 	public void defausser(Carte carteADefausser) {
 
+	    if (carteADefausser == null) {
+                throw new IllegalArgumentException(ERREUR_CARTE_NULL);
+            }
+	    
 		/* On ajoute la carte à la défausse */
 		getPartieDuTour().getDefausse().push(carteADefausser);
 
