@@ -422,6 +422,11 @@ public class TableCinqJoueurs {
         updateJetons();
         updatePiocheDefausse();
         updateFeuxArtifice();
+        if (partieEnCours.isPartieFinie()) {
+            /* Désactive tous ce qui ne sert pas à sortir de la partie */
+            desactiverBoutonsPartie();
+            masquerOrverlays();
+        }
     }
     
     /**
@@ -721,9 +726,6 @@ public class TableCinqJoueurs {
         } catch (IllegalStateException partieTerminee) {
             //TODO lancer séquence de partie terminée
             System.out.println("La partie est terminée");
-            /* Désactive tous ce qui ne sert pas à sortir de la partie */
-            desactiverBoutonsPartie();
-            masquerOrverlays();
         }
     }
 }
