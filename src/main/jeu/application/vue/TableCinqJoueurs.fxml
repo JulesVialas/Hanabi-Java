@@ -67,7 +67,7 @@
             <Circle fill="RED" layoutX="562.0" layoutY="421.0" radius="15.0" strokeType="INSIDE" />
             <AnchorPane layoutX="342.0" layoutY="188.0">
                <children>
-                  <Button fx:id="pileFeuxVerts" layoutX="106.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0" textFill="GREEN">
+                  <Button fx:id="pileFeuxVerts" layoutX="106.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="30.0">
                      <font>
                         <Font size="15.0" />
                      </font>

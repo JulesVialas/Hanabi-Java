@@ -646,6 +646,7 @@ public class TableCinqJoueurs {
      * Met à jour l'affichage des feux d'artifice posés sur la table.
      */
     private void updateFeuxArtifice() {
+        
         try {
             pileFeuxRouges.setText(
                     Integer.toString(partieEnCours.getFeuxPosesRouge().peek().getValeur().getValeurNumerique()));
