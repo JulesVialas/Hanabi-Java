@@ -156,7 +156,67 @@ public class TableCinqJoueurs {
     
     @FXML
     private Button btnIndiceValeur;
-
+    
+    @FXML
+    private Button joueurBasIndice1;
+    
+    @FXML
+    private Button joueurBasIndice2;
+    
+    @FXML
+    private Button joueurBasIndice3;
+    
+    @FXML
+    private Button joueurBasIndice4;
+    
+    @FXML
+    private Button joueurDroite1Indice1;
+    
+    @FXML
+    private Button joueurDroite1Indice2;
+    
+    @FXML
+    private Button joueurDroite1Indice3;
+    
+    @FXML
+    private Button joueurDroite1Indice4;
+    
+    @FXML
+    private Button joueurDroite2Indice1;
+    
+    @FXML
+    private Button joueurDroite2Indice2;
+    
+    @FXML
+    private Button joueurDroite2Indice3;
+    
+    @FXML
+    private Button joueurDroite2Indice4;
+    
+    @FXML
+    private Button joueurGauche1Indice1;
+    
+    @FXML
+    private Button joueurGauche1Indice2;
+    
+    @FXML
+    private Button joueurGauche1Indice3;
+    
+    @FXML
+    private Button joueurGauche1Indice4;
+    
+    @FXML
+    private Button joueurGauche2Indice1;
+    
+    @FXML
+    private Button joueurGauche2Indice2;
+    
+    @FXML
+    private Button joueurGauche2Indice3;
+    
+    @FXML
+    private Button joueurGauche2Indice4;
+    
     @FXML
     private VBox overlayActions;
 
