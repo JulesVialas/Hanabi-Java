@@ -75,7 +75,7 @@ public class Hanabi extends Application {
 	 * Fenêtre principale de l'application La scène qui lui est associée sera
 	 * modifiée en fonction des clics de l'utilisateur
 	 */
-	private static Stage fenetrePrincipale;
+	public static Stage fenetrePrincipale;
 
 	/**
 	 * Permet de modifier la scène de la fenêtre principale pour qu'elle devienne la
