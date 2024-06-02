@@ -13,7 +13,12 @@ import jeu.application.Hanabi;
 public class ConfirmationSauvegarde {
 
     @FXML
-    private void retourJeu() {
-        Hanabi.activerTableCinqJoueurs(ChoixJoueurs.partieCinqJoueurs);  
+    private void retourSauvegarde() {
+        Hanabi.activerSauvegarder();  
+    }
+    
+    @FXML
+    private void retourMenuPrincipal() {
+        Hanabi.activerPrincipale();
     }
 }
