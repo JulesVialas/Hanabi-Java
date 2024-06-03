@@ -5,8 +5,14 @@ import javafx.fxml.FXML;
 import jeu.application.Hanabi;
 
 public class Regles {
-	@FXML
-	private void retourMenu(ActionEvent event) {
-		Hanabi.activerPrincipale();
-	}
+    public static boolean partieActive = false;
+    
+    @FXML
+    private void retourMenu(ActionEvent event) {
+        if(partieActive) {
+            Hanabi.activerTableCinqJoueurs(ChoixJoueurs.partieCinqJoueurs);
+        } else {
+            Hanabi.activerPrincipale();
+        }
+    }
 }

@@ -294,17 +294,22 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#retourMenuPrincipal" style="-fx-background-color: black;" text="Menu Principal" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#retourMenuPrincipal" style="-fx-background-color: BLACK;" text="Menu Principal" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#versParametres" style="-fx-background-color: black;" text="Paramètres" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#versParametres" style="-fx-background-color: BLACK;" text="Paramètres" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#retourJeu" style="-fx-background-color: black;" text="⭠" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#regles" style="-fx-background-color: BLACK;" text="Règles" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#retourJeu" style="-fx-background-color: BLACK;" text="⭠" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold Italic" size="20" />
                </font>

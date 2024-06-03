@@ -829,4 +829,14 @@ public class TableCinqJoueurs {
             System.out.println("La partie est terminée");
         }
     }
+    
+    
+    
+    @FXML
+    private void regles() {
+        Regles.partieActive = true;
+        Hanabi.activerRegles();
+    }
+    
+    
 }
