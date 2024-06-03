@@ -427,6 +427,7 @@ public class Hanabi extends Application {
 			 */
 			primaryStage.setScene(scenePrincipale);
 			fenetrePrincipale = primaryStage;
+			fenetrePrincipale.setResizable(false);
 			primaryStage.show();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
