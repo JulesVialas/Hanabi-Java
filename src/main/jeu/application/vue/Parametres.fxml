@@ -36,13 +36,5 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" layoutY="418.0" mnemonicParsing="false" onAction="#regles" style="-fx-background-color: #477148;" text="Règles du jeu" textFill="WHITE">
-         <font>
-            <Font name="Calibri Bold" size="25.0" />
-         </font>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Button>
    </children>
 </AnchorPane>

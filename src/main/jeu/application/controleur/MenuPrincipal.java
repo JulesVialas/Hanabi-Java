@@ -31,4 +31,9 @@ public class MenuPrincipal {
 	private void gererClicParametres() {
 		Hanabi.activerParametres();
 	}
+	
+	@FXML
+        private void regles() {
+                Hanabi.activerRegles();
+        }
 }

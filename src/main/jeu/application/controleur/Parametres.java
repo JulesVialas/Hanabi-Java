@@ -58,9 +58,4 @@ public class Parametres {
 	        Hanabi.activerPrincipale();
 	    }
 	}
-	
-	@FXML
-	private void regles() {
-		Hanabi.activerRegles();
-	}
 }

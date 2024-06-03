@@ -7,6 +7,6 @@ import jeu.application.Hanabi;
 public class Regles {
 	@FXML
 	private void retourMenu(ActionEvent event) {
-		Hanabi.activerParametres();
+		Hanabi.activerPrincipale();
 	}
 }
