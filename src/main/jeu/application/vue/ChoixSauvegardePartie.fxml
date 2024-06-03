@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.ChoixSauvegardePartie">
    <children>
-      <Label layoutX="92.0" layoutY="158.0" text="Veuillez choisir l'emplacement par défaut de la sauvegarde du jeu">
+      <Label layoutX="91.0" layoutY="184.0" text="Veuillez choisir l'emplacement par défaut de la sauvegarde du jeu">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font></Label>
@@ -16,6 +16,9 @@
             <Font name="Calibri Bold Italic" size="20" />
          </font>
       </Button>
-      <Button layoutX="252.0" layoutY="342.0" mnemonicParsing="false" onAction="#choisirEmplacementDefaut" text="Choisir l'emplacement par défaut pour la sauvegarde" />
+      <Button layoutX="92.0" layoutY="341.0" mnemonicParsing="false" onAction="#choisirEmplacementDefaut" style="-fx-background-color: #477148;" text="Choisir l'emplacement par défaut pour la sauvegarde" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
    </children>
 </AnchorPane>

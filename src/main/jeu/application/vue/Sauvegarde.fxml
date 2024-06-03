@@ -14,12 +14,12 @@
       </Label>
       <Button defaultButton="true" layoutX="343.0" layoutY="259.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="114.0" text="Oui">
          <font>
-            <Font size="24.0" />
+            <Font size="25.0" />
          </font>
       </Button>
       <Button layoutX="343.0" layoutY="390.0" mnemonicParsing="false" onAction="#confirmationSauvegarde" prefHeight="46.0" prefWidth="114.0" text="Non">
          <font>
-            <Font size="24.0" />
+            <Font size="25.0" />
          </font>
       </Button>
    </children>

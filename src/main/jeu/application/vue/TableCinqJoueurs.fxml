@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -15,18 +16,18 @@
       <AnchorPane fx:id="effetPause" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#FermerOverlay" prefHeight="600.0" prefWidth="800.0">
          <children>
             <Ellipse fill="#477148" layoutX="400.0" layoutY="275.0" radiusX="350.0" radiusY="250.0" strokeType="INSIDE" />
-            <Button fx:id="JoueurBasIndice1" layoutX="345.0" layoutY="383.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurBasIndice2" layoutX="380.0" layoutY="383.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurBasIndice3" layoutX="415.0" layoutY="383.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurBasIndice4" layoutX="450.0" layoutY="383.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurGauche2Indice1" layoutX="209.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurGauche2Indice2" layoutX="244.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurGauche2Indice3" layoutX="279.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurGauche2Indice4" layoutX="314.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurDroite1Indice1" layoutX="463.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurDroite1Indice2" layoutX="498.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurDroite1Indice3" layoutX="533.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurDroite1Indice4" layoutX="568.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurBasIndice1" layoutX="345.0" layoutY="383.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurBasIndice2" layoutX="380.0" layoutY="383.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurBasIndice3" layoutX="415.0" layoutY="383.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurBasIndice4" layoutX="450.0" layoutY="383.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurGauche2Indice1" layoutX="209.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurGauche2Indice2" layoutX="244.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurGauche2Indice3" layoutX="279.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurGauche2Indice4" layoutX="314.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurDroite1Indice1" layoutX="463.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurDroite1Indice2" layoutX="498.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurDroite1Indice3" layoutX="533.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurDroite1Indice4" layoutX="568.0" layoutY="64.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
             <HBox alignment="CENTER" layoutX="206.0" layoutY="92.0" spacing="5.0">
                <children>
                   <Button fx:id="joueurGauche2Carte1" mnemonicParsing="false" onAction="#gererClicCarteEquipier" prefHeight="50.0" prefWidth="30.0">
@@ -109,27 +110,27 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="222.0" layoutY="350.0" strokeType="INSIDE" width="30.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="562.0" layoutY="350.0" strokeType="INSIDE" width="30.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="50.0" layoutX="547.0" layoutY="350.0" strokeType="INSIDE" width="30.0" />
-            <Label fx:id="joueurBasLabel" layoutX="382.0" layoutY="460.0" text="Joueur 1" textFill="WHITE">
+            <Label fx:id="joueurBasLabel" layoutX="382.0" layoutY="460.0" text="joueur 1" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="joueurGauche1Label" layoutX="149.0" layoutY="281.0" text="Joueur 2" textFill="WHITE">
+            <Label fx:id="joueurGauche1Label" layoutX="149.0" layoutY="281.0" text="joueur 2" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="joueurGauche2Label" layoutX="246.0" layoutY="144.0" text="Joueur 3" textFill="WHITE">
+            <Label fx:id="joueurGauche2Label" layoutX="246.0" layoutY="144.0" text="joueur 3" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="joueurDroite1Label" layoutX="499.0" layoutY="144.0" text="Joueur 4" textFill="WHITE">
+            <Label fx:id="joueurDroite1Label" layoutX="499.0" layoutY="144.0" text="joueur 4" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="joueurDroite2Label" layoutX="596.0" layoutY="281.0" text="Joueur 5" textFill="WHITE">
+            <Label fx:id="joueurDroite2Label" layoutX="596.0" layoutY="281.0" text="joueur 5" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -273,14 +274,17 @@
                </children>
             </VBox>
             <Button fx:id="menuPause" layoutX="14.0" layoutY="14.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#gererClicParametres" style="-fx-background-color: lightgrey;" />
-            <Button fx:id="JoueurGauche1Indice1" layoutX="112.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurGauche1Indice2" layoutX="147.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurGauche1Indice3" layoutX="182.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurGauche1Indice4" layoutX="217.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurDroite2Indice1" layoutX="560.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurDroite2Indice2" layoutX="595.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurDroite2Indice3" layoutX="630.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
-            <Button fx:id="JoueurDroite2Indice4" layoutX="665.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurGauche1Indice1" layoutX="112.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurGauche1Indice2" layoutX="147.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurGauche1Indice3" layoutX="182.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurGauche1Indice4" layoutX="217.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurDroite2Indice1" layoutX="560.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurDroite2Indice2" layoutX="595.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurDroite2Indice3" layoutX="630.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Button fx:id="joueurDroite2Indice4" layoutX="665.0" layoutY="203.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="5.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 25px;" text="" />
+            <Line endX="25.0" layoutX="17.0" layoutY="22.0" onMouseClicked="#gererClicParametres" strokeLineCap="ROUND" strokeWidth="2.0" />
+            <Line endX="25.0" layoutX="17.0" layoutY="38.0" onMouseClicked="#gererClicParametres" strokeLineCap="ROUND" strokeWidth="2.0" />
+            <Line endX="25.0" layoutX="17.0" layoutY="30.0" onMouseClicked="#gererClicParametres" strokeLineCap="ROUND" strokeWidth="2.0" />
          </children>
       </AnchorPane>
       <VBox fx:id="Pause" alignment="CENTER" layoutX="333.0" layoutY="160.0" onMouseClicked="#FermerOverlay" spacing="20.0">

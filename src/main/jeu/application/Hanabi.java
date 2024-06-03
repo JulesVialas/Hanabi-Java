@@ -70,6 +70,12 @@ public class Hanabi extends Application {
         
         /** Scène permettant de gérer la confirmation de la sauvegarde de la partie */
         private static Scene sceneConfirmationSauvegarde;
+        
+        /** Scène permettant de gérer la fin de partie lorsqu'elle est gagnée*/
+        private static Scene scenePartieGagnee;
+        
+        /** Scène permettant de gérer la fin de partie lorsqu'elle est perdue */
+        private static Scene scenePartiePerdue;
 
 	/**
 	 * Fenêtre principale de l'application La scène qui lui est associée sera
@@ -268,6 +274,38 @@ public class Hanabi extends Application {
                 e.printStackTrace();
             }
         }
+        
+        /**
+         * Permet de modifier la scene de la fenêtre principale pour 
+         * qu'elle devienne celle de PartieGagnee
+         */
+        @FXML
+        public static void activerPartieGagnee() {
+                try {
+                FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/PartieGagnee.fxml"));
+                Parent root = loader.load();
+                scenePartieGagnee = new Scene(root, 800, 600);
+                fenetrePrincipale.setScene(scenePartieGagnee);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        /**
+         * Permet de modifier la scene de la fenêtre principale pour 
+         * qu'elle devienne celle de PartiePerdue
+         */
+        @FXML
+        public static void activerPartiePerdue() {
+                try {
+                FXMLLoader loader = new FXMLLoader(Hanabi.class.getResource("vue/PartiePerdue.fxml"));
+                Parent root = loader.load();
+                scenePartiePerdue = new Scene(root, 800, 600);
+                fenetrePrincipale.setScene(scenePartiePerdue);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         	
 	@Override
 	public void start(Stage primaryStage) {
@@ -365,6 +403,16 @@ public class Hanabi extends Application {
 			chargeurFXMLConfirmationSauvegarde.setLocation(getClass().getResource("vue/ConfirmationSauvegarde.fxml"));
 			conteneur = chargeurFXMLConfirmationSauvegarde.load();
 			sceneRegles = new Scene(conteneur, 800, 600);
+			
+			FXMLLoader chargeurFXMLPartieGagnee= new FXMLLoader();
+                        chargeurFXMLPartieGagnee.setLocation(getClass().getResource("vue/PartieGagnee.fxml"));
+                        conteneur = chargeurFXMLPartieGagnee.load();
+                        scenePartieGagnee = new Scene(conteneur, 800, 600);
+                        
+                        FXMLLoader chargeurFXMLPartiePerdue= new FXMLLoader();
+                        chargeurFXMLPartiePerdue.setLocation(getClass().getResource("vue/PartiePerdue.fxml"));
+                        conteneur = chargeurFXMLPartiePerdue.load();
+                        scenePartiePerdue = new Scene(conteneur, 800, 600);
                         
                         
 			// on définit le titre, la hauteur et la largeur de la fenêtre principale

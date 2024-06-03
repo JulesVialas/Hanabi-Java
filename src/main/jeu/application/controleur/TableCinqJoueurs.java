@@ -477,6 +477,7 @@ public class TableCinqJoueurs {
         updatePositionJoueurs();
         updateLabelsJoueurs();
         updateAffichageCartes();
+        masquerIndices();
         //TODO update cases indices équipiers
         //TODO affichage cartes joueur courant en fonction indices
         updateJetons();
@@ -498,6 +499,37 @@ public class TableCinqJoueurs {
         Pause.setVisible(false);
     }
 
+    /**
+     * Masque les boutons d'indices en début de partie
+     */
+    private void masquerIndices() {
+        
+        joueurBasIndice1.setVisible(false);
+        joueurBasIndice2.setVisible(false);
+        joueurBasIndice3.setVisible(false);
+        joueurBasIndice4.setVisible(false); 
+        
+        joueurGauche1Indice1.setVisible(false);
+        joueurGauche1Indice2.setVisible(false);
+        joueurGauche1Indice3.setVisible(false);
+        joueurGauche1Indice4.setVisible(false);
+        
+        joueurGauche2Indice1.setVisible(false);
+        joueurGauche2Indice2.setVisible(false);
+        joueurGauche2Indice3.setVisible(false);
+        joueurGauche2Indice4.setVisible(false);
+        
+        joueurDroite1Indice1.setVisible(false);
+        joueurDroite1Indice2.setVisible(false);
+        joueurDroite1Indice3.setVisible(false);
+        joueurDroite1Indice4.setVisible(false);
+        
+        joueurDroite2Indice1.setVisible(false);
+        joueurDroite2Indice2.setVisible(false);
+        joueurDroite2Indice3.setVisible(false);
+        joueurDroite2Indice4.setVisible(false);
+    }
+    
     /**
      * Désactive tous les boutons en lien avec la réalisation
      * d'actions de la partie.
@@ -526,7 +558,8 @@ public class TableCinqJoueurs {
         joueurDroite2Carte1.setDisable(true);
         joueurDroite2Carte2.setDisable(true);
         joueurDroite2Carte3.setDisable(true);
-        joueurDroite2Carte4.setDisable(true);
+        joueurDroite2Carte4.setDisable(true);       
+        
     }
     
     /**
@@ -753,6 +786,14 @@ public class TableCinqJoueurs {
         
         if (partieEnCours.isPartieFinie()) {
             //TODO dernier tour après pioche vide
+            if(partieEnCours.getJetons().getRouges() == 3) {
+                Hanabi.activerPartiePerdue();
+                PartiePerdue.afficherScore(partieEnCours);
+            } else {
+                Hanabi.activerPartieGagnee();
+                PartieGagnee.afficherScore(partieEnCours);
+            }
+            
             throw new IllegalStateException(ERREUR_PARTIE_TERMINEE);
         }
         
@@ -785,7 +826,6 @@ public class TableCinqJoueurs {
             System.out.println("JBas après = " + joueurBas.getPseudo());
             //TODO écran de changement de joueur
         } catch (IllegalStateException partieTerminee) {
-            //TODO lancer séquence de partie terminée
             System.out.println("La partie est terminée");
         }
     }
