@@ -5,6 +5,7 @@
 package jeu.application.controleur;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import jeu.application.Hanabi;
 import jeu.modele.Partie;
@@ -22,6 +23,24 @@ public class PartieFinie {
     @FXML
     private Label score;
 
+    @FXML
+    private Button pileFeuxRouges;
+
+    @FXML
+    private Button pileFeuxJaunes;
+
+    @FXML
+    private Button pileFeuxVerts;
+
+    @FXML
+    private Button pileFeuxBleus;
+
+    @FXML
+    private Button pileFeuxBlancs;
+
+    @FXML
+    private Label jetonsRouges;
+
     /**
      * Retourne au menu principal.
      */
@@ -36,9 +55,50 @@ public class PartieFinie {
      * @param partieFinie la partie terminée
      */
     public void afficherScore(Partie partieFinie) {
-        score.setText(Integer.toString(partieFinie.calculerScore()));
-
         int scoreValeur = partieFinie.calculerScore();
+        score.setText(Integer.toString(scoreValeur));
+
+        if (!partieFinie.getFeuxPosesRouge().isEmpty()) {
+            pileFeuxRouges
+                    .setText(Integer.toString(partieFinie.getFeuxPosesRouge()
+                            .peek().getValeur().getValeurNumerique()));
+        } else {
+            pileFeuxRouges.setText("0");
+        }
+        if (!partieFinie.getFeuxPosesJaune().isEmpty()) {
+            pileFeuxJaunes
+                    .setText(Integer.toString(partieFinie.getFeuxPosesJaune()
+                            .peek().getValeur().getValeurNumerique()));
+        } else {
+            pileFeuxJaunes.setText("0");
+        }
+        if (!partieFinie.getFeuxPosesVert().isEmpty()) {
+            pileFeuxVerts
+                    .setText(Integer.toString(partieFinie.getFeuxPosesVert()
+                            .peek().getValeur().getValeurNumerique()));
+        } else {
+            pileFeuxVerts.setText("0");
+        }
+        if (!partieFinie.getFeuxPosesBleu().isEmpty()) {
+            pileFeuxBleus
+                    .setText(Integer.toString(partieFinie.getFeuxPosesBleu()
+                            .peek().getValeur().getValeurNumerique()));
+        } else {
+            pileFeuxBleus.setText("0");
+        }
+        if (!partieFinie.getFeuxPosesBlanc().isEmpty()) {
+            pileFeuxBlancs
+                    .setText(Integer.toString(partieFinie.getFeuxPosesBlanc()
+                            .peek().getValeur().getValeurNumerique()));
+        } else {
+            pileFeuxBlancs.setText("0");
+        }
+
+        // Mettre à jour le nombre de jetons rouges
+        jetonsRouges
+                .setText(Integer.toString(partieFinie.getJetons().getRouges()));
+
+        // Définir le message basé sur le score
         String message;
         switch (scoreValeur) {
         case 0:
