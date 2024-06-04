@@ -68,6 +68,9 @@ public class Partie {
     /** Le tour en cours */
     private Tour tourCourant;
 
+    /** Le numéro du tour final lorsque la pioche est vide */
+    private int numeroTourFinal;
+    
     /**
      * Une partie de Hanabi est caractérisée par un nombre de joueurs
      * allant de 2 à 5, des paquets de cartes posés sur le plateau (vides
@@ -92,6 +95,7 @@ public class Partie {
         jetons = new JetonsPlateau();
         pioche = new Pioche();
         defausse = new Defausse();
+        numeroTourFinal = 0; // int à 0 par défaut mais permet compréhension
 
         /* Distribution des cartes */
         distribuerCartes(joueur1, NB_CARTES_2_3_JOUEURS);
@@ -128,6 +132,7 @@ public class Partie {
         jetons = new JetonsPlateau();
         pioche = new Pioche();
         defausse = new Defausse();
+        numeroTourFinal = 0; // int à 0 par défaut mais permet compréhension
 
         /* Distribution des cartes */
         distribuerCartes(joueur1, NB_CARTES_2_3_JOUEURS);
@@ -169,6 +174,7 @@ public class Partie {
         jetons = new JetonsPlateau();
         pioche = new Pioche();
         defausse = new Defausse();
+        numeroTourFinal = 0; // int à 0 par défaut mais permet compréhension
 
         /* Distribution des cartes */
         distribuerCartes(joueur1, NB_CARTES_4_5_JOUEURS);
@@ -214,6 +220,7 @@ public class Partie {
         jetons = new JetonsPlateau();
         pioche = new Pioche();
         defausse = new Defausse();
+        numeroTourFinal = 0; // int à 0 par défaut mais permet compréhension
 
         /* Distribution des cartes */
         distribuerCartes(joueur1, NB_CARTES_4_5_JOUEURS);
@@ -391,14 +398,14 @@ public class Partie {
      * l'équipe ait pioché la dernière carte (y compris ce dernier)</li>
      * </ul>
      *
+     * @param numeroTourEnCours le numéro du tour en cours à tester
      * @return true si la partie est finie, false sinon
      */
-    public boolean isPartieFinie() {
-        // TODO trouver pour le cas de la pioche finie donc
-        // dernier tour pour chaque joueur
+    public boolean isPartieFinie(int numeroTourEnCours) {
 
-        return getJetons().getRouges() == 3 || areFireworksCompleted();
-        // TODO dernier tour de table a eu lieu
+        return getJetons().getRouges() == 3 
+               || areFireworksCompleted()
+               || numeroTourEnCours == this.numeroTourFinal;
         // TODO Tests :D
     }
 
@@ -431,5 +438,22 @@ public class Partie {
      */
     public void setTourCourant(Tour aDefinirCourant) {
         tourCourant = aDefinirCourant;
+    }
+    
+    /**
+     * Défini le numéro du dernier tour, c'est à dire le numéro de 
+     * tour durant lequel le joueur ayant pioché la dernière carte de
+     * la pioche joue après un dernier tour de table.
+     * @param numeroDernierTour le numéro de tour à affecter.
+     */
+    public void setNumeroTourFinal(int numeroDernierTour) {
+        numeroTourFinal = numeroDernierTour;
+    }
+    
+    /**
+     * @return le numéro du dernier tour
+     */
+    public int getNumeroTourFinal() {
+        return this.numeroTourFinal;
     }
 }

@@ -42,6 +42,9 @@ public class Tour {
 
     private static final String ERREUR_CARTE_NULL = "Erreur: aucune action ne peut être effectuée sur une carte null";
 
+    /* Nombre de joueurs de la partie */
+    private static final int NB_JOUEUR = 5;
+
     /** La partie dans laquelle le tour s'inscrit */
     private Partie partieDuTour;
 
@@ -308,6 +311,12 @@ public class Tour {
 
             joueurCourant.getCartesEnMains()
                     .add(partieDuTour.getPioche().pop());
+        } else if (partieDuTour.getNumeroTourFinal() == 0){
+           /* 
+            * On défini le numéro du dernier tour qui aura lieu un 
+            * tour de table après ce moment.
+            */
+            partieDuTour.setNumeroTourFinal(this.numero + NB_JOUEUR);
         }
         // TODO mais jsais pas où: stop game si rouge == 3
         // TODO lastTour si pioche vide, trouver pour end =>
@@ -401,7 +410,13 @@ public class Tour {
 
             joueurCourant.getCartesEnMains()
                     .add(partieDuTour.getPioche().pop());
-        }
+        } else if (partieDuTour.getNumeroTourFinal() == 0){
+            /* 
+             * On défini le numéro du dernier tour qui aura lieu un 
+             * tour de table après ce moment.
+             */
+             partieDuTour.setNumeroTourFinal(this.numero + NB_JOUEUR);
+         }
 
         /*
          * On ajoute 1 jeton bleu à la partie si le nb max n'est pas atteint
