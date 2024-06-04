@@ -80,8 +80,8 @@ public class ChoixJoueurs {
     protected static Partie partieCinqJoueurs;
 
     /**
-     * Méthode d'initialisation appelée après que tous les éléments FXML ont été
-     * injectés.
+     * Méthode d'initialisation appelée après que tous les éléments FXML
+     * ont été injectés.
      */
     @FXML
     private void initialize() {
@@ -101,37 +101,40 @@ public class ChoixJoueurs {
         try {
             switch (nbJoueurs) {
             case 2:
-                partieDeuxJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText());
+                partieDeuxJoueurs = new Partie(joueur1TextField.getText(),
+                        joueur2TextField.getText());
                 Hanabi.activerTableDeuxJoueurs(partieDeuxJoueurs);
                 break;
             case 3:
-                partieTroisJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
-                        joueur3TextField.getText());
+                partieTroisJoueurs = new Partie(joueur1TextField.getText(),
+                        joueur2TextField.getText(), joueur3TextField.getText());
                 Hanabi.activerTableTroisJoueurs(partieTroisJoueurs);
                 break;
             case 4:
-                partieQuatreJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
-                        joueur3TextField.getText(), joueur4TextField.getText());
+                partieQuatreJoueurs = new Partie(joueur1TextField.getText(),
+                        joueur2TextField.getText(), joueur3TextField.getText(),
+                        joueur4TextField.getText());
                 Hanabi.activerTableQuatreJoueurs(partieQuatreJoueurs);
                 break;
             case 5:
-                partieCinqJoueurs = new Partie(joueur1TextField.getText(), joueur2TextField.getText(),
-                        joueur3TextField.getText(), joueur4TextField.getText(), joueur5TextField.getText());
-               // TableCinqJoueurs.setPartie(partieCinqJoueurs);
+                partieCinqJoueurs = new Partie(joueur1TextField.getText(),
+                        joueur2TextField.getText(), joueur3TextField.getText(),
+                        joueur4TextField.getText(), joueur5TextField.getText());
+                // TableCinqJoueurs.setPartie(partieCinqJoueurs);
                 Hanabi.activerTableCinqJoueurs(partieCinqJoueurs);
                 break;
             default:
                 return;
             }
-        } catch(IllegalArgumentException erreur) {
-            /* 
-             * Une erreur de saisie a été commise pour les pseudos. 
-             * Une boite d'alerte est affiché pour prévenir le joueur. 
-             */ 
-            Alert boiteAlerte = new Alert(Alert.AlertType.ERROR); 
-            boiteAlerte.setTitle("Erreur de saisie des pseudos"); 
-            boiteAlerte.setHeaderText(erreur.getMessage()); 
-            boiteAlerte.showAndWait(); 
+        } catch (IllegalArgumentException erreur) {
+            /*
+             * Une erreur de saisie a été commise pour les pseudos. Une boite
+             * d'alerte est affiché pour prévenir le joueur.
+             */
+            Alert boiteAlerte = new Alert(Alert.AlertType.ERROR);
+            boiteAlerte.setTitle("Erreur de saisie des pseudos");
+            boiteAlerte.setHeaderText(erreur.getMessage());
+            boiteAlerte.showAndWait();
         }
     }
 
@@ -224,7 +227,8 @@ public class ChoixJoueurs {
     }
 
     /**
-     * Méthode appelée lorsqu'on clique sur le bouton "Retour au Menu Principal".
+     * Méthode appelée lorsqu'on clique sur le bouton "Retour au Menu
+     * Principal".
      *
      * @param event L'événement de clic sur le bouton
      */

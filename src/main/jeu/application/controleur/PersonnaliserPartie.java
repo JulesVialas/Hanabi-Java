@@ -15,6 +15,6 @@ public class PersonnaliserPartie {
 
     @FXML
     private void retourMenu(ActionEvent event) {
-            Hanabi.activerParametres();
+        Hanabi.activerParametres();
     }
 }

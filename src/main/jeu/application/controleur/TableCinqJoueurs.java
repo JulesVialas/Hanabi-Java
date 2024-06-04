@@ -9,7 +9,6 @@ import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import jeu.application.Hanabi;
 import jeu.modele.Carte;
@@ -23,22 +22,21 @@ import jeu.modele.Tour;
  */
 public class TableCinqJoueurs {
 
-    private static final String ERREUR_PARTIE_TERMINEE 
-    = "Erreur: impossible de créer un nouveau tour, la partie est terminée.";
+    private static final String ERREUR_PARTIE_TERMINEE = "Erreur: impossible de créer un nouveau tour, la partie est terminée.";
 
     /** La partie à contrôler */
     private Partie partieEnCours;
 
     /** La carte sélectionnée */
     private Carte carteSelectionnee;
-    
+
     /** La nature de l'indice à donner */
     private char natureIndice;
-    
+
     /** La nature de la pose de carte: p pour poser et d pour défausser */
     private char naturePose;
 
-    /* Joueurs correspondant aux positions*/
+    /* Joueurs correspondant aux positions */
     private Joueur joueurBas;
 
     private Joueur joueurGauche1;
@@ -78,19 +76,19 @@ public class TableCinqJoueurs {
 
     @FXML
     private Button pileFeuxRouges;
-    
+
     @FXML
     private Button pileFeuxJaunes;
-    
+
     @FXML
     private Button pileFeuxVerts;
-    
+
     @FXML
     private Button pileFeuxBleus;
-    
+
     @FXML
     private Button pileFeuxBlancs;
-    
+
     @FXML
     private Button joueurBasCarte1;
 
@@ -153,82 +151,82 @@ public class TableCinqJoueurs {
 
     @FXML
     private Button btnIndiceCouleur;
-    
+
     @FXML
     private Button btnIndiceValeur;
-    
+
     @FXML
     private Button joueurBasIndice1;
-    
+
     @FXML
     private Button joueurBasIndice2;
-    
+
     @FXML
     private Button joueurBasIndice3;
-    
+
     @FXML
     private Button joueurBasIndice4;
-    
+
     @FXML
     private Button joueurDroite1Indice1;
-    
+
     @FXML
     private Button joueurDroite1Indice2;
-    
+
     @FXML
     private Button joueurDroite1Indice3;
-    
+
     @FXML
     private Button joueurDroite1Indice4;
-    
+
     @FXML
     private Button joueurDroite2Indice1;
-    
+
     @FXML
     private Button joueurDroite2Indice2;
-    
+
     @FXML
     private Button joueurDroite2Indice3;
-    
+
     @FXML
     private Button joueurDroite2Indice4;
-    
+
     @FXML
     private Button joueurGauche1Indice1;
-    
+
     @FXML
     private Button joueurGauche1Indice2;
-    
+
     @FXML
     private Button joueurGauche1Indice3;
-    
+
     @FXML
     private Button joueurGauche1Indice4;
-    
+
     @FXML
     private Button joueurGauche2Indice1;
-    
+
     @FXML
     private Button joueurGauche2Indice2;
-    
+
     @FXML
     private Button joueurGauche2Indice3;
-    
+
     @FXML
     private Button joueurGauche2Indice4;
-    
+
     @FXML
     private VBox overlayActions;
 
     @FXML
     private VBox overlayJoueurCourant;
-    
+
     @FXML
     private VBox Pause;
-    
+
     @FXML
     private AnchorPane effetPause;
-    
+
     private BoxBlur blurEffect = new BoxBlur(10, 10, 3);
 
     /**
@@ -298,10 +296,9 @@ public class TableCinqJoueurs {
         overlayJoueurCourant.setVisible(false);
     }
 
-
     @FXML
     private void gererClicParametres() {
-    	effetPause.setEffect(blurEffect);
+        effetPause.setEffect(blurEffect);
         Parametres.partieActive = true;
         Pause.setVisible(true);
     }
@@ -309,30 +306,30 @@ public class TableCinqJoueurs {
     @FXML
     private void gererClicCouleur() {
         natureIndice = 'c';
-        //TODO mettre en évidence les cartes correspondantes
-        //Tour.donnerIndice(TODO trouver la carte selectionnée, 'c');
-    } 	
+        // TODO mettre en évidence les cartes correspondantes
+        // Tour.donnerIndice(TODO trouver la carte selectionnée, 'c');
+    }
 
     @FXML
     private void gererClicValeur() {
         natureIndice = 'v';
         System.out.println(natureIndice);
-        //Tour.donnerIndice(TODO trouver la carte selectionnée, 'v');
+        // Tour.donnerIndice(TODO trouver la carte selectionnée, 'v');
     }
 
     @FXML
     private void gererClicPoser() {
         naturePose = 'p';
-        //Tour.poser(TODO Trouver la carte selectionnée);
+        // Tour.poser(TODO Trouver la carte selectionnée);
     }
-    
+
     @FXML
     private void gererClicDefausser() {
         naturePose = 'd';
-        //Tour.poser(TODO Trouver la carte selectionnée);
+        // Tour.poser(TODO Trouver la carte selectionnée);
     }
 
-    @FXML 
+    @FXML
     private void poserDefausserCarte() {
         if (naturePose == 'p') {
             partieEnCours.getTourCourant().poser(carteSelectionnee);
@@ -344,54 +341,54 @@ public class TableCinqJoueurs {
         System.out.println(carteSelectionnee);
         updateView();
         lancerTourSuivant(creerTourSuivant());
-        updateView(); //STUB
+        updateView(); // STUB
     }
-    
+
     @FXML
     private void donnerIndice(ActionEvent event) {
         System.out.println(natureIndice);
-        partieEnCours.getTourCourant()
-                     .donnerIndice(carteSelectionnee, natureIndice);
-        System.out.println(((Control)event.getSource()).getId());
+        partieEnCours.getTourCourant().donnerIndice(carteSelectionnee,
+                natureIndice);
+        System.out.println(((Control) event.getSource()).getId());
         natureIndice = ' ';
         carteSelectionnee = null;
         resetCarteSelectionnee();
         updateView();
         lancerTourSuivant(creerTourSuivant());
-        updateView(); //STUB
+        updateView(); // STUB
     }
-    
+
     @FXML
     private void retourJeu(ActionEvent event) {
         Hanabi.activerTableCinqJoueurs(ChoixJoueurs.partieCinqJoueurs);
     }
 
     @FXML
-    private void versParametres(){
+    private void versParametres() {
         Hanabi.activerParametres();
     }
-    
+
     @FXML
-    private void retourMenuPrincipal(){
+    private void retourMenuPrincipal() {
         Hanabi.activerSauvegarder();
     }
-    
+
     /**
      * Vider le champ carteSelectionnee
      */
     private void resetCarteSelectionnee() {
         carteSelectionnee = null;
     }
-    
-    /** 
-     * Définie la carte liée au bouton cliqué comme étant la
-     * carte sélectionnée.
-     * 
+
+    /**
+     * Définie la carte liée au bouton cliqué comme étant la carte
+     * sélectionnée.
+     *
      * @param idBouton l'identifiant du bouton cliqué
      */
     private void setCarteSelectionnee(String idBouton) {
         System.out.println(idBouton);
-        switch(idBouton) {
+        switch (idBouton) {
 
         /* Joueur bas */
         case "joueurBasCarte1":
@@ -407,7 +404,7 @@ public class TableCinqJoueurs {
             carteSelectionnee = joueurBas.getCartesEnMains().get(3);
             break;
 
-            /* Joueur gauche 1 */    
+        /* Joueur gauche 1 */
         case "joueurGauche1Carte1":
             carteSelectionnee = joueurGauche1.getCartesEnMains().get(0);
             break;
@@ -421,7 +418,7 @@ public class TableCinqJoueurs {
             carteSelectionnee = joueurGauche1.getCartesEnMains().get(3);
             break;
 
-            /* Joueur gauche 2 */    
+        /* Joueur gauche 2 */
         case "joueurGauche2Carte1":
             carteSelectionnee = joueurGauche2.getCartesEnMains().get(0);
             break;
@@ -435,7 +432,7 @@ public class TableCinqJoueurs {
             carteSelectionnee = joueurGauche2.getCartesEnMains().get(3);
             break;
 
-            /* Joueur droite 1 */    
+        /* Joueur droite 1 */
         case "joueurDroite1Carte1":
             carteSelectionnee = joueurDroite1.getCartesEnMains().get(0);
             break;
@@ -449,7 +446,7 @@ public class TableCinqJoueurs {
             carteSelectionnee = joueurDroite1.getCartesEnMains().get(3);
             break;
 
-            /* Joueur droite 1 */    
+        /* Joueur droite 1 */
         case "joueurDroite2Carte1":
             carteSelectionnee = joueurDroite2.getCartesEnMains().get(0);
             break;
@@ -472,14 +469,14 @@ public class TableCinqJoueurs {
      * Met à jour tous les éléments de la vue.
      */
     public void updateView() {
-        //TODO updateView
+        // TODO updateView
         masquerOrverlays();
         updatePositionJoueurs();
         updateLabelsJoueurs();
         updateAffichageCartes();
         masquerIndices();
-        //TODO update cases indices équipiers
-        //TODO affichage cartes joueur courant en fonction indices
+        // TODO update cases indices équipiers
+        // TODO affichage cartes joueur courant en fonction indices
         updateJetons();
         updatePiocheDefausse();
         updateFeuxArtifice();
@@ -489,7 +486,7 @@ public class TableCinqJoueurs {
             masquerOrverlays();
         }
     }
-    
+
     /**
      * Masque les overlays d'actions et de menus
      */
@@ -503,88 +500,87 @@ public class TableCinqJoueurs {
      * Masque les boutons d'indices en début de partie
      */
     private void masquerIndices() {
-        
+
         joueurBasIndice1.setVisible(false);
         joueurBasIndice2.setVisible(false);
         joueurBasIndice3.setVisible(false);
-        joueurBasIndice4.setVisible(false); 
-        
+        joueurBasIndice4.setVisible(false);
+
         joueurGauche1Indice1.setVisible(false);
         joueurGauche1Indice2.setVisible(false);
         joueurGauche1Indice3.setVisible(false);
         joueurGauche1Indice4.setVisible(false);
-        
+
         joueurGauche2Indice1.setVisible(false);
         joueurGauche2Indice2.setVisible(false);
         joueurGauche2Indice3.setVisible(false);
         joueurGauche2Indice4.setVisible(false);
-        
+
         joueurDroite1Indice1.setVisible(false);
         joueurDroite1Indice2.setVisible(false);
         joueurDroite1Indice3.setVisible(false);
         joueurDroite1Indice4.setVisible(false);
-        
+
         joueurDroite2Indice1.setVisible(false);
         joueurDroite2Indice2.setVisible(false);
         joueurDroite2Indice3.setVisible(false);
         joueurDroite2Indice4.setVisible(false);
     }
-    
+
     /**
-     * Désactive tous les boutons en lien avec la réalisation
-     * d'actions de la partie.
+     * Désactive tous les boutons en lien avec la réalisation d'actions de
+     * la partie.
      */
     private void desactiverBoutonsPartie() {
         joueurBasCarte1.setDisable(true);
         joueurBasCarte2.setDisable(true);
         joueurBasCarte3.setDisable(true);
         joueurBasCarte4.setDisable(true);
-        
+
         joueurGauche1Carte1.setDisable(true);
         joueurGauche1Carte2.setDisable(true);
         joueurGauche1Carte3.setDisable(true);
         joueurGauche1Carte4.setDisable(true);
-        
+
         joueurGauche2Carte1.setDisable(true);
         joueurGauche2Carte2.setDisable(true);
         joueurGauche2Carte3.setDisable(true);
         joueurGauche2Carte4.setDisable(true);
-        
+
         joueurDroite1Carte1.setDisable(true);
         joueurDroite1Carte2.setDisable(true);
         joueurDroite1Carte3.setDisable(true);
         joueurDroite1Carte4.setDisable(true);
-        
+
         joueurDroite2Carte1.setDisable(true);
         joueurDroite2Carte2.setDisable(true);
         joueurDroite2Carte3.setDisable(true);
-        joueurDroite2Carte4.setDisable(true);       
-        
+        joueurDroite2Carte4.setDisable(true);
+
     }
-    
+
     /**
      * Initialise la couleur des tas de feux d'artifice sur la table
      */
     private void initializeCouleurFeuxArtifice() {
-        //TODO enlever animation si cliqués !
+        // TODO enlever animation si cliqués !
         pileFeuxRouges.setStyle("-fx-background-color: #"
-                               + convertirCouleurEnHex(Couleur.ROUGE));
+                + convertirCouleurEnHex(Couleur.ROUGE));
         pileFeuxJaunes.setStyle("-fx-background-color: #"
-                               + convertirCouleurEnHex(Couleur.JAUNE));
+                + convertirCouleurEnHex(Couleur.JAUNE));
         pileFeuxVerts.setStyle("-fx-background-color: #"
-                               + convertirCouleurEnHex(Couleur.VERT));
+                + convertirCouleurEnHex(Couleur.VERT));
         pileFeuxBleus.setStyle("-fx-background-color: #"
-                               + convertirCouleurEnHex(Couleur.BLEU));
+                + convertirCouleurEnHex(Couleur.BLEU));
         pileFeuxBlancs.setStyle("-fx-background-color: #"
-                               + convertirCouleurEnHex(Couleur.BLANC));
+                + convertirCouleurEnHex(Couleur.BLANC));
     }
-    
+
     /**
-     * Met à jour la position des joueurs en fonction du 
-     * numéro de tour
+     * Met à jour la position des joueurs en fonction du numéro de tour
      */
     private void updatePositionJoueurs() {
-        switch(partieEnCours.getTourCourant().getNumero() % 5) {
+        switch (partieEnCours.getTourCourant().getNumero() % 5) {
         case 0:
             joueurBas = partieEnCours.getJoueur5();
             joueurGauche1 = partieEnCours.getJoueur4();
@@ -640,203 +636,231 @@ public class TableCinqJoueurs {
         joueurDroite1Label.setText(joueurDroite1.getPseudo());
         joueurDroite2Label.setText(joueurDroite2.getPseudo());
     }
-    
+
     /**
-     * Met à jour l'affichage du nombre de jetons rouges et bleus 
+     * Met à jour l'affichage du nombre de jetons rouges et bleus
      * disponibles
      */
     private void updatePiocheDefausse() {
-        nbCartesPioche.setText(Integer.toString(partieEnCours.getPioche().size()));
-        nbCartesDefausse.setText(Integer.toString(partieEnCours.getDefausse().size()));
+        nbCartesPioche
+                .setText(Integer.toString(partieEnCours.getPioche().size()));
+        nbCartesDefausse
+                .setText(Integer.toString(partieEnCours.getDefausse().size()));
     }
-    
+
     /**
      * Met à jour le nombre de jetons rouges et bleus disponibles
      */
     private void updateJetons() {
-        nbJetonsRouge.setText(Integer.toString(partieEnCours.getJetons().getRouges()));
-        nbJetonsBleu.setText(Integer.toString(partieEnCours.getJetons().getBleus()));
+        nbJetonsRouge.setText(
+                Integer.toString(partieEnCours.getJetons().getRouges()));
+        nbJetonsBleu.setText(
+                Integer.toString(partieEnCours.getJetons().getBleus()));
     }
-    
+
     /**
      * Met à jour l'affichage des mains des joueurs
      */
     private void updateAffichageCartes() {
         joueurGauche1Carte1.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurGauche1.getCartesEnMains().get(0).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurGauche1.getCartesEnMains().get(0).getCouleur())
+                + ";");
         joueurGauche1Carte2.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurGauche1.getCartesEnMains().get(1).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurGauche1.getCartesEnMains().get(1).getCouleur())
+                + ";");
         joueurGauche1Carte3.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurGauche1.getCartesEnMains().get(2).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurGauche1.getCartesEnMains().get(2).getCouleur())
+                + ";");
         joueurGauche1Carte4.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurGauche1.getCartesEnMains().get(3).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurGauche1.getCartesEnMains().get(3).getCouleur())
+                + ";");
 
-        joueurGauche1Carte1.setText(
-                Integer.toString(joueurGauche1.getCartesEnMains().get(0).getValeur().getValeurNumerique()));
-        joueurGauche1Carte2.setText(
-                Integer.toString(joueurGauche1.getCartesEnMains().get(1).getValeur().getValeurNumerique()));
-        joueurGauche1Carte3.setText(
-                Integer.toString(joueurGauche1.getCartesEnMains().get(2).getValeur().getValeurNumerique()));
-        joueurGauche1Carte4.setText(
-                Integer.toString(joueurGauche1.getCartesEnMains().get(3).getValeur().getValeurNumerique()));
+        joueurGauche1Carte1.setText(Integer.toString(joueurGauche1
+                .getCartesEnMains().get(0).getValeur().getValeurNumerique()));
+        joueurGauche1Carte2.setText(Integer.toString(joueurGauche1
+                .getCartesEnMains().get(1).getValeur().getValeurNumerique()));
+        joueurGauche1Carte3.setText(Integer.toString(joueurGauche1
+                .getCartesEnMains().get(2).getValeur().getValeurNumerique()));
+        joueurGauche1Carte4.setText(Integer.toString(joueurGauche1
+                .getCartesEnMains().get(3).getValeur().getValeurNumerique()));
 
         joueurGauche2Carte1.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurGauche2.getCartesEnMains().get(0).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurGauche2.getCartesEnMains().get(0).getCouleur())
+                + ";");
         joueurGauche2Carte2.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurGauche2.getCartesEnMains().get(1).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurGauche2.getCartesEnMains().get(1).getCouleur())
+                + ";");
         joueurGauche2Carte3.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurGauche2.getCartesEnMains().get(2).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurGauche2.getCartesEnMains().get(2).getCouleur())
+                + ";");
         joueurGauche2Carte4.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurGauche2.getCartesEnMains().get(3).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurGauche2.getCartesEnMains().get(3).getCouleur())
+                + ";");
 
-        joueurGauche2Carte1.setText(
-                Integer.toString(joueurGauche2.getCartesEnMains().get(0).getValeur().getValeurNumerique()));
-        joueurGauche2Carte2.setText(
-                Integer.toString(joueurGauche2.getCartesEnMains().get(1).getValeur().getValeurNumerique()));
-        joueurGauche2Carte3.setText(
-                Integer.toString(joueurGauche2.getCartesEnMains().get(2).getValeur().getValeurNumerique()));
-        joueurGauche2Carte4.setText(
-                Integer.toString(joueurGauche2.getCartesEnMains().get(3).getValeur().getValeurNumerique()));
+        joueurGauche2Carte1.setText(Integer.toString(joueurGauche2
+                .getCartesEnMains().get(0).getValeur().getValeurNumerique()));
+        joueurGauche2Carte2.setText(Integer.toString(joueurGauche2
+                .getCartesEnMains().get(1).getValeur().getValeurNumerique()));
+        joueurGauche2Carte3.setText(Integer.toString(joueurGauche2
+                .getCartesEnMains().get(2).getValeur().getValeurNumerique()));
+        joueurGauche2Carte4.setText(Integer.toString(joueurGauche2
+                .getCartesEnMains().get(3).getValeur().getValeurNumerique()));
 
         joueurDroite1Carte1.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurDroite1.getCartesEnMains().get(0).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurDroite1.getCartesEnMains().get(0).getCouleur())
+                + ";");
         joueurDroite1Carte2.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurDroite1.getCartesEnMains().get(1).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurDroite1.getCartesEnMains().get(1).getCouleur())
+                + ";");
         joueurDroite1Carte3.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurDroite1.getCartesEnMains().get(2).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurDroite1.getCartesEnMains().get(2).getCouleur())
+                + ";");
         joueurDroite1Carte4.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurDroite1.getCartesEnMains().get(3).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurDroite1.getCartesEnMains().get(3).getCouleur())
+                + ";");
 
-        joueurDroite1Carte1.setText(
-                Integer.toString(joueurDroite1.getCartesEnMains().get(0).getValeur().getValeurNumerique()));
-        joueurDroite1Carte2.setText(
-                Integer.toString(joueurDroite1.getCartesEnMains().get(1).getValeur().getValeurNumerique()));
-        joueurDroite1Carte3.setText(
-                Integer.toString(joueurDroite1.getCartesEnMains().get(2).getValeur().getValeurNumerique()));
-        joueurDroite1Carte4.setText(
-                Integer.toString(joueurDroite1.getCartesEnMains().get(3).getValeur().getValeurNumerique()));
+        joueurDroite1Carte1.setText(Integer.toString(joueurDroite1
+                .getCartesEnMains().get(0).getValeur().getValeurNumerique()));
+        joueurDroite1Carte2.setText(Integer.toString(joueurDroite1
+                .getCartesEnMains().get(1).getValeur().getValeurNumerique()));
+        joueurDroite1Carte3.setText(Integer.toString(joueurDroite1
+                .getCartesEnMains().get(2).getValeur().getValeurNumerique()));
+        joueurDroite1Carte4.setText(Integer.toString(joueurDroite1
+                .getCartesEnMains().get(3).getValeur().getValeurNumerique()));
 
         joueurDroite2Carte1.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurDroite2.getCartesEnMains().get(0).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurDroite2.getCartesEnMains().get(0).getCouleur())
+                + ";");
         joueurDroite2Carte2.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurDroite2.getCartesEnMains().get(1).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurDroite2.getCartesEnMains().get(1).getCouleur())
+                + ";");
         joueurDroite2Carte3.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurDroite2.getCartesEnMains().get(2).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurDroite2.getCartesEnMains().get(2).getCouleur())
+                + ";");
         joueurDroite2Carte4.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(joueurDroite2.getCartesEnMains().get(3).getCouleur()) + ";");
+                + convertirCouleurEnHex(
+                        joueurDroite2.getCartesEnMains().get(3).getCouleur())
+                + ";");
 
-        joueurDroite2Carte1.setText(
-                Integer.toString(joueurDroite2.getCartesEnMains().get(0).getValeur().getValeurNumerique()));
-        joueurDroite2Carte2.setText(
-                Integer.toString(joueurDroite2.getCartesEnMains().get(1).getValeur().getValeurNumerique()));
-        joueurDroite2Carte3.setText(
-                Integer.toString(joueurDroite2.getCartesEnMains().get(2).getValeur().getValeurNumerique()));
-        joueurDroite2Carte4.setText(
-                Integer.toString(joueurDroite2.getCartesEnMains().get(3).getValeur().getValeurNumerique()));
+        joueurDroite2Carte1.setText(Integer.toString(joueurDroite2
+                .getCartesEnMains().get(0).getValeur().getValeurNumerique()));
+        joueurDroite2Carte2.setText(Integer.toString(joueurDroite2
+                .getCartesEnMains().get(1).getValeur().getValeurNumerique()));
+        joueurDroite2Carte3.setText(Integer.toString(joueurDroite2
+                .getCartesEnMains().get(2).getValeur().getValeurNumerique()));
+        joueurDroite2Carte4.setText(Integer.toString(joueurDroite2
+                .getCartesEnMains().get(3).getValeur().getValeurNumerique()));
     }
-    
+
     /**
      * Met à jour l'affichage des feux d'artifice posés sur la table.
      */
     private void updateFeuxArtifice() {
-        
+
         try {
-            pileFeuxRouges.setText(
-                    Integer.toString(partieEnCours.getFeuxPosesRouge().peek().getValeur().getValeurNumerique()));
+            pileFeuxRouges
+                    .setText(Integer.toString(partieEnCours.getFeuxPosesRouge()
+                            .peek().getValeur().getValeurNumerique()));
         } catch (EmptyStackException e) {
             // Empty body
         }
         try {
-            pileFeuxJaunes.setText(
-                    Integer.toString(partieEnCours.getFeuxPosesJaune().peek().getValeur().getValeurNumerique()));
+            pileFeuxJaunes
+                    .setText(Integer.toString(partieEnCours.getFeuxPosesJaune()
+                            .peek().getValeur().getValeurNumerique()));
         } catch (EmptyStackException e) {
             // Empty body
         }
         try {
-            pileFeuxVerts.setText(
-                    Integer.toString(partieEnCours.getFeuxPosesVert().peek().getValeur().getValeurNumerique()));
+            pileFeuxVerts
+                    .setText(Integer.toString(partieEnCours.getFeuxPosesVert()
+                            .peek().getValeur().getValeurNumerique()));
         } catch (EmptyStackException e) {
             // Empty body
         }
         try {
-            pileFeuxBleus.setText(
-                    Integer.toString(partieEnCours.getFeuxPosesBleu().peek().getValeur().getValeurNumerique()));
+            pileFeuxBleus
+                    .setText(Integer.toString(partieEnCours.getFeuxPosesBleu()
+                            .peek().getValeur().getValeurNumerique()));
         } catch (EmptyStackException e) {
             // Empty body
         }
         try {
-            pileFeuxBlancs.setText(
-                    Integer.toString(partieEnCours.getFeuxPosesBlanc().peek().getValeur().getValeurNumerique()));
+            pileFeuxBlancs
+                    .setText(Integer.toString(partieEnCours.getFeuxPosesBlanc()
+                            .peek().getValeur().getValeurNumerique()));
         } catch (EmptyStackException e) {
             // Empty body
         }
-    }    
-    
+    }
+
     /**
-     * Créé le tour suivant à partir du tour actuel.
-     * Si la partie est terminée (3 jetons rouges, feux d'artifices
-     * complets ou dernier tour de table après pioche vide), une 
-     * exception sera propagée pour empêcher de poursuivre la 
-     * partie.
-     * 
-     * @throws IllegalStateException si une des conditions de fin de 
-     *         partie est respectée
+     * Créé le tour suivant à partir du tour actuel. Si la partie est
+     * terminée (3 jetons rouges, feux d'artifices complets ou dernier
+     * tour de table après pioche vide), une exception sera propagée pour
+     * empêcher de poursuivre la partie.
+     *
+     * @throws IllegalStateException si une des conditions de fin de
+     *                               partie est respectée
      */
     private Tour creerTourSuivant() {
-        
+
         if (partieEnCours.isPartieFinie()) {
-            //TODO dernier tour après pioche vide
-            if(partieEnCours.getJetons().getRouges() == 3) {
-                Hanabi.activerPartiePerdue();
-                PartiePerdue.afficherScore(partieEnCours);
-            } else {
-                Hanabi.activerPartieGagnee();
-                PartieGagnee.afficherScore(partieEnCours);
-            }
-            
-            throw new IllegalStateException(ERREUR_PARTIE_TERMINEE);
+            // TODO dernier tour après pioche vide
+            Hanabi.activerPartieFinie(partieEnCours);
         }
-        
-        Tour nouveau = new Tour(joueurDroite2, 
-                        partieEnCours.getTourCourant().getNumero() + 1);
-        
+
+        Tour nouveau = new Tour(joueurDroite2,
+                partieEnCours.getTourCourant().getNumero() + 1);
+
         nouveau.setPartieDuTour(partieEnCours);
-        
+
         return nouveau;
     }
-    
+
     /**
-     * Lance le nouveau tour suivant si aucune condition de fin 
-     * de partie n'est remplie.
-     * 
+     * Lance le nouveau tour suivant si aucune condition de fin de partie
+     * n'est remplie.
+     *
      * <p>
-     * Si une condition de fin de partie est remplie (trois jetons 
-     * rouges, feux d'artifices complétés, dernier tour de table après
-     * pioche vidée a eu lieu), alors la séquence de partie
-     * terminée sera lancée.
-     * 
+     * Si une condition de fin de partie est remplie (trois jetons rouges,
+     * feux d'artifices complétés, dernier tour de table après pioche
+     * vidée a eu lieu), alors la séquence de partie terminée sera lancée.
+     *
      * @param aLancer le tour à lancer
      */
     private void lancerTourSuivant(Tour aLancer) {
-        
+
         try {
             System.out.println("JBas avant = " + joueurBas.getPseudo());
             partieEnCours.setTourCourant(aLancer);
             updateView();
             System.out.println("JBas après = " + joueurBas.getPseudo());
-            //TODO écran de changement de joueur
+            // TODO écran de changement de joueur
         } catch (IllegalStateException partieTerminee) {
             System.out.println("La partie est terminée");
         }
     }
-    
-    
-    
+
     @FXML
     private void regles() {
         Regles.partieActive = true;
         Hanabi.activerRegles();
     }
-    
-    
+
 }

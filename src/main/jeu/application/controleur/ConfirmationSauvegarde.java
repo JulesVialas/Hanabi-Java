@@ -14,9 +14,9 @@ public class ConfirmationSauvegarde {
 
     @FXML
     private void retourSauvegarde() {
-        Hanabi.activerSauvegarder();  
+        Hanabi.activerSauvegarder();
     }
-    
+
     @FXML
     private void retourMenuPrincipal() {
         Hanabi.activerPrincipale();

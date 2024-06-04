@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeu.application.controleur.PartieFinie">
+   <children>
+      <Label fx:id="textePartieFinie" alignment="CENTER" contentDisplay="CENTER" layoutX="257.0" layoutY="153.0" text="Label">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="341.0" layoutY="252.0" text="Score :">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="score" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="252.0" text="Label">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="316.0" layoutY="371.0" mnemonicParsing="false" onAction="#retourMenu" style="-fx-background-color: #477148;" text="Menu Principal" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
