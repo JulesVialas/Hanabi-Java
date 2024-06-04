@@ -486,6 +486,7 @@ public class TableCinqJoueurs {
             /* Désactive tous ce qui ne sert pas à sortir de la partie */
             desactiverBoutonsPartie();
             masquerOrverlays();
+            Hanabi.activerPartieFinie(partieEnCours);
         }
     }
 
