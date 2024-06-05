@@ -456,4 +456,11 @@ public class Partie {
     public int getNumeroTourFinal() {
         return this.numeroTourFinal;
     }
+    
+    /**
+     * @return l'identifiant de la partie
+     */
+    public long getIdentifiant() {
+        return this.identifiant;
+    }
 }
