@@ -50,11 +50,4 @@ public class Pioche {
     public void setPioche(Stack<Carte> pileAMettre) {
         this.pile = pileAMettre;
     }
-
-    /**
-     * @return la pile de la pioche
-     */
-    public Stack<Carte> getPioche() {
-        return this.pile;
-    }
 }
