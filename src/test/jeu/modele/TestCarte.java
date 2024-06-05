@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -534,13 +533,5 @@ class TestCarte {
         assertFalse(troisVert.getValeurConnue());
         assertFalse(quatreBleu.getValeurConnue());
         assertFalse(cinqBlanc.getValeurConnue());
-    }
-
-    /**
-     * Méthode de test pour {@link jeu.modele.Carte#toString()}.
-     */
-    @Test
-    void testToString() {
-        fail("Not yet implemented");
     }
 }

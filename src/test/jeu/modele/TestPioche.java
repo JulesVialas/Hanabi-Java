@@ -25,13 +25,13 @@ class TestPioche {
     @Test
     void testPioche() {
         Pioche pioche = new Pioche();
-        assertNotNull(pioche.getPioche(), "La pioche ne doit pas être null.");
-        assertEquals(50, pioche.getPioche().size(),
+        assertNotNull(pioche.getPaquet(), "La pioche ne doit pas être null.");
+        assertEquals(50, pioche.getPaquet().size(),
                 "La pioche doit contenir 50" + " cartes.");
 
         // Vérifie que les cartes sont mélangées
         Carte[] jeuDeBase = Carte.jeuComplet();
-        Stack<Carte> jeuPioche = pioche.getPioche();
+        Stack<Carte> jeuPioche = pioche.getPaquet();
 
         boolean estMélangé = false;
         for (int i = 0; i < jeuDeBase.length; i++) {
@@ -44,12 +44,12 @@ class TestPioche {
     }
 
     /**
-     * Méthode de test pour {@link jeu.modele.Pioche#getPioche()}.
+     * Méthode de test pour {@link jeu.modele.Pioche#getPaquet()}.
      */
     @Test
-    void testGetPioche() {
+    void testgetPaquet() {
         Pioche pioche = new Pioche();
-        Stack<Carte> pile = pioche.getPioche();
+        Stack<Carte> pile = pioche.getPaquet();
         assertNotNull(pile, "La pile de la pioche ne doit pas être null.");
         assertEquals(50, pile.size(), "La pile doit contenir 50 cartes.");
     }
@@ -66,18 +66,18 @@ class TestPioche {
         nouvellePile.push(new Carte(Couleur.JAUNE, Valeur.DEUX));
         pioche.setPioche(nouvellePile);
 
-        assertEquals(nouvellePile, pioche.getPioche(),
+        assertEquals(nouvellePile, pioche.getPaquet(),
                 "La pioche doit " + "être remplacée par la nouvelle pile.");
-        assertEquals(2, pioche.getPioche().size(),
+        assertEquals(2, pioche.getPaquet().size(),
                 "La nouvelle pioche doit" + " contenir 2 cartes.");
 
         // Avec une pile vide
         Stack<Carte> pileVide = new Stack<>();
         pioche.setPioche(pileVide);
 
-        assertEquals(pileVide, pioche.getPioche(),
+        assertEquals(pileVide, pioche.getPaquet(),
                 "La pioche doit être" + " remplacée par une pile vide.");
-        assertEquals(0, pioche.getPioche().size(),
+        assertEquals(0, pioche.getPaquet().size(),
                 "La pioche doit contenir " + "0 carte.");
 
         // Avec pile contenant une seule carte
@@ -85,9 +85,9 @@ class TestPioche {
         pileCarteUnique.push(new Carte(Couleur.BLEU, Valeur.TROIS));
         pioche.setPioche(pileCarteUnique);
 
-        assertEquals(pileCarteUnique, pioche.getPioche(), "La pioche doit "
+        assertEquals(pileCarteUnique, pioche.getPaquet(), "La pioche doit "
                 + "être remplacée par la pile avec une unique carte.");
-        assertEquals(1, pioche.getPioche().size(),
+        assertEquals(1, pioche.getPaquet().size(),
                 "La pioche doit contenir 1 " + "carte.");
     }
 }

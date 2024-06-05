@@ -311,11 +311,11 @@ public class Tour {
 
             joueurCourant.getCartesEnMains()
                     .add(partieDuTour.getPioche().pop());
-        } else if (partieDuTour.getNumeroTourFinal() == 0){
-           /* 
-            * On défini le numéro du dernier tour qui aura lieu un 
-            * tour de table après ce moment.
-            */
+        } else if (partieDuTour.getNumeroTourFinal() == 0) {
+            /*
+             * On défini le numéro du dernier tour qui aura lieu un tour de
+             * table après ce moment.
+             */
             partieDuTour.setNumeroTourFinal(this.numero + NB_JOUEUR);
         }
         // TODO mais jsais pas où: stop game si rouge == 3
@@ -410,13 +410,13 @@ public class Tour {
 
             joueurCourant.getCartesEnMains()
                     .add(partieDuTour.getPioche().pop());
-        } else if (partieDuTour.getNumeroTourFinal() == 0){
-            /* 
-             * On défini le numéro du dernier tour qui aura lieu un 
-             * tour de table après ce moment.
+        } else if (partieDuTour.getNumeroTourFinal() == 0) {
+            /*
+             * On défini le numéro du dernier tour qui aura lieu un tour de
+             * table après ce moment.
              */
-             partieDuTour.setNumeroTourFinal(this.numero + NB_JOUEUR);
-         }
+            partieDuTour.setNumeroTourFinal(this.numero + NB_JOUEUR);
+        }
 
         /*
          * On ajoute 1 jeton bleu à la partie si le nb max n'est pas atteint

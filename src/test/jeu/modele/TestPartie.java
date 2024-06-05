@@ -2,7 +2,6 @@ package jeu.modele;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -73,41 +72,6 @@ class TestPartie {
         assertTrue(partie5J.getJoueur3().getCartesEnMains().size() == 4);
         assertTrue(partie5J.getJoueur4().getCartesEnMains().size() == 4);
         assertTrue(partie5J.getJoueur5().getCartesEnMains().size() == 4);
-    }
-
-    @Test
-    void testGetJetons() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testGetJoueur1() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testGetJoueur2() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testGetJoueur3() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testGetJoueur4() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testGetJoueur5() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testGetPioche() {
-        fail("Not yet implemented");
     }
 
     /**

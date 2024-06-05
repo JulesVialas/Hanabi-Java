@@ -70,7 +70,7 @@ public class Partie {
 
     /** Le numéro du tour final lorsque la pioche est vide */
     private int numeroTourFinal;
-    
+
     /**
      * Une partie de Hanabi est caractérisée par un nombre de joueurs
      * allant de 2 à 5, des paquets de cartes posés sur le plateau (vides
@@ -403,9 +403,8 @@ public class Partie {
      */
     public boolean isPartieFinie(int numeroTourEnCours) {
 
-        return getJetons().getRouges() == 3 
-               || areFireworksCompleted()
-               || numeroTourEnCours == this.numeroTourFinal;
+        return getJetons().getRouges() == 3 || areFireworksCompleted()
+                || numeroTourEnCours == this.numeroTourFinal;
         // TODO Tests :D
     }
 
@@ -439,24 +438,25 @@ public class Partie {
     public void setTourCourant(Tour aDefinirCourant) {
         tourCourant = aDefinirCourant;
     }
-    
+
     /**
-     * Défini le numéro du dernier tour, c'est à dire le numéro de 
-     * tour durant lequel le joueur ayant pioché la dernière carte de
-     * la pioche joue après un dernier tour de table.
+     * Défini le numéro du dernier tour, c'est à dire le numéro de tour
+     * durant lequel le joueur ayant pioché la dernière carte de la pioche
+     * joue après un dernier tour de table.
+     *
      * @param numeroDernierTour le numéro de tour à affecter.
      */
     public void setNumeroTourFinal(int numeroDernierTour) {
         numeroTourFinal = numeroDernierTour;
     }
-    
+
     /**
      * @return le numéro du dernier tour
      */
     public int getNumeroTourFinal() {
         return this.numeroTourFinal;
     }
-    
+
     /**
      * @return l'identifiant de la partie
      */

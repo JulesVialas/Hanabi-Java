@@ -481,8 +481,8 @@ public class TableCinqJoueurs {
         updatePiocheDefausse();
         updateFeuxArtifice();
         if (partieEnCours
-            .isPartieFinie(partieEnCours.getTourCourant().getNumero())) {
-            
+                .isPartieFinie(partieEnCours.getTourCourant().getNumero())) {
+
             /* Désactive tous ce qui ne sert pas à sortir de la partie */
             desactiverBoutonsPartie();
             masquerOrverlays();
@@ -678,13 +678,15 @@ public class TableCinqJoueurs {
                         joueurGauche1.getCartesEnMains().get(2).getCouleur())
                 + ";");
         try {
-        joueurGauche1Carte4.setStyle("-fx-background-color: #"
-                + convertirCouleurEnHex(
-                        joueurGauche1.getCartesEnMains().get(3).getCouleur())
-                + ";");
-        joueurGauche1Carte4.setText(Integer.toString(joueurDroite2
-                .getCartesEnMains().get(3).getValeur().getValeurNumerique()));
-        } catch(IndexOutOfBoundsException piocheVide) {
+            joueurGauche1Carte4
+                    .setStyle("-fx-background-color: #"
+                            + convertirCouleurEnHex(joueurGauche1
+                                    .getCartesEnMains().get(3).getCouleur())
+                            + ";");
+            joueurGauche1Carte4
+                    .setText(Integer.toString(joueurDroite2.getCartesEnMains()
+                            .get(3).getValeur().getValeurNumerique()));
+        } catch (IndexOutOfBoundsException piocheVide) {
             // La main du joueur n'est plus complète car pioche vide
             joueurGauche1Carte4.setStyle("-fx-background-color: #000000");
             joueurGauche1Carte4.setText("");
@@ -696,8 +698,7 @@ public class TableCinqJoueurs {
                 .getCartesEnMains().get(1).getValeur().getValeurNumerique()));
         joueurGauche1Carte3.setText(Integer.toString(joueurGauche1
                 .getCartesEnMains().get(2).getValeur().getValeurNumerique()));
-        
-        
+
         joueurGauche2Carte1.setStyle("-fx-background-color: #"
                 + convertirCouleurEnHex(
                         joueurGauche2.getCartesEnMains().get(0).getCouleur())
@@ -711,13 +712,15 @@ public class TableCinqJoueurs {
                         joueurGauche2.getCartesEnMains().get(2).getCouleur())
                 + ";");
         try {
-            joueurGauche2Carte4.setStyle("-fx-background-color: #"
-                    + convertirCouleurEnHex(
-                            joueurGauche2.getCartesEnMains().get(3).getCouleur())
-                    + ";");
-            joueurGauche2Carte4.setText(Integer.toString(joueurDroite2
-                    .getCartesEnMains().get(3).getValeur().getValeurNumerique()));
-        } catch(IndexOutOfBoundsException piocheVide) {
+            joueurGauche2Carte4
+                    .setStyle("-fx-background-color: #"
+                            + convertirCouleurEnHex(joueurGauche2
+                                    .getCartesEnMains().get(3).getCouleur())
+                            + ";");
+            joueurGauche2Carte4
+                    .setText(Integer.toString(joueurDroite2.getCartesEnMains()
+                            .get(3).getValeur().getValeurNumerique()));
+        } catch (IndexOutOfBoundsException piocheVide) {
             // La main du joueur n'est plus complète car pioche vide
             joueurGauche2Carte4.setStyle("-fx-background-color: #000000");
             joueurGauche2Carte4.setText("");
@@ -743,13 +746,15 @@ public class TableCinqJoueurs {
                         joueurDroite1.getCartesEnMains().get(2).getCouleur())
                 + ";");
         try {
-            joueurDroite1Carte4.setStyle("-fx-background-color: #"
-                    + convertirCouleurEnHex(
-                            joueurDroite1.getCartesEnMains().get(3).getCouleur())
-                    + ";");
-            joueurDroite1Carte4.setText(Integer.toString(joueurDroite2
-                    .getCartesEnMains().get(3).getValeur().getValeurNumerique()));
-        } catch(IndexOutOfBoundsException piocheVide) {
+            joueurDroite1Carte4
+                    .setStyle("-fx-background-color: #"
+                            + convertirCouleurEnHex(joueurDroite1
+                                    .getCartesEnMains().get(3).getCouleur())
+                            + ";");
+            joueurDroite1Carte4
+                    .setText(Integer.toString(joueurDroite2.getCartesEnMains()
+                            .get(3).getValeur().getValeurNumerique()));
+        } catch (IndexOutOfBoundsException piocheVide) {
             // La main du joueur n'est plus complète car pioche vide
             joueurDroite1Carte4.setStyle("-fx-background-color: #000000");
             joueurDroite1Carte4.setText("");
@@ -775,25 +780,27 @@ public class TableCinqJoueurs {
                         joueurDroite2.getCartesEnMains().get(2).getCouleur())
                 + ";");
         try {
-            joueurDroite2Carte4.setStyle("-fx-background-color: #"
-                    + convertirCouleurEnHex(
-                            joueurDroite2.getCartesEnMains().get(3).getCouleur())
-                    + ";");
-            joueurDroite2Carte4.setText(Integer.toString(joueurDroite2
-                    .getCartesEnMains().get(3).getValeur().getValeurNumerique()));
-        } catch(IndexOutOfBoundsException piocheVide) {
+            joueurDroite2Carte4
+                    .setStyle("-fx-background-color: #"
+                            + convertirCouleurEnHex(joueurDroite2
+                                    .getCartesEnMains().get(3).getCouleur())
+                            + ";");
+            joueurDroite2Carte4
+                    .setText(Integer.toString(joueurDroite2.getCartesEnMains()
+                            .get(3).getValeur().getValeurNumerique()));
+        } catch (IndexOutOfBoundsException piocheVide) {
             // La main du joueur n'est plus complète car pioche vide
             joueurDroite2Carte4.setStyle("-fx-background-color: #000000");
             joueurDroite2Carte4.setText("");
-        } 
-    
+        }
+
         joueurDroite2Carte1.setText(Integer.toString(joueurDroite2
                 .getCartesEnMains().get(0).getValeur().getValeurNumerique()));
         joueurDroite2Carte2.setText(Integer.toString(joueurDroite2
                 .getCartesEnMains().get(1).getValeur().getValeurNumerique()));
         joueurDroite2Carte3.setText(Integer.toString(joueurDroite2
                 .getCartesEnMains().get(2).getValeur().getValeurNumerique()));
-        
+
     }
 
     /**
@@ -850,8 +857,8 @@ public class TableCinqJoueurs {
     private Tour creerTourSuivant() {
 
         if (partieEnCours
-            .isPartieFinie(partieEnCours.getTourCourant().getNumero())) {
-            
+                .isPartieFinie(partieEnCours.getTourCourant().getNumero())) {
+
             Hanabi.activerPartieFinie(partieEnCours);
         }
 

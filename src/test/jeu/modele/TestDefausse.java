@@ -28,26 +28,26 @@ class TestDefausse {
     void testDefausse() {
         Defausse defausse = new Defausse();
         assertDoesNotThrow(() -> new Defausse());
-        assertNotNull(defausse.getDefausse(),
+        assertNotNull(defausse.getPaquet(),
                 "La défausse ne doit pas être " + "null.");
-        assertTrue(defausse.getDefausse().isEmpty(),
+        assertTrue(defausse.getPaquet().isEmpty(),
                 "La défausse doit " + "être vide à l'initialisation.");
     }
 
     /**
-     * Méthode de test pour {@link jeu.modele.Defausse#getDefausse()}.
+     * Méthode de test pour {@link jeu.modele.Defausse#getPaquet()}.
      */
     @Test
-    void testGetDefausse() {
+    void testgetPaquet() {
         Defausse defausse = new Defausse();
-        Stack<Carte> pile = defausse.getDefausse();
-        assertNotNull(defausse.getDefausse(),
+        Stack<Carte> pile = defausse.getPaquet();
+        assertNotNull(defausse.getPaquet(),
                 "La pile de la défausse ne doit " + "pas être null.");
-        assertTrue(defausse.getDefausse().isEmpty(),
+        assertTrue(defausse.getPaquet().isEmpty(),
                 "La pile de la défausse " + "doit être vide.");
 
         // Vérifie que la défausse contient la même chose que la pile
-        assertSame(pile, defausse.getDefausse(), "La méthode getDefausse() doit"
+        assertSame(pile, defausse.getPaquet(), "La méthode getPaquet() doit"
                 + " renvoyer la même référence à la pile.");
     }
 
@@ -63,26 +63,26 @@ class TestDefausse {
         nouvellePile.push(new Carte(Couleur.JAUNE, Valeur.DEUX));
 
         defausse.setDefausse(nouvellePile);
-        assertEquals(nouvellePile, defausse.getDefausse(),
+        assertEquals(nouvellePile, defausse.getPaquet(),
                 "La défausse doit " + "être remplacée par la nouvelle pile.");
-        assertEquals(2, defausse.getDefausse().size(),
+        assertEquals(2, defausse.getPaquet().size(),
                 "La défausse doit " + "contenir 2 cartes.");
 
         // Avec une pile vide
         Stack<Carte> pileVide = new Stack<>();
         defausse.setDefausse(pileVide);
-        assertEquals(pileVide, defausse.getDefausse(),
+        assertEquals(pileVide, defausse.getPaquet(),
                 "La défausse doit être " + "remplacée par une pile vide.");
-        assertTrue(defausse.getDefausse().isEmpty(),
+        assertTrue(defausse.getPaquet().isEmpty(),
                 "La défausse contenir 0 " + "carte.");
 
         // Avec une pile contenant une seule carte
         Stack<Carte> pileUnique = new Stack<>();
         pileUnique.push(new Carte(Couleur.BLEU, Valeur.TROIS));
         defausse.setDefausse(pileUnique);
-        assertEquals(pileUnique, defausse.getDefausse(),
+        assertEquals(pileUnique, defausse.getPaquet(),
                 "La défausse doit être" + " remplacée par la pile unique.");
-        assertEquals(1, defausse.getDefausse().size(),
+        assertEquals(1, defausse.getPaquet().size(),
                 "La défausse doit " + "contenir 1 carte.");
     }
 
