@@ -20,7 +20,7 @@ import jeu.application.Hanabi;
 import jeu.modele.Partie;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Gère la page de choix des joueurs pour lancer la partie adaptée
  */
 public class ChoixJoueurs {
     @FXML

@@ -318,11 +318,6 @@ public class Tour {
              */
             partieDuTour.setNumeroTourFinal(this.numero + NB_JOUEUR);
         }
-        // TODO mais jsais pas où: stop game si rouge == 3
-        // TODO lastTour si pioche vide, trouver pour end =>
-        // mettre vérif à chaque fin d'action en fonction de ce qui peut
-        // arriver
-        // (0 pioche ou rouges) ? Pcq tour dépend de l'action !
     }
 
     /**
@@ -426,6 +421,5 @@ public class Tour {
 
             partieDuTour.getJetons().incrementBleus();
         }
-        // TODO lastTour si pioche vide, trouver pour end
     }
 }

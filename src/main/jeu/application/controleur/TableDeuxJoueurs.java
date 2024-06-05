@@ -179,8 +179,8 @@ public class TableDeuxJoueurs {
 
     @FXML
     private void donnerIndiceCouleur(ActionEvent event) {
-        // TODO faut récupérer la carte liée au bouton
-        // => switch case en private en fcontion de la source
+        // TODO récupérer la carte liée au bouton
+        // => switch case en private en fonction de la source
         // partieEnCours.getTourCourant()
         // .donnerIndice(Carte recoitIndice, 'c');
         System.out.println(((Control) event.getSource()).getId());

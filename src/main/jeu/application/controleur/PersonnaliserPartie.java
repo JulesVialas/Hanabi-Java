@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import jeu.application.Hanabi;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Gere la page de configuration des éléments de la partie
  */
 public class PersonnaliserPartie {
 

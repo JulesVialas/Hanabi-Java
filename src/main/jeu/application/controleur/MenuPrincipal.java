@@ -14,7 +14,7 @@ import javafx.fxml.FXML;
 import jeu.application.Hanabi;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Gère le menu principal
  */
 public class MenuPrincipal {
     @FXML
@@ -24,7 +24,7 @@ public class MenuPrincipal {
 
     @FXML
     private void gererClicChargerPartie() {
-        // TODO
+        // TODO chargement de la partie
     }
 
     @FXML

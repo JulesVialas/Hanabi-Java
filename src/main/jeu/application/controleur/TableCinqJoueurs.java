@@ -307,26 +307,23 @@ public class TableCinqJoueurs {
     private void gererClicCouleur() {
         natureIndice = 'c';
         // TODO mettre en évidence les cartes correspondantes
-        // Tour.donnerIndice(TODO trouver la carte selectionnée, 'c');
     }
 
     @FXML
     private void gererClicValeur() {
         natureIndice = 'v';
         System.out.println(natureIndice);
-        // Tour.donnerIndice(TODO trouver la carte selectionnée, 'v');
+        // TODO mettre en évidence les cartes correspondantes
     }
 
     @FXML
     private void gererClicPoser() {
         naturePose = 'p';
-        // Tour.poser(TODO Trouver la carte selectionnée);
     }
 
     @FXML
     private void gererClicDefausser() {
         naturePose = 'd';
-        // Tour.poser(TODO Trouver la carte selectionnée);
     }
 
     @FXML
@@ -469,13 +466,12 @@ public class TableCinqJoueurs {
      * Met à jour tous les éléments de la vue.
      */
     public void updateView() {
-        // TODO updateView
         masquerOrverlays();
         updatePositionJoueurs();
         updateLabelsJoueurs();
         updateAffichageCartes();
         masquerIndices();
-        // TODO update cases indices équipiers
+        // TODO update cases indices des équipiers
         // TODO affichage cartes joueur courant en fonction indices
         updateJetons();
         updatePiocheDefausse();
@@ -566,7 +562,7 @@ public class TableCinqJoueurs {
      * Initialise la couleur des tas de feux d'artifice sur la table
      */
     private void initializeCouleurFeuxArtifice() {
-        // TODO enlever animation si cliqués !
+        // TODO enlever animation si cliqués
         pileFeuxRouges.setStyle("-fx-background-color: #"
                 + convertirCouleurEnHex(Couleur.ROUGE));
         pileFeuxJaunes.setStyle("-fx-background-color: #"
@@ -888,7 +884,7 @@ public class TableCinqJoueurs {
             partieEnCours.setTourCourant(aLancer);
             updateView();
             System.out.println("JBas après = " + joueurBas.getPseudo());
-            // TODO écran de changement de joueur
+            // TODO écran de changement de joueur pour transition
         } catch (IllegalStateException partieTerminee) {
             System.out.println("La partie est terminée");
         }

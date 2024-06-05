@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import jeu.application.Hanabi;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Contrôleur de la page pour changer le thème de l'application
  */
 public class ChangerTheme {
 

@@ -405,7 +405,6 @@ public class Partie {
 
         return getJetons().getRouges() == 3 || areFireworksCompleted()
                 || numeroTourEnCours == this.numeroTourFinal;
-        // TODO Tests :D
     }
 
     /**

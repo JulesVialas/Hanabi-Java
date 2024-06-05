@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import jeu.application.Hanabi;
 
 /**
- * TODO commenter la responsabilité de cette classe (SRP)
+ * Gère la page de sauvegarde de partie
  */
 public class ChoixSauvegardePartie {
 

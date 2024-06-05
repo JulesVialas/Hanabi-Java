@@ -12,9 +12,7 @@ import jeu.application.Hanabi;
 
 /**
  * Joue le rôle de contrôleur pour la vue Paramètres de l'application
- * Hanabi. Fait le lien entre la vue
- * {@link jeu.application.vue#Parametres.fxml} et le FIXME je doute
- * que ça fasse lien avec modele tbh modele présent dans le package
+ * Hanabi.
  * {@link jeu.modele}.
  *
  * @author Corentin Solignac
@@ -33,7 +31,7 @@ public class Parametres {
     @FXML
     private void initialize() {
         /* Préparation des éléments FXML */
-        // TODO ajouter les @FXML des éléments
+        // TODO 
     }
 
     @FXML

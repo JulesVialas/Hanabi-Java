@@ -245,7 +245,7 @@ public class Hanabi extends Application {
     }
 
     /**
-     * TODO commenter le rôle de cette méthode
+     * Ouvre la page de règles du jeu
      */
     @FXML
     public static void activerRegles() {
@@ -304,7 +304,7 @@ public class Hanabi extends Application {
     public static void activerPartieFinie(Partie partie) {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    Hanabi.class.getResource("vue/PartieFinie.fxml"));
+            Hanabi.class.getResource("vue/PartieFinie.fxml"));
             Parent root = loader.load();
             PartieFinie controller = loader.getController();
             controller.afficherScore(partie);
@@ -450,7 +450,6 @@ public class Hanabi extends Application {
             fenetrePrincipale.setResizable(false);
             primaryStage.show();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
